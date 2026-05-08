@@ -1,0 +1,7396 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-16",
+  "engine": {
+    "defaultStopOnMatch": true,
+    "caseInsensitive": true
+  },
+  "rules": [
+    {
+      "ruleNo": 1,
+      "name": "Income - Payroll",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "PAYROLL|SALARY|DIRECT DEP"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Salary"
+      }
+    },
+    {
+      "ruleNo": 2,
+      "name": "Amazon - Prime membership",
+      "enabled": true,
+      "priority": 20,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Amazon"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "PRIME|PRME|AMAZONPRIME|PRIME MEMBERSHIP|MEMBERSHIP"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Subscription",
+        "setSub2": "AmazonPrime"
+      }
+    },
+    {
+      "ruleNo": 3,
+      "name": "Amazon - Shopping (default)",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Amazon"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 5,
+      "name": "Merchant - ATM deposits GTEFCU",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "ATM"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "ATM DEPOSIT GTE FCU"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Paycheck",
+        "setSub2": "Padma"
+      }
+    },
+    {
+      "ruleNo": 6,
+      "name": "Merchant - ATM deposits BOA",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "ATM"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "BKOFAMERICA"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Misc"
+      }
+    },
+    {
+      "ruleNo": 1000,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "ATM W/DRL Fee"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "ATM"
+      }
+    },
+    {
+      "ruleNo": 1001,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CHECK ORDER"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "Check Order"
+      }
+    },
+    {
+      "ruleNo": 1002,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "FOREIGN TRANSACTION FEE"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "Foreign Transaction Fee"
+      }
+    },
+    {
+      "ruleNo": 1003,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "GTE Annual Fee"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "Annual Fee"
+      }
+    },
+    {
+      "ruleNo": 1004,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "INTEREST"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "Interest Charged"
+      }
+    },
+    {
+      "ruleNo": 1005,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "ISPA/PIMDS"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "ISPA/PIMDS"
+      }
+    },
+    {
+      "ruleNo": 1006,
+      "name": "Fees",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Fees"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Periodic Finance Charge"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Fees",
+        "setSub2": "Late Fee"
+      }
+    },
+    {
+      "ruleNo": 1007,
+      "name": "Sears - Duct Cleaning",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Sears"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "DUCT"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Duct Cleaning",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 7,
+      "name": "Sears - Carpet Cleaning",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Sears"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CARPET"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Carpet Cleaning",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 8,
+      "name": "AT&T Bill",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "AT&T"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "MOBILITY Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Utilities",
+        "setSub2": "Phone",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 9,
+      "name": "Verizon Direct Deposit",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Verizon"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "DIR DEP"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Paycheck",
+        "setSub2": "Padma"
+      }
+    },
+    {
+      "ruleNo": 10,
+      "name": "Verizon Cafe",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Verizon"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CAFE"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Food",
+        "setSub2": "Verizon Cafe"
+      }
+    },
+    {
+      "ruleNo": 11,
+      "name": "Verizon Internet",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Verizon"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "COMMUNICATIONS Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Utilities",
+        "setSub2": "Phone, Cable & Internet",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 12,
+      "name": "Verizon Wireless (WRLS P0050)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Verizon"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "WRLS P0050"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Verizon Wireless"
+      }
+    },
+    {
+      "ruleNo": 13,
+      "name": "Shell Service",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Shell"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "SERVICE"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "Service",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 14,
+      "name": "Dividends",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Dividend"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Interest"
+      }
+    },
+    {
+      "ruleNo": 15,
+      "name": "Sears",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Sears"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "DUCT CLEAN"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Cleaning"
+      }
+    },
+    {
+      "ruleNo": 16,
+      "name": "Sears",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Sears"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CARPET CLN"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Cleaning"
+      }
+    },
+    {
+      "ruleNo": 17,
+      "name": "Internal - Payment Received (generic token)",
+      "enabled": true,
+      "priority": 15,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "PAYMENT\\s*RECEIVED"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "Payment Received"
+      }
+    },
+    {
+      "ruleNo": 18,
+      "name": "Internal - Payment Thank You (generic token)",
+      "enabled": true,
+      "priority": 15,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "PAYMENT\\s*-\\s*THANK\\s*YOU|PAYMENT\\s+THANK\\s+YOU|PAYMENT\\s*-\\s*THANKYOU"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "Payment Thank You"
+      }
+    },
+    {
+      "ruleNo": 19,
+      "name": "Internal - Thank You Bill Pay Service (generic token)",
+      "enabled": true,
+      "priority": 15,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "THANK\\s*YOU"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BILL\\s*PAY\\s*SERVICE|BILL\\s*PA"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "Bill Pay Service"
+      }
+    },
+    {
+      "ruleNo": 20,
+      "name": "Internal - AMEX Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "American Express"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "$MERCHANT",
+        "setSub3": "Bill Payment"
+      }
+    },
+    {
+      "ruleNo": 21,
+      "name": "Internal - BOA Credit Card Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Bank of America Credit Card"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "BOA Credit Card",
+        "setSub3": "Bill Payment"
+      }
+    },
+    {
+      "ruleNo": 22,
+      "name": "Internal - Chase Credit Cards Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Chase Credit Cards"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "$MERCHANT",
+        "setSub3": "Bill Payment"
+      }
+    },
+    {
+      "ruleNo": 23,
+      "name": "Internal - GTE FCU Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "GTE Federal Credit Union"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "GTE FCU",
+        "setSub3": "Bill Payment"
+      }
+    },
+    {
+      "ruleNo": 24,
+      "name": "Internal - Macy's Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "Macy's"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Bill Payment"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "$MERCHANT",
+        "setSub3": "Bill Payment"
+      }
+    },
+    {
+      "ruleNo": 25,
+      "name": "Internal - Chase EPAY",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "CHASE\\s*-\\s*EPAY|CHASE\\s+EPAY|EPAY"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CHASE"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "Chase Credit Cards",
+        "setSub3": "ePay"
+      }
+    },
+    {
+      "ruleNo": 26,
+      "name": "Internal - GTE Online PMT",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GTE\\s+FINANCIAL\\s*-\\s*ONLINE\\s+PMT|ONLINE\\s+PMT"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "GTE"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "GTE FCU",
+        "setSub3": "Online Payment"
+      }
+    },
+    {
+      "ruleNo": 27,
+      "name": "Internal - GTE FIN CRDTCARD CREDIT",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "GTE FIN CRDTCARD CREDIT"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "GTE FCU",
+        "setSub3": "Credit Card Credit"
+      }
+    },
+    {
+      "ruleNo": 127,
+      "name": "Internal - Return of posted check/item (BOA)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:BOA\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "RETURN OF POSTED CHECK"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Adjustment"
+      }
+    },
+    {
+      "ruleNo": 128,
+      "name": "Education - NSU webcheck (BOA)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:BOA\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "NOVA\\s+SOUTHEASTE.*WEBCHECK|WEBCHECK.*NOVA\\s+SOUTHEASTE"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "NSU"
+      }
+    },
+    {
+      "ruleNo": 158,
+      "name": "Expense - Misc - chec order (GTEFCU check order)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "HARLAND CLARKE"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "CHECK ORDER"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "chec order"
+      }
+    },
+    {
+      "ruleNo": 159,
+      "name": "Education - NSU webcheck (GTEFCU)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "NOVA\\s+SOUTHEASTE.*WEBCHECK|WEBCHECK.*NOVA\\s+SOUTHEASTE"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "NSU Tuition"
+      }
+    },
+    {
+      "ruleNo": 160,
+      "name": "Expense - Venmo",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bVENMO\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Venmo Purchase"
+      }
+    },
+    {
+      "ruleNo": 161,
+      "name": "Amazon Digital",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bAMZN\\s+DIGITAL\\b|\\bAMAZON\\s+DIGITAL\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Amazon Digital"
+      }
+    },
+    {
+      "ruleNo": 162,
+      "name": "Blinds.com",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bBLINDS\\s*\\.?\\s*COM\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Blinds.com"
+      }
+    },
+    {
+      "ruleNo": 163,
+      "name": "Car Maintenance - Gas (Harney Rd Mara)",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "HARNEY RD MARA"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "Gas"
+      }
+    },
+    {
+      "ruleNo": 164,
+      "name": "Recreation - Running (iMathlete)",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bIMATHLETE\\.?COM\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Running"
+      }
+    },
+    {
+      "ruleNo": 165,
+      "name": "Recreation - Dance (Rangeelo Raas)",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "RANGEELO\\s+RAAS"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance"
+      }
+    },
+    {
+      "ruleNo": 166,
+      "name": "Internal - Transfer - Goldman Sachs BA Collection",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GOLDMAN\\s+SACHS\\s+BA\\s*-\\s*COLLECTION"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Goldman Sachs Collection"
+      }
+    },
+    {
+      "ruleNo": 167,
+      "name": "Internal - Transfer - Chase External Transfer (Ext Trnsfr)",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "JPMORGAN\\s+CHASE.*EXT\\s+TRNSFR|JPMORGAN\\s+CHASE\\s*-\\s*EXT\\s+TRNSFR"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Chase External Transfer"
+      }
+    },
+    {
+      "ruleNo": 168,
+      "name": "Internal - Transfer - Transfer money to external account",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "TRANSFER\\s+MONEY\\s+TO\\s+EXTERNAL"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "External Transfer"
+      }
+    },
+    {
+      "ruleNo": 169,
+      "name": "Investment  - Transfer money to brokerage",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "TRANSFER\\s+MONEY\\s+TO\\s+BROKERAGE"
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Securities",
+        "setSub2": "ETrade"
+      }
+    },
+    {
+      "ruleNo": 170,
+      "name": "Internal - Transfer - Marcus Online Transfer",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ONLINE\\s+TRANSFER.*MARCUS|MARCUS\\s+ONLINE\\s+SAVINGS|MARCUS\\s+ONLINE\\s+WIRE\\s+TRANSFER"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Marcus Transfer"
+      }
+    },
+    {
+      "ruleNo": 171,
+      "name": "Internal - Transfer - Citi Web Transfer",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "CITIZE\\s+SV\\s+WEBXFR|\\bCITIXFR\\b|IIT\\s+CITIBANK\\s+DES:CITIXFR"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Citibank Transfer"
+      }
+    },
+    {
+      "ruleNo": 172,
+      "name": "Internal - Transfer - MSPBNA Bank Transfer",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "MSPBNA\\s+BANK\\s*-\\s*TRANSFER|MSPBNA\\s+BANK\\s*-\\s*TRANSFER|MSPBNA\\s+BANK\\s+\\-\\s+TRANSFER|MSPBNA\\s+BANK\\s+\\-\\s+TRANSFER"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "MSPBNA Transfer"
+      }
+    },
+    {
+      "ruleNo": 173,
+      "name": "Internal - Transfer - Wire transfers (inbound/outbound)",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^WIRE\\s+TYPE:WIRE\\s+IN|FEDWIRE\\s+CREDIT\\s+VIA:|OUTBOUND\\s+ONLINE\\s+WIRE\\s+TO"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Wire Transfer"
+      }
+    },
+    {
+      "ruleNo": 174,
+      "name": "Internal - Transfer - BOA mobile deposit",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BKOFAMERICA\\s+MOBILE.*DEPOSIT|\\bMOBILE\\s+DEPOSIT\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Mobile Deposit"
+      }
+    },
+    {
+      "ruleNo": 175,
+      "name": "Internal - Transfer - HSBC Online P2P deposit",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "DEPOSIT\\s+FROM\\s+HSBC\\s+ONLINE\\-P2P"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "HSBC P2P"
+      }
+    },
+    {
+      "ruleNo": 176,
+      "name": "Internal - Transfer - E*TRADE bank transfer",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "E\\*?TRADE\\s+BANK\\s*-\\s*TRANSFER"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Transfer from etrade"
+      }
+    },
+    {
+      "ruleNo": 177,
+      "name": "Internal - Transfer - Closeout (GTEFCU CD)",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CD)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^CLOSEOUT$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "closeout"
+      }
+    },
+    {
+      "ruleNo": 178,
+      "name": "Internal - Transfer - Generic check transaction (GTEFCU Checking)",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^CHECK\\s*(?:#\\s*)?(?:964|965|974|1047|975|1048|103|105|1050|107|146|108|149|115)\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Check"
+      }
+    },
+    {
+      "ruleNo": 179,
+      "name": "AT&T Bill Payment (ATT BILL PAYMENT)",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "AT&T"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ATT\\s+BILL\\s+PAYMENT"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Utilities",
+        "setSub2": "Phone, Cable & Internet",
+        "setSub3": "$MERCHANT"
+      }
+    },
+    {
+      "ruleNo": 180,
+      "name": "Car Maintenance - Loan - Honda (GTEFCU transfer to 478699807)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "TRANSFER\\s+TO\\s+478699807"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "Loan,",
+        "setSub3": "Honda"
+      }
+    },
+    {
+      "ruleNo": 181,
+      "name": "Car Maintenance - New car - Brandon Honda (GTEFCU check #1049)",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:GTEFCU\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "CHECK\\s*(?:#\\s*)?1049\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "New car,",
+        "setSub3": "Brandon Honda"
+      }
+    },
+    {
+      "ruleNo": 182,
+      "name": "Entertainment - NHL game (Zelle to Megan Peacy)",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ZELLE\\s+PAYMENT\\s+TO\\s+MEGAN\\s+PEACY"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "NHL game",
+        "setSub3": "Megan Peacy"
+      }
+    },
+    {
+      "ruleNo": 183,
+      "name": "Entertainment - Game tickets (Zelle to Jayendra Singh)",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ZELLE\\s+TRANSFER.*SINGH,\\s*JAYENDRA"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "Game tickets",
+        "setSub3": "Jayendra Singh"
+      }
+    },
+    {
+      "ruleNo": 184,
+      "name": "Entertainment - The Weekend Concert (Vivid Seats)",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "VIVID\\s+SEATS.*WEEKN"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "The Weekend Concert",
+        "setSub3": "Vivid Seats"
+      }
+    },
+    {
+      "ruleNo": 185,
+      "name": "Travel - Universal (Orlando)",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "(?:UNIVERSA\\s+0?1410018|SUPER\\s+SILLY|ON\\s+LOCATION)"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Travel",
+        "setSub2": "Universal",
+        "setSub3": "Universal Orlando"
+      }
+    },
+    {
+      "ruleNo": 186,
+      "name": "Recreation - Veda Class - Kalenahalli",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ONLINE\\s+BANKING\\s+TRANSFER.*KALENAHALLI"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Veda class"
+      }
+    },
+    {
+      "ruleNo": 187,
+      "name": "Recreation - Dance - Desi Dhamaka (Gopa Rautray) [ConfId specific]",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+TRANSFER\\s+CONF#\\s*b475813b2\\s*;\\s*Rautray,?\\s+Gopa\\s*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Desi Dhamaka"
+      }
+    },
+    {
+      "ruleNo": 188,
+      "name": "Recreation - Dance - Gopali Ambika",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GOPALI\\s+AMBIKA"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Ambika"
+      }
+    },
+    {
+      "ruleNo": 189,
+      "name": "Groceries - Branchton Farms (Thonotosassa) -> Strawberry forms",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BRANCHTON\\s+FARMS.*THONOTOSASSA"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Groceries",
+        "setSub2": "Strawberry forms"
+      }
+    },
+    {
+      "ruleNo": 190,
+      "name": "Groceries - Branchton Farms -> Branchton",
+      "enabled": true,
+      "priority": 10,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BRANCHTON\\s+FARMS"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Groceries",
+        "setSub2": "Branchton"
+      }
+    },
+    {
+      "ruleNo": 191,
+      "name": "Groceries - Cracker Barrel (CRACKER B 1960)",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "CRACKER\\s+B\\s+1960"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Groceries",
+        "setSub2": "Cracker Barrel"
+      }
+    },
+    {
+      "ruleNo": 192,
+      "name": "Sam Ash Music",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "SAM\\s+ASH\\s+MUSIC"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund",
+        "setSub2": "Shopping",
+        "setSub3": "Sam Ash"
+      }
+    },
+    {
+      "ruleNo": 193,
+      "name": "Investment Income - Transfer money from brokerage",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "TRANSFER\\s+MONEY\\s+FROM\\s+BROKERAGE"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Investment"
+      }
+    },
+    {
+      "ruleNo": 9417,
+      "name": "Zelle EXCEPTION Conf#mw56duaim: Gopali Ambika -> Expense/Recreation/Dance/Padma",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+PAYMENT\\s+(?:FROM|TO)\\s+Gopali\\s+Ambika\\b.*CONF#\\s*mw56duaim\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Padma",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 11
+    },
+    {
+      "ruleNo": 9418,
+      "name": "Zelle EXCEPTION Conf#py9owazmr: Anusha Vaka -> Expense/Shopping/Jewellery",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+PAYMENT\\s+(?:FROM|TO)\\s+Anusha\\s+Vaka\\b.*CONF#\\s*py9owazmr\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Jewellery",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 11
+    },
+    {
+      "ruleNo": 9419,
+      "name": "Zelle EXCEPTION Conf#nr842jugy: Ramesh Joshi -> Expense/Misc/To Ramesh Joshi",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+PAYMENT\\s+(?:FROM|TO)?\\s+Ramesh\\s+Joshi\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "To Ramesh Joshi",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 11
+    },
+    {
+      "ruleNo": 9420,
+      "name": "Zelle EXCEPTION Conf#rpbl4wkbf: Venky Dharmarajan -> Lending/To Venky",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+PAYMENT\\s+(?:FROM|TO)\\s+Venky\\s+Dharmarajan\\b.*CONF#\\s*rpbl4wkbf\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Lending",
+        "setSub1": "To Venky",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 11
+    },
+    {
+      "ruleNo": 9421,
+      "name": "Zelle EXCEPTION Conf#bzz5y5qqy: anoushka -> Expense/Zelle Payment",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+PAYMENT\\s+(?:FROM|TO)\\s+anoushka\\b.*CONF#\\s*bzz5y5qqy\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 11
+    },
+    {
+      "ruleNo": 9422,
+      "name": "Zelle: AASHI SHAH -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)AASHI\\s+SHAH\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9423,
+      "name": "Zelle: AIMJAH -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)AIMJAH\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9424,
+      "name": "Zelle: ANOUSHKA DHAU -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)ANOUSHKA\\s+DHAU\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9425,
+      "name": "Zelle: Alekhya -> Expense/Travel/Entertainment",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Alekhya\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Travel",
+        "setSub2": "Entertainment",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9426,
+      "name": "Zelle: Ananya K Dad -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ananya\\s+K\\s+Dad\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9427,
+      "name": "Zelle: Anusha Vaka -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Anusha\\s+Vaka\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9428,
+      "name": "Zelle: BUYYANAPRAGADA, TANMAI -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)BUYYANAPRAGADA,?\\s+TANMAI\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9429,
+      "name": "Zelle: BUYYANAPRAGADA, TEJOMAI -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)BUYYANAPRAGADA,?\\s+TEJOMAI\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9430,
+      "name": "Zelle: Bsr buyyanapragada -> Expense/Misc/To BSR",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Bsr\\s+buyyanapragada\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "To BSR",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9431,
+      "name": "Zelle: Chandrasekhar Gadamsetty -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s*(?:FROM|TO)?)\\s*Chandrasekhar\\s+Gadamsetty\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9432,
+      "name": "Zelle: Collins, Jesse -> Expense/Medical/Therapy",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Collins,?\\s+Jesse\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Medical",
+        "setSub2": "Therapy",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9433,
+      "name": "Zelle: Deepali Gajjar Bhangra -> Expense/Recreation/Dance/Deepali",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Deepali\\s+Gajjar\\s+Bhangra\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Deepali",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9434,
+      "name": "Zelle: Emanuel JPM999ikv23r -> Expense/Home Maintenance/Repair/Emanuel J",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Emanuel\\s+JPM999ikv23r\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Repair",
+        "setSub3": "Emanuel J",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9435,
+      "name": "Zelle: FEVA -> Expense/Recreation/Sports/FEVA",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)FEVA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Sports",
+        "setSub3": "FEVA",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9436,
+      "name": "Zelle: GOPALA -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)GOPALA\\bBALAGA\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9437,
+      "name": "Zelle: Ganduri, Parvathi -> Expense/Recreation/Music/Parvathi",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ganduri,?\\s+Parvathi\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Parvathi",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9438,
+      "name": "Zelle: Gopa Aunty -> Expense/Recreation/Dance/Gopa",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Gopa\\s+Aunty\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Gopa",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9439,
+      "name": "Zelle: Gopali Ambika -> Expense/Recreation/Dance/Ambika",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Gopali\\s+Ambika\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Ambika",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9440,
+      "name": "Zelle: Gujjar, Vikram -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Gujjar\\s+Vikram"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9441,
+      "name": "Zelle: HANA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)HANA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9442,
+      "name": "Zelle: Hiranmayee Buyyanapragada -> Expense/Gifts/to Hiran and Srikara",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Hiranmayee\\s+Buyyanapragada\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Gifts",
+        "setSub2": "to Hiran and Srikara",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9443,
+      "name": "Zelle: IBUKUN ADETULA -> Income/Rental",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)IBUKUN\\s+ADETULA"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9444,
+      "name": "Zelle: JOHNNY N. REDONDO -> Income/Rental",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+) JOHNNY\\s+(?:N.)?\\s+REDONDO"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9464,
+      "name": "Zelle: Ivanova, Sonya -> Expense/Recreation/Piano/Sonya",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ivanova,?\\s+Sonya\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Piano",
+        "setSub3": "Sonya",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9465,
+      "name": "Zelle: JAYENDRA SINGH -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)JAYENDRA\\s+SINGH"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9466,
+      "name": "Zelle: JET USA -> Donation/JETUSA",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)JET\\s+USA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "JETUSA",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9467,
+      "name": "Zelle: JOHNNY N. REDONDO AND ASSOCIATES LL -> Income/Rental",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)JOHNNY\\s+N\\.\\s+REDONDO\\s+AND\\s+ASSOCIATES\\s+LL\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9468,
+      "name": "Zelle: JOHNNY REDONDO -> Income/Rental",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)JOHNNY\\s+REDONDO\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9469,
+      "name": "Zelle: Jamie Davis JPM99aaoan0f -> Expense/Home Maintenance/Repairs/To Jamie Davis/10303 Meadow Crossing Dr",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Jamie\\s+Davis\\s+JPM99aaoan0f\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Home Maintenance",
+        "setSub2": "Repairs",
+        "setSub3": "To Jamie Davis",
+        "setSub4": "10303 Meadow Crossing Dr"
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9470,
+      "name": "Zelle: Jayendra Singh -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)(?:JAYENDRA|SINGH)\\s+(?:SINGH|JAYENDRA)"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9471,
+      "name": "Zelle: Johnny The Agent -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Johnny\\s+(?:THE\\s+)?Agent\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9472,
+      "name": "Zelle: KOTAMRAJU, VENKATA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)KOTAMRAJU,?\\s+VENKATA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9473,
+      "name": "Zelle: Kiran Josyula -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Kiran\\s+Josyula\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9474,
+      "name": "Zelle: MAHALAXMI SOME -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)MAHALAXMI\\s+SOME\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9475,
+      "name": "Zelle: MICHELLE A JOSE -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)MICHELLE\\s+A\\s+JOSE\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9476,
+      "name": "Zelle: MOKSHAGNA SAI KOLLA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)MOKSHAGNA\\s+SAI\\s+KOLLA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9477,
+      "name": "Zelle: Madhuri School of Dance -> Expense/Recreation/Dance/Madhuri",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Madhuri\\s+School\\s+of\\s+Dance\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Madhuri",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9478,
+      "name": "Zelle: NAVYA L -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)NAVYA\\s+L\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9479,
+      "name": "Zelle: NEHA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)?)\\s*NEHA\\s+KASHYAP"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9480,
+      "name": "Zelle: NIRAJ MISHRA BAChaqbkxb5i -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)NIRAJ\\s+MISHRA\\s+BAChaqbkxb5i\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9481,
+      "name": "Zelle: NJ NAACH A NJ NONPROFIT -> Donation/NJ NAACH A NJ NONPROFIT CORPORATION",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)NJ\\s+NAACH\\s+A\\s+NJ\\s+NONPROFIT\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "NJ NAACH A NJ NONPROFIT CORPORATION",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9482,
+      "name": "Zelle: Neeraj Mishra -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Neeraj\\s+Mishra\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9483,
+      "name": "Zelle: Neha Kashyap -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Neha\\s+Kashyap\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9484,
+      "name": "Zelle: PADMAJA JOSYULA -> Internal when amt GT 0",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT(?:\\s+FROM|TO)?\\s+)PADMAJA\\s+JOSYULA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9485,
+      "name": "Zelle: PRAVEENA KHAMBHAM BACj7ebumiln -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)PRAVEENA\\s+KHAMBHAM\\s+BACj7ebumiln\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9486,
+      "name": "Zelle: Panguluri, Sivakumar -> Donation/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Panguluri,?\\s+Sivakumar\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9487,
+      "name": "Zelle: Pavan Cherukuri -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Pavan\\s+Cherukuri"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9488,
+      "name": "Zelle: RAMA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)RAMA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9489,
+      "name": "Zelle: RANJANA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)RANJANA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9490,
+      "name": "Zelle: RAVIPRAKASH R KAMMADIKE -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)RAVIPRAKASH\\s+R\\s+KAMMADIKE\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9491,
+      "name": "Zelle: Raghavendra Dronamraju -> Donation/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Raghavendra\\s+Dronamraju\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9492,
+      "name": "Zelle: Raghuvamsi, Devendar -> Expense/Education/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Raghuvamsi,?\\s+Devendar\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "Misc",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9493,
+      "name": "Zelle: Ramesh Joshi -> Expense/Misc/Anjali Project Expenses",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ramesh\\s+Joshi\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Anjali Project Expenses",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9494,
+      "name": "Zelle: Ramprasad -> Expense/Food/Ramprasad",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ramprasad\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Food",
+        "setSub2": "Ramprasad",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9495,
+      "name": "Zelle: Ranjana Warier -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ranjana\\s+Warier\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9496,
+      "name": "Zelle: Rapolu, Jagan -> Expense/Entertainment",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Rapolu,?\\s+Jagan\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9497,
+      "name": "Zelle: Rautray, Gopa -> Expense/Recreation/Dance/Gopa",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Rautray,?\\s+Gopa\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Gopa",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9498,
+      "name": "Zelle: Ravikiran vadlamudi -> Expense/Recreation/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Ravikiran\\s+vadlamudi\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Misc",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9499,
+      "name": "Zelle: Rhea Pitale -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Rhea\\s+Pitale\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9500,
+      "name": "Zelle: SAUMYA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)SAUMYA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9501,
+      "name": "Zelle: SHRIKARA V MURTHY -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)SHRIKARA\\s+V\\s+MURTHY\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9502,
+      "name": "Zelle: SRILAASYA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)SRILAASYA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9503,
+      "name": "Zelle: SRILATHA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)SRILATHA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9504,
+      "name": "Zelle: SRINIVASA RAO BUYYANAPRAGADA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)SRINIVASA\\s+RAO\\s+BUYYANAPRAGADA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9505,
+      "name": "Zelle: Sharada Manginipudi -> Expense/Recreation/Music/Sharada",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Sharada\\s+Manginipudi\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Sharada",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9506,
+      "name": "Zelle: Singh, Jayendra -> Expense/Entertainment/Game tickets",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Singh,?\\s+Jayendra\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "Game tickets",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9507,
+      "name": "Zelle: Sonya Ivanova -> Expense/Recreation/Piano/Sonya",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Sonya\\s+Ivanova\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Piano",
+        "setSub3": "Sonya",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9508,
+      "name": "Zelle: Sowmya Kodukula -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Sowmya\\s+Kodukula\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9509,
+      "name": "Zelle: Subha Ganesh -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Subha\\s+Ganesh\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9510,
+      "name": "Zelle: Sudha Garu -> Expense/Shopping/Clothing",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Sudha\\s+Garu\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Clothing",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9511,
+      "name": "Zelle: Sujaya raviprakash -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)Sujaya\\s+raviprakash\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9512,
+      "name": "Zelle: TANMAI -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)TANMAI\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9513,
+      "name": "Zelle: UC MIDWEST -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)UC\\s+MIDWEST\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9514,
+      "name": "Zelle: UDIPI, MURALI -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)UDIPI,?\\s+MURALI\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9515,
+      "name": "Zelle: Udipi, Murali -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)UDIPI,?\\s+MURALI\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9516,
+      "name": "Zelle: VANESSA -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)VANESSA\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9517,
+      "name": "Zelle: VIKRAM GUJAR BACw9ec90y0r -> Internal",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)VIKRAM\\s+GUJAR"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9518,
+      "name": "Zelle: Vanshika Shah -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)Vanshika\\s+Shah\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9519,
+      "name": "Zelle: Venky Dharmarajan -> Investment/LLC Business/Idhayam Square LLC/Shady hills",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)VENKY\\s+DHARMARAJAN\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "LLC Business",
+        "setSub2": "Idhayam Square LLC",
+        "setSub3": "Shady hills",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9520,
+      "name": "Zelle: anoushka -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)anoushka\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9521,
+      "name": "Zelle: buyyanapragada, Bsr -> Expense/Vacation",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)(?:buyyanapragada|BSR)\\s+(?:Bsr|buyyanapragada)\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Vacation",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9522,
+      "name": "Zelle: deeksha k -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s*[A-Z0-9]+\\s*|PAYMENT\\s+(?:FROM|TO)?\\s+)deeksha\\s+k\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9523,
+      "name": "Zelle: farmtable LLC -> Expense/Food/Farmtable LLC",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)farmtable\\s+LLC\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Food",
+        "setSub2": "Farmtable LLC",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9524,
+      "name": "Zelle: ozra sedighi -> Expense/Education/Tuition/Infinite Edge",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)ozra\\s+sedighi\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "Tuition",
+        "setSub3": "Infinite Edge",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9525,
+      "name": "Zelle: padmaja josyula -> Expense/Misc",
+      "enabled": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF#\\s*[A-Z0-9]+\\s*;\\s*|PAYMENT\\s+(?:FROM|TO)\\s+)padmaja\\s+josyula\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      },
+      "stopOnMatch": true,
+      "priority": 9
+    },
+    {
+      "ruleNo": 9526,
+      "name": "Zelle: aashi shah for fundraiser conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)AASHI\\s+SHAH\\s+FOR\\s+FUNDRAISER\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9527,
+      "name": "Zelle: aimjah pointdujour conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)AIMJAH\\s+POINTDUJOUR\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9528,
+      "name": "Zelle: alekhya -> Expense/Travel/Entertainment",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)ALEKHYA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Travel",
+        "setSub2": "Entertainment",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9529,
+      "name": "Zelle: anoushka conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)ANOUSHKA\\s+CONF\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9530,
+      "name": "Zelle: anoushka dhau conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)ANOUSHKA\\s+DHAU\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9531,
+      "name": "Zelle: anoushka dhau for onion rings conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)ANOUSHKA\\s+DHAU\\s+FOR\\s+ONION\\s+RINGS\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9532,
+      "name": "Zelle: bsr buyyanapragada conf -> Expense/Misc/To BSR",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)BSR\\s+BUYYANAPRAGADA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "To BSR",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9533,
+      "name": "Zelle: buyyanapragada bsr -> Expense/Vacation",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)BUYYANAPRAGADA\\s+BSR\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Vacation",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9534,
+      "name": "Zelle: buyyanapragada tanmai -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)BUYYANAPRAGADA\\s+TANMAI\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9535,
+      "name": "Zelle: buyyanapragada tejomai -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)BUYYANAPRAGADA\\s+TEJOMAI\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9536,
+      "name": "Zelle: collins jesse -> Expense/Medical/Therapy",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)COLLINS\\s+JESSE\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Medical",
+        "setSub2": "Therapy",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9537,
+      "name": "Zelle: deepali gajjar bhangra for for padmaja regarding amishi gift conf -> Expense/Recreation/Dance/Deepali",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)DEEPALI\\s+GAJJAR\\s+BHANGRA\\s+FOR\\s+FOR\\s+PADMAJA\\s+REGARDING\\s+AMISHI\\s+GIFT\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Deepali",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9538,
+      "name": "Zelle: feva for for anjali annamraju private classes with maddi conf -> Expense/Recreation/Sports/FEVA",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)FEVA\\s+FOR\\s+FOR\\s+ANJALI\\s+ANNAMRAJU\\s+PRIVATE\\s+CLASSES\\s+WITH\\s+MADDI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Sports",
+        "setSub3": "FEVA",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9539,
+      "name": "Zelle: feva for for anjali annamraju private lesson conf -> Expense/Recreation/Sports/FEVA",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)FEVA\\s+FOR\\s+FOR\\s+ANJALI\\s+ANNAMRAJU\\s+PRIVATE\\s+LESSON\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Sports",
+        "setSub3": "FEVA",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9540,
+      "name": "Zelle: ganduri parvathi -> Expense/Recreation/Music/Parvathi",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)GANDURI\\s+PARVATHI\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Parvathi",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9541,
+      "name": "Zelle: gopa aunty -> Expense/Recreation/Dance/Gopa",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)GOPA\\s+AUNTY\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Gopa",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9542,
+      "name": "Zelle: gopala balaga conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)GOPALA\\s+BALAGA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9543,
+      "name": "Zelle: gujjar vikram -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)GUJJAR\\s+VIKRAM\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9544,
+      "name": "Zelle: hana bushra for hoh brunch conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)HANA\\s+BUSHRA\\s+FOR\\s+HOH\\s+BRUNCH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9545,
+      "name": "Zelle: hiranmayee buyyanapragada for congratulations on your new house pinni -> Expense/Gifts/to Hiran and Srikara",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)HIRANMAYEE\\s+BUYYANAPRAGADA\\s+FOR\\s+CONGRATULATIONS\\s+ON\\s+YOUR\\s+NEW\\s+HOUSE\\s+PINNI\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Gifts",
+        "setSub2": "to Hiran and Srikara",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9546,
+      "name": "Zelle: ibukun adetula -> Income/Rental",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)IBUKUN\\s+ADETULA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9547,
+      "name": "Zelle: jayendra singh -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JAYENDRA\\s+SINGH\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9548,
+      "name": "Zelle: jayendra singh -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JAYENDRA\\s+SINGH\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9549,
+      "name": "Zelle: jet usa for goda kalyanam conf -> Donation/JETUSA",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JET\\s+USA\\s+FOR\\s+GODA\\s+KALYANAM\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "JETUSA",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9550,
+      "name": "Zelle: johnny agent -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JOHNNY\\s+AGENT\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9551,
+      "name": "Zelle: johnny n redondo and associates ll -> Income/Rental",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JOHNNY\\s+N\\s+REDONDO\\s+AND\\s+ASSOCIATES\\s+LL\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9552,
+      "name": "Zelle: johnny redondo -> Income/Rental",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)JOHNNY\\s+REDONDO\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9553,
+      "name": "Zelle: kiran josyula conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)KIRAN\\s+JOSYULA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9554,
+      "name": "Zelle: kotamraju venkata -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)KOTAMRAJU\\s+VENKATA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9555,
+      "name": "Zelle: mahalaxmi some for greyhound ticket conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)MAHALAXMI\\s+SOME\\s+FOR\\s+GREYHOUND\\s+TICKET\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9556,
+      "name": "Zelle: mahalaxmi some for spirit ticket conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)MAHALAXMI\\s+SOME\\s+FOR\\s+SPIRIT\\s+TICKET\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9557,
+      "name": "Zelle: megan peacy conf -> Expense/Entertainment/NHL game",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)MEGAN\\s+PEACY\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "NHL game",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9558,
+      "name": "Zelle: michelle a jose for hoh brunch conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)MICHELLE\\s+A\\s+JOSE\\s+FOR\\s+HOH\\s+BRUNCH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9559,
+      "name": "Zelle: mokshagna sai kolla for moksha hoh brunch conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)MOKSHAGNA\\s+SAI\\s+KOLLA\\s+FOR\\s+MOKSHA\\s+HOH\\s+BRUNCH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9560,
+      "name": "Zelle: navya l inampudi conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NAVYA\\s+L\\s+INAMPUDI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9561,
+      "name": "Zelle: neeraj mishra conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NEERAJ\\s+MISHRA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9562,
+      "name": "Zelle: neha kashyap -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NEHA\\s+KASHYAP\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9563,
+      "name": "Zelle: niraj mishra -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NIRAJ\\s+MISHRA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9564,
+      "name": "Zelle: nj naach a nj nonprofit corporation for nsu maasti 2024 app fee conf -> Donation/NJ NAACH A NJ NONPROFIT CORPORAT",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NJ\\s+NAACH\\s+A\\s+NJ\\s+NONPROFIT\\s+CORPORATION\\s+FOR\\s+NSU\\s+MAASTI\\s+2024\\s+APP\\s+FEE\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "NJ NAACH A NJ NONPROFIT CORPORATION",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9565,
+      "name": "Zelle: nj naach a nj nonprofit corporation for nsu maasti after party conf -> Donation/NJ NAACH A NJ NONPROFIT CORPORATI",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NJ\\s+NAACH\\s+A\\s+NJ\\s+NONPROFIT\\s+CORPORATION\\s+FOR\\s+NSU\\s+MAASTI\\s+AFTER\\s+PARTY\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "NJ NAACH A NJ NONPROFIT CORPORATION",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9566,
+      "name": "Zelle: nj naach a nj nonprofit corporation for nsu maasti security deposit conf -> Donation/NJ NAACH A NJ NONPROFIT CORP",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)NJ\\s+NAACH\\s+A\\s+NJ\\s+NONPROFIT\\s+CORPORATION\\s+FOR\\s+NSU\\s+MAASTI\\s+SECURITY\\s+DEPOSIT\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "NJ NAACH A NJ NONPROFIT CORPORATION",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9567,
+      "name": "Zelle: ozra sedighi for for anjali annamraju for sat math conf -> Expense/Education/Tuition/Infinite Edge",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)OZRA\\s+SEDIGHI\\s+FOR\\s+FOR\\s+ANJALI\\s+ANNAMRAJU\\s+FOR\\s+SAT\\s+MATH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "Tuition",
+        "setSub3": "Infinite Edge",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9569,
+      "name": "Zelle: padmaja josyula for vyo and movie conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)PADMAJA\\s+JOSYULA\\s+FOR\\s+VYO\\s+AND\\s+MOVIE\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9570,
+      "name": "Zelle: panguluri sivakumar -> Donation/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)PANGULURI\\s+SIVAKUMAR\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9571,
+      "name": "Zelle: pavan cherukuri for vrrct book conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)PAVAN\\s+CHERUKURI\\s+FOR\\s+VRRCT\\s+BOOK\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9572,
+      "name": "Zelle: praveena khambham -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)PRAVEENA\\s+KHAMBHAM\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9573,
+      "name": "Zelle: raghavendra dronamraju conf -> Donation/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAGHAVENDRA\\s+DRONAMRAJU\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9574,
+      "name": "Zelle: raghuvamsi devendar -> Expense/Education/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAGHUVAMSI\\s+DEVENDAR\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Education",
+        "setSub2": "Misc",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9575,
+      "name": "Zelle: rama vudutala for vegetables conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAMA\\s+VUDUTALA\\s+FOR\\s+VEGETABLES\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9576,
+      "name": "Zelle: ramesh joshi conf -> Expense/Misc/To Ramesh Joshi",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAMESH\\s+JOSHI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "To Ramesh Joshi",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9577,
+      "name": "Zelle: ramesh joshi for anjalis project expenses conf -> Expense/Misc/Anjali Project Expenses",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAMESH\\s+JOSHI\\s+FOR\\s+ANJALIS\\s+PROJECT\\s+EXPENSES\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Anjali Project Expenses",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9578,
+      "name": "Zelle: ramprasad conf -> Expense/Food/Ramprasad",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAMPRASAD\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Food",
+        "setSub2": "Ramprasad",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9579,
+      "name": "Zelle: ranjana warier for 50 back workshop conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RANJANA\\s+WARIER\\s+FOR\\s+50\\s+BACK\\s+WORKSHOP\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9580,
+      "name": "Zelle: ranjana warier for workshop conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RANJANA\\s+WARIER\\s+FOR\\s+WORKSHOP\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9581,
+      "name": "Zelle: rapolu jagan -> Expense/Entertainment",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAPOLU\\s+JAGAN\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9582,
+      "name": "Zelle: rautray gopa -> Expense/Recreation/Dance/Gopa",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAUTRAY\\s+GOPA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Dance",
+        "setSub3": "Gopa",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9583,
+      "name": "Zelle: ravikiran vadlamudi conf -> Expense/Recreation/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAVIKIRAN\\s+VADLAMUDI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Misc",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9584,
+      "name": "Zelle: raviprakash r kammadike -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)RAVIPRAKASH\\s+R\\s+KAMMADIKE\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9585,
+      "name": "Zelle: saumya israni for sonia brunch money conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SAUMYA\\s+ISRANI\\s+FOR\\s+SONIA\\s+BRUNCH\\s+MONEY\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9586,
+      "name": "Zelle: sharada manginipudi conf -> Expense/Recreation/Music/Sharada",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SHARADA\\s+MANGINIPUDI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Sharada",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9587,
+      "name": "Zelle: sharada manginipudi for for march classes for padmaja conf -> Expense/Recreation/Music/Sharada",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SHARADA\\s+MANGINIPUDI\\s+FOR\\s+FOR\\s+MARCH\\s+CLASSES\\s+FOR\\s+PADMAJA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Sharada",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9588,
+      "name": "Zelle: sharada manginipudi for music lessons for padmaja conf -> Expense/Recreation/Music/Sharada",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SHARADA\\s+MANGINIPUDI\\s+FOR\\s+MUSIC\\s+LESSONS\\s+FOR\\s+PADMAJA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Recreation",
+        "setSub2": "Music",
+        "setSub3": "Sharada",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9589,
+      "name": "Zelle: shrikara v murthy -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SHRIKARA\\s+V\\s+MURTHY\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9590,
+      "name": "Zelle: sowmya kodukula for for womens day tickets padmaja conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SOWMYA\\s+KODUKULA\\s+FOR\\s+FOR\\s+WOMENS\\s+DAY\\s+TICKETS\\s+PADMAJA\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9591,
+      "name": "Zelle: srilaasya nedunoori for brunch conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SRILAASYA\\s+NEDUNOORI\\s+FOR\\s+BRUNCH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9592,
+      "name": "Zelle: srilatha paramatmuni for cruise 2024 latha and sruti conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SRILATHA\\s+PARAMATMUNI\\s+FOR\\s+CRUISE\\s+2024\\s+LATHA\\s+AND\\s+SRUTI\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9593,
+      "name": "Zelle: srinivasa rao buyyanapragada -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SRINIVASA\\s+RAO\\s+BUYYANAPRAGADA\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9594,
+      "name": "Zelle: subha ganesh for padmajas sarer amount conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SUBHA\\s+GANESH\\s+FOR\\s+PADMAJAS\\s+SARER\\s+AMOUNT\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9595,
+      "name": "Zelle: sujaya raviprakash conf -> Expense/Misc",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)SUJAYA\\s+RAVIPRAKASH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9596,
+      "name": "Zelle: tanmai buyyanapragada for maasti shirt money conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)TANMAI\\s+BUYYANAPRAGADA\\s+FOR\\s+MAASTI\\s+SHIRT\\s+MONEY\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9597,
+      "name": "Zelle: udipi murali -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)UDIPI\\s+MURALI\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9598,
+      "name": "Zelle: vanessa gonzalez for vanessa hoh brunch conf -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)VANESSA\\s+GONZALEZ\\s+FOR\\s+VANESSA\\s+HOH\\s+BRUNCH\\s+CONF\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9599,
+      "name": "Zelle: venky dharmarajan conf -> Lending/To Venky",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)VENKY\\s+DHARMARAJAN\\s+CONF\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Lending",
+        "setSub1": "To Venky",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9600,
+      "name": "Zelle: venky dharmarajan conf -> Investment/LLC Business/Idhayam Square LLC/Shady hills",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)VENKY\\s+DHARMARAJAN\\s+CONF\\b.*$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "LLC Business",
+        "setSub2": "Idhayam Square LLC",
+        "setSub3": "Shady hills",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9601,
+      "name": "Zelle: vikram gujar -> Internal",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ZELLE\\s+(?:TRANSFER\\s+CONF\\s+[A-Z0-9]+\\s+|PAYMENT\\s+)VIKRAM\\s+GUJAR\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "",
+        "setSub2": "",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9602,
+      "name": "Investment - Etrade brokerage transfer XXXX1488",
+      "enabled": true,
+      "priority": 8,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^TRANSFER\\s+MONEY\\s+TO\\s+BROKERAGE\\s+XXXX1488$"
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Securities",
+        "setSub2": "Etrade",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9603,
+      "name": "Investment - Etrade ACH to Fidelity rollover IRA for minor",
+      "enabled": true,
+      "priority": 8,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^E\\*?TRADE\\s+DES:ACH\\s+TRNSFR\\s+ID:[A-Z0-9]+\\s+INDN:[0-9]+\\s+CO\\s+ID:[A-Z0-9]+\\s+PPD$"
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Retirement",
+        "setSub2": "Fidelity Rollover IRA for Minor",
+        "setSub3": "Ananya",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9604,
+      "name": "Investment - Coinbase withdrawal to Kumar Annamraju",
+      "enabled": true,
+      "priority": 8,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^WITHDRAWAL\\s+TO\\s+KUMAR\\s+ANNAMRAJU\\s+-\\s+[A-Z0-9]{4}$"
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Crypto",
+        "setSub2": "Coinbase",
+        "setSub3": "",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9605,
+      "name": "Investment - Outgoing wire to Venkatesan Dharmarajan",
+      "enabled": true,
+      "priority": 8,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^OUTGOING\\s+WIRE\\s+\\d+\\s+VENKATESAN\\s+DHARMARAJAN$"
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "LLC Business",
+        "setSub2": "Idhayam Square LLC",
+        "setSub3": "Shady hills",
+        "setSub4": ""
+      }
+    },
+    {
+      "ruleNo": 9701,
+      "name": "Grooming - Hair & All Beauty",
+      "enabled": true,
+      "priority": 9,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^HAIR\\s+ALL\\s+BEAUTY(?:\\s+SALO)?\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Grooming",
+        "setSub2": "Hair & All Beauty"
+      }
+    },
+    {
+      "ruleNo": 9702,
+      "name": "Internal - Transfer - Goldman Sachs Collection (DES or hyphen variants)",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GOLDMAN\\s+SACHS\\s+BA(?:\\s+DES)?\\s+COLLECTION\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Goldman Sachs Collection"
+      }
+    },
+    {
+      "ruleNo": 9703,
+      "name": "Internal - Transfer - Goldman Sachs P2P",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GOLDMAN\\s+SACHS\\s+BA(?:\\s+DES)?\\s+P2P\\b|ANNAMRAJU\\s+KUMAR\\s+P2P\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Goldman Sachs P2P"
+      }
+    },
+    {
+      "ruleNo": 9704,
+      "name": "Internal - Transfer - Marcus <-> GTE FCU",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "INTERNET\\s+TRANSFER\\s+(?:FROM|TO)\\s+G\\s+T\\s+E\\s+FEDERAL\\s+CREDIT\\s+UNION\\s+DDA\\s+ACCOUNT\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Marcus Transfer",
+        "setSub3": "$ACCOUNT"
+      }
+    },
+    {
+      "ruleNo": 9705,
+      "name": "Internal - Transfer - HSBC online transfer/webxfr",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "HSBC(?:BK\\s+SV)?\\s+(?:WEBXFR\\s+)?ONLNE\\s+TRNSFR\\d+\\s+TRANSFER\\b|HSBC\\s+ONLINE\\s+ONLNE\\s+TRNSFR\\d+\\s+TRANSFER\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "HSBC Transfer"
+      }
+    },
+    {
+      "ruleNo": 9706,
+      "name": "Internal - Transfer - Citibank external pull/push",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:BOA\\s+CHECKING)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "CITIBANK\\s+N\\s+A\\s+\\d{2}\\s+\\d{2}\\s+PURCHASE\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Citibank Transfer"
+      }
+    },
+    {
+      "ruleNo": 9707,
+      "name": "Internal - Transfer - HSA electronic reimbursement",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "REGEX",
+          "value": "^(?:HSA)$"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ELECTRONIC\\s+REIMBURSEMENT\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "HSA Reimbursement"
+      }
+    },
+    {
+      "ruleNo": 9708,
+      "name": "Internal - Transfer - Wire transfer to recipient",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^WIRE\\s+TRANSFER\\s+TO\\s+RECIPIENT\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer",
+        "setSub2": "Wire Transfer"
+      }
+    },
+    {
+      "ruleNo": 9709,
+      "name": "Shopping - Airport gift/news shop",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^TPA\\s+WFLA\\s+CHAN\\s+8\\s+SHOP\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Airport"
+      }
+    },
+    {
+      "ruleNo": 9710,
+      "name": "Travel - Roadtrip - St George Lighthouse",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^ST\\s+GEORGE\\s+LIGHTHO\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Travel",
+        "setSub2": "Roadtrip"
+      }
+    },
+    {
+      "ruleNo": 9711,
+      "name": "Shopping - Misc - BBD",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^BBD\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Misc"
+      }
+    },
+    {
+      "ruleNo": 9712,
+      "name": "Shopping - Misc - Valley Bank",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "VALLEY\\s+BANK"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Shopping",
+        "setSub2": "Misc"
+      }
+    },
+    {
+      "ruleNo": 9713,
+      "name": "Internal - BOA Credit Card Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA CC"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Payment"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "BOA CC"
+      }
+    },
+    {
+      "ruleNo": 9714,
+      "name": "Internal - GTEFCU Credit Card Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU CC"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Payment"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "GTEFCU CC"
+      }
+    },
+    {
+      "ruleNo": 9715,
+      "name": "Income Rental",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Chase Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^DEPOSIT\\s+(?:\\s+ID\\s+)?NUMBER\\s+(?:152718|40238|152719|152720|152721|152722|510215|510217|510222|510219|510220|510221|510224|510223|510226|523053)$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Rental"
+      }
+    },
+    {
+      "ruleNo": 9716,
+      "name": "Internal - GTEFCU Credit Card Bill Payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU CC"
+        },
+        {
+          "field": "description",
+          "op": "CONTAINS",
+          "value": "Payment"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "GTEFCU CC"
+      }
+    },
+    {
+      "ruleNo": 9717,
+      "name": "Venmo Cashout",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bVENMO\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Venmo Cashout"
+      }
+    },
+    {
+      "ruleNo": 9718,
+      "name": "Tax Refund",
+      "enabled": true,
+      "priority": 50,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bIRS\\s+TREAS\\s+310\\s+TAX\\s+REF\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund",
+        "setSub2": "Federal Tax"
+      }
+    },
+    {
+      "ruleNo": 9801,
+      "name": "Food - Misc Restaurants",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "(?:PHO\\s+TRUCK|BIRYANI\\s+HOUSE|SR\\s+TEQUILA|PEI\\s+WEI|PITA\\s+PIT|HAPPY\\s+COW|GREEN\\s+ISLAND|SNOW\\s+ROLLS|BURGERIM|INTERWICH\\s+CAFE|WING\\s+BOX|HOUSE\\s+OF\\s+SWE|TAP\\s+42|MERRY\\s+ANNS\\s+DINER|EDIBLE\\s+ARRANGEMENTS|AUNTIEANNES|JENI'?S\\s+SPLEN|TIJUANA\\s+TAXI)"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Food"
+      }
+    },
+    {
+      "ruleNo": 9802,
+      "name": "Expense - Entertainment - Movies Museums Events Disney",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "(?:\\bAMC\\b|\\bFUN\\s+MOVIE\\s+GRILL\\b|\\bHIGHWOODS\\s+20\\b|\\bMUSEUM\\s+SCIENCE\\s+AND\\s+INDUS\\b|\\bFLORIDA\\s+STATE\\s+FAI\\b|\\bVASANT\\s+UTSAV\\b|\\bPOPCORN\\b.*\\bLAKE\\s+BUENA\\s+VIFL\\b|\\bBIG\\s+TOP\\s+SOUVENIR\\b.*\\bLAKE\\s+BUENA\\s+VIFL\\b|\\bAUTO\\s+PLAZA\\b.*\\bLAKE\\s+BUENA\\s+VIFL\\b)"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment"
+      }
+    },
+    {
+      "ruleNo": 9803,
+      "name": "Expense - Medical from HSA (catch all)",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "HSA"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Medical"
+      }
+    },
+    {
+      "ruleNo": 9804,
+      "name": "Expense - Ananya CC payments",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA Checking(Ananya)"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bONLINE\\s+(?:SCHEDULED|BANKING)\\s+PAYMENT\\s+(?:TO\\s+)?CRD\\b"
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "CreditCard",
+        "setSub2": "BOA CC(Ananya)"
+      }
+    },
+    {
+      "ruleNo": 9810,
+      "name": "Donation - Adella ShivaKumar wire",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BNF\\s+SHIVA\\s+KUMAR\\s+ADELLA"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Adella ShivaKumar"
+      }
+    },
+    {
+      "ruleNo": 9811,
+      "name": "Donation - Bala Tripura Sundari wire",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BNF\\s+BALA\\s+TRIPURA\\s+SUNDARI"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Bala Tripura Sundari"
+      }
+    },
+    {
+      "ruleNo": 9812,
+      "name": "Donation - ISKON via Google Wallet",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "GOOGLE\\s+DES\\s+WALLET.*KUMAR\\s+ANNAMRAJU"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "to ISKON"
+      }
+    },
+    {
+      "ruleNo": 9813,
+      "name": "Donation - Guruji ICICI payment",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ICICI\\s+BANK\\s+LIMIEDI\\s+PAYMTS"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Guruji"
+      }
+    },
+    {
+      "ruleNo": 9814,
+      "name": "Donation - Sakshat Dondes",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "SAKSHAT\\s+DONDES"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation"
+      }
+    },
+    {
+      "ruleNo": 9815,
+      "name": "Donation - Bojjas Family Fund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BOJJAS\\s+FAMILY\\s+FUND"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation"
+      }
+    },
+    {
+      "ruleNo": 9816,
+      "name": "Donation - Ramadevi support",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "HELP\\s+RAMADEVI\\s+ORUGOND"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "WPY Help Ramadevi Orugond"
+      }
+    },
+    {
+      "ruleNo": 9817,
+      "name": "Donation - Everloved memorial",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "EVERLOVED\\s+ALAN\\s+TEO|IN\\s+LOVING\\s+MEMORY"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation"
+      }
+    },
+    {
+      "ruleNo": 9818,
+      "name": "Donation - Vaid Lochan",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "VAID\\s+LOCHAN\\s+BILL\\s+PAYMENT"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation"
+      }
+    },
+    {
+      "ruleNo": 9819,
+      "name": "Donation - Isha",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "SHAKTI\\s+CHALANA\\s+KRIYA"
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "Isha"
+      }
+    },
+    {
+      "ruleNo": 9901,
+      "name": "Expense - Big Purchase",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "BMW\\s+FLUS\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Big Purchase",
+        "setSub2": "New Car"
+      }
+    },
+    {
+      "ruleNo": 9902,
+      "name": "Special Donation - facebook",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bFACEBK\\s+NETWORKFORGOOD\\s+DONATE\\s+FB\\s+COMCA\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Donation",
+        "setSub1": "FaceBook"
+      }
+    },
+    {
+      "ruleNo": 9903,
+      "name": "Special Donation - facebook return",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bFACEBK\\s+NETWORKFORGOOD\\s+DONATE\\s+FB\\s+CREDIT\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund",
+        "setSub2": "Donation",
+        "SetSub3": "FaceBook"
+      }
+    },
+    {
+      "ruleNo": 9904,
+      "name": "Investment Retirement",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bE\\s+TRADE\\s+DES\\s+ACH\\s+TRNSFR\\s+XXXXX691906\\s+INDN\\s+54999846\\s+CO\\s+XXXXX21258\\s+PPD\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Retirement",
+        "setSub2": "Fidelity Rollover IRA for Minor",
+        "SetSub3": "Ananya"
+      }
+    },
+    {
+      "ruleNo": 9905,
+      "name": "Lending to ppl",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "merchant",
+          "op": "EQ",
+          "value": "EDI Payments"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\b0410M2E03558948\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Lending",
+        "setSub1": "Raghava"
+      }
+    },
+    {
+      "ruleNo": 9906,
+      "name": "Lending to Venky",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bONLINE\\s+REALTIME\\s+TRANSFER\\s+(?:TO\\s+)?VENKYS\\s+CHASE\\s+BANK\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Lending",
+        "setSub1": "Venky"
+      }
+    },
+    {
+      "ruleNo": 9907,
+      "name": "Lending to Venky",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bOUTBOUND\\s+WIRE\\s+(?:TO\\s+)?JPMORGAN\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Lending",
+        "setSub1": "Venky"
+      }
+    },
+    {
+      "ruleNo": 9908,
+      "name": "Investment Returns Marcus",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Marcus Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bDEPOSIT\\s+KUMAR\\s+ANNAMRAJU\\s+RCTY\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Investment Returns"
+      }
+    },
+    {
+      "ruleNo": 9909,
+      "name": "Internal Returns",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Chase Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bDEPOSITED\\s+ITEM\\s+RETURNED\\s+ACCOUNT\\s+CLOSED\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Return"
+      }
+    },
+    {
+      "ruleNo": 9910,
+      "name": "Investment LLC",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Chase Checking (Anantha LLC)"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bWITHDRAWAL\\s+12\\s+(?:28|29)\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "LLC Business",
+        "setSub2": "Anantha LLC"
+      }
+    },
+    {
+      "ruleNo": 9911,
+      "name": "Investment Crypto",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Marcus Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^WITHDRAWAL\\s+(?:TO\\s+)?KUMAR\\s+ANNAMRAJU(?:\\s*-)?\\s*[A-Z0-9]{4}$"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Investment",
+        "setSub1": "Crypto",
+        "setSub2": "Coinbase"
+      }
+    },
+    {
+      "ruleNo": 9912,
+      "name": "Internal CreditCard Misc",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bANNAMRAJU\\s+PMT\\s+1042965076\\s+CK\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "CreditCard",
+        "setSub2": "GTEFCU CC"
+      }
+    },
+    {
+      "ruleNo": 9913,
+      "name": "Shopping Apple misc",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bRIA\\s+FINANCIAL\\s+SE\\s+DES\\s+CORP\\s+PMT\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Reimbursement",
+        "setSub2": "Shopping",
+        "setSub3": "Ramakanths Phone"
+      }
+    },
+    {
+      "ruleNo": 9914,
+      "name": "Entertainment misc",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bCHILDRENS\\s+PLACE\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Entertainment",
+        "setSub2": "Childrens Place"
+      }
+    },
+    {
+      "ruleNo": 9915,
+      "name": "REFUND OVERSEAS MISC",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bDESCRIPTIONDEPOSIT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTSDEPOSIT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTSMORE\\s+INFOSELECT\\s+EXPAND\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund",
+        "setSub2": "Overseas",
+        "setSub3": "Transfer"
+      }
+    },
+    {
+      "ruleNo": 9916,
+      "name": "CAR MAINTENACNE MISC",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\b1SAFEDRIVER\\s+COM\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "Misc"
+      }
+    },
+    {
+      "ruleNo": 9917,
+      "name": "CAR MAINTENACNE Insurance",
+      "enabled": true,
+      "priority": 18,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Marcus Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bANNAMRAJU\\s+KUMAR\\s+9590\\b"
+        },
+        {
+          "field": "amount",
+          "op": "LT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Car Maintenance",
+        "setSub2": "Insurance"
+      }
+    },
+    {
+      "ruleNo": 9918,
+      "name": "Income Interest",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Chase Checking (Anantha LLC)"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^DEPOSIT\\s+(?:\\s+ID\\s+)?NUMBER\\s+(?:310336|99239|99136|99343|360112|979019|979483|410547|139408|59108)$"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Interest",
+        "setSub2": "Anantha"
+      }
+    },
+    {
+      "ruleNo": 9919,
+      "name": "Internal Acct Verify",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^E\\s+TRADE\\s+BANK\\s+DES\\s+TRANSFER\\s+XXXXX2025601671\\s+INDN\\s+ETRADE\\s+BANK\\s+CO\\s+XXXXX80001\\s+CCD$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Account Verify"
+      }
+    },
+    {
+      "ruleNo": 9920,
+      "name": "Reimbursement",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bUNITED\\s+HEALTHCAR\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Reimbursement"
+      }
+    },
+    {
+      "ruleNo": 9921,
+      "name": "Reimbursement",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "\\bOPTUM\\s+BANK\\b"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Reimbursement"
+      }
+    },
+    {
+      "ruleNo": 9922,
+      "name": "Income Misc",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ONESOURCE\\s+VIRTUA\\s+EDI\\s+EDI\\s+PYMNTS"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Misc"
+      }
+    },
+    {
+      "ruleNo": 9923,
+      "name": "Income Refund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU CC"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "AMZN\\s+DIGITAL\\s+888\\s+802\\s+3080888\\s+802\\s+CREDIT"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund"
+      }
+    },
+    {
+      "ruleNo": 9924,
+      "name": "Income Refund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "PAYOFF\\s+EXCESS\\s+TRANSFER\\s+LOAN\\s+478699807"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund"
+      }
+    },
+    {
+      "ruleNo": 9925,
+      "name": "Income Misc",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Citizens Bank"
+        },
+        {
+          "field": "description",
+          "op": "EQ",
+          "value": "OTHER"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Misc"
+      }
+    },
+    {
+      "ruleNo": 9926,
+      "name": "Income Refund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA CC"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ADJUSTMENT\\s+(?:TO\\s+)?BALANCE"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund"
+      }
+    },
+    {
+      "ruleNo": 9927,
+      "name": "Income Refund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Marcus Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "ANNAMRAJU\\s+KUMAR\\s+912P"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund"
+      }
+    },
+    {
+      "ruleNo": 9928,
+      "name": "Income Refund",
+      "enabled": true,
+      "priority": 12,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "Chase Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "REMOTE\\s+ONLINE\\s+DEPOSIT\\s+1"
+        },
+        {
+          "field": "amount",
+          "op": "GT",
+          "value": 0.0
+        }
+      ],
+      "then": {
+        "setCategory": "Income",
+        "setSub1": "Refund"
+      }
+    },
+    {
+      "ruleNo": 9938,
+      "name": "Internal - Transfer - HSBC GTE web transfer deposit",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "HSBC Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^DEPOSIT\\s+FROM\\s+GTEFIN\\s+CK\\s+WEBXFR(?:\\-P2P)?\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer"
+      }
+    },
+    {
+      "ruleNo": 9939,
+      "name": "Internal - Transfer - HSBC payment to GTE web transfer",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "HSBC Savings"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^PAYMENT\\s+TO\\s+GTEFIN\\s+CK\\s+WEBXFR\\-TRANSFER\\b.*$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer"
+      }
+    },
+    {
+      "ruleNo": 9940,
+      "name": "Internal - Transfer - GTE online transfer P2P Kumar",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "GTEFCU Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^KUMAR\\s+ANNAMRAJU\\s+ONLNE\\s+TRNSFR\\d+\\s*\\-\\s*P2P$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer"
+      }
+    },
+    {
+      "ruleNo": 9941,
+      "name": "Internal - Transfer - ETRADE DES TRANSFER generic",
+      "enabled": true,
+      "priority": 14,
+      "stopOnMatch": true,
+      "when": [
+        {
+          "field": "account",
+          "op": "EQ",
+          "value": "BOA Checking"
+        },
+        {
+          "field": "description",
+          "op": "REGEX",
+          "value": "^E\\*?TRADE\\s+BANK\\s+DES:TRANSFER\\s+ID:[A-Z0-9]+\\s+INDN\\s+ETRADE\\s+BANK\\s+CO\\s+[A-Z0-9]+\\s+CCD$"
+        }
+      ],
+      "then": {
+        "setCategory": "Internal",
+        "setSub1": "Transfer"
+      }
+    }
+  ]
+}

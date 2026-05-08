@@ -1,0 +1,254 @@
+{
+	"Fields" :
+	[ "Acct_type", "Order", "Year", "Month", "Date", "Description", "Amount", "Balance", "Category", "SubCategory1", "SubCategory2", "SubCategory3", "SubCategory4"],
+	"Rules": 
+	[
+		{"Conditions": [{"field": "Description","operator": "equals","value": "GOLDMAN SACHS BA  - COLLECTION" },
+						{"field": "Amount","operator": "Greater Than","value": "0" }	
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "Transfer"}
+		},																						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Individual Contribution" },
+						{"field": "Amount","operator": "Greater Than","value": "0" },		
+						{"field": "Acct_type","operator": "equals","value": "HSA" },													
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "HSA Contribution"}
+		},																				
+		 {"Conditions": [{"field": "Description","operator": "contains","value": "THE DEPOSITORY T" },
+		 				{"field": "Amount","operator": "Greater Than","value": "0" },							
+		 			   ],
+		  "Decision": {"Category": "Income","SubCategory1": "Paycheck","SubCategory2":"Kumar"}
+		 },																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "EVERYDAY" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Food","SubCategory2":"Everyday"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "GOOGLE *Google" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Subscription","SubCategory2":"Google"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "equals","value": "Apple.com" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Subscription","SubCategory2":"Apple"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "equals","value": "APPLE.COM/BILL" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Subscription","SubCategory2":"Apple"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "VENMO" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Venmo Purchase"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "WAL-MART" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Shopping","SubCategory2":"Walmart"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "STARBUCKS" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Food","SubCategory2":"Starbucks"}
+		},																				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "VENMO DES:CASHOUT" },
+						{"field": "Amount","operator": "Greater Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "Venmo Cashout"}
+		},																		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "OPTUM BANK DES:REIMBUR" },
+						{"field": "Amount","operator": "Greater Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "Reimbursement","SubCategory2":"Medical"}
+		},																		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Transfer to 478699807" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","SubCategory2":"Loan","SubCategory3":"Honda"}
+		},																		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "BMW FINANCIAL SERVICES" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","SubCategory2":"Loan","SubCategory3":"BMW"}
+		},																		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "CKE*Brandon Honda" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Food","SubCategory2":"Brandon Honda"}
+		},																		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Brandon Honda" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","SubCategory2":"Service","SubCategory3":"Brandon Honda"}
+		},																
+		{"Conditions": [{"field": "Description","operator": "contains","value": "TARGET.COM" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Shopping","SubCategory2":"Target"}
+		},																
+		{"Conditions": [{"field": "Description","operator": "contains","value": "TARGET " },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Shopping","SubCategory2":"Target"}
+		},																
+		{"Conditions": [{"field": "Description","operator": "contains","value": "BASSET CREEK HOA" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Home Maintenance","SubCategory2":"HOA","SubCategory3":"BassetCreek"}
+		},														
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Madhuri School of Dance" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Recreation","SubCategory2":"Dance","SubCategory3":"Madhuri"}
+		},														
+		{"Conditions": [{"field": "Description","operator": "contains","value": "MACY'S Bill Payment" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "CreditCard","SubCategory2":"MACY CC"}
+		},														
+		{"Conditions": [{"field": "Description","operator": "contains","value": "TRANSFER KUMAR ANNAMRAJU:KUMAR ANNAMRAJU" }
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "Transfer"}
+		},														
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Zelle payment to Sharada Manginipudi" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Recreation","SubCategory2":"Music","SubCategory3":"Sharada"}
+		},												
+		{"Conditions": [{"field": "Description","operator": "contains","value": "WITHDRWL" },
+						{"field": "Description","operator": "contains","value": " FEE" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Fee","SubCategory2":"Withdrawal Fee"}
+		},												
+		{"Conditions": [{"field": "Description","operator": "contains","value": "WITHDRWL" },
+						{"field": "Amount","operator": "Less Than","value": "0" },							
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Withdrawal","SubCategory2":"ATMs"}
+		},												
+		{"Conditions": [{"field": "Description","operator": "contains","value": "TAMPA ELECTRIC" },
+						{"field": "Amount","operator": "Less Than","value": "0" }	
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Utilities","SubCategory2":"Electricity"}
+		},												
+		{"Conditions": [{"field": "Description","operator": "contains","value": "CITY OF TAMPA UTILITIES" },
+						{"field": "Amount","operator": "Less Than","value": "0" }	
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Utilities","SubCategory2":"Water"}
+		},										
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Online Banking transfer from" }
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "Transfer"}
+		},								
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Online Banking transfer to" }
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "Transfer"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "KUMON OF WESLEY DES:TUITION" },
+						{"field": "Amount","operator": "Less Than","value": "0" }		
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Education","SubCategory2":"Kumon"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Online scheduled transfer" }
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "Transfer"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "FRONTIER COMMUNICATIONS" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Utilities","SubCategory2": "Phone, Cable & Internet","SubCategory3":"Frontier"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "VERIZON WIRELESS" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Utilities","SubCategory2": "Phone, Cable & Internet","SubCategory3":"Verizon"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "Zelle payment to Sonya Ivanova" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Recreation","SubCategory2": "Piano","SubCategory3":"Sonya"}
+		},						
+		{"Conditions": [{"field": "Description","operator": "contains","value": "FDOT" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Transport","SubCategory2": "FDOT"}
+		},				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "COSTCO WHSE" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Groceries","SubCategory2": "Costco"}
+		},				
+		{"Conditions": [{"field": "Description","operator": "contains","value": "COSTCO GAS" },
+						{"field": "Amount","operator": "Less Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","SubCategory2": "Gas","SubCategory3": "Costco"}
+		},		
+		{"Conditions": [{"field": "Description","operator": "contains","value": "ACCTVERIFY" }
+					   ],
+		 "Decision": {"Category": "Internal","SubCategory1": "account verify"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "THE DEPOSITORY" },
+						{"field": "Amount","operator": "Greater Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "Paycheck","SubCategory2": "Kumar" }
+		},
+		{"Conditions": [{"field": "Description","operator": "starts with","value": "THE DEPOSITORY T DES:DIRECT DEP" },
+						{"field": "Amount","operator": "Greater Than","value": "0" }
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "Paycheck","SubCategory2": "Kumar"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "PUBLIX"},
+						{"field": "Amount","operator": "Less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Groceries","SubCategory2": "Publix"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","values_in": ["Dividend", "Interest Earned",  "INTEREST PAID", "Int Paid", "Interest Paid", "Interest","INT EARNED CR","DescriptionINTEREST","Interest Payment"] },
+						{"field": "Amount","operator": "Greater Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Income","SubCategory1": "Interest"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","values_in": ["SHELL OIL","Shell Oil"] },
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "Shell"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "7-ELEVEN"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "7-Eleven"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "EXXONMOBIL"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "EXXONMOBIL"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "COSTCO GAS"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "Costco"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "BJS FUEL"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "BJs"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "MARATHON PETRO"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "Marathon"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "CHEVRON"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "Chevron"}
+		},
+		{"Conditions": [{"field": "Description","operator": "contains","value": "CHEVRON"},
+						{"field": "Amount","operator": "less Than","value": "0"}
+					   ],
+		 "Decision": {"Category": "Expense","SubCategory1": "Car Maintenance","Subcategory2":"Gas","Subcategory3" : "Chevron"}
+		}
+	]
+}

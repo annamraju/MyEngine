@@ -1,0 +1,52 @@
+Acct Type,Institution,Account,Owner,Currency
+Cash,GTE fcu,Checking, Kumar & Padma, USD
+Cash,BOA,Checking, Kumar & Padma, USD
+Cash,GTE fcu,Savings, Kumar & Padma, USD
+Cash,BOA,Savings, Kumar & Padma, USD
+Cash,BOA,Checking, Ananya, USD
+Cash,BOA,Checking, Anjali, USD
+Cash,HSBC,Savings, Kumar, USD
+Cash,Citizens,Savings, Kumar, USD
+Cash,etrade,Premium Savings, Kumar, USD
+Cash,Chase,Checking, Kumar & Padma, USD
+Cash,Marcus,Savings, Kumar, USD
+Cash,GTE fcu,CDs, Kumar & Padma, USD
+Cash, GTE fcu, 6 month CD, Kumar & Padma, USD
+Cash, GTE fcu, 6 month Jumbo, Kumar & Padma, USD
+Cash, GTE fcu, 12 month Jumbo, Kumar & Padma, USD
+Cash, Webster bank, Savings, Kumar, USD
+Stocks,etrade,Brokerage, Kumar, USD
+Crypto,Coinbase,Crypto, Kumar, USD
+Education,TRowPrice,529 Plan, Ananya, USD
+Education,Fidelity,529 Plan, Anjali, USD
+Education,Florida, College Prepaid,Ananya, USD
+Education,Florida, College Prepaid,Anjali, USD
+HSA,Optum Bank,HSA, Kumar, USD
+Retirement,Fidelity,Verion 401k,Kumar,USD
+Retirement,Trowprice,Syneverse 401k,Padma,USD
+Retirement,New York Life,Lebor & Friedman 401k,Padma,USD
+Retirement,JPMC,401k,Padma,USD
+Retirement,DTCC,401k, Kumar, USD
+Retirement,Syneverse, 401k, Padma, USD
+Retirement,Fidelity, Infosys 401k, Padma, USD
+Retirement,DTCC, Pension, Kumar, USD
+Retirement,Syneverse,Pension, Padma, USD
+Retirement,JPMC, Pension, Padma, USD
+Retirement,Fidelity,RolloverIRA, Kumar, USD
+Retirement,Fidelity,Roth IRA, Kumar, USD
+Retirement,Fidelity,RolloverIRA, Padma, USD
+Retirement,Fidelity,Verizon LTI, Padma, USD
+Retirement,DTCC, Exec Savings Plan, Kumar, USD
+Retirement,DTCC, LTIP,Kumar, USD
+Retirement,Etrade,Roth IRA, Ananya, USD
+Retirement,Fidelity, Verizon 401k,Padma, USD
+Retirement,Lebor & Friedman, 401k, Padma, USD
+Overseas,ICICI,NRO, Kumar & Padma, INR
+Overseas,ICICI,NRE, Kumar & Padma, INR
+Overseas,SBI,NRO, Kumar, INR
+Overseas,SBI,NR Fixed Deposit, Kumar, INR
+Overseas,Corp/Union Bank,NRO, Kumar, INR
+Overseas,Corp/Union Bank,NRO, Padma, INR
+Overseas,ICICI, Prudential 1,Kumar, INR
+Overseas,ICICI, Prudential 2,Kumar, INR
+Overseas,Mahendra Kotak,LIC, Kumar, INR

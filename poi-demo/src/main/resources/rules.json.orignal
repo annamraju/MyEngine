@@ -1,0 +1,524 @@
+{
+  "Fields": [
+    "Acct_type",
+    "Order",
+    "Year",
+    "Month",
+    "Date",
+    "Description",
+    "Amount",
+    "Balance",
+    "Category",
+    "SubCategory1",
+    "SubCategory2",
+    "SubCategory3",
+    "SubCategory4"
+  ],
+  "Rules": [
+	  {
+	    "RuleNo": 1,
+	    "Conditions": "Description contains INDIVIDUAL CONTRIBUTION AND Amount Greater Than 0 AND Acct_type equals HSA",
+	    "Decision": "Category=Income, SubCategory1=HSA Contribution"
+	  },
+	  {
+	    "RuleNo": 2,
+	    "Conditions": "Description contains FEE AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Fee, SubCategory2=Withdrawal Fee"
+	  },
+	  {
+	    "RuleNo": 3,
+	    "Conditions": "Description equals GOLDMAN SACHS BA - COLLECTION AND Amount Greater Than 0",
+	    "Decision": "Category=Internal, SubCategory1=Transfer"
+	  },
+	  {
+	    "RuleNo": 4,
+	    "Conditions": "Description contains APPLE.COM AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Subscription, SubCategory2=Apple"
+	  },
+	  {
+	    "RuleNo": 5,
+	    "Conditions": "Description contains THE DEPOSITORY AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Paycheck, SubCategory2=Kumar"
+	  },
+	  {
+	    "RuleNo": 6,
+	    "Conditions": "Description contains ZELLE PAYMENT TO SHARADA MANGINIPUDI AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Recreation, SubCategory2=Music, SubCategory3=Sharada"
+	  },
+	  {
+	    "RuleNo": 7,
+	    "Conditions": "Description contains ZELLE PAYMENT TO SONYA IVANOVA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Recreation, SubCategory2=Piano, SubCategory3=Sonya"
+	  },
+	  {
+	    "RuleNo": 8,
+	    "Conditions": "Description contains KUMON OF WESLEY DES:TUITION AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Education, SubCategory2=Kumon"
+	  },
+	  {
+	    "RuleNo": 9,
+	    "Conditions": "Description contains PRIMROSECROSSCRK DESAUTOPAY AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Education, SubCategory2=Primrose"
+	  },
+	  {
+	    "RuleNo": 10,
+	    "Conditions": "Description contains MADHURI SCHOOL OF DANCE AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Recreation, SubCategory2=Dance, SubCategory3=Madhuri"
+	  },
+	  {
+	    "RuleNo": 11,
+	    "Conditions": "Description contains CITY OF TAMPA UTILITIES AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Water"
+	  },
+	  {
+	    "RuleNo": 12,
+	    "Conditions": "Description contains FRONTIER COMMUNICATIONS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Phone, Cable & Internet, SubCategory3=Frontier"
+	  },
+	  {
+	    "RuleNo": 13,
+	    "Conditions": "Description contains OPTUM BANK DES:REIMBUR AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Reimbursement, SubCategory2=Medical"
+	  },
+	  {
+	    "RuleNo": 14,
+	    "Conditions": "Description contains BMW FINANCIAL SERVICES AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Loan, SubCategory3=BMW"
+	  },
+	  {
+	    "RuleNo": 15,
+	    "Conditions": "Description contains TRANSFER TO 478699807 AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Loan, SubCategory3=Honda"
+	  },
+	  {
+	    "RuleNo": 16,
+	    "Conditions": "Description contains NETFLIXCOM NETFLIXCOM AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Subscription, SubCategory2=Netflix"
+	  },
+	  {
+	    "RuleNo": 17,
+	    "Conditions": "Description contains EUREST METLI11165362 AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Eurest"
+	  },
+	  {
+	    "RuleNo": 18,
+	    "Conditions": "Description contains MACY'S BILL PAYMENT AND Amount Less Than 0",
+	    "Decision": "Category=Internal, SubCategory1=CreditCard, SubCategory2=MACY CC"
+	  },
+	  {
+	    "RuleNo": 19,
+	    "Conditions": "Description contains FOREIGN TRANSACTION AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Fees, SubCategory2=Foreign Transaction Fee"
+	  },
+	  {
+	    "RuleNo": 20,
+	    "Conditions": "Description contains EVERYDAY AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Everyday"
+	  },
+	  {
+	    "RuleNo": 21,
+	    "Conditions": "Description contains VONAGE *PRICETAXES AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Phone, SubCategory3=Vonage"
+	  },
+	  {
+	    "RuleNo": 22,
+	    "Conditions": "Description contains VENMO DES:CASHOUT AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Venmo Cashout"
+	  },
+	  {
+	    "RuleNo": 23,
+	    "Conditions": "Description contains CKE*BRANDON HONDA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Brandon Honda"
+	  },
+	  {
+	    "RuleNo": 24,
+	    "Conditions": "Description contains BASSET CREEK HOA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Home Maintenance, SubCategory2=HOA, SubCategory3=BassetCreek"
+	  },
+	  {
+	    "RuleNo": 25,
+	    "Conditions": "Description contains VERIZON WIRELESS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Phone, Cable & Internet, SubCategory3=Verizon"
+	  },
+	  {
+	    "RuleNo": 26,
+	    "Conditions": "Description contains SYNIVERSE TE-OSV AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Paycheck, SubCategory2=Padma"
+	  },
+	  {
+	    "RuleNo": 27,
+	    "Conditions": "Description contains STARBUCKS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Starbucks"
+	  },
+	  {
+	    "RuleNo": 28,
+	    "Conditions": "Description contains INFOSYS LIMITED AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Paycheck, SubCategory2=Padma"
+	  },
+	  {
+	    "RuleNo": 29,
+	    "Conditions": "Description contains INTEREST AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Interest"
+	  },
+	  {
+	    "RuleNo": 30,
+	    "Conditions": "Description contains GOOGLE *GOOGLE AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Subscription, SubCategory2=Google"
+	  },
+	  {
+	    "RuleNo": 31,
+	    "Conditions": "Description contains TAMPA ELECTRIC AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Electricity"
+	  },
+	  {
+	    "RuleNo": 32,
+	    "Conditions": "Description contains MARATHON PETRO AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=Marathon"
+	  },
+	  {
+	    "RuleNo": 33,
+	    "Conditions": "Description contains WAL-MART AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Shopping, SubCategory2=Walmart"
+	  },
+	  {
+	    "RuleNo": 34,
+	    "Conditions": "Description contains CHIPOTLE TAMPA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Chipotle"
+	  },
+	  {
+	    "RuleNo": 35,
+	    "Conditions": "Description contains 7-ELEVEN AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=7-Eleven"
+	  },
+	  {
+	    "RuleNo": 36,
+	    "Conditions": "Description contains ATM WITHDRAWAL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Withdrawal, SubCategory2=ATM"
+	  },
+	  {
+	    "RuleNo": 37,
+	    "Conditions": "Description contains AVANTI MARKETS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Avanti Markets"
+	  },
+	  {
+	    "RuleNo": 38,
+	    "Conditions": "Description contains BRANDON HONDA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Service, SubCategory3=Brandon Honda"
+	  },
+	  {
+	    "RuleNo": 39,
+	    "Conditions": "Description contains THE DEPOSITRY AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Paycheck, SubCategory2=Kumar"
+	  },
+	  {
+	    "RuleNo": 40,
+	    "Conditions": "Description contains MARKETWORK WA AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=MARKET@WORK"
+	  },
+	  {
+	    "RuleNo": 41,
+	    "Conditions": "Description contains PUBLIX AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Groceries, SubCategory2=Publix"
+	  },
+	  {
+	    "RuleNo": 42,
+	    "Conditions": "Description contains KIRAN INDIAN AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Groceries, SubCategory2=Kiran Grocery"
+	  },
+	  {
+	    "RuleNo": 43,
+	    "Conditions": "Description contains ATT MOBILITY AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Phone, SubCategory3=ATT"
+	  },
+	  {
+	    "RuleNo": 44,
+	    "Conditions": "Description contains BJ WHOLESALE AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Shopping, SubCategory2=BJs"
+	  },
+	  {
+	    "RuleNo": 45,
+	    "Conditions": "Description contains TECO PEOPLES AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Gas"
+	  },
+	  {
+	    "RuleNo": 46,
+	    "Conditions": "Description contains ADT SECURITY AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Home Maintenance, SubCategory2=Home Security, SubCategory3=ADT"
+	  },
+	  {
+	    "RuleNo": 47,
+	    "Conditions": "Description contains CURRENT YEAR AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=HSA Contribution"
+	  },
+	  {
+	    "RuleNo": 48,
+	    "Conditions": "Description contains COSTCO WHSE AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Groceries, SubCategory2=Costco"
+	  },
+	  {
+	    "RuleNo": 49,
+	    "Conditions": "Description contains MARINS LAWN AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Lawn Maintenance, SubCategory2=Mowing"
+	  },
+	  {
+	    "RuleNo": 50,
+	    "Conditions": "Description contains JIMMY JOHNS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Food, SubCategory2=Jimmy Johns"
+	  },
+	  {
+	    "RuleNo": 51,
+	    "Conditions": "Description contains TARGET AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Shopping, SubCategory2=Target"
+	  },
+	  {
+	    "RuleNo": 52,
+	    "Conditions": "Description contains COSTCO GAS AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=Costco"
+	  },
+	  {
+	    "RuleNo": 53,
+	    "Conditions": "Description contains EXXONMOBIL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=EXXONMOBIL"
+	  },
+	  {
+	    "RuleNo": 54,
+	    "Conditions": "Description contains TAAZA MART AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Groceries, SubCategory2=Taaza Mart"
+	  },
+	  {
+	    "RuleNo": 55,
+	    "Conditions": "Description contains KUMON BILL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Education, SubCategory2=Kumon"
+	  },
+	  {
+	    "RuleNo": 56,
+	    "Conditions": "Description contains SHELL OIL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=Shell"
+	  },
+	  {
+	    "RuleNo": 57,
+	    "Conditions": "Description contains DIVIDENDS AND Amount Greater Than 0",
+	    "Decision": "Category=Income, SubCategory1=Interest"
+	  },
+	  {
+	    "RuleNo": 58,
+	    "Conditions": "Description contains AMZN MKTP AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Shopping, SubCategory2=Amazon"
+	  },
+	  {
+	    "RuleNo": 59,
+	    "Conditions": "Description contains WITHDRWL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Withdrawal, SubCategory2=Cash/Purchase"
+	  },
+	  {
+	    "RuleNo": 60,
+	    "Conditions": "Description contains BJS FUEL AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=BJs"
+	  },
+	  {
+	    "RuleNo": 61,
+	    "Conditions": "Description contains CHEVRON AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Car Maintenance, SubCategory2=Gas, SubCategory3=Chevron"
+	  },
+	  {
+	    "RuleNo": 62,
+	    "Conditions": "Description contains CITY OF AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Utilities, SubCategory2=Water"
+	  },
+	  {
+	    "RuleNo": 63,
+	    "Conditions": "Description contains PINCH A AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Pool Maintenance, SubCategory2=Pinch a Penny"
+	  },
+	  {
+	    "RuleNo": 64,
+	    "Conditions": "Description contains VENMO AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Venmo Purchase"
+	  },
+	  {
+	    "RuleNo": 65,
+	    "Conditions": "Description contains FDOT AND Amount Less Than 0",
+	    "Decision": "Category=Expense, SubCategory1=Transport, SubCategory2=FDOT"
+	  },
+	  {
+	    "RuleNo": 66,
+	    "Conditions": "Description contains TRANSFER KUMAR ANNAMRAJU:KUMAR ANNAMRAJU",
+	    "Decision": "Category=Internal, SubCategory1=Transfer"
+	  },
+	  {
+	    "RuleNo": 67,
+	    "Conditions": "Description contains ONLINE BANKING TRANSFER FROM",
+	    "Decision": "Category=Internal, SubCategory1=Transfer"
+	  },
+	  {
+	    "RuleNo": 68,
+	    "Conditions": "Description contains ONLINE BANKING TRANSFER TO",
+	    "Decision": "Category=Internal, SubCategory1=Transfer"
+	  },
+	  {
+	    "RuleNo": 69,
+	    "Conditions": "Description contains ONLINE SCHEDULED TRANSFER",
+	    "Decision": "Category=Internal, SubCategory1=Transfer"
+	  },
+	  {
+	    "RuleNo": 70,
+	    "Conditions": "Description contains GTE FEDERAL",
+	    "Decision": "Category=Internal, SubCategory1=CreditCard, SubCategory2=GTEFCU CC"
+	  },
+	  {
+	    "RuleNo": 71,
+	    "Conditions": "Description contains ACCTVERIFY",
+	    "Decision": "Category=Internal, SubCategory1=account verify"
+	  },
+	  {
+	    "RuleNo": 72,
+	    "Conditions": "Description contains KEEP THE",
+	    "Decision": "Category=Internal, SubCategory1=Transfer, SubCategory2=Keep the change"
+	  },
+	  {
+	    "RuleNo": 73,
+	    "Conditions": "Description contains CHECK # AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 74,
+	    "Conditions": "Description contains TIJUANA FLATS AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 75,
+	    "Conditions": "Description contains BANK OF AND Amount Less Than 0",
+	    "Decision": "Category=Internal"
+	  },
+	  {
+	    "RuleNo": 76,
+	    "Conditions": "Description contains MOES SW AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 77,
+	    "Conditions": "Description contains THE HOME AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 78,
+	    "Conditions": "Description contains MARKET WORK AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 79,
+	    "Conditions": "Description contains KEEPTHECHANGE CREDIT AND Amount Greater Than 0",
+	    "Decision": "Category=Internal"
+	  },
+	  {
+	    "RuleNo": 80,
+	    "Conditions": "Description contains PAYMENT THANK AND Amount Greater Than 0",
+	    "Decision": "Category=Internal"
+	  },
+	  {
+	    "RuleNo": 81,
+	    "Conditions": "Description contains PAYMENT - AND Amount Greater Than 0",
+	    "Decision": "Category=Internal"
+	  },
+	  {
+	    "RuleNo": 82,
+	    "Conditions": "Description contains CHASE CREDIT AND Amount Less Than 0",
+	    "Decision": "Category=Internal"
+	  },
+	  {
+	    "RuleNo": 83,
+	    "Conditions": "Description contains CVS/PHARMACY # AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 84,
+	    "Conditions": "Description contains PANERA BREAD AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 85,
+	    "Conditions": "Description contains CHIPOTLE # AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 86,
+	    "Conditions": "Description contains NETFLIX.COM NETFLIX.COM AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 87,
+	    "Conditions": "Description contains ZELLE TRANSFER AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 88,
+	    "Conditions": "Description contains AT&T MOBILITY AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 89,
+	    "Conditions": "Description contains WM SUPERCENTER AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 90,
+	    "Conditions": "Description contains WALGREENS # AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 91,
+	    "Conditions": "Description contains MARIN S AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 92,
+	    "Conditions": "Description contains TRANSFER MONEY AND Amount Greater Than 0",
+	    "Decision": "Category=Income"
+	  },
+	  {
+	    "RuleNo": 93,
+	    "Conditions": "Description contains PRIMROSECROSSCRK DES AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 94,
+	    "Conditions": "Description contains VONAGE *PRICE AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 95,
+	    "Conditions": "Description contains MICHAELS STORES AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 96,
+	    "Conditions": "Description contains VERIZON SS AND Amount Greater Than 0",
+	    "Decision": "Category=Income"
+	  },
+	  {
+	    "RuleNo": 97,
+	    "Conditions": "Description contains TACO BELL AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 98,
+	    "Conditions": "Description contains BKOFAMERICA MOBILE AND Amount Greater Than 0",
+	    "Decision": "Category=Income"
+	  },
+	  {
+	    "RuleNo": 99,
+	    "Conditions": "Description contains OAKLEY S AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 100,
+	    "Conditions": "Description contains DUNKIN # AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  },
+	  {
+	    "RuleNo": 101,
+	    "Conditions": "Description contains BARNES & AND Amount Less Than 0",
+	    "Decision": "Category=Expense"
+	  }
+	]
+}
