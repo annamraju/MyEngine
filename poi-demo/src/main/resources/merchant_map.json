@@ -464,7 +464,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "American",
       "match": {
         "patterns": [
           "AMERICAN\\s+001",
@@ -2184,7 +2184,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "Gas",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Costco",
       "match": {
         "patterns": [
           "COSTCO\\s+GAS"
@@ -3177,7 +3177,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Frontier",
       "match": {
         "patterns": [
           "FRONTIER\\s+03\\s+12\\s+PURCHASE\\s+DENVER\\s+CO",
@@ -3193,7 +3193,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Utilities",
       "defaultSub2": "Phone, Cable & Internet",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Frontier",
       "match": {
         "patterns": [
           "FRONTIER\\s+COMM\\s+CORP",
@@ -3517,7 +3517,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Hawaian",
       "match": {
         "patterns": [
           "HAWAIIAN\\s+173",
@@ -5078,7 +5078,7 @@
 	        "category": "Expense",
 	        "sub1": "Recreation",
 			"sub2" : "Dance",
-			"sub3" : "$MERCHANT"
+			"sub3" : "Madhuri"
 	      },
 	      "positive": {
 	        "category": "Income",
@@ -9417,7 +9417,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "United",
       "match": {
         "patterns": [
           "UNITED\\s+01"
@@ -10068,7 +10068,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Recreation",
       "defaultSub2": "Piano",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Sonya",
       "match": {
         "type": "REGEX_ANY",
         "patterns": [
