@@ -9295,7 +9295,7 @@
 	   {	
 	     "field": "description",
 	     "op": "REGEX",
-	     "value": "ATLANTA"
+	     "value": "ATLANTA|NEW\\s+YORK"
 	   },
 	   {	
 	     "field": "amount",
