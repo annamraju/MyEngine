@@ -77,7 +77,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Day Care",
         "setSub3": "Summer Camp"
       }
     },
@@ -252,7 +252,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -578,7 +579,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Singing",
+        "setSub2": "Music",
         "setSub3": "Parvathi"
       }
     },
@@ -629,7 +630,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -650,7 +652,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -680,7 +683,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -720,7 +724,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Swimming"
+        "setSub2": "Sports",
+        "setSub3": "Swimming"
       }
     },
     {
@@ -1003,26 +1008,26 @@
         "setSub2": "Dance"
       }
     },
-	{
-	  "enabled": true,
-	  "account": "BOA Checking",
-	  "checkNo": 367,
-	  "then": {
-	    "setCategory": "Expense",
-	    "setSub1": "Misc",
-	    "setSub2": "Passport"
-	  }
-	},
-	{
-	  "enabled": true,
-	  "account": "BOA Checking",
-	  "checkNo": 368,
-	  "then": {
-	    "setCategory": "Expense",
-	    "setSub1": "Misc",
-	    "setSub2": "Passport"
-	  }
-	},
+    {
+      "enabled": true,
+      "account": "BOA Checking",
+      "checkNo": 367,
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Passport"
+      }
+    },
+    {
+      "enabled": true,
+      "account": "BOA Checking",
+      "checkNo": 368,
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Passport"
+      }
+    },
     {
       "enabled": true,
       "account": "BOA Checking",
@@ -1071,7 +1076,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1081,7 +1087,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Prajna"
+        "setSub2": "Misc",
+        "setSub3": "Prajna"
       }
     },
     {
@@ -1091,7 +1098,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Music"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1273,7 +1281,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy",
+        "setSub2": "Music",
         "setSub3": "Parvathi"
       }
     },
@@ -1293,7 +1301,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy",
+        "setSub2": "Music",
         "setSub3": "Parvathi"
       }
     },
@@ -1429,7 +1437,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1450,7 +1459,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1471,7 +1481,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1687,7 +1698,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Kumon"
+        "setSub2": "Tuition",
+        "setSub3": "Kumon"
       }
     },
     {
@@ -1760,7 +1772,7 @@
         "setCategory": "Expense",
         "setSub1": "Recreation",
         "setSub2": "Music",
-        "setSub3": "Sachin Academy"
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -1944,7 +1956,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Shyamas Art"
+        "setSub2": "Misc",
+        "setSub3": "Shyamas Art"
       }
     },
     {
@@ -2382,7 +2395,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Madhuri School of Dance"
+        "setSub2": "Dance",
+        "setSub3": "Madhuri"
       }
     },
     {
@@ -2473,7 +2487,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -2516,7 +2531,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Medical",
-        "setSub2": "Riverside Dermatology"
+        "setSub2": "Dermatology",
+        "setSub3": "Riverside Dermatology"
       }
     },
     {
@@ -2749,8 +2765,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Car Maintenance",
-        "setSub2": "Tag Renewal",
-        "setSub3": "DMV"
+        "setSub2": "DMV",
+        "setSub3": "License/Tag Renewal"
       }
     },
     {
@@ -2960,7 +2976,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Singing",
+        "setSub2": "Music",
         "setSub3": "Parvathi"
       }
     },
@@ -2982,8 +2998,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Sridhar's class",
-        "setSub3": "Sujaya"
+        "setSub2": "Tuition",
+        "setSub3": "Sridhar"
       }
     },
     {
@@ -2993,7 +3009,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Singing",
+        "setSub2": "Music",
         "setSub3": "Parvathi"
       }
     },
@@ -3004,7 +3020,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Madhuri School of Dance"
+        "setSub2": "Dance",
+        "setSub3": "Madhuri"
       }
     },
     {
@@ -3025,7 +3042,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -3065,7 +3083,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Madhuri School of Dance"
+        "setSub2": "Dance",
+        "setSub3": "Madhuri"
       }
     },
     {
@@ -3075,7 +3094,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Madhuri School of Dance"
+        "setSub2": "Dance",
+        "setSub3": "Madhuri"
       }
     },
     {
@@ -3085,7 +3105,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Blue Shark Swim School"
+        "setSub2": "Sports",
+        "setSub3": "Swimming"
       }
     },
     {
@@ -3105,7 +3126,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Mark Ritter"
+        "setSub2": "Piano",
+        "setSub3": "Mark Ritter"
       }
     },
     {
@@ -3155,7 +3177,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Madhuri School of Dance"
+        "setSub2": "Dance",
+        "setSub3": "Madhuri"
       }
     },
     {
@@ -3327,16 +3350,16 @@
         "setSub2": "PTSA"
       }
     },
-	{
-	  "enabled": true,
-	  "account": "BOA checking",
-	  "checkNo": 621,
-	  "then": {
-	    "setCategory": "Expense",
-	    "setSub1": "Misc",
-	    "setSub2": "Passport"
-	  }
-	},
+    {
+      "enabled": true,
+      "account": "BOA checking",
+      "checkNo": 621,
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Passport"
+      }
+    },
     {
       "enabled": true,
       "account": "BOA checking",
@@ -3871,7 +3894,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Day Care",
         "setSub3": "Summer Camp"
       }
     },
@@ -4174,7 +4197,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Sachin Academy"
+        "setSub2": "Music",
+        "setSub3": "Parvathi"
       }
     },
     {
@@ -4215,15 +4239,15 @@
         "setSub1": "Transfer"
       }
     },
-	{
-	  "enabled": true,
-	  "account": "GTEFCU Checking",
-	  "checkNo": 132,
-	  "then": {
-	    "setCategory": "Expense",
-	    "setSub1": "Misc",
-		"setSub2": "Ramprasad Catering"
-	  }
-	}	
+    {
+      "enabled": true,
+      "account": "GTEFCU Checking",
+      "checkNo": 132,
+      "then": {
+        "setCategory": "Expense",
+        "setSub1": "Misc",
+        "setSub2": "Ramprasad Catering"
+      }
+    }
   ]
 }
