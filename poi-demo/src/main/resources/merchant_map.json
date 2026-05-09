@@ -280,7 +280,7 @@
       "canonicalName": "Adrienne Arsht Center",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Adrienne Arsht Center",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -2792,7 +2792,7 @@
       "canonicalName": "Expedia",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub2": "Miscellaneous",
       "match": {
         "patterns": [
           "EXPEDIA",
@@ -2827,10 +2827,11 @@
     },
     {
       "merchantId": "FAIRGROUNDS",
-      "canonicalName": "fairgrounds",
+      "canonicalName": "Fairgrounds",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
       "defaultSub2": "Misc",
+	  "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bFAIRGROUNDS\\b",
@@ -3553,8 +3554,10 @@
       "merchantId": "HERITAGE_ISLES_GOLF",
       "canonicalName": "Heritage Isles Golf",
       "defaultCategory": "Expense",
-      "defaultSub1": "Entertainment",
-      "defaultSub2": "Golf",
+      "defaultSub1": "Recreation",
+	  "defaultSub2": "Sports",
+      "defaultSub3": "Golf",
+	  "defaultSub4": "$MERCHANT",
       "match": {
         "patterns": [
           "HERITAGE\\s+ISLES\\s+GOLF",
@@ -5563,7 +5566,7 @@
       "canonicalName": "MOSI",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "MOSI",
+      "defaultSub2": "Misc",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -5843,10 +5846,10 @@
     },
     {
       "merchantId": "NNT_BUSCH_GARD",
-      "canonicalName": "NNT Busch Gard",
+      "canonicalName": "Busch Gardens",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "NNT Busch Gardens",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -6277,7 +6280,7 @@
       "canonicalName": "Peabodys",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Peabody",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -6741,7 +6744,7 @@
       "canonicalName": "Pump It Up",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Pumpit up",
+      "defaultSub2": "Party",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -6791,7 +6794,7 @@
       "canonicalName": "Qzars Laser Tag",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Birthday party",
+      "defaultSub2": "Party",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -6858,7 +6861,7 @@
       "canonicalName": "Redbox",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Redbox",
+      "defaultSub2": "Movies",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -7899,7 +7902,8 @@
       "canonicalName": "Sway PartyBus",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "$MERCHANT",
+	  "defaultSub2": "Misc",	  
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bSWAY\\s+PARTYBUS\\b",
@@ -8036,14 +8040,14 @@
     },
     {
       "merchantId": "TAMPA_PARKS_REC",
-      "canonicalName": "Tampa Parks Rec",
+      "canonicalName": "Parks Recreation",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Parks Recreation",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
-          "\\bPARKS\\s+REC\\s+TAMPA\\b"
+          "\\bPARKS\\s+REC(?:\\s+TAMPA)?\\b"
         ]
       }
     },
@@ -8512,7 +8516,8 @@
       "canonicalName": "Topgolf",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Golf",
+      "defaultSub2": "Outing",
+	  "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bTOPGOLF\\b",
@@ -8798,14 +8803,14 @@
 		  "byAmountSign": {
 		    "negative": {
 		      "category": "Expense",
-		      "sub1": "Transport",
-			  "sub2" : "$MERCHANT"
+		      "sub1": "Travel",
+			  "sub2" : "Parking"
 		    },
 		    "positive": {
 		      "category": "Income",
 		      "sub1": "Refund/Reimbursement",
-			  "sub2": "Transport",
-			  "sub3" : "$MERCHANT"			  
+			  "sub2": "Travel",
+			  "sub3" : "Parking"			  
 		    }
 		  }
 		},		
@@ -8898,7 +8903,8 @@
 		  "canonicalName": "Chuck E Cheese",
 		  "defaultCategory": "Expense",
 		  "defaultSub1": "Entertainment",
-		  "defaultSub2": "$MERCHANT",
+		  "defaultSub2": "Party",
+		  "defaultSub3": "$MERCHANT",
 		  "match": {
 		    "patterns": [
 		      "\\bCHUCK\\s+E\\s+00009969\\b",
@@ -9812,7 +9818,8 @@
       "canonicalName": "Westin Beach",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "$MERCHANT",
+	  "defaultSub2": "Lodging",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bWESTIN\\s+BEACH\\b",
@@ -9925,7 +9932,7 @@
       "canonicalName": "You Do The Dishes",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "You do the dishes",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
