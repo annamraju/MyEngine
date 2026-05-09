@@ -490,7 +490,7 @@
       "canonicalName": "American Express",
       "defaultCategory": "Expense",
       "defaultSub1": "CreditCard",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub2": "AMEX CC",
       "match": {
         "patterns": [
           "AMERICAN\\s+EXPRESS"
@@ -8638,7 +8638,7 @@
       "canonicalName": "Trader Joe's",
       "defaultCategory": "Expense",
       "defaultSub1": "Groceries",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub2": "Trader Joes",
       "match": {
         "patterns": [
           "TRADER\\s+JOE\\s*S",
@@ -8651,7 +8651,7 @@
       "canonicalName": "Misc",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub2": "Miscellaneous",
       "match": {
         "patterns": [
           "TPA\\s+CART\\s+RENTAL",
@@ -9293,7 +9293,7 @@
 	      "negative": {
 	        "category": "Expense",
 	        "sub1": "Travel",
-			"sub2" : "$MERCHANT"
+			"sub2" : "Lodging"
 	      },
 	      "positive": {
 	        "category": "Income",
@@ -11177,6 +11177,7 @@
 	    "canonicalName": "Real Estate Tax",
 	    "defaultCategory": "Tax",
 	    "defaultSub1": "$MERCHANT",
+	    "defaultSub2": "10303 Meadow Crossing Dr",
 	    "match": {
 	      "patterns": [
 	  			"\\bTAX\\s+COLLECTOR\\b"
