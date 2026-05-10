@@ -1290,18 +1290,6 @@
       }
     },
     {
-      "merchantId": "BOOZE_SWAY",
-      "canonicalName": "Booze/Sway",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "BOOZE\\s+SWAY"
-        ]
-      }
-    },
-    {
       "merchantId": "BORASOO",
       "canonicalName": "Borasoo",
       "defaultCategory": "Expense",
@@ -7906,6 +7894,7 @@
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
+			"BOOZE\\s+SWAY",
           "\\bSWAY\\s+PARTYBUS\\b",
           "\\bEB\\s+SWAY\\s+PARTY\\s+BUS\\b"
         ]
