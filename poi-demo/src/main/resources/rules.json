@@ -11359,7 +11359,11 @@
 	       { "field": "sub1", "op": "EQ", "value": "Misc" },
 	       { "field": "description", "op": "REGEX", "value": "WINDSOR\\s+CORNE" }
 	     ],
-	     "then": { "setSub2": "Windsor Corne" }
+	     "then": { 
+			"setSub2": "Windsor Corne" 
+		}
+	},
+	{
 	     "ruleNo": 11056,
 	     "name": "EXEPNSE_MISC thats passport",
 	     "enabled": true,
