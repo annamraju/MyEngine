@@ -10884,6 +10884,55 @@
 	     "then": {
 	   		"setSub3" : "Fun Movie Grill"
 	     }
+	   },
+	   {
+	     "ruleNo": 11056,
+	     "name": "EXEPNSE_MISC thats passport",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Misc"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "\\b(?:PASSPORT|PASSPORTSERVICES)\\b"
+	   		}
+	     ],
+	     "then": {
+			"setCategory": "Expense",
+			"setSub1": "Misc",
+			"setSub2" : "Passport Services"
+	     }
+	   },
+	   {
+	     "ruleNo": 11057,
+	     "name": "EXEPNSE_MISC thats spiritual",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Misc"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "\\bSELF\\s+RLZTN\\s+FELLOWSHIP\\b"
+	   		}
+	     ],
+	     "then": {
+	   	"setCategory": "Expense",
+	   	"setSub1": "Recreation",
+	   	"setSub2" : "Spiritual",
+		"setSub3" : "Self Realization"
+	     }
 	   }
 
 	   
