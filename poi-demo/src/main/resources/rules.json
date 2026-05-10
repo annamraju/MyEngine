@@ -10884,6 +10884,482 @@
 	     "then": {
 	   		"setSub3" : "Fun Movie Grill"
 	     }
+	   },
+	   {
+	     "ruleNo": 11100,
+	     "name": "Expense Misc - Air Vac connection",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "AIR\\s+VAC\\s+CONNECTION" }
+	     ],
+	     "then": { "setSub2": "Air Vac connection" }
+	   },
+	   {
+	     "ruleNo": 11101,
+	     "name": "Expense Misc - Aveda Ins",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "AVEDA\\s+INS\\s+4186" }
+	     ],
+	     "then": { "setSub2": "Aveda Ins" }
+	   },
+	   {
+	     "ruleNo": 11102,
+	     "name": "Expense Misc - Babylon Tattoo",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "BABYLON\\s+TATTOO\\s+SH" }
+	     ],
+	     "then": { "setSub2": "Babylon Tattoo" }
+	   },
+	   {
+	     "ruleNo": 11103,
+	     "name": "Expense Misc - Craig list",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "CRAIGSLIST\\s+ORG" }
+	     ],
+	     "then": { "setSub2": "Craig list" }
+	   },
+	   {
+	     "ruleNo": 11104,
+	     "name": "Expense Misc - CVG Gaslight",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "CVG\\s+GASLIGHT\\s+MARK" }
+	     ],
+	     "then": { "setSub2": "CVG Gaslight" }
+	   },
+	   {
+	     "ruleNo": 11105,
+	     "name": "Expense Misc - FL Tropical",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "FLL\\s+TROPICAL\\s+EXCH" }
+	     ],
+	     "then": { "setSub2": "FL Tropical" }
+	   },
+	   {
+	     "ruleNo": 11106,
+	     "name": "Expense Misc - FTL CNBC",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "FTL\\s+CNBC\\s+T4" }
+	     ],
+	     "then": { "setSub2": "FTL CNBC" }
+	   },
+	   {
+	     "ruleNo": 11107,
+	     "name": "Expense Misc - FTL Univision",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "FTL\\s+UNIVISION" }
+	     ],
+	     "then": { "setSub2": "FTL Univision" }
+	   },
+	   {
+	     "ruleNo": 11108,
+	     "name": "Expense Misc - H&M",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "H\\s+M0?600" }
+	     ],
+	     "then": { "setSub2": "H&M" }
+	   },
+	   {
+	     "ruleNo": 11109,
+	     "name": "Expense Misc - Ippodo",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "\\bIPPODO\\b" }
+	     ],
+	     "then": { "setSub2": "Ippodo" }
+	   },
+	   {
+	     "ruleNo": 11110,
+	     "name": "Expense Misc - Lexus accident payment",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "LEXUS\\s+BAY\\s+COL|LEXUS\\s+OF\\s+TAMPA\\s+BAY\\s+COL" }
+	     ],
+	     "then": { "setSub2": "Pay for accident" }
+	   },
+	   {
+	     "ruleNo": 11111,
+	     "name": "Expense Misc - Miami News Now",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "MIAMI\\s+NEWS\\s+NOW" }
+	     ],
+	     "then": { "setSub2": "Miami News Now" }
+	   },
+	   {
+	     "ruleNo": 11112,
+	     "name": "Expense Misc - New Balance 0016",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "NEW\\s+BALANCE\\s+0*016" }
+	     ],
+	     "then": { "setSub2": "New Balance *0016" }
+	   },
+	   {
+	     "ruleNo": 11113,
+	     "name": "Expense Misc - NNT H&M",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "NNT\\s+H\\s+M0?800" }
+	     ],
+	     "then": { "setSub2": "NNT H&M" }
+	   },
+	   {
+	     "ruleNo": 11114,
+	     "name": "Expense Misc - NNT Midtown",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "NNT\\s+MIDTOWN\\s+BO" }
+	     ],
+	     "then": { "setSub2": "NNT Midtown" }
+	   },
+	   {
+	     "ruleNo": 11115,
+	     "name": "Expense Misc - Paypal Fieldprin",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "PAYPAL\\s+FIELDPRIN" }
+	     ],
+	     "then": { "setSub2": "Paypal" }
+	   },
+	   {
+	     "ruleNo": 11116,
+	     "name": "Expense Misc - Paypal NRIINVESTIN",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "PAYPAL\\s+NRIINVESTIN" }
+	     ],
+	     "then": { "setSub2": "Paypal NRIINVETIMG" }
+	   },
+	   {
+	     "ruleNo": 11117,
+	     "name": "Expense Misc - Renaissance",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "RENAISSANCE\\s+DALLA" }
+	     ],
+	     "then": { "setSub2": "Renaissance" }
+	   },
+	   {
+	     "ruleNo": 11118,
+	     "name": "Expense Misc - Salvation Army",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "SALVATION\\s+ARMY" }
+	     ],
+	     "then": { "setSub2": "Salvation Army" }
+	   },
+	   {
+	     "ruleNo": 11119,
+	     "name": "Expense Misc - GymShark",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "GYMSHARK\\s+INC" }
+	     ],
+	     "then": { "setSub2": "GymShark" }
+	   },
+	   {
+	     "ruleNo": 11120,
+	     "name": "Expense Misc - Notary",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "\\bNOTARY\\b" }
+	     ],
+	     "then": { "setSub2": "Notary" }
+	   },
+	   {
+	     "ruleNo": 11121,
+	     "name": "Expense Misc - Statement delivery",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "STATEMENT\\s+DELIVERY" }
+	     ],
+	     "then": { "setSub2": "Stmt Delivery charges" }
+	   },
+	   {
+	     "ruleNo": 11122,
+	     "name": "Expense Misc - LAS OLAS COMP",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "LAS\\s+OLAS\\s+COMP" }
+	     ],
+	     "then": { "setSub2": "LAS OLAS COMP" }
+	   },
+	   {
+	     "ruleNo": 11123,
+	     "name": "Expense Misc - Thea Collect",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "THEA\\s+COLLECT" }
+	     ],
+	     "then": { "setSub2": "Thea Collect" }
+	   },
+	   {
+	     "ruleNo": 11124,
+	     "name": "Expense Misc - Big Bubble",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "BIG\\s+BUBBLE\\s+RA" }
+	     ],
+	     "then": { "setSub2": "Big Bubble" }
+	   },
+	   {
+	     "ruleNo": 11125,
+	     "name": "Expense Misc - TPA Square 1F",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "TPA\\s+SQUARE\\s+1\\s+F" }
+	     ],
+	     "then": { "setSub2": "TPA Square 1F" }
+	   },
+	   {
+	     "ruleNo": 11126,
+	     "name": "Expense Misc - TST HH Tampa",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "^TST\\s+HH\\b" }
+	     ],
+	     "then": { "setSub2": "TST* HH- Tampa" }
+	   },
+	   {
+	     "ruleNo": 11127,
+	     "name": "Expense Misc - Le Plug",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "LE\\s+PLUG\\s+PROT" }
+	     ],
+	     "then": { "setSub2": "Le Plug" }
+	   },
+	   {
+	     "ruleNo": 11128,
+	     "name": "Expense Misc - UN Attimo",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "UN\\s+ATTIMO\\s+SP" }
+	     ],
+	     "then": { "setSub2": "UN Attimo" }
+	   },
+	   {
+	     "ruleNo": 11129,
+	     "name": "Expense Misc - U-haul",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "UHI\\s+U\\s+HAULSTACK\\s+STOR|U\\s+HAULSTACK\\s+STOR" }
+	     ],
+	     "then": { "setSub2": "U-haul" }
+	   },
+	   {
+	     "ruleNo": 11130,
+	     "name": "Expense Misc - Immigration",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "USCIS\\s+DALLAS\\s+DES\\s+PAYMENT" }
+	     ],
+	     "then": { "setSub2": "Immigration" }
+	   },
+	   {
+	     "ruleNo": 11131,
+	     "name": "Expense Misc - UWORLD",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "\\bUWORLD\\b" }
+	     ],
+	     "then": { "setSub2": "UWORLD" }
+	   },
+	   {
+	     "ruleNo": 11132,
+	     "name": "Expense Misc - Wiley",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "\\bWILEY\\b" }
+	     ],
+	     "then": { "setSub2": "Wiley" }
+	   },
+	   {
+	     "ruleNo": 11133,
+	     "name": "Expense Misc - Windsor Corne",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "description", "op": "REGEX", "value": "WINDSOR\\s+CORNE" }
+	     ],
+	     "then": { "setSub2": "Windsor Corne" }
 	   }
 
 	   
