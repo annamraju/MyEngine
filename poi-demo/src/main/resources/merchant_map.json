@@ -10438,6 +10438,31 @@
 	    }
 	  },
 	  {
+	    "merchantId": "MOTORCYCLE",
+	    "canonicalName": "Motorcycle",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Car Maintenance",
+	    "defaultSub2": "DMV",
+	    "defaultSub3": "Motorcycle license",
+	    "match": {
+	      "patterns": [
+			"\\bPASCO\\s+MOTORCYCLE\\b"
+	      ]
+	    }
+	  },
+	  {
+	    "merchantId": "LLC_ADMINISTRATION",
+	    "canonicalName": "LLC Administration",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Misc",
+	    "defaultSub2": "$MERCHANT",
+	    "match": {
+	      "patterns": [
+			"\\bNIC\\*?-?FL\\s+SUNBIZ\\.ORG\\b"
+	      ]
+	    }
+	  },
+	  {
 	    "merchantId": "EXPENSE_MISC",
 	    "canonicalName": "Misc",
 	    "defaultCategory": "Expense",
@@ -10445,7 +10470,6 @@
 	    "match": {
 	      "patterns": [
 	        "\\bLE\\s+TREND\\s+BOUTIQUE\\b",
-			"\\bPASCO\\s+MOTORCYCLE\\b",
 			"\\bSERVICES\\s+NEW\\s+AGE\\s+DETA\\b",
 			"\\bNIJEBA \\s+SHIKURI\\b",
 			"SQ\\s+JEFFREY\\s+DANIEL",
@@ -10491,7 +10515,6 @@
 			      "\\bTM\\s*\\*?BIG\\s+BUBBLE\\s+RA\\b",
 			      "\\b1115[-\\s]*717[-\\s]*MERCHANT[-\\s]*CHAMBE\\b",
 			      "\\bBP#?1460100MCINTOSH\\s+QPS\\b",
-			      "\\bNIC\\*?-?FL\\s+SUNBIZ\\.ORG\\b",
 			      "\\b91280\\s*-\\s*AUSTIN[-\\s]*BERGSTR\\b",
 			      "\\bWILEY\\b",
 			      "\\bAVEDA\\s+INS\\s+4186\\b",
