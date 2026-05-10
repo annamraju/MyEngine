@@ -26,11 +26,19 @@ public class RunCategorizer {
     private static final Path OUTPUT_DIR = Path.of("D:\\fin_docs\\output");
 
     public static void main(String[] args) throws Exception {
+        String merchantMapResource = getArgOrDefault(args, 0, "merchant_map.json");
+        String rulesResource = getArgOrDefault(args, 1, "rules.json");
+        String checkRulesResource = getArgOrDefault(args, 2, "check_rules.json");
+
+        System.out.println("Using resources: "
+                + "merchant_map=" + merchantMapResource
+                + ", rules=" + rulesResource
+                + ", check_rules=" + checkRulesResource);
 
         Engine engine = LedgerRecordCategorizer.load(
-                "merchant_map.json",
-                "rules.json",
-                "check_rules.json"
+                merchantMapResource,
+                rulesResource,
+                checkRulesResource
         );
 
         // you already have this from ReadLedgerFile.readFile(...)
@@ -258,5 +266,12 @@ public class RunCategorizer {
 
     private static boolean isBlank(String s) {
         return s == null || s.trim().isEmpty() || "null".equalsIgnoreCase(s.trim());
+    }
+
+    private static String getArgOrDefault(String[] args, int idx, String defaultVal) {
+        if (args == null || idx < 0 || idx >= args.length) return defaultVal;
+        String val = args[idx];
+        if (isBlank(val)) return defaultVal;
+        return val.trim();
     }
 }
