@@ -10747,6 +10747,143 @@
 	    	"setSub2" : "Periodontist",
 	   		"setSub3" : "Thomas Reinhart"
 	     }
+	   },
+	   {
+	     "ruleNo": 11050,
+	     "name": "HOA - preserve Basset Creek sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "HOA"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "BASSET\\s+CREEK\\s+HOA"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "Basset Creek"
+	     }
+	   },
+	   {
+	     "ruleNo": 11051,
+	     "name": "Florida Prepaid - map higher tuition to Ananya",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Florida Prepaid"
+	   		},
+	       	{
+	         "field": "amount",
+	         "op": "LT",
+	         "value": -200.0
+	       	}
+	     ],
+	     "then": {
+	   		"setSub3" : "Ananya"
+	     }
+	   },
+	   {
+	     "ruleNo": 11052,
+	     "name": "Florida Prepaid - map mid tuition to Anjali",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Florida Prepaid"
+	   		},
+	       	{
+	         "field": "amount",
+	         "op": "GTE",
+	         "value": -200.0
+	       	},
+	       	{
+	         "field": "amount",
+	         "op": "LT",
+	         "value": -100.0
+	       	}
+	     ],
+	     "then": {
+	   		"setSub3" : "Anjali"
+	     }
+	   },
+	   {
+	     "ruleNo": 11053,
+	     "name": "Starlight 20 - keep AMC legacy label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Starlight 20"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "AMC\\s+STARLIGHT\\s+20"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "AMC"
+	     }
+	   },
+	   {
+	     "ruleNo": 11054,
+	     "name": "Starlight 20 - keep Highwoods legacy label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Starlight 20"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "HIGHWOODS\\s+20"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "Highwoods 20"
+	     }
+	   },
+	   {
+	     "ruleNo": 11055,
+	     "name": "Starlight 20 - keep Fun Movie legacy label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "Starlight 20"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "FUN\\s+MOVIE\\s+GRILL"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "Fun Movie Grill"
+	     }
 	   }
 
 	   
