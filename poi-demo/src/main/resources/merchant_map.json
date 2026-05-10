@@ -8944,6 +8944,187 @@
 		    ]
 		  }
 		},	  		
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_FOOD",
+		  "canonicalName": "TRAVEL FOOD",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Food"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Food"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "BURRITO\\s+JIMMY\\s+IRVING\\s+TX",
+		      "\\bC1\\s+GLOBAL\\s+BAZAAR\\b",
+		      "DORRIAN\\s+S\\s+RESTAURA\\s+JERSEY\\s+CITY\\s+NJ",
+		      "KAMANA\\s+KITCHEN\\s+HILO\\s+HILO\\s+HI",
+		      "KFC\\s+J625049\\s+IRVING\\s+TX",
+		      "MORTN\\s+WILLMS\\s+NVYSJ7\\s+JERSEY\\s+CITY\\s+NJ",
+		      "TST\\s+INDIA\\s+101\\s+IRVING\\s+TX",
+		      "YOGURT\\s+ZONE\\s+MAC"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_PARKING",
+		  "canonicalName": "TRAVEL PARKING",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Parking"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Parking"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "AAA\\s+PARK\\s+127\\s+AY\\s+INTE\\s+ATLANTA\\s+GA",
+		      "LAZ\\s+PARKING\\s+580518\\s+TIB\\s+ATLANTA\\s+GA",
+		      "PARK\\s+ME\\s+FLY\\s+ORLANDO\\b",
+		      "INT\\s+L\\s+AIRPOR\\b",
+		      "XPRESS\\s+AIRPORT\\s+VALET\\s+P\\s+ORLANDO\\b"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_TRANSPORT",
+		  "canonicalName": "TRAVEL TRANSPORT",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Transport"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Transport"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "AMTRAK\\s+MOBILE\\s+APP\\s+01\\s+07\\s+PURCHASE\\s+XXXXX27245\\s+DC",
+		      "LYFT\\s+RIDE\\s+FRI\\s+1AM\\s+855\\s+865\\s+9553\\s+CA",
+		      "\\bLYFT\\s+1\\s+RIDE\\b",
+		      "SQUARE\\s+SQ\\s+UBER\\s+JERSEY\\s+CITY\\s+NJ",
+		      "TAXI\\s+PASS\\s+COM\\s+NEW\\s+YORK\\s+NY",
+		      "THRIFTY\\s+0078213\\s+ATLANTA\\s+GA"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_GAS",
+		  "canonicalName": "TRAVEL GAS",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Gas"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Gas"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "76\\s+GAS\\s+EXPRESS\\s+126\\s+ATLANTA\\s+GA",
+		      "ADEL\\s+TRUCK\\s+PLAZA\\s+ADEL\\s+GA",
+		      "RACETRAC246\\s+00002469\\s+KISSIMMEE\\b",
+		      "RACETRAC2531\\s+00025312\\s+ATLANTA\\s+GA"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_MEDICAL",
+		  "canonicalName": "TRAVEL MEDICAL",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Medical"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Medical"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "URGENT\\s+CARE\\s+24\\s+7\\s+CENTE\\s+ATLANTA\\s+GA"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_TRAVEL_PACKAGE",
+		  "canonicalName": "TRAVEL PACKAGE",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Travel Package"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Travel Package"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "COSTCO\\s+TRAVEL"
+		    ]
+		  }
+		},
+		{
+		  "merchantId": "TRAVEL_MISC_ALL_VACATION",
+		  "canonicalName": "TRAVEL VACATION",
+		  "defaults": {
+		    "byAmountSign": {
+		      "negative": {
+		        "category": "Expense",
+		        "sub1": "Travel",
+		        "sub2": "Miscellaneous"
+		      },
+		      "positive": {
+		        "category": "Income",
+		        "sub1": "Refund/Reimbursement",
+		        "sub2": "Vacation",
+		        "sub3": "The Whitley"
+		      }
+		    }
+		  },
+		  "match": {
+		    "patterns": [
+		      "\\bWHITLEY\\b"
+		    ]
+		  }
+		},
     	{
       "merchantId": "TRAVEL_MISC_ALL",
       "canonicalName": "TRAVEL MISCELLANEOUS",

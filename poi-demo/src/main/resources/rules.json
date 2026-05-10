@@ -11411,20 +11411,42 @@
 	   	"setSub2" : "Spiritual",
 		"setSub3" : "Self Realization"
 	     }
+	   },
+	   {
+	     "ruleNo": 11140,
+	     "name": "Travel transport - preserve Lyft sub3",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "TRAVEL TRANSPORT" },
+	       { "field": "description", "op": "REGEX", "value": "\\bLYFT\\b" }
+	     ],
+	     "then": { "setSub3": "Lyft" }
+	   },
+	   {
+	     "ruleNo": 11141,
+	     "name": "Travel transport - preserve Uber sub3",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "TRAVEL TRANSPORT" },
+	       { "field": "description", "op": "REGEX", "value": "\\bUBER\\b" }
+	     ],
+	     "then": { "setSub3": "Uber" }
+	   },
+	   {
+	     "ruleNo": 11142,
+	     "name": "Travel misc all - preserve CareNow sub3",
+	     "enabled": true,
+	     "priority": 21,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "TRAVEL MISCELLANEOUS" },
+	       { "field": "description", "op": "REGEX", "value": "CARENOW" }
+	     ],
+	     "then": { "setSub3": "CareNow" }
 	   }
-
-	   
-
-
-
-
-	   
-	   
-	   	   	 	  
-	   	   	 	  
-	   	 	  
-	   	 	  
-	   	 	  
-	   	 	  
   ]
 }
