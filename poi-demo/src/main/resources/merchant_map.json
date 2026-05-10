@@ -10438,6 +10438,19 @@
 	    }
 	  },
 	  {
+	    "merchantId": "MOTORCYCLE",
+	    "canonicalName": "Motorcycle",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Car Maintenance",
+	    "defaultSub2": "DMV",
+	    "defaultSub3": "Motorcycle license",
+	    "match": {
+	      "patterns": [
+			"\\bPASCO\\s+MOTORCYCLE\\b"
+	      ]
+	    }
+	  },
+	  {
 	    "merchantId": "EXPENSE_MISC",
 	    "canonicalName": "Misc",
 	    "defaultCategory": "Expense",
@@ -10445,7 +10458,6 @@
 	    "match": {
 	      "patterns": [
 	        "\\bLE\\s+TREND\\s+BOUTIQUE\\b",
-			"\\bPASCO\\s+MOTORCYCLE\\b",
 			"\\bSERVICES\\s+NEW\\s+AGE\\s+DETA\\b",
 			"\\bNIJEBA \\s+SHIKURI\\b",
 			"SQ\\s+JEFFREY\\s+DANIEL",
