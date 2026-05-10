@@ -1841,6 +1841,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Education",
 	  "defaultSub2" : "Books",
+	  "defaultSub3" : "Chegg",
       "match": {
         "patterns": [
           "\\bCHEGG\\s+ORDER\\b",		  
@@ -2300,7 +2301,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Delta",
       "match": {
         "patterns": [
           "DELTA\\s+006",
@@ -2457,6 +2458,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "$MERCHANT",
+      "defaultSub3": "License/Tag Renewal",
       "match": {
         "patterns": [
           "\\bTAG\\s+RENEW\\b",
@@ -2806,7 +2808,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "Gas",
-      "defaultSub3": "ExxonMobile",
+      "defaultSub3": "EXXONMOBIL",
       "match": {
         "patterns": [
           "EXXON"
@@ -4022,7 +4024,7 @@
 	        "category": "Income",
 	        "sub1": "Investment Returns",
 			"sub2": "Securities",
-			"sub3": "Etrade"			
+			"sub3": ""			
 	      }
 	    }
 	  },	  
@@ -7524,7 +7526,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Spirit",
       "match": {
         "patterns": [
           "SPIRIT\\s+AIRL",
@@ -10136,7 +10138,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "Drycleaning",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bQUALITY\\s+PLUS\\s+DRY\\s+CLEAN\\b"
@@ -10149,7 +10151,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "Safebox Rental",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bSAFEBOX\\s+RENTAL\\b"
@@ -10162,7 +10164,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "USPS",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bUSPS\\b",
@@ -10191,7 +10193,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "UPS Store",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bUPS\\s+STORE\\s+4513\\b",
@@ -10221,7 +10223,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "P&R Online",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bP\\s*&\\s*R\\s+ONLINE\\b",
@@ -10235,7 +10237,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "AMEX CC",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bMISC\\s*\\(\\s*AMEX\\s*\\)\\b",
@@ -10249,7 +10251,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "Roadside Assistance",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bDRIVE\\s+ROADSIDE\\b"
@@ -10262,7 +10264,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "Tampa Bay Times",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bTAMPA\\s+BAY\\s+TIMES\\b",
@@ -10303,7 +10305,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "MCC",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bMCC\\s+COMMON\\s+GROUND\\b"
@@ -10330,7 +10332,7 @@
 	    "defaultCategory": "Expense",
 	    "defaultSub1": "Misc",
 	    "defaultSub2": "Hyatt Regency",
-	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
+	    "defaultSub3": "",
 	    "match": {
 	      "patterns": [
 	        "\\bHYATT\\s+REGENCY\\b"
