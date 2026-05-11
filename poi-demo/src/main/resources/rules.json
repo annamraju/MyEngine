@@ -11447,6 +11447,188 @@
 	       { "field": "description", "op": "REGEX", "value": "CARENOW" }
 	     ],
 	     "then": { "setSub3": "CareNow" }
+	   },
+	   {
+	     "ruleNo": 11150,
+	     "name": "Medical - Florida Medical Clinic wellness",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "FLORIDA\\s+MEDICAL\\s+CLINIC" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "Florida Medical Clinic"
+	     }
+	   },
+	   {
+	     "ruleNo": 11151,
+	     "name": "Medical - New Tampa clinic legacy (before 2024)",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "^NEW\\s+MEDICAL\\s+CLINIC$" },
+	       { "field": "date", "op": "BEFORE", "value": "2024-01-01" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "Suvarna Nomula"
+	     }
+	   },
+	   {
+	     "ruleNo": 11152,
+	     "name": "Medical - New Tampa clinic modern label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "^NEW\\s+MEDICAL\\s+CLINIC$" },
+	       { "field": "date", "op": "ON_OR_AFTER", "value": "2024-01-01" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "New Tampa Medical Clinic"
+	     }
+	   },
+	   {
+	     "ruleNo": 11153,
+	     "name": "Medical - TMS New Tampa",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "TMS\\s+NEW\\s+MEDICAL" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "New Tampa Medical"
+	     }
+	   },
+	   {
+	     "ruleNo": 11154,
+	     "name": "Medical - New Tampa 253 debit",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "253\\s+SALE\\s+DEBIT\\s+NEW\\s+MEDICAL\\s+CLIN" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "New Tampa"
+	     }
+	   },
+	   {
+	     "ruleNo": 11155,
+	     "name": "Medical - New Tampa Foot and Ankle wellness",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "NEW\\s+FOOT\\s+ANKLE\\s+CHAPEL" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "Foot and Ankle"
+	     }
+	   },
+	   {
+	     "ruleNo": 11156,
+	     "name": "Medical - AdventHealth wellness",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "ADVENTHEALTH\\s+CENT" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Wellness",
+	       "setSub3": "Advent Health"
+	     }
+	   },
+	   {
+	     "ruleNo": 11157,
+	     "name": "Medical - Clermont pharmacy label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "CLERMONT\\s+COMMUNITY\\s+PHARMA" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Pharmacy",
+	       "setSub3": "CLERMONT COMMUNITY PHARMA"
+	     }
+	   },
+	   {
+	     "ruleNo": 11159,
+	     "name": "Medical - GoodRx pharmacy label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "GOODRXGOLD" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Pharmacy",
+	       "setSub3": "Goodrxgold"
+	     }
+	   },
+	   {
+	     "ruleNo": 11158,
+	     "name": "Medical - Family cosmetic dentistry",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "FAMILY\\s+AND\\s+COSMETIC" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Medical",
+	       "setSub2": "Dentistry",
+	       "setSub3": "Family and Cosmetic Dentistry"
+	     }
 	   }
   ]
 }
