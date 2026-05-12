@@ -2444,7 +2444,8 @@
       "canonicalName": "Disney",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "$MERCHANT",
+	  "defaultSub2": "Tickets",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "^WDW\\b",
@@ -8389,8 +8390,8 @@
       "merchantId": "TIPSY_TOPSY_WEAR",
       "canonicalName": "Tipsy Topsy Wear",
       "defaultCategory": "Expense",
-      "defaultSub1": "Shopping",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub1": "Travel",
+      "defaultSub2": "Shopping",
       "match": {
         "patterns": [
           "\\bTIPSY\\s+TOPSY\\s+WEAR\\b",

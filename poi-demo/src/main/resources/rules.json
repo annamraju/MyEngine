@@ -10088,7 +10088,7 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Gas"
+	     "setSub2" : "Miscellaneous"
 	     }
 	   },
 	   {
@@ -11629,6 +11629,60 @@
 	       "setSub2": "Dentistry",
 	       "setSub3": "Family and Cosmetic Dentistry"
 	     }
+	   },
+	   {
+	     "ruleNo": 11159,
+	     "name": "taste of india - travel",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Taste Of India" },
+	       { "field": "description", "op": "REGEX", "value": "DUBAI|JERSEY" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Food"
+	     }
+	   },
+	   {
+	     "ruleNo": 11160,
+	     "name": "Disney  travel - parking",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Disney" },
+	       { "field": "description", "op": "REGEX", "value": "PARKING" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Parking",
+		   "setSub3" : "Disney"
+	     }
+	   },
+	   {
+	     "ruleNo": 11161,
+	     "name": "Disney  travel - food",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Disney" },
+	       { "field": "description", "op": "REGEX", "value": "POPCORN|PINOCCHIO|CAFE" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Food",
+	      "setSub3" : "Disney"
+	     }
 	   }
+	   
   ]
 }
