@@ -828,7 +828,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Groceries",
-        "setSub2": "Traders Joe"
+        "setSub2": "Trader Joes"
       }
     },
     {
@@ -966,7 +966,7 @@
       "then": {
         "setCategory": "Internal",
         "setSub1": "CreditCard",
-        "setSub2": "Chase CC"
+        "setSub2": "Chase CC (Anantha)"
       }
     },
     {
@@ -8238,7 +8238,7 @@
 	       "setCategory": "Income",
 		   "setSub1": "Refund/Reimbursement",
 	       "setSub2": "Subscription",
-	       "setSub2": "Amazon Prime"
+	       "setSub3": "Amazon Prime"
 	     }
 	   },
 	   {
@@ -9450,7 +9450,7 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Walmart"
+	     "setSub2" : "Miscellaneous"
 	     }
 	   },
 	   {
@@ -9479,7 +9479,8 @@
 	     "then": {
 	       "setCategory": "Income",
 	      "setSub1": "Refund/Reimbursement",
-	     "setSub2" : "Fees"
+	     "setSub2" : "Fees",
+		 "setSub3" : "Interest Charged"
 	     }
 	   },
 	   {
@@ -10148,7 +10149,7 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Misc"
+	     "setSub2" : "Miscellaneous"
 	     }
 	   },
 	   {
@@ -10744,8 +10745,7 @@
 	     "then": {
 	       "setCategory": "Expense",
 	       "setSub1": "Medical",
-	    	"setSub2" : "Periodontist",
-	   		"setSub3" : "Thomas Reinhart"
+	    	"setSub2" : "Periodontist"
 	     }
 	   },
 	   {
@@ -11682,6 +11682,354 @@
 	       "setSub2": "Food",
 	      "setSub3" : "Disney"
 	     }
+	   },
+	   {
+	     "ruleNo": 11200,
+	     "name": "Travel misc - food venues",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Travel" },
+	       { "field": "description", "op": "REGEX", "value": "PANINI|WOK\\s+ROLL|COPPER\\s+CHIMNEY|REST(?:AURANT|O)\\b|BISTRO\\s+GURU|CIBO\\s+EXPRESS|LAGARD|KOMODA\\s+STORE\\s+AND\\s+BAKE" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Food"
+	     }
+	   },
+	   {
+	     "ruleNo": 11201,
+	     "name": "Travel misc - transport venues",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Travel" },
+	       { "field": "description", "op": "REGEX", "value": "TPA\\s+CART\\s+RENTAL|MTA\\s+METROCARD|NJT\\s+NEWARK|METROCARD\\s*PATH" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Transport"
+	     }
+	   },
+	   {
+	     "ruleNo": 11202,
+	     "name": "Travel misc - parking venues",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Travel" },
+	       { "field": "description", "op": "REGEX", "value": "ORLANDO\\s+AP\\s+CART\\s+RENTAL" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Parking"
+	     }
+	   },
+	   {
+	     "ruleNo": 11203,
+	     "name": "Travel misc - gas venue",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Travel" },
+	       { "field": "description", "op": "REGEX", "value": "LUKOIL\\s+57328\\s+TRENTON\\s+NJ" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Gas"
+	     }
+	   },
+	   {
+	     "ruleNo": 11204,
+	     "name": "Sports misc - running label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Sports Misc" },
+	       { "field": "description", "op": "REGEX", "value": "RIVER\\s+RUN" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Running" }
+	   },
+	   {
+	     "ruleNo": 11205,
+	     "name": "Sports misc - preserve volleyball label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Sports Misc" },
+	       { "field": "description", "op": "REGEX", "value": "FL\\s+REGION\\s+OF\\s+USAV|^AAU$" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Volleyball" }
+	   },
+	   {
+	     "ruleNo": 11206,
+	     "name": "CollegePrep - College Board",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "CollegePrep" },
+	       { "field": "description", "op": "REGEX", "value": "COLLEGEBOARD|\\bSAT\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "College Board" }
+	   },
+	   {
+	     "ruleNo": 11207,
+	     "name": "CollegePrep - Shemmassian",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "CollegePrep" },
+	       { "field": "description", "op": "REGEX", "value": "SHEMMASSIAN" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Shemmassian" }
+	   },
+	   {
+	     "ruleNo": 11208,
+	     "name": "CollegePrep - KD College Prep",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "CollegePrep" },
+	       { "field": "description", "op": "REGEX", "value": "KD\\s+COLLEGE\\s+PREP" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "KD College Prep" }
+	   },
+	   {
+	     "ruleNo": 11209,
+	     "name": "CollegePrep - College Advisor",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "CollegePrep" },
+	       { "field": "description", "op": "REGEX", "value": "COLLEGEADVISOR" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "College Advisor" }
+	   },
+	   {
+	     "ruleNo": 11210,
+	     "name": "EDI Payments - beneficiary Indira",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "description", "op": "REGEX", "value": "INDIRA" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Indira" }
+	   },
+	   {
+	     "ruleNo": 11211,
+	     "name": "EDI Payments - beneficiary Adella",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "description", "op": "REGEX", "value": "ADELLA" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Adella ShivaKumar" }
+	   },
+	   {
+	     "ruleNo": 11212,
+	     "name": "EDI Payments - beneficiary Ushamma",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "description", "op": "REGEX", "value": "USHAMMA" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Ushamma" }
+	   },
+	   {
+	     "ruleNo": 11213,
+	     "name": "Education misc - Silicon Andhra label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "SILICON\\s+ANDHRA|SILICONANDH" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Silicon Andhra" }
+	   },
+	   {
+	     "ruleNo": 11214,
+	     "name": "Education misc - Pearson Education label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "AWL\\s+PEARSON|PEARSON\\s+EDUCATION" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Pearson Education" }
+	   },
+	   {
+	     "ruleNo": 11215,
+	     "name": "Education misc - MUN label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "WORLDSTRIDES\\s+WEB\\s+PAY|PADMAJA\\s+DONTARAJU\\s+IDES" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "MUN" }
+	   },
+	   {
+	     "ruleNo": 11216,
+	     "name": "Education misc - Yearbook label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "HERFF\\s+JONES|YEARBOOK" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Yearbook" }
+	   },
+	   {
+	     "ruleNo": 11217,
+	     "name": "Education misc - School insurance label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "SCHOOL\\s+INSURANCE\\s+FLORI" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "School insurance of Florida" }
+	   },
+	   {
+	     "ruleNo": 11218,
+	     "name": "Education misc - Vue testing label",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "VUE\\s+TESTING|VUE\\s+AAMC" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Vue Testing" }
+	   },
+	   {
+	     "ruleNo": 11219,
+	     "name": "Medical - Williams MID legacy sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "WILLIAMSMID" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "WILLIAMSMID" }
+	   },
+	   {
+	     "ruleNo": 11220,
+	     "name": "Medical - Jesse Collins legacy sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "JESSE\\s+COLLINS" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Jesse Collins" }
+	   },
+	   {
+	     "ruleNo": 11221,
+	     "name": "Medical - Mikele Branch legacy sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "MIKELE\\s+BRANCH" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Mikele Branch" }
+	   },
+	   {
+	     "ruleNo": 11222,
+	     "name": "Medical - New Tampa foot and ankle legacy sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "NEW\\s+TAMPA\\s+FOOT\\s+ANKLE" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "New Tampa Foot and Ankle" }
+	   },
+	   {
+	     "ruleNo": 11223,
+	     "name": "Medical - Bain complete wellness legacy sub3",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Medical" },
+	       { "field": "description", "op": "REGEX", "value": "BAIN\\s+COMPLETE\\s+WELLN" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub3": "Ananya's foot" }
 	   }
 	   
   ]
