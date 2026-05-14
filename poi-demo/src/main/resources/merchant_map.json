@@ -2035,7 +2035,7 @@
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "\\bCLOTHING\\b",
+          "^(?!.*\\bDICK\\b).*\\bCLOTHING\\b",
           "\\bZELLE\\s+PAYMENT\\s+TO\\s+SUDHA\\b"
         ]
       }
@@ -5308,7 +5308,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "Service",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Mavis Tire",
       "match": {
         "patterns": [
           "\\bMAVIS\\b",
@@ -6879,7 +6879,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Utilities",
       "defaultSub2": "Phone, Cable & Internet",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub3": "Reliance",
       "match": {
         "patterns": [
           "RELIANCE\\s+COMMUNICATION\\s+\\d+",
@@ -7377,7 +7377,8 @@
 	      "negative": {
 	        "category": "Expense",
 	        "sub1": "Education",
-			"sub2" : "$MERCHANT"
+			"sub2" : "$MERCHANT",
+			"sub3" : "College Apps"
 	      },
 	      "positive": {
 	        "category": "Income",
@@ -8279,8 +8280,7 @@
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
-          "\\bTIDAL\\s+EAVE\\b",
-          "\\bTIDAL\\s+WAVE\\b"
+          "\\bTIDAL\\s+EAVE\\b"
         ]
       }
     },
@@ -11349,7 +11349,7 @@
 	    "defaultCategory": "Expense",
 	  	"defaultSub1": "Recreation",
 	  	"defaultSub2": "Sports",
-	    "defaultSub3": "Volleyball",
+	    "defaultSub3": "Misc",
 	    "match": {
 	      "patterns": [
 	  			"\\bATH\\s+RAP\\s+RIVER\\s+RUN\\b",
