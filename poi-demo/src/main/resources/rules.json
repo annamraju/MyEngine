@@ -11682,6 +11682,23 @@
 	       "setSub2": "Food",
 	      "setSub3" : "Disney"
 	     }
+	   },
+	   {
+	     "ruleNo": 11162,
+	     "name": "Emirates   - Misc",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Emirates" },
+	       { "field": "description", "op": "REGEX", "value": "\\bS\\s+S\\s+P\\s+EMIRATES\\s+LLC\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": {
+	       "setCategory": "Expense",
+	       "setSub1": "Travel",
+	       "setSub2": "Miscellaneous"
+	     }
 	   }
 	   
   ]

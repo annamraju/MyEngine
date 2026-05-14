@@ -735,11 +735,12 @@
       "merchantId": "AUTOGRILL",
       "canonicalName": "Autogrill",
       "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub1": "Travel",
+	  "defaultSub2": "Food",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
-          "AUTOGRILL"
+          "\\bAUTOGRILL\\s+MIDDLE\\s+EAST\\b"
         ]
       }
     },
@@ -798,7 +799,8 @@
       "merchantId": "BAKED_BY_MELISSA",
       "canonicalName": "Baked By Melissa",
       "defaultCategory": "Expense",
-      "defaultSub1": "Food",
+      "defaultSub1": "Travel",
+	  "defaultSub2": "Food",
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
@@ -5769,7 +5771,7 @@
     },
     {
       "merchantId": "NEW_AGE_DETAIL",
-      "canonicalName": "New Age Detail",
+      "canonicalName": "New Age Detailing",
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "Cleaning",
@@ -9281,8 +9283,6 @@
           "ORLANDO\\s+INT\\s+L\\s+ECON\\s+ORLANDO,\\s+FL\\s+\\(3152\\)",
           "OTG\\s+JFK\\s+T5\\s+VENTURE,\\s+LLC",
           "OTG\\s+MCO\\s+VENTURES",
-          "PANINI'S\\s+LONDON\\s+GB",
-          "PANINIÆ‹…\\s+LONDON\\s+GB",
           "PARKING\\s+01400076\\s+ORLANDO\\s+FL",
           "PARKING\\s+\\(IPS\\)\\s+04/21\\s+PURCHASE\\s+FORT\\s+LAUDERDA\\s+FL",
           "PARK\\s+ME\\s+FLY\\s+ORLANDO\\s+FL",
@@ -9334,7 +9334,6 @@
           "TAMPA\\s+INT'L\\s+AIRPOR",
           "TAMPA\\s+INT\\s+L\\s+AIRPOR\\s+TAMPA\\s+FL",
           "TAXI\\-PASS\\.COM\\s+NEW\\s+YORK\\s+NY",
-          "THE\\s+COPPER\\s+CHIMNEY\\s+RES\\s+VANCOUVER\\s+BC",
           "THE\\s+WHITLEY",
           "WHITEHQPS\\s+NEW\\s+YORK\\s+NY\\b",
           "THRIFTY\\s+\\#0078213\\s+ATLANTA\\s+GA",
@@ -9399,6 +9398,9 @@
 	  "match": {
 	    "type": "REGEX_ANY",
 	    "patterns": [
+			"PANINI'S\\s+LONDON\\s+GB",
+			"PANINIÆ‹…\\s+LONDON\\s+GB",
+			"THE\\s+COPPER\\s+CHIMNEY\\s+RES\\s+VANCOUVER\\s+BC",
 	      "MORTN\\s+WILLMS\\s+NVYSJ7\\s+JERSEY\\s+C,\\s+NJ\\s+\\(2332\\)",
 	      "MORTN\\s+WILLMS\\s+NVYSJ7\\s+JERSEY\\s+CITY\\s+NJ",
 	      "EXECUTIVE\\s+HOTEL\\s+LE\\s+SOL\\s+604\\-6323000\\s+BC",
