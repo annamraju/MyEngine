@@ -12047,6 +12047,141 @@
 	       { "field": "amount", "op": "LT", "value": 0.0 }
 	     ],
 	     "then": { "setSub3": "Ananya's foot" }
-	   }	   
+	   },
+	   {
+	     "ruleNo": 11224,
+	     "name": "BOA Mobile Deposit refund sub2 - Medical",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\b(?:3407651135|3407652558|3512018816|3622630080|3617162785)\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Medical" }
+	   },
+	   {
+	     "ruleNo": 11225,
+	     "name": "BOA Mobile Deposit refund sub2 - from Bhupesh",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\b3638337573\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "from Bhupesh" }
+	   },
+	   {
+	     "ruleNo": 11226,
+	     "name": "BOA Mobile Deposit refund sub2 - CDD",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\b3692266660\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "CDD" }
+	   },
+	   {
+	     "ruleNo": 11227,
+	     "name": "BOA Mobile Deposit refund sub2 - Insurance",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX25726\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Insurance" }
+	   },
+	   {
+	     "ruleNo": 11228,
+	     "name": "BOA Mobile Deposit refund sub2 - Return",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX02671\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Return" }
+	   },
+	   {
+	     "ruleNo": 11229,
+	     "name": "BOA Mobile Deposit refund sub2 - Quest Diagnostics",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX96315\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Quest Diagnostics" }
+	   },
+	   {
+	     "ruleNo": 11230,
+	     "name": "BOA Mobile Deposit refund sub2 - Cross Creek HOA",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX18783\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Cross Creek HOA" }
+	   },
+	   {
+	     "ruleNo": 11231,
+	     "name": "BOA Mobile Deposit refund sub2 - Florida PrePaid",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX89446\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Florida PrePaid" }
+	   },
+	   {
+	     "ruleNo": 11232,
+	     "name": "BOA Mobile Deposit refund sub2 - NSU",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "BOA Mobile Deposit" },
+	       { "field": "category", "op": "EQ", "value": "Income" },
+	       { "field": "sub1", "op": "EQ", "value": "Refund/Reimbursement" },
+	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX97888\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "NSU" }
+	   }
   ]
 }
