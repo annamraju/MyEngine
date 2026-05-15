@@ -1231,7 +1231,8 @@ public class LedgerRecordCategorizer {
 "STORYBOOK TREATS         LAKE BUENA VIFL",
 "THE EDISON 04/11 PURCHASE LAKE BUENA VI FL",
 "Friscia & Ross, PA,Trust Account Bill Payment",
-"NEW TAMPA ORAL &amp; FACIAL"
+"NEW TAMPA ORAL &amp; FACIAL",
+"DICK'S CLOTHING&amp;SPORTING WESLEY CHAPELFL"
     			 
 
 

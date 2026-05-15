@@ -2402,8 +2402,8 @@
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "DICK\\s+S\\s+CLOTHING\\s+SPORTING\\s+WESLEY\\s+CHAPELFL",
-          "DICK\\s+S\\s+CLOTHING\\s+SPORTI\\s+WESLEY\\s+CHAPELFL",
+          "DICK\\s+S\\s+CLOTHING\\s+SPORTING\\s+(?:WESLEY\\s+)?CHAPELFL",
+          "DICK\\s+S\\s+CLOTHING\\s+SPORTI\\s+(?:WESLEY\\s+)?CHAPELFL",
           "DICK\\s+S\\s+SPORTINGGOODS",
           "DICKSSPORTINGGOOD\\s+01",
           "DICKS"

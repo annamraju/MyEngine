@@ -9556,7 +9556,7 @@
 	   {	
 	     "field": "description",
 	     "op": "REGEX",
-	     "value": "JACKSONVILLE|MONTREAL|IRVING"
+	     "value": "JACKSONVILLE|MONTREAL|IRVING|HIXSON"
 	   },
 	   {	
 	     "field": "amount",
