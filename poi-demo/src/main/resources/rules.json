@@ -12182,6 +12182,72 @@
 	       { "field": "amount", "op": "GT", "value": 0.0 }
 	     ],
 	     "then": { "setSub2": "NSU" }
+	   },
+	   {
+	     "ruleNo": 11233,
+	     "name": "EDI Payments transfer sub2 - Indira (GTEFCU IDs)",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "category", "op": "EQ", "value": "Overseas" },
+	       { "field": "sub1", "op": "EQ", "value": "Transfer" },
+	       { "field": "account", "op": "EQ", "value": "GTEFCU Checking" },
+	       { "field": "description", "op": "REGEX", "value": "\\b(?:0912M2A11280350|0823M2A11543294|0804M2A11626371|0905M2E03334742|0922M2E03737756)\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Indira" }
+	   },
+	   {
+	     "ruleNo": 11234,
+	     "name": "EDI Payments transfer sub2 - Adella (HSBC YPE codes)",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "category", "op": "EQ", "value": "Overseas" },
+	       { "field": "sub1", "op": "EQ", "value": "Transfer" },
+	       { "field": "account", "op": "EQ", "value": "HSBC Savings" },
+	       { "field": "description", "op": "REGEX", "value": "\\b(?:YPE150262|YPE172844|YPE190486|YPE207379|YPE291247|YPE109054)\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Adella ShivaKumar" }
+	   },
+	   {
+	     "ruleNo": 11235,
+	     "name": "EDI Payments transfer sub2 - Ushamma (legacy HSBC format)",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "category", "op": "EQ", "value": "Overseas" },
+	       { "field": "sub1", "op": "EQ", "value": "Transfer" },
+	       { "field": "account", "op": "EQ", "value": "HSBC Savings" },
+	       { "field": "description", "op": "REGEX", "value": "^PAYMENT\\s+TO\\s+ICICI\\s+BANKLIMI\\-EDI\\s+PAYMTSPAYMENT\\s+TO\\s+ICICI\\s+BANKLIMI\\-EDI\\s+PAYMTS$" },
+	       { "field": "amount", "op": "GT", "value": -1500.0 },
+	       { "field": "amount", "op": "LT", "value": -1400.0 }
+	     ],
+	     "then": { "setSub2": "Ushamma" }
+	   },
+	   {
+	     "ruleNo": 11236,
+	     "name": "EDI Payments transfer sub2 - Indira (legacy HSBC format)",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "category", "op": "EQ", "value": "Overseas" },
+	       { "field": "sub1", "op": "EQ", "value": "Transfer" },
+	       { "field": "account", "op": "EQ", "value": "HSBC Savings" },
+	       { "field": "description", "op": "REGEX", "value": "^PAYMENT\\s+TO\\s+ICICI\\s+BANKLIMI\\-EDI\\s+PAYMTSPAYMENT\\s+TO\\s+ICICI\\s+BANKLIMI\\-EDI\\s+PAYMTS$" },
+	       { "field": "amount", "op": "GT", "value": -1200.0 },
+	       { "field": "amount", "op": "LT", "value": -1000.0 }
+	     ],
+	     "then": { "setSub2": "Indira" }
 	   }
   ]
 }
