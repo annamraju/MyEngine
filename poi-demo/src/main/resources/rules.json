@@ -12248,6 +12248,130 @@
 	       { "field": "amount", "op": "LT", "value": -1000.0 }
 	     ],
 	     "then": { "setSub2": "Indira" }
+	   },
+	   {
+	     "ruleNo": 11237,
+	     "name": "Education misc - Math Kangaroo tuition",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "MATH\\s+KANGAROO" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Tuition", "setSub3": "Math Kangaroo" }
+	   },
+	   {
+	     "ruleNo": 11238,
+	     "name": "Education misc - North South Foundation tuition",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "NORTH\\s+SOUTH\\s+FOUNDATION" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Tuition", "setSub3": "NORTH SOUTH FOUNDATION" }
+	   },
+	   {
+	     "ruleNo": 11239,
+	     "name": "Education misc - Myers tutoring tuition",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "MYERSTUTORING|MYERS\\s+TUTORING" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Tuition", "setSub3": "Myers" }
+	   },
+	   {
+	     "ruleNo": 11240,
+	     "name": "Education misc - Tophat tuition",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "^TOPHAT\\.COM\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Tuition", "setSub3": "Tophat" }
+	   },
+	   {
+	     "ruleNo": 11241,
+	     "name": "Education misc - Numerade tuition",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "NUMERADE" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Tuition", "setSub3": "Numerade" }
+	   },
+	   {
+	     "ruleNo": 11242,
+	     "name": "Education misc - Yearbook shopping legacy",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "^HERFF\\s+JONES\\s+YEARBOOK\\s+I$" },
+	       { "field": "date", "op": "ON_OR_BEFORE", "value": "2019-01-09" },
+	       { "field": "date", "op": "ON_OR_AFTER", "value": "2019-01-09" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Shopping", "setSub3": "Yearbook" }
+	   },
+	   {
+	     "ruleNo": 11243,
+	     "name": "Education misc - Pearson subscription on 2024-09-09",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "^AWL\\*PEARSON\\s+EDUCA(?:TION)?\\b" },
+	       { "field": "date", "op": "ON_OR_BEFORE", "value": "2024-09-09" },
+	       { "field": "date", "op": "ON_OR_AFTER", "value": "2024-09-09" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Subscription", "setSub3": "Pearson Education" }
+	   },
+	   {
+	     "ruleNo": 11244,
+	     "name": "Education misc - Top Hat subscription",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Misc" },
+	       { "field": "category", "op": "EQ", "value": "Expense" },
+	       { "field": "sub1", "op": "EQ", "value": "Education" },
+	       { "field": "description", "op": "REGEX", "value": "^TOP\\s+HAT\\s+\\(COURSEWA" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Subscription", "setSub3": "Tophat" }
 	   }
   ]
 }
