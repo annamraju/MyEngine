@@ -7386,7 +7386,9 @@
 	     ],
 	 "then": {
 	   "setCategory": "Income",
-	   "setSub1": "Refund/Reimbursement"
+	   "setSub1": "Refund/Reimbursement",
+	   "setSub2" : "Subscription",
+	   "setSub3" : "$MERCHANT"
 	 	}
 	 },
 	   {
@@ -8160,7 +8162,7 @@
 	   },	 	  
 	   {
 	     "ruleNo": 9955,
-	     "name": "Refund Amazon Digital",
+	     "name": "Refund Amazon Music",
 	     "enabled": true,
 	     "priority": 18,
 	     "stopOnMatch": true,
@@ -8173,7 +8175,7 @@
 	       {
 	         "field": "description",
 	         "op": "REGEX",
-	         "value": "\\bAMZN\\s+DIGITAL\\bSVCS\\b|\\bAMAZON\\s+DIGITAL\\bSVCS\\b"
+	         "value": "\\bAMAZON\\s+MUSIC"
 	       },
 	       {
 	         "field": "amount",
@@ -8185,7 +8187,7 @@
 	       "setCategory": "Income",
 		   "setSub1": "Refund/Reimbursement",
 	       "setSub2": "Subscription",
-	       "setSub3": "Amazon Digital"
+	       "setSub3": "Amazon"
 	     }
 	   },
 	   {
