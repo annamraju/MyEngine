@@ -502,7 +502,7 @@
       "canonicalName": "AMF University Lanes",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Bowling",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -628,13 +628,13 @@
 	    "byAmountSign": {
 	      "negative": {
 	        "category": "Expense",
-	        "sub1": "Misc",
+	        "sub1": "Miscellaneous",
 			"sub2" : "$MERCHANT"
 	      },
 	      "positive": {
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
-			"sub2" : "Misc",
+			"sub2" : "Miscellaneous",
 			"sub3" : "$MERCHANT"
 	      }
 	    }
@@ -801,7 +801,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
 	  "defaultSub2": "Food",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "BAKED\\s+BY\\s+MELISSA"
@@ -1044,7 +1044,7 @@
       "merchantId": "BENTO_DAVIE",
       "canonicalName": "Bento Davie",
       "defaultCategory": "Expense",
-      "defaultSub1": "Misc",
+      "defaultSub1": "Miscellaneous",
       "defaultSub2": "Bento Davie",
       "match": {
         "patterns": [
@@ -1121,7 +1121,7 @@
       "canonicalName": "BiryaniPot",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "Misc",
+      "defaultSub2": "Food",
       "match": {
         "patterns": [
           "BIRYANIPOT"
@@ -1537,8 +1537,9 @@
       "merchantId": "CAFE55",
       "canonicalName": "Cafe 55",
       "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
+	  "defaultSub1": "Travel",
+      "defaultSub2": "Food",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "CAFE\\s+55"
@@ -1639,7 +1640,7 @@
       "merchantId": "CANVA",
       "canonicalName": "Canva",
       "defaultCategory": "Expense",
-      "defaultSub1": "Misc",
+      "defaultSub1": "Miscellaneous",
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
@@ -2606,7 +2607,8 @@
       "canonicalName": "Duane Reade",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "$MERCHANT",
+	  "defaultSub2" : "Miscellaneous",
+      "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "DUANE\\s+READE\\b"
@@ -2823,7 +2825,7 @@
       "canonicalName": "Fairgrounds",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Misc",
+      "defaultSub2": "Miscellaneous",
 	  "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
@@ -3015,7 +3017,7 @@
       "canonicalName": "Florida Hospital Center Ice",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Florida Hospital Center Ice",
+      "defaultSub2": "Outing",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -3214,7 +3216,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
 	  "defaultSub2" : "Fireworks",
-      "defaultSub2": "Galaxy",
+      "defaultSub3": "Galaxy",
       "match": {
         "patterns": [
 			"\\bGALAXY\\s+FIREWORK\\b",
@@ -3753,7 +3755,7 @@
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "HYDERABAD\\s+BIRYANI"
+          "HYDERABAD\\s+BIRYANI\\s+HOUS"
         ]
       }
     },
@@ -4041,7 +4043,7 @@
 	},
 	{
 	  "merchantId": "TILAK_JEWELERS",
-	  "canonicalName": "Tilak Jewelers",
+	  "canonicalName": "Tilak Jewellers",
 	  "defaultCategory": "Expense",
 	  "defaultSub1": "Shopping",
 	  "defaultSub2": "$MERCHANT",
@@ -5559,7 +5561,7 @@
       "canonicalName": "MOSI",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Misc",
+      "defaultSub2": "Miscellaneous",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -5709,7 +5711,7 @@
     },
     {
       "merchantId": "NATURALIZER",
-      "canonicalName": "Naturalizer",
+      "canonicalName": "Naturalizer outlet",
       "defaultCategory": "Expense",
       "defaultSub1": "Shopping",
       "defaultSub2": "$MERCHANT",
@@ -5774,7 +5776,7 @@
       "canonicalName": "New Age Detailing",
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
-      "defaultSub2": "Cleaning",
+      "defaultSub2": "Car Wash",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -7410,7 +7412,7 @@
 	},
     {
       "merchantId": "SMOOTHIE",
-      "canonicalName": "Smoothie",
+      "canonicalName": "Smoothie King",
       "defaultCategory": "Expense",
       "defaultSub1": "Food",
       "defaultSub2": "$MERCHANT",
@@ -7730,7 +7732,7 @@
       "canonicalName": "Stellar Bay",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "Misc",
+      "defaultSub2": "Miscellaneous",
       "match": {
         "patterns": [
           "STELLAR\\s+BAY"
@@ -7896,7 +7898,7 @@
       "canonicalName": "Sway PartyBus",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-	  "defaultSub2": "Misc",	  
+	  "defaultSub2": "Miscellaneous",	  
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -9346,7 +9348,6 @@
           "TRAVEL\\s+NEWS\\s+SERVICES\\s+I\\s+HYDERABAD\\s+TEL",
           "TRIPLE\\s+O'S\\s+\\#202\\s+VANCOUVER\\s+BC",
           "TYROLIENNE\\s+MTL\\s+ZIPLINE\\s+MONTREAL\\s+QC",
-          "UNIVERSAL\\s+ORLA02200095\\s+ORLANDO\\s+FL",
           "URGENT\\s+CARE\\s+24/7\\s+CENTE\\s+ATLANTA\\s+GA",
           "VIDA\\s+BY\\s+SIP\\s+ME\\s+MAUI\\s+MAKAWAO\\s+HI",
           "VRBO\\s+HA72556257011889\\s+512\\-759\\-0902\\s+TX",
@@ -9630,7 +9631,8 @@
           "\\bUNIVERSAL\\s+ORLANDO\\s+WEBSIT\\b",
           "\\bUNIVERSA\\s+0?1410018\\b",
           "\\bSUPER\\s+SILLY\\b",
-          "\\bON\\s+LOCATION\\b"
+          "\\bON\\s+LOCATION\\b",
+		  "UNIVERSAL\\s+ORLA02200095\\s+ORLANDO\\s+FL"
         ]
       }
     },
@@ -10158,6 +10160,7 @@
 	  "canonicalName": "Pizza (any)",
 	  "defaultCategory": "Expense",
 	  "defaultSub1": "Food",
+	  "defaultSub2": "Pizza Miscellaneous",
 	  "match": {
 	    "patterns": [
 	      "\\bPIZZA\\b"
@@ -10172,14 +10175,14 @@
 	      "negative": {
 	        "category": "Expense",
 	        "sub1": "Education",
-			"sub2" : "Misc",
+			"sub2" : "Miscellaneous",
 			"sub3" : "$MERCHANT"
 	      },
 	      "positive": {
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
 			"sub2": "Education",
-			"sub3" : "Misc",
+			"sub3" : "Miscellaneous",
 			"sub4" : "$MERCHANT"
 	      }
 	    }
@@ -10199,13 +10202,13 @@
 	      "negative": {
 	        "category": "Expense",
 	        "sub1": "Food",
-			"sub2" : "Misc"
+			"sub2" : "Miscellaneous"
 	      },
 	      "positive": {
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
 			"sub2": "Food",
-			"sub3" : "Misc"			
+			"sub3" : "Miscellaneous"			
 	      }
 	    }
 	  },	  
@@ -10320,7 +10323,7 @@
 	    "merchantId": "MISC_DRYCLEAN_QUALITYPLUS",
 	    "canonicalName": "QUALITY PLUS DRY CLEAN",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Drycleaning",
 	    "defaultSub3": "",
 	    "match": {
@@ -10333,7 +10336,7 @@
 	    "merchantId": "MISC_SAFEBOX_RENTAL",
 	    "canonicalName": "SAFEBOX RENTAL",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Safebox Rental",
 	    "defaultSub3": "",
 	    "match": {
@@ -10346,7 +10349,7 @@
 	    "merchantId": "MISC_USPS",
 	    "canonicalName": "USPS",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "USPS",
 	    "defaultSub3": "",
 	    "match": {
@@ -10375,7 +10378,7 @@
 	    "merchantId": "MISC_UPS_STORE_4513",
 	    "canonicalName": "UPS STORE",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "UPS Store",
 	    "defaultSub3": "",
 	    "match": {
@@ -10389,7 +10392,7 @@
 	    "merchantId": "FEDEX",
 	    "canonicalName": "Fedex",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "$MERCHANT",
 	    "match": {
 	      "patterns": [
@@ -10405,7 +10408,7 @@
 	    "merchantId": "MISC_PR_ONLINE",
 	    "canonicalName": "P & R ONLINE",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "P&R Online",
 	    "defaultSub3": "",
 	    "match": {
@@ -10419,7 +10422,7 @@
 	    "merchantId": "MISC_AMEX_PAREN",
 	    "canonicalName": "MISC (AMEX)",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "AMEX CC",
 	    "defaultSub3": "",
 	    "match": {
@@ -10433,7 +10436,7 @@
 	    "merchantId": "MISC_DRIVE_ROADSIDE",
 	    "canonicalName": "DRIVE ROADSIDE",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Roadside Assistance",
 	    "defaultSub3": "",
 	    "match": {
@@ -10446,7 +10449,7 @@
 	    "merchantId": "MISC_TAMPA_BAY_TIMES",
 	    "canonicalName": "TAMPA BAY TIMES",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Tampa Bay Times",
 	    "defaultSub3": "",
 	    "match": {
@@ -10464,13 +10467,13 @@
 		    "negative": {
 		      "category": "Expense",
 			  "sub1" : "Education",
-		      "sub2": "Misc",
+		      "sub2": "Miscellaneous",
 			  "sub3" : "NSU"
 		    },
 		    "positive": {
 		      "category": "Income",
 		      "sub1": "Refund/Reimbursement",
-			  "sub2": "Misc",
+			  "sub2": "Miscellaneous",
 			  "sub3" : "NSU"			  
 		    }
 		  }
@@ -10487,7 +10490,7 @@
 	    "merchantId": "MISC_MCC_COMMON_GROUND",
 	    "canonicalName": "MCC COMMON GROUND",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "MCC",
 	    "defaultSub3": "",
 	    "match": {
@@ -10500,7 +10503,7 @@
 	    "merchantId": "MISC_BENTO_DAVIE",
 	    "canonicalName": "BENTO",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Bento",
 	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
@@ -10514,7 +10517,7 @@
 	    "merchantId": "MISC_HYATT_REGENCY",
 	    "canonicalName": "HYATT REGENCY",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Hyatt Regency",
 	    "defaultSub3": "",
 	    "match": {
@@ -10527,7 +10530,7 @@
 	    "merchantId": "MISC_THE_MARKET",
 	    "canonicalName": "THE MARKET",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "The Market",
 	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
@@ -10612,7 +10615,7 @@
 	    "merchantId": "MISC_APPLE_CASH",
 	    "canonicalName": "APPLE CASH",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "Apple Cash",
 	    "defaultSub3": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
@@ -10638,7 +10641,7 @@
 	    "merchantId": "LLC_ADMINISTRATION",
 	    "canonicalName": "LLC Administration",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "$MERCHANT",
 	    "match": {
 	      "patterns": [
@@ -10650,7 +10653,7 @@
 	    "merchantId": "EXPENSE_MISC",
 	    "canonicalName": "Misc",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "match": {
 	      "patterns": [
 	        "\\bLE\\s+TREND\\s+BOUTIQUE\\b",
@@ -11321,7 +11324,7 @@
 	    "merchantId": "GADGETS_REPAIR",
 	    "canonicalName": "Gadgets Repair",
 	    "defaultCategory": "Expense",
-	  "defaultSub1": "Misc",
+	  "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "$MERCHANT",
 	    "match": {
 	      "patterns": [
@@ -11351,7 +11354,7 @@
 	    "defaultCategory": "Expense",
 	  	"defaultSub1": "Recreation",
 	  	"defaultSub2": "Sports",
-	    "defaultSub3": "Misc",
+	    "defaultSub3": "Miscellaneous",
 	    "match": {
 	      "patterns": [
 	  			"\\bATH\\s+RAP\\s+RIVER\\s+RUN\\b",
@@ -11463,7 +11466,7 @@
 	    "merchantId": "STORE",
 	    "canonicalName": "Store",
 	    "defaultCategory": "Expense",
-	    "defaultSub1": "Misc",
+	    "defaultSub1": "Miscellaneous",
 	    "defaultSub2": "$MERCHANT",
 	    "match": {
 	      "patterns": [

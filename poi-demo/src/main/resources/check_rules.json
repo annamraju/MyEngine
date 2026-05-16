@@ -88,7 +88,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -97,7 +97,7 @@
       "checkNo": 190,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "to cultural program"
       }
     },
@@ -178,7 +178,7 @@
       "checkNo": 199,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -197,7 +197,7 @@
       "checkNo": 244,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -305,7 +305,7 @@
       "checkNo": 294,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -333,7 +333,7 @@
       "checkNo": 297,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -343,7 +343,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -389,7 +389,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -417,7 +417,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -427,7 +427,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -455,7 +455,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -474,7 +474,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -484,7 +484,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -494,7 +494,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -521,7 +521,7 @@
       "checkNo": 317,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -531,7 +531,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -609,7 +609,7 @@
       "checkNo": 326,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -856,7 +856,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -865,7 +865,7 @@
       "checkNo": 351,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -1014,7 +1014,7 @@
       "checkNo": 367,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Passport"
       }
     },
@@ -1024,7 +1024,7 @@
       "checkNo": 368,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Passport"
       }
     },
@@ -1087,7 +1087,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "Prajna"
       }
     },
@@ -1108,7 +1108,7 @@
       "checkNo": 376,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "to Bhaskar"
       }
     },
@@ -1129,7 +1129,7 @@
       "checkNo": 378,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Traffic ticket"
       }
     },
@@ -1331,7 +1331,7 @@
       "checkNo": 399,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Traffic Toll"
       }
     },
@@ -1502,7 +1502,7 @@
       "checkNo": 416,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "License Renewel"
       }
     },
@@ -1534,7 +1534,7 @@
       "checkNo": 419,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Bhaskara chappidi"
       }
     },
@@ -1638,7 +1638,7 @@
       "checkNo": 430,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Williams Mystic Buster"
       }
     },
@@ -1658,7 +1658,7 @@
       "checkNo": 432,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "strawbridge studios"
       }
     },
@@ -1678,7 +1678,7 @@
       "checkNo": 434,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -1687,7 +1687,7 @@
       "checkNo": 435,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Strawberry Studios"
       }
     },
@@ -1749,7 +1749,7 @@
       "checkNo": 441,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Strawberry Studios"
       }
     },
@@ -1782,7 +1782,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -1917,7 +1917,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -1946,7 +1946,7 @@
       "checkNo": 465,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -1956,7 +1956,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "Shyamas Art"
       }
     },
@@ -2072,7 +2072,7 @@
       "checkNo": 482,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Strawbridge Studies"
       }
     },
@@ -2187,7 +2187,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Utilities",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "Plumbing test"
       }
     },
@@ -2385,7 +2385,7 @@
       "checkNo": 512,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -2405,7 +2405,7 @@
       "checkNo": 515,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Strawbridge Studios"
       }
     },
@@ -2415,7 +2415,7 @@
       "checkNo": 516,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Raymond McKennie"
       }
     },
@@ -2466,7 +2466,7 @@
       "checkNo": 522,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Kevin Patterson"
       }
     },
@@ -2476,7 +2476,7 @@
       "checkNo": 523,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Sujaya Raviprakash"
       }
     },
@@ -2607,7 +2607,7 @@
       "checkNo": 536,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -2795,7 +2795,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Car Maintenance",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -3276,7 +3276,7 @@
       "checkNo": 611,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Mark Ritter"
       }
     },
@@ -3286,7 +3286,7 @@
       "checkNo": 612,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Home Movers"
       }
     },
@@ -3356,7 +3356,7 @@
       "checkNo": 621,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Passport"
       }
     },
@@ -3366,7 +3366,7 @@
       "checkNo": 622,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "US Department of State"
       }
     },
@@ -3409,7 +3409,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -3439,7 +3439,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "FBLA"
       }
     },
@@ -3481,7 +3481,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "FBLA"
       }
     },
@@ -3937,7 +3937,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -3983,7 +3983,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -3993,7 +3993,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -4002,7 +4002,7 @@
       "checkNo": 1014,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -4020,7 +4020,7 @@
       "checkNo": 1016,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -4030,7 +4030,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -4039,7 +4039,7 @@
       "checkNo": 1019,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -4049,7 +4049,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -4075,7 +4075,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc"
+        "setSub2": "Miscellaneous"
       }
     },
     {
@@ -4084,7 +4084,7 @@
       "checkNo": 1025,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -4093,7 +4093,7 @@
       "checkNo": 1033,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc"
+        "setSub1": "Miscellaneous"
       }
     },
     {
@@ -4245,7 +4245,7 @@
       "checkNo": 132,
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Ramprasad Catering"
       }
     }

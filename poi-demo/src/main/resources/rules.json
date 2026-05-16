@@ -59,30 +59,6 @@
         "setSub2": "Amazon Prime"
       }
     },
-    {
-      "ruleNo": 3,
-      "name": "Amazon - Shopping (default)",
-      "enabled": true,
-      "priority": 50,
-      "stopOnMatch": true,
-      "when": [
-        {
-          "field": "merchant",
-          "op": "EQ",
-          "value": "Amazon"
-        },
-        {
-          "field": "amount",
-          "op": "LT",
-          "value": 0
-        }
-      ],
-      "then": {
-        "setCategory": "Expense",
-        "setSub1": "Shopping",
-        "setSub2": "$MERCHANT"
-      }
-    },
 	{
 	  "ruleNo": 5,
 	  "name": "Merchant - ATM deposits GTEFCU",
@@ -137,7 +113,7 @@
 	  ],
 	  "then": {
 	    "setCategory": "Income",
-	    "setSub1": "Misc"
+	    "setSub1": "Miscellaneous"
 	  }
 	},
     {
@@ -1088,30 +1064,6 @@
       }
     },
     {
-      "ruleNo": 26,
-      "name": "Internal - GTE Online PMT",
-      "enabled": true,
-      "priority": 12,
-      "stopOnMatch": true,
-      "when": [
-        {
-          "field": "description",
-          "op": "REGEX",
-          "value": "GTE\\s+FINANCIAL\\s*-\\s*ONLINE\\s+PMT|ONLINE\\s+PMT"
-        },
-        {
-          "field": "description",
-          "op": "CONTAINS",
-          "value": "GTE"
-        }
-      ],
-      "then": {
-        "setCategory": "Internal",
-        "setSub1": "CreditCard",
-        "setSub2": "GTE FCU"
-      }
-    },
-    {
       "ruleNo": 27,
       "name": "Internal - GTE FIN CRDTCARD CREDIT",
       "enabled": true,
@@ -1223,7 +1175,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Check Order"
       }
     },
@@ -1824,31 +1776,6 @@
       }
     },
     {
-      "ruleNo": 185,
-      "name": "Travel - Universal (Orlando)",
-      "enabled": true,
-      "priority": 12,
-      "stopOnMatch": true,
-      "when": [
-        {
-          "field": "description",
-          "op": "REGEX",
-          "value": "(?:UNIVERSA\\s+0?1410018|SUPER\\s+SILLY|ON\\s+LOCATION)"
-        },
-        {
-          "field": "amount",
-          "op": "LT",
-          "value": 0
-        }
-      ],
-      "then": {
-        "setCategory": "Expense",
-        "setSub1": "Travel",
-        "setSub2": "Universal",
-        "setSub3": "Universal Orlando"
-      }
-    },
-    {
       "ruleNo": 186,
       "name": "Recreation - Veda Class - Kalenahalli",
       "enabled": true,
@@ -2157,7 +2084,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "To Ramesh Joshi",
         "setSub3": "",
         "setSub4": ""
@@ -2209,7 +2136,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2235,7 +2162,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2261,7 +2188,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2287,7 +2214,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2339,7 +2266,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2365,7 +2292,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2391,7 +2318,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2417,7 +2344,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2443,7 +2370,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "To BSR",
         "setSub3": "",
         "setSub4": ""
@@ -2469,7 +2396,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2599,7 +2526,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2703,7 +2630,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2729,7 +2656,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -2859,7 +2786,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3014,7 +2941,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3040,7 +2967,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3066,7 +2993,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3092,7 +3019,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3118,7 +3045,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3144,7 +3071,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3196,7 +3123,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3222,7 +3149,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3248,7 +3175,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3300,7 +3227,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3326,7 +3253,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3352,7 +3279,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3378,7 +3305,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3404,7 +3331,7 @@
       ],
       "then": {
         "setCategory": "Donation",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3430,7 +3357,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3456,7 +3383,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3482,7 +3409,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3508,7 +3435,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3534,7 +3461,7 @@
       ],
       "then": {
         "setCategory": "Donation",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3561,7 +3488,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "",
         "setSub4": ""
       },
@@ -3586,7 +3513,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Anjali Project Expenses",
         "setSub3": "",
         "setSub4": ""
@@ -3638,7 +3565,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3717,7 +3644,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "",
         "setSub4": ""
       },
@@ -3742,7 +3669,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3768,7 +3695,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3794,7 +3721,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3820,7 +3747,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3846,7 +3773,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3872,7 +3799,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -3976,7 +3903,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4002,7 +3929,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4054,7 +3981,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4080,7 +4007,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4106,7 +4033,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4132,7 +4059,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4158,7 +4085,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4184,7 +4111,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4210,7 +4137,7 @@
       ],
       "then": {
         "setCategory": "Internal",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4236,7 +4163,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4288,7 +4215,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4340,7 +4267,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4418,7 +4345,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4507,7 +4434,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4570,7 +4497,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "To BSR",
         "setSub3": "",
         "setSub4": ""
@@ -4777,7 +4704,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4798,7 +4725,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4913,7 +4840,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -4955,7 +4882,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5018,7 +4945,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5185,7 +5112,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5206,7 +5133,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5332,7 +5259,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5353,7 +5280,7 @@
       ],
       "then": {
         "setCategory": "Donation",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5374,7 +5301,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5416,7 +5343,7 @@
       ],
       "then": {
         "setCategory": "Donation",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5438,7 +5365,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Education",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "",
         "setSub4": ""
       }
@@ -5479,7 +5406,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "To Ramesh Joshi",
         "setSub3": "",
         "setSub4": ""
@@ -5500,7 +5427,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "Anjali Project Expenses",
         "setSub3": "",
         "setSub4": ""
@@ -5542,7 +5469,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5625,7 +5552,7 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Recreation",
-        "setSub2": "Misc",
+        "setSub2": "Miscellaneous",
         "setSub3": "",
         "setSub4": ""
       }
@@ -5771,7 +5698,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5855,7 +5782,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -5876,7 +5803,7 @@
       ],
       "then": {
         "setCategory": "Expense",
-        "setSub1": "Misc",
+        "setSub1": "Miscellaneous",
         "setSub2": "",
         "setSub3": "",
         "setSub4": ""
@@ -6321,7 +6248,7 @@
 		    "then": {
 		      "setCategory": "Expense",
 		      "setSub1": "Shopping",
-		      "setSub2": "Misc"
+		      "setSub2": "Miscellaneous"
 		    }
 		  },
 		  {
@@ -6340,7 +6267,7 @@
 		    "then": {
 		      "setCategory": "Expense",
 		      "setSub1": "Shopping",
-		      "setSub2": "Misc"
+		      "setSub2": "Miscellaneous"
 		    }
 		  },
 		  {
@@ -6515,13 +6442,13 @@
 	     {
 	       "field": "description",
 	       "op": "REGEX",
-	       "value": "(?:PHO\\s+TRUCK|BIRYANI\\s+HOUSE|SR\\s+TEQUILA|PEI\\s+WEI|PITA\\s+PIT|HAPPY\\s+COW|GREEN\\s+ISLAND|SNOW\\s+ROLLS|BURGERIM|INTERWICH\\s+CAFE|WING\\s+BOX|HOUSE\\s+OF\\s+SWE|TAP\\s+42|EDIBLE\\s+ARRANGEMENTS|AUNTIEANNES|JENI'?S\\s+SPLEN|TIJUANA\\s+TAXI)"
+	       "value": "(?:PHO\\s+TRUCK|CHINA\\s+3\\s+BIRYANI\\s+HOUSE|SR\\s+TEQUILA|PEI\\s+WEI|PITA\\s+PIT|HAPPY\\s+COW|GREEN\\s+ISLAND|SNOW\\s+ROLLS|BURGERIM|INTERWICH\\s+CAFE|WING\\s+BOX|HOUSE\\s+OF\\s+SWE|TAP\\s+42|EDIBLE\\s+ARRANGEMENTS|AUNTIEANNES|JENI'?S\\s+SPLEN|TIJUANA\\s+TAXI)"
 	     }
 	   ],
 	   "then": {
 	     "setCategory": "Expense",
 	     "setSub1": "Food",
-		 "setSub2" : "$PRUNED_MERCHANT"
+		 "setSub2" : "Miscellaneous"
 	   }
 	 },
 	 {
@@ -7191,7 +7118,7 @@
 	   "then": {
 	     "setCategory": "Expense",
 	     "setSub1": "Car Maintenance",
-	  	 "setSub2": "Misc"
+	  	 "setSub2": "Miscellaneous"
 	   }
 	 },
 	 {
@@ -7358,7 +7285,7 @@
 	     ],
 	 "then": {
 	   "setCategory": "Income",
-	   "setSub1": "Misc"
+	   "setSub1": "Miscellaneous"
 	 	}
 	 },	 
 	   {
@@ -7444,7 +7371,7 @@
 	     ],
 	 "then": {
 	   "setCategory": "Income",
-	   "setSub1": "Misc"
+	   "setSub1": "Miscellaneous"
 	 	}
 	 },
 	   {
@@ -7765,7 +7692,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },
 	   {
@@ -7950,7 +7877,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },	 	  
 	   {
@@ -7973,7 +7900,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },	 	  
 	   {
@@ -7996,7 +7923,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },	 	  
 	   {
@@ -8019,7 +7946,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },	 	  
 	   {
@@ -8042,7 +7969,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },	 	  
 	   {
@@ -8088,7 +8015,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Internal",
-	       "setSub1": "Misc"
+	       "setSub1": "Miscellaneous"
 	     }
 	   },
 	   {
@@ -8164,7 +8091,7 @@
 	     "ruleNo": 9955,
 	     "name": "Refund Amazon Music",
 	     "enabled": true,
-	     "priority": 18,
+	     "priority": 1,
 	     "stopOnMatch": true,
 	     "when": [
 			{
@@ -8175,7 +8102,7 @@
 	       {
 	         "field": "description",
 	         "op": "REGEX",
-	         "value": "\\bAMAZON\\s+MUSIC"
+	         "value": "AMAZON\\s+MUSIC"
 	       },
 	       {
 	         "field": "amount",
@@ -8564,7 +8491,7 @@
 	     ],
 	     "then": {
 	       "setCategory": "Income",
-	      "setSub1": "Misc",
+	      "setSub1": "Miscellaneous",
 	     "setSub2" : "Resale",
 		 "setSub3" : "Acura"
 	     }
@@ -9550,26 +9477,27 @@
 	     "priority": 20,
 	     "stopOnMatch": true,
 	     "when": [
-	   	{	
-	   	  "field": "merchant",
-	   	  "op": "EQ",
-	   	  "value": "Subway"
-	   	},
-	   {	
-	     "field": "description",
-	     "op": "REGEX",
-	     "value": "JACKSONVILLE|MONTREAL|IRVING|HIXSON"
-	   },
-	   {	
-	     "field": "amount",
-	     "op": "LT",
-	     "value": 0.0
-	   }
+			   	{	
+			   	  "field": "merchant",
+			   	  "op": "EQ",
+			   	  "value": "Subway"
+			   	},
+			   {	
+			     "field": "description",
+			     "op": "REGEX",
+			     "value": "JACKSONVILLE|MONTREAL|IRVING|HIXSON|ORLANDO"
+			   },
+			   {	
+			     "field": "amount",
+			     "op": "LT",
+			     "value": 0.0
+			   }
 	     ],
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Food"
+	     "setSub2" : "Food",
+		 "setSub3" : "Subway"
 	     }
 	   },
 	   {
@@ -10896,7 +10824,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "AIR\\s+VAC\\s+CONNECTION" }
 	     ],
 	     "then": { "setSub2": "Air Vac connection" }
@@ -10910,7 +10838,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "AVEDA\\s+INS\\s+4186" }
 	     ],
 	     "then": { "setSub2": "Aveda Ins" }
@@ -10924,7 +10852,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "BABYLON\\s+TATTOO\\s+SH" }
 	     ],
 	     "then": { "setSub2": "Babylon Tattoo" }
@@ -10938,7 +10866,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "CRAIGSLIST\\s+ORG" }
 	     ],
 	     "then": { "setSub2": "Craig list" }
@@ -10952,7 +10880,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "CVG\\s+GASLIGHT\\s+MARK" }
 	     ],
 	     "then": { "setSub2": "CVG Gaslight" }
@@ -10966,7 +10894,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "FLL\\s+TROPICAL\\s+EXCH" }
 	     ],
 	     "then": { "setSub2": "FL Tropical" }
@@ -10980,7 +10908,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "FTL\\s+CNBC\\s+T4" }
 	     ],
 	     "then": { "setSub2": "FTL CNBC" }
@@ -10994,7 +10922,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "FTL\\s+UNIVISION" }
 	     ],
 	     "then": { "setSub2": "FTL Univision" }
@@ -11008,7 +10936,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "H\\s+M0?600" }
 	     ],
 	     "then": { "setSub2": "H&M" }
@@ -11022,7 +10950,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "\\bIPPODO\\b" }
 	     ],
 	     "then": { "setSub2": "Ippodo" }
@@ -11036,7 +10964,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "LEXUS\\s+BAY\\s+COL|LEXUS\\s+OF\\s+TAMPA\\s+BAY\\s+COL" }
 	     ],
 	     "then": { "setSub2": "Pay for accident" }
@@ -11050,7 +10978,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "MIAMI\\s+NEWS\\s+NOW" }
 	     ],
 	     "then": { "setSub2": "Miami News Now" }
@@ -11064,7 +10992,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "NEW\\s+BALANCE\\s+0*016" }
 	     ],
 	     "then": { "setSub2": "New Balance *0016" }
@@ -11078,7 +11006,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "NNT\\s+H\\s+M0?800" }
 	     ],
 	     "then": { "setSub2": "NNT H&M" }
@@ -11092,7 +11020,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "NNT\\s+MIDTOWN\\s+BO" }
 	     ],
 	     "then": { "setSub2": "NNT Midtown" }
@@ -11106,7 +11034,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "PAYPAL\\s+FIELDPRIN" }
 	     ],
 	     "then": { "setSub2": "Paypal" }
@@ -11120,7 +11048,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "PAYPAL\\s+NRIINVESTIN" }
 	     ],
 	     "then": { "setSub2": "Paypal NRIINVETIMG" }
@@ -11134,7 +11062,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "RENAISSANCE\\s+DALLA" }
 	     ],
 	     "then": { "setSub2": "Renaissance" }
@@ -11148,7 +11076,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "SALVATION\\s+ARMY" }
 	     ],
 	     "then": { "setSub2": "Salvation Army" }
@@ -11162,7 +11090,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "GYMSHARK\\s+INC" }
 	     ],
 	     "then": { "setSub2": "GymShark" }
@@ -11176,7 +11104,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "\\bNOTARY\\b" }
 	     ],
 	     "then": { "setSub2": "Notary" }
@@ -11190,7 +11118,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "STATEMENT\\s+DELIVERY" }
 	     ],
 	     "then": { "setSub2": "Stmt Delivery charges" }
@@ -11204,7 +11132,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "LAS\\s+OLAS\\s+COMP" }
 	     ],
 	     "then": { "setSub2": "LAS OLAS COMP" }
@@ -11218,7 +11146,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "THEA\\s+COLLECT" }
 	     ],
 	     "then": { "setSub2": "Thea Collect" }
@@ -11232,7 +11160,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "BIG\\s+BUBBLE\\s+RA" }
 	     ],
 	     "then": { "setSub2": "Big Bubble" }
@@ -11246,7 +11174,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "TPA\\s+SQUARE\\s+1\\s+F" }
 	     ],
 	     "then": { "setSub2": "TPA Square 1F" }
@@ -11260,7 +11188,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "^TST\\s+HH\\b" }
 	     ],
 	     "then": { "setSub2": "TST* HH- Tampa" }
@@ -11274,7 +11202,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "LE\\s+PLUG\\s+PROT" }
 	     ],
 	     "then": { "setSub2": "Le Plug" }
@@ -11288,7 +11216,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "UN\\s+ATTIMO\\s+SP" }
 	     ],
 	     "then": { "setSub2": "UN Attimo" }
@@ -11302,7 +11230,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "UHI\\s+U\\s+HAULSTACK\\s+STOR|U\\s+HAULSTACK\\s+STOR" }
 	     ],
 	     "then": { "setSub2": "U-haul" }
@@ -11316,7 +11244,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "USCIS\\s+DALLAS\\s+DES\\s+PAYMENT" }
 	     ],
 	     "then": { "setSub2": "Immigration" }
@@ -11330,7 +11258,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "\\bUWORLD\\b" }
 	     ],
 	     "then": { "setSub2": "UWORLD" }
@@ -11344,7 +11272,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "\\bWILEY\\b" }
 	     ],
 	     "then": { "setSub2": "Wiley" }
@@ -11358,7 +11286,7 @@
 	     "when": [
 	       { "field": "merchant", "op": "EQ", "value": "Misc" },
 	       { "field": "category", "op": "EQ", "value": "Expense" },
-	       { "field": "sub1", "op": "EQ", "value": "Misc" },
+	       { "field": "sub1", "op": "EQ", "value": "Miscellaneous" },
 	       { "field": "description", "op": "REGEX", "value": "WINDSOR\\s+CORNE" }
 	     ],
 	     "then": { 
@@ -11385,7 +11313,7 @@
 	     ],
 	     "then": {
 			"setCategory": "Expense",
-			"setSub1": "Misc",
+			"setSub1": "Miscellaneous",
 			"setSub2" : "Passport Services"
 	     }
 	   },
@@ -12387,6 +12315,102 @@
 	       { "field": "amount", "op": "LT", "value": 0.0 }
 	     ],
 	     "then": { "setSub2": "Indian Kitchen" }
-	   }
+	   },
+	   {
+	     "ruleNo": 11246,
+	     "name": "Fees Refund - NSU",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Fees" },
+	       { "field": "description", "op": "REGEX", "value": "\\bNSU\\s+TUITION\\b" },
+	       { "field": "amount", "op": "GT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "NSU Tuition" }
+	   },
+	   {
+	     "ruleNo": 11247,
+	     "name": "Fees  - Creditcard fees",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Fees" },
+	       { "field": "description", "op": "REGEX", "value": "\\b479829065\\s+ANNAMRAJU\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Credit card fees" }
+	   },
+	   {
+	     "ruleNo": 11248,
+	     "name": "Fees  - Wire Transwfer fees",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Fees" },
+	       { "field": "description", "op": "REGEX", "value": "\\bWIRE\\s+FEE\\s+DOMESTIC\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Transfer" }
+	   },
+	   {
+	     "ruleNo": 11249,
+	     "name": "Fees  - Library fees",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Fees" },
+	       { "field": "description", "op": "REGEX", "value": "\\bLIBRARY\\s+SERVICES\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Library fee" }
+	   },
+	   {
+	     "ruleNo": 11250,
+	     "name": "ATM  - India Travel",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "ATM Operations" },
+	       { "field": "description", "op": "REGEX", "value": "ITM\\s+NEWTPA2" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "for india travel" }
+	   },
+	   {
+	     "ruleNo": 11251,
+	     "name": "EDI Payments  - special #1",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	       { "field": "description", "op": "REGEX", "value": "PAYMENT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTSPAYMENT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTS" },
+	       { "field": "amount", "op": "LT", "value": -150.00 },
+		   { "field":  "date", "op": "ON_OR_BEFORE", "value": "2018-08-28"},
+		   { "field":  "date", "op": "ON_OR_AFTER", "value": "2018-08-28"}		   
+	     ],
+     	"then": { "setSub2": "Ushamma" }
+	   },
+	     {
+	       "ruleNo": 11252,
+	       "name": "EDI Payments  - special #2",
+	       "enabled": true,
+	       "priority": 18,
+	       "stopOnMatch": true,
+	       "when": [
+	         { "field": "merchant", "op": "EQ", "value": "EDI Payments" },
+	         { "field": "description", "op": "REGEX", "value": "PAYMENT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTSPAYMENT\\s+ICICI\\s+BANKLIMI\\s+EDI\\s+PAYMTS" },
+	         { "field": "amount", "op": "LT", "value": 0.0 },
+	      	 { "field":  "date", "op": "ON_OR_BEFORE", "value": "2018-09-06"},
+	         { "field":  "date", "op": "ON_OR_AFTER", "value": "2018-09-06"}
+	       ],
+	   		"then": { "setSub2": "Indira" }
+	     }
+	   
   ]
 }
