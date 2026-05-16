@@ -12372,6 +12372,19 @@
 	       { "field": "amount", "op": "LT", "value": 0.0 }
 	     ],
 	     "then": { "setSub2": "Subscription", "setSub3": "Tophat" }
+	   },
+	   {
+	     "ruleNo": 11245,
+	     "name": "Indian Kitchen - fort lauderdale",
+	     "enabled": true,
+	     "priority": 18,
+	     "stopOnMatch": true,
+	     "when": [
+	       { "field": "merchant", "op": "EQ", "value": "Indian Kitchen" },
+	       { "field": "description", "op": "REGEX", "value": "\\bINC\\s+FORT\\s+LAUDERDAFL\\b" },
+	       { "field": "amount", "op": "LT", "value": 0.0 }
+	     ],
+	     "then": { "setSub2": "Indian Kitchen" }
 	   }
   ]
 }
