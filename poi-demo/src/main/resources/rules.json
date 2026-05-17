@@ -6442,7 +6442,7 @@
 	     {
 	       "field": "description",
 	       "op": "REGEX",
-	       "value": "(?:PHO\\s+TRUCK|CHINA\\s+3\\s+BIRYANI\\s+HOUSE|SR\\s+TEQUILA|PEI\\s+WEI|PITA\\s+PIT|HAPPY\\s+COW|GREEN\\s+ISLAND|SNOW\\s+ROLLS|BURGERIM|INTERWICH\\s+CAFE|WING\\s+BOX|HOUSE\\s+OF\\s+SWE|TAP\\s+42|EDIBLE\\s+ARRANGEMENTS|AUNTIEANNES|JENI'?S\\s+SPLEN|TIJUANA\\s+TAXI)"
+	       "value": "(?:PHO\\s+TRUCK|CHINA\\s+3\\s+BIRYANI\\s+HOUSE|SR\\s+TEQUILA|PEI\\s+WEI|PITA\\s+PIT|HAPPY\\s+COW|GREEN\\s+ISLAND|SNOW\\s+ROLLS|BURGERIM|WING\\s+BOX|HOUSE\\s+OF\\s+SWE|TAP\\s+42|EDIBLE\\s+ARRANGEMENTS|AUNTIEANNES|JENI'?S\\s+SPLEN|TIJUANA\\s+TAXI)"
 	     }
 	   ],
 	   "then": {
@@ -10688,7 +10688,7 @@
 	   		{
 	     		"field": "merchant",
 	     		"op": "EQ",
-	   			"value" : "HOA"
+	   			"value" : "HOA/CDD"
 	   		},
 	   		{
 	   		"field": "description",
@@ -11851,7 +11851,10 @@
 	       { "field": "description", "op": "REGEX", "value": "AWL\\s+PEARSON|PEARSON\\s+EDUCATION" },
 	       { "field": "amount", "op": "LT", "value": 0.0 }
 	     ],
-	     "then": { "setSub3": "Pearson Education" }
+	     "then": { 
+			"setSub2": "Subscription", 
+			"setSub3": "Pearson Education" 
+		}
 	   },
 	   {
 	     "ruleNo": 11215,
@@ -12081,7 +12084,10 @@
 	       { "field": "description", "op": "REGEX", "value": "\\bXXXXX18783\\b" },
 	       { "field": "amount", "op": "GT", "value": 0.0 }
 	     ],
-	     "then": { "setSub2": "Cross Creek HOA" }
+	     "then": { 
+			"setSub2": "HOA/CDD",
+			"setSub3" : "Cross Creek" 
+		}
 	   },
 	   {
 	     "ruleNo": 11231,
@@ -12410,7 +12416,20 @@
 	         { "field":  "date", "op": "ON_OR_AFTER", "value": "2018-09-06"}
 	       ],
 	   		"then": { "setSub2": "Indira" }
-	     }
+	     },
+		 {
+		   "ruleNo": 11253,
+		   "name": "ATM  - Cash",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		     { "field": "merchant", "op": "EQ", "value": "ATM Operations" },
+		     { "field": "description", "op": "REGEX", "value": "4294210614" },
+		     { "field": "amount", "op": "LT", "value": 0.0 }
+		   ],
+		 	"then": { "setSub2": "Cash" }
+		 }
 	   
   ]
 }

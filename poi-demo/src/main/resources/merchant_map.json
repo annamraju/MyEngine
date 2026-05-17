@@ -1674,7 +1674,7 @@
     },
     {
       "merchantId": "CARTER",
-      "canonicalName": "Carter",
+      "canonicalName": "Carters",
       "defaultCategory": "Expense",
       "defaultSub1": "Shopping",
       "defaultSub2": "$MERCHANT",
@@ -1712,8 +1712,9 @@
 	      "positive": {
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
-			"sub2" : "Insurance",
-			"sub3" : "$MERCHANT"			
+			"sub2": "Home Maintenance",			
+			"sub3" : "Insurance",
+			"sub4" : "$MERCHANT"			
 	      }
 	    }
 	  },	  
@@ -1904,18 +1905,6 @@
       }
     },
     {
-      "merchantId": "CHIPOTLE",
-      "canonicalName": "Chipotle",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "CHIPOTLE"
-        ]
-      }
-    },
-    {
       "merchantId": "CHRISTIAN_BROTHERS",
       "canonicalName": "Christian Brothers",
       "defaultCategory": "Expense",
@@ -2030,6 +2019,21 @@
         ]
       }
     },
+	{
+	  "merchantId": "PAPAYA_CLOTHING",
+	  "canonicalName": "Papaya Clothing",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Shopping",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+	      "\\bPAPAYA\\s+CLOTHING\\b",
+	      "\\bPAPAYA\\s+CLOTHING\\s+FLM\\b",
+	      "PAPAYA\\s+CLOTHING",
+	      "\\bPAPAYA\\b"
+	    ]
+	  }
+	},	
     {
       "merchantId": "CLOTHING",
       "canonicalName": "Clothing",
@@ -2136,7 +2140,7 @@
       "canonicalName": "Corporate Custom",
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
-      "defaultSub2": "bodyshop",
+      "defaultSub2": "Bodyshop",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -2552,6 +2556,18 @@
         ]
       }
     },
+	{
+	  "merchantId": "CHIPOTLE",
+	  "canonicalName": "Chipotle",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Food",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+	      "CHIPOTLE"
+	    ]
+	  }
+	},	
     {
       "merchantId": "DOSA_HUT",
       "canonicalName": "Dosa Hut",
@@ -2681,7 +2697,7 @@
     },
     {
       "merchantId": "EINSTEIN",
-      "canonicalName": "Einstein",
+      "canonicalName": "Einstein Bagels",
       "defaultCategory": "Expense",
       "defaultSub1": "Food",
       "defaultSub2": "$MERCHANT",
@@ -2825,8 +2841,8 @@
       "canonicalName": "Fairgrounds",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
-      "defaultSub2": "Miscellaneous",
-	  "defaultSub2": "$MERCHANT",
+      "defaultSub2": "Outing",
+	  "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bFAIRGROUNDS\\b",
@@ -3139,18 +3155,6 @@
         "patterns": [
           "FRESH\\s+MKT",
           "FRESH\\s+MARKET"
-        ]
-      }
-    },
-    {
-      "merchantId": "FRIENDLYFOODSEN",
-      "canonicalName": "FRIENDLYFOODSEN",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "FRIENDLYFOODSEN"
         ]
       }
     },
@@ -3601,7 +3605,7 @@
     },
     {
       "merchantId": "HOA",
-      "canonicalName": "HOA",
+      "canonicalName": "HOA/CDD",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "$MERCHANT",
@@ -3868,6 +3872,18 @@
         ]
       }
     },
+	{
+	  "merchantId": "RAAGA",
+	  "canonicalName": "Raaga",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Food",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+	      "RAAGA\\s+INDIAN\\s+KITCHEN"
+	    ]
+	  }
+	},
     {
       "merchantId": "INDIAN_KITCHEN",
       "canonicalName": "Indian Kitchen",
@@ -3885,7 +3901,7 @@
       "canonicalName": "Indian Mangoes",
       "defaultCategory": "Expense",
       "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
+      "defaultSub2": "Farmtable LLC",
       "match": {
         "patterns": [
           "FARMTABLE"
@@ -4690,7 +4706,7 @@
       "canonicalName": "Lakeside Heating Cooling & Plumbing",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
-      "defaultSub2": "Lakeside Heating & Cooling",
+      "defaultSub2": "Service",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -4806,7 +4822,7 @@
       "canonicalName": "Liberty of the Seas",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
-      "defaultSub2": "Liberty of the Seas",
+      "defaultSub2": "Cruise",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -5260,7 +5276,7 @@
 	  "canonicalName": "Misc",
 	  "defaultCategory": "Expense",
 	  "defaultSub1": "Education",
-	  "defaultSub2": "$MERCHANT",
+	  "defaultSub2": "Miscellaneous",
 	  "match": {
 	    "patterns": [
 	      "\\bMATH\\b",
@@ -6115,21 +6131,6 @@
       }
     },
     {
-      "merchantId": "PAPAYA_CLOTHING",
-      "canonicalName": "Papaya Clothing",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Shopping",
-      "defaultSub2": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "\\bPAPAYA\\s+CLOTHING\\b",
-          "\\bPAPAYA\\s+CLOTHING\\s+FLM\\b",
-          "PAPAYA\\s+CLOTHING",
-          "\\bPAPAYA\\b"
-        ]
-      }
-    },
-    {
       "merchantId": "PAPA_JOHNS",
       "canonicalName": "Papa Johns",
       "defaultCategory": "Expense",
@@ -6799,18 +6800,6 @@
       }
     },
     {
-      "merchantId": "RAAGA",
-      "canonicalName": "Raaga",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Food",
-      "defaultSub2": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "RAAGA"
-        ]
-      }
-    },
-    {
       "merchantId": "RAAZ",
       "canonicalName": "Raaz",
       "defaultCategory": "Expense",
@@ -7411,17 +7400,29 @@
 	  }
 	},
     {
-      "merchantId": "SMOOTHIE",
+      "merchantId": "SMOOTHIE_KING",
       "canonicalName": "Smoothie King",
       "defaultCategory": "Expense",
       "defaultSub1": "Food",
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "SMOOTHIE"
+          "\\bSMOOTHIE\\s+KING\\b"
         ]
       }
     },
+	{
+	  "merchantId": "SMOOTHIES",
+	  "canonicalName": "Smoothies",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Food",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+	      "\\bSMOOTHIES\\b"
+	    ]
+	  }
+	},
     {
       "merchantId": "SNACK_SHACK",
       "canonicalName": "Snack Shack",
@@ -8668,7 +8669,6 @@
 		  "\\bAIRSIDE\\s+A\\s+GIFT10196061\\b",
 		  "\\bMETROCARD\\b",
 		  "\\bFRANKFURT\\s+AM\\s+DEU",
-		  "^T\\s+KOMODA\\s+(?:STORE\\s+)?(?:AND\\s+)BAKE\\b",
 		  "\\bSMITH\\s+STORE\\s+NASM\\b",
 		  "\\bBURLINGTON\\s+NC$"
         ]
@@ -8968,6 +8968,7 @@
 		  },
 		  "match": {
 		    "patterns": [
+				"^T\\s+KOMODA\\s+(?:STORE\\s+)?(?:AND\\s+)BAKE\\b",				
 		      "BURRITO\\s+JIMMY\\s+IRVING\\s+TX",
 		      "\\bC1\\s+GLOBAL\\s+BAZAAR\\b",
 		      "DORRIAN\\s+S\\s+RESTAURA\\s+JERSEY\\s+CITY\\s+NJ",
@@ -9399,6 +9400,8 @@
 	  "match": {
 	    "type": "REGEX_ANY",
 	    "patterns": [
+			"FRIENDLYFOODSEN\\s+ORLANDO",
+			"INTERWICH\\s+CAFE\\s+FLUSHING\\s+NY",
 			"PANINI'S\\s+LONDON\\s+GB",
 			"PANINIÆ‹…\\s+LONDON\\s+GB",
 			"THE\\s+COPPER\\s+CHIMNEY\\s+RES\\s+VANCOUVER\\s+BC",
@@ -10473,8 +10476,9 @@
 		    "positive": {
 		      "category": "Income",
 		      "sub1": "Refund/Reimbursement",
-			  "sub2": "Miscellaneous",
-			  "sub3" : "NSU"			  
+			  "sub2": "Education",
+			  "sub3": "Miscellaneous",
+			  "sub4" : "NSU"			  
 		    }
 		  }
 		},		
@@ -10958,6 +10962,7 @@
 	    "canonicalName": "Investment Returns",
 	    "defaultCategory": "Income",
 	    "defaultSub1": "$MERCHANT",
+		"defaultSub2": "Securities",
 	    "match": {
 	      "patterns": [
 	        "MSPBNA\\s+ACH\\s+TRNSFR\\s+PPD\\b",
