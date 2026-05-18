@@ -639,7 +639,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Shopping",
-        "setSub2": "Verizon Wireless"
+        "setSub2": "Verizon Wireless",
+		"setSub3" : ""
       }
     },
     {
@@ -9147,7 +9148,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Gas"
+	     	"setSub2" : "Gas",
+	 		"setSub2" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -9292,7 +9294,7 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Shopping",
-	     "setSub2" : "Doordash"
+	     "setSub2" : "Target"
 	     }
 	   },
 	   {
@@ -9699,7 +9701,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Food"
+		     "setSub2" : "Food",
+			 "setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -12429,7 +12432,20 @@
 		     { "field": "amount", "op": "LT", "value": 0.0 }
 		   ],
 		 	"then": { "setSub2": "Cash" }
+		 },
+		 {
+		   "ruleNo": 11254,
+		   "name": "HOA  - Bassett",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		     { "field": "merchant", "op": "EQ", "value": "HOA/CDD" },
+		     { "field": "description", "op": "REGEX", "value": "BASSET" },
+		     { "field": "amount", "op": "LT", "value": 0.0 }
+		   ],
+		 	"then": { "setSub3": "Basset Creek" }
 		 }
-	   
+		 
   ]
 }

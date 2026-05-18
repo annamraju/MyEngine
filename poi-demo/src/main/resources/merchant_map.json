@@ -540,8 +540,8 @@
       }
     },
     {
-      "merchantId": "AOMCO",
-      "canonicalName": "Aomco",
+      "merchantId": "AMOCO",
+      "canonicalName": "Amoco",
       "defaultCategory": "Expense",
       "defaultSub1": "Car Maintenance",
       "defaultSub2": "Gas",
@@ -3609,6 +3609,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "$MERCHANT",
+	  "defaultSub3": "Cross Creek",
       "match": {
         "patterns": [
           "CROSSCREEKII\\s+MASTER\\s+ASSOCIATION",
@@ -5272,6 +5273,19 @@
 	  }
 	},
 	{
+	  "merchantId": "TOPHAT_EDUCATION",
+	  "canonicalName": "Tophat",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Education",
+	  "defaultSub2": "Subscription",
+	  "defaultSub3": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+			"\\bTOP\\s+HAT\\s+COURSEWA\\b"
+	    ]
+	  }
+	},
+	{
 	  "merchantId": "EDUCATION_MISC",
 	  "canonicalName": "Misc",
 	  "defaultCategory": "Expense",
@@ -5305,7 +5319,6 @@
 		  "\\bNUMERADE\\b",
 		  "^PADMAJA\\s+DONTARAJU\\s+IDES$",
 		  "\\bAWL\\s+PEARSON\\s+EDUCATION\\b",
-		  "\\bTOP\\s+HAT\\s+COURSEWA\\b",
 		  "\\bWL\\s+VUE\\s+AAMC\\s+EXAM\\b"
 	    ]
 	  }
