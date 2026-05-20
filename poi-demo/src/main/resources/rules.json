@@ -931,8 +931,8 @@
         },
         {
           "field": "description",
-          "op": "CONTAINS",
-          "value": "Bill Payment"
+          "op": "REGEX",
+          "value": "BILL\\s+PAYMENT$"
         },
         {
           "field": "amount",
@@ -9149,7 +9149,7 @@
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
 	     	"setSub2" : "Gas",
-	 		"setSub2" : "$MERCHANT"
+	 		"setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -12445,6 +12445,35 @@
 		     { "field": "amount", "op": "LT", "value": 0.0 }
 		   ],
 		 	"then": { "setSub3": "Basset Creek" }
+		 },
+		 {
+		   "ruleNo": 11255,
+		   "name": "Internal - Chase Credit Cards Bill Payment Anantha",
+		   "enabled": true,
+		   "priority": 12,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "merchant",
+		       "op": "EQ",
+		       "value": "Chase Credit Cards"
+		     },
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "BILL\\s+PAYMENT\\s+BUSINESS$$"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "LT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Internal",
+		     "setSub1": "CreditCard",
+		     "setSub2": "Chase CC (Anantha)"
+		   }
 		 }
 		 
   ]
