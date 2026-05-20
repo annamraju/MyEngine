@@ -24,6 +24,8 @@ public class LedgerRecordCategorizer {
     private static final String MACRO_MERCHANT = "$MERCHANT";   // canonical merchant name
     private static final String MACRO_MERCHANT_ID = "$MERCHANT_ID"; // merchantId from merchant_map.json (optional)
     private static final String MACRO_PRUNED_MERCHANT = "$PRUNED_MERCHANT";
+    private static final String MACRO_BLANK = "$BLANK"; // explicit clear token for rule actions
+    private static final String EXPLICIT_BLANK_SENTINEL = "__EXPLICIT_BLANK__";
 
     // NEW: macros based on the *normalized* description (same normalization used for rule matching)
     private static final String MACRO_DESC_NORM = "$DESC_NORM";
@@ -216,6 +218,7 @@ public class LedgerRecordCategorizer {
                 }
                 if (chkActions != null) {
                     CategoryResult chkRes = applyActions(r, "CHECK", null, chkActions);
+                    chkRes = materializeExplicitBlanks(chkRes);
                     Integer chkRuleNo = CHECK_RULE_OFFSET + checkNo;
 
                     // Do NOT fall through to other rules or merchant defaults
@@ -359,6 +362,7 @@ public class LedgerRecordCategorizer {
                 }
             }
 **********/            
+            res = materializeExplicitBlanks(res);
             //TODO: writeBackToRecord(r, res);
             return new CategorizationResult(r, merchant, merchantID, matchedAny, matchedRuleNo, res);
         }
@@ -539,11 +543,27 @@ public class LedgerRecordCategorizer {
             if (!isBlank(a.setSub3)) r.setSubCategory3(a.setSub3);
             if (!isBlank(a.setSub4)) r.setSubCategory4(a.setSub4);
             */
-            if (!isBlank(a.setCategory)) res.r_category = resolveMacro(a.setCategory, r, merchant, mh);
-            if (!isBlank(a.setSub1)) res.r_sub1 = resolveMacro(a.setSub1, r, merchant, mh);
-            if (!isBlank(a.setSub2)) res.r_sub2 = resolveMacro(a.setSub2, r, merchant, mh);
-            if (!isBlank(a.setSub3)) res.r_sub3 = resolveMacro(a.setSub3, r, merchant, mh);
-            if (!isBlank(a.setSub4)) res.r_sub4 = resolveMacro(a.setSub4, r, merchant, mh);
+            res.r_category = resolveActionValue(a.setCategory, r, merchant, mh);
+            res.r_sub1 = resolveActionValue(a.setSub1, r, merchant, mh);
+            res.r_sub2 = resolveActionValue(a.setSub2, r, merchant, mh);
+            res.r_sub3 = resolveActionValue(a.setSub3, r, merchant, mh);
+            res.r_sub4 = resolveActionValue(a.setSub4, r, merchant, mh);
+            return res;
+        }
+
+        private String resolveActionValue(String raw, LedgerRecord r, String merchant, MerchantHit mh) {
+            if (isBlank(raw)) return null;
+            if (MACRO_BLANK.equalsIgnoreCase(raw.trim())) return EXPLICIT_BLANK_SENTINEL;
+            return resolveMacro(raw, r, merchant, mh);
+        }
+
+        private CategoryResult materializeExplicitBlanks(CategoryResult res) {
+            if (res == null) return null;
+            if (EXPLICIT_BLANK_SENTINEL.equals(res.r_category)) res.r_category = null;
+            if (EXPLICIT_BLANK_SENTINEL.equals(res.r_sub1)) res.r_sub1 = null;
+            if (EXPLICIT_BLANK_SENTINEL.equals(res.r_sub2)) res.r_sub2 = null;
+            if (EXPLICIT_BLANK_SENTINEL.equals(res.r_sub3)) res.r_sub3 = null;
+            if (EXPLICIT_BLANK_SENTINEL.equals(res.r_sub4)) res.r_sub4 = null;
             return res;
         }
         
