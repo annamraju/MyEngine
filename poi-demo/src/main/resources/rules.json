@@ -640,7 +640,7 @@
         "setCategory": "Expense",
         "setSub1": "Shopping",
         "setSub2": "Verizon Wireless",
-		"setSub3" : ""
+		"setSub3" : "$BLANK"
       }
     },
     {
