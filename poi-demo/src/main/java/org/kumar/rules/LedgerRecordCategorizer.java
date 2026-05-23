@@ -289,7 +289,7 @@ public class LedgerRecordCategorizer {
              * 
              */
 
-            // Apply merchant defaults only if category/sub1..sub3 are blank
+            // Apply merchant defaults only if category/sub1..sub4 are blank
             if (mh != null) {
 
                 // Start with legacy defaults (backward compatible)
@@ -297,6 +297,7 @@ public class LedgerRecordCategorizer {
                 String dSub1 = mh.defaultSub1;
                 String dSub2 = mh.defaultSub2;
                 String dSub3 = mh.defaultSub3;
+                String dSub4 = mh.defaultSub4;
 
                 // Prefer v3 defaults.base (if present)
                 if (mh.defaults != null && mh.defaults.base != null) {
@@ -305,6 +306,7 @@ public class LedgerRecordCategorizer {
                     if (!isBlank(b.sub1))     dSub1 = b.sub1;
                     if (!isBlank(b.sub2))     dSub2 = b.sub2;
                     if (!isBlank(b.sub3))     dSub3 = b.sub3;
+                    if (!isBlank(b.sub4))     dSub4 = b.sub4;
                 }
 
                 // Override via v3 defaults.byAmountSign (if present)
@@ -323,6 +325,7 @@ public class LedgerRecordCategorizer {
                         if (!isBlank(blk.sub1))     dSub1 = blk.sub1;
                         if (!isBlank(blk.sub2))     dSub2 = blk.sub2;
                         if (!isBlank(blk.sub3))     dSub3 = blk.sub3;
+                        if (!isBlank(blk.sub4))     dSub4 = blk.sub4;
                     }
                 }
 
@@ -342,6 +345,10 @@ public class LedgerRecordCategorizer {
                 if ((res == null || isBlank(res.r_sub3)) && !isBlank(dSub3)) {
                     if (res == null) res = new CategoryResult();
                     res.r_sub3 = resolveMacro(dSub3, r, merchant, mh);
+                }
+                if ((res == null || isBlank(res.r_sub4)) && !isBlank(dSub4)) {
+                    if (res == null) res = new CategoryResult();
+                    res.r_sub4 = resolveMacro(dSub4, r, merchant, mh);
                 }
             }
             r.setMerchant(merchant);
@@ -797,7 +804,7 @@ public class LedgerRecordCategorizer {
                     if (p.matcher(normalized).find()) {
                         MerchantEntry e = mc.entry;
                         // UPDATED: include defaultSub3
-                        return new MerchantHit(e.merchantId, e.canonicalName, e.defaultCategory, e.defaultSub1, e.defaultSub2, e.defaultSub3, e.defaults);
+                        return new MerchantHit(e.merchantId, e.canonicalName, e.defaultCategory, e.defaultSub1, e.defaultSub2, e.defaultSub3, e.defaultSub4, e.defaults);
                     }
                 }
             }
@@ -865,6 +872,7 @@ public class LedgerRecordCategorizer {
                                 e.defaultSub1,
                                 e.defaultSub2,
                                 e.defaultSub3,
+                                e.defaultSub4,
                                 e.defaults
                         );
                     }
@@ -943,6 +951,7 @@ public class LedgerRecordCategorizer {
         public final String defaultSub1;
         public final String defaultSub2;
         public final String defaultSub3;
+        public final String defaultSub4;
 
         // Unified v3 defaults (preferred)
         public final DefaultsV3 defaults;
@@ -954,6 +963,7 @@ public class LedgerRecordCategorizer {
                 String defaultSub1,
                 String defaultSub2,
                 String defaultSub3,
+                String defaultSub4,
                 DefaultsV3 defaults
         ) {
             this.merchantId = merchantId;
@@ -962,6 +972,7 @@ public class LedgerRecordCategorizer {
             this.defaultSub1 = defaultSub1;
             this.defaultSub2 = defaultSub2;
             this.defaultSub3 = defaultSub3;
+            this.defaultSub4 = defaultSub4;
             this.defaults = defaults;
         }
     }
@@ -994,6 +1005,7 @@ public class LedgerRecordCategorizer {
         public String defaultSub1;
         public String defaultSub2;
         public String defaultSub3; // your JSON already uses this in some entries
+        public String defaultSub4;
 
         // Unified v3 defaults (preferred)
         public DefaultsV3 defaults;
@@ -1019,6 +1031,7 @@ public class LedgerRecordCategorizer {
         public String sub1;
         public String sub2;
         public String sub3;
+        public String sub4;
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
