@@ -443,7 +443,7 @@
       }
     },
     {
-      "merchantId": "AMC_STARLIGHT",
+      "merchantId": "AMC_MOVIES",
       "canonicalName": "AMC",
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
@@ -454,7 +454,15 @@
           "\\bAMC\\s+4187\\b",
           "\\bAMC\\s+4187\\s+STARLIGHT\\s+20\\b",
           "\\b4187\\s+AMC\\s+STARLIGH\\b",
-		  "^AMC\\s+(?:0588\\s+|9640\\s+)?(?:ONLINE\\s+)?(?:AVENTURA\\s+)?"
+		  "^AMC\\s+(?:0588\\s+|9640\\s+)?(?:ONLINE\\s+)?(?:AVENTURA\\s+)?",
+	      "\\bMUVICO\\s+STARLIGHT\\b",
+	      "\\bREDBOX\\b",
+	      "\\bREDBOX\\s+\\*DVD\\s+RENTAL\\b",
+	  "\\bSTARLIGHT\\s+20\\b",
+	  "\\b073076\\s+STARLIGHT\\s+20\\b",
+	  "\\bSTARLIGHT\\s+20\\s+TAMPA\\b",
+	  "\\bHIGHWOODS\\s+20\\b",
+	  "\\bFUN\\s+MOVIE\\s+GRILL\\b"
         ]
       }
     },
@@ -5638,19 +5646,6 @@
       }
     },
     {
-      "merchantId": "MUVICO_STARLIGHT",
-      "canonicalName": "Muvico",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Entertainment",
-      "defaultSub2": "Movies",
-      "defaultSub3": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "\\bMUVICO\\s+STARLIGHT\\b"
-        ]
-      }
-    },
-    {
       "merchantId": "MYTHRI",
       "canonicalName": "Mythri",
       "defaultCategory": "Expense",
@@ -6854,20 +6849,6 @@
       }
     },
     {
-      "merchantId": "REDBOX",
-      "canonicalName": "Redbox",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Entertainment",
-      "defaultSub2": "Movies",
-      "defaultSub3": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "\\bREDBOX\\b",
-          "\\bREDBOX\\s+\\*DVD\\s+RENTAL\\b"
-        ]
-      }
-    },
-    {
       "merchantId": "REDCOACH",
       "canonicalName": "Redcoach",
       "defaultCategory": "Expense",
@@ -7696,23 +7677,6 @@
           "STARBUCKS\\s+N",
           "NSUSTARBUCKS",
           "STARBUCKS"
-        ]
-      }
-    },
-    {
-      "merchantId": "STARLIGHT_20",
-      "canonicalName": "Starlight 20",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Entertainment",
-      "defaultSub2": "Movies",
-      "defaultSub3": "$MERCHANT",
-      "match": {
-        "patterns": [
-          "\\bSTARLIGHT\\s+20\\b",
-          "\\b073076\\s+STARLIGHT\\s+20\\b",
-          "\\bSTARLIGHT\\s+20\\s+TAMPA\\b",
-		  "\\bHIGHWOODS\\s+20\\b",
-		  "\\bFUN\\s+MOVIE\\s+GRILL\\b"
         ]
       }
     },
@@ -8836,6 +8800,7 @@
 	      "defaultCategory": "Expense",
 	      "defaultSub1": "Grooming",
 	      "defaultSub2": "Haircut",
+		  "defaultSub3": "$MERCHANT",
 	      "match": {
 	        "patterns": [
 	          "\\bCOOL\\s+CUTS\\s+4\\s+KIDS\\b"
@@ -9659,6 +9624,7 @@
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Insurance",
       "defaultSub3": "$MERCHANT",
+	  "defaultSub4": "10303 Meadow Crossing Dr",	  
       "match": {
         "patterns": [
           "UNIVERSAL\\s+PROPERTY\\s+&\\s+CASUALTY",
@@ -9791,7 +9757,7 @@
     },
 	{
 	  "merchantId": "DIRECTV",
-	  "canonicalName": "DIRECTV",
+	  "canonicalName": "DIRECT TV",
 	  "defaults": {
 	    "byAmountSign": {
 	      "negative": {
@@ -10923,6 +10889,7 @@
 	    "defaultCategory": "Investment",
 	    "defaultSub1": "College Savings plan",
 	    "defaultSub2": "Florida Prepaid",
+		"defaultSub3": "Ananya",
 	    "match": {
 	      "patterns": [
 	        "FLORIDA\\s+PREPAID\\s+COLLEGE\\s+BOARD"
@@ -11356,7 +11323,7 @@
 	    "defaultCategory": "Expense",
 	  	"defaultSub1": "Recreation",
 		"defaultSub2": "Dance",
-	    "defaultSub3": "$MERCHANT",
+	    "defaultSub3": "Miscellaneous",
 	    "match": {
 	      "patterns": [
 	  			"\\bDANCE\\s+ACADEMY\\b",

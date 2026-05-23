@@ -1253,8 +1253,8 @@ public class LedgerRecordCategorizer {
 "Friscia & Ross, PA,Trust Account Bill Payment",
 "NEW TAMPA ORAL &amp; FACIAL",
 "DICK'S CLOTHING&amp;SPORTING WESLEY CHAPELFL",
-"PAYMENT TO ICICI BANKLIMI-EDI PAYMTSPAYMENT TO ICICI BANKLIMI-EDI PAYMTS"
-    			 
+"PAYMENT TO ICICI BANKLIMI-EDI PAYMTSPAYMENT TO ICICI BANKLIMI-EDI PAYMTS",
+"New Tampa Foot &amp; Ankle"    			 
 
 
     	};

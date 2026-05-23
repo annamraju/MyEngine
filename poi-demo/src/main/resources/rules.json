@@ -580,7 +580,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Food",
-        "setSub2": "Verizon Café"
+        "setSub2": "Verizon Café",
+		"setSub3": "$BLANK"
       }
     },
     {
@@ -1302,7 +1303,8 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Car Maintenance",
-        "setSub2": "Gas"
+        "setSub2": "Gas",
+		"setSub3": "Marathon"
       }
     },
     {
@@ -6454,7 +6456,7 @@
 	 },
 	 {
 	   "ruleNo": 9802,
-	   "name": "Expense - Entertainment - Movies Museums Events Disney",
+	   "name": "Expense - Entertainment - Museums Events Disney",
 	   "enabled": true,
 	   "priority": 18,
 	   "stopOnMatch": true,
@@ -6462,14 +6464,14 @@
 	     {
 	       "field": "description",
 	       "op": "REGEX",
-	       "value": "(?:\\bMUSEUM\\s+SCIENCE\\s+AND\\s+INDUS\\b|\\bFLORIDA\\s+STATE\\s+FAI\\b|\\bVASANT\\s+UTSAV\\b)"
+	       "value": "\\bMUSEUM\\s+SCIENCE\\s+AND\\s+INDUS\\b"
 	     }
 	   ],
 	   "then": {
 	     "setCategory": "Expense",
 	     "setSub1": "Entertainment",
 		 "setSub2" : "Outing",
-		 "setSub3" : "$PRUNED_MERCHANT"
+		 "setSub3" : "MOSI"
 	   }
 	 },
 	 {
@@ -6780,7 +6782,7 @@
 	     "setCategory": "Income",
 	     "setSub1": "Refund/Reimbursement",
 		 "setSub2": "Donation",
-		 "SetSub3": "FaceBook"
+		 "setSub3": "FaceBook"
 	   }
 	 },
 	 {
@@ -6805,7 +6807,7 @@
 	     "setCategory": "Investment",
 	     "setSub1": "Retirement",
 	  	 "setSub2": "Fidelity Rollover IRA for Minor",
-	  	 "SetSub3": "Ananya"
+	  	 "setSub3": "Ananya"
 	   }
 	 },
 	 {
@@ -10231,7 +10233,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	       "setSub1": "Travel",
-	    "setSub2" : "Food"
+	    "setSub2" : "Food",
+		"setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -10754,7 +10757,7 @@
 	   },
 	   {
 	     "ruleNo": 11053,
-	     "name": "Starlight 20 - keep AMC legacy label",
+	     "name": "AMC that is Starlight 20",
 	     "enabled": true,
 	     "priority": 19,
 	     "stopOnMatch": true,
@@ -10762,21 +10765,21 @@
 	   		{
 	     		"field": "merchant",
 	     		"op": "EQ",
-	   			"value" : "Starlight 20"
+	   			"value" : "AMC"
 	   		},
 	   		{
 	   		"field": "description",
 	   		"op": "REGEX",
-	   		"value": "AMC\\s+STARLIGHT\\s+20"
+	   		"value": "\\bSTARLIGHT\\s+20\\b"
 	   		}
 	     ],
 	     "then": {
-	   		"setSub3" : "AMC"
+	   		"setSub3" : "Starlight 20"
 	     }
 	   },
 	   {
 	     "ruleNo": 11054,
-	     "name": "Starlight 20 - keep Highwoods legacy label",
+	     "name": "AMC that is Highwoods 20",
 	     "enabled": true,
 	     "priority": 19,
 	     "stopOnMatch": true,
@@ -10784,7 +10787,7 @@
 	   		{
 	     		"field": "merchant",
 	     		"op": "EQ",
-	   			"value" : "Starlight 20"
+	   			"value" : "AMC"
 	   		},
 	   		{
 	   		"field": "description",
@@ -10794,11 +10797,11 @@
 	     ],
 	     "then": {
 	   		"setSub3" : "Highwoods 20"
-	     }
+	     }	
 	   },
 	   {
 	     "ruleNo": 11055,
-	     "name": "Starlight 20 - keep Fun Movie legacy label",
+	     "name": "AMC thats Fun Movie Grill",
 	     "enabled": true,
 	     "priority": 19,
 	     "stopOnMatch": true,
@@ -10806,7 +10809,7 @@
 	   		{
 	     		"field": "merchant",
 	     		"op": "EQ",
-	   			"value" : "Starlight 20"
+	   			"value" : "AMC"
 	   		},
 	   		{
 	   		"field": "description",
@@ -10816,6 +10819,50 @@
 	     ],
 	     "then": {
 	   		"setSub3" : "Fun Movie Grill"
+	     }
+	   },
+	   {
+	     "ruleNo": 11056,
+	     "name": "AMC thats Muvico",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "AMC"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "MUVICO"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "Muvico"
+	     }
+	   },
+	   {
+	     "ruleNo": 11057,
+	     "name": "AMC thats Redbox",
+	     "enabled": true,
+	     "priority": 19,
+	     "stopOnMatch": true,
+	     "when": [
+	   		{
+	     		"field": "merchant",
+	     		"op": "EQ",
+	   			"value" : "AMC"
+	   		},
+	   		{
+	   		"field": "description",
+	   		"op": "REGEX",
+	   		"value": "REDBOX"
+	   		}
+	     ],
+	     "then": {
+	   		"setSub3" : "Redbox"
 	     }
 	   },
 	   {
@@ -12474,7 +12521,117 @@
 		     "setSub1": "CreditCard",
 		     "setSub2": "Chase CC (Anantha)"
 		   }
+		 },
+		 {
+		   "ruleNo": 11256,
+		   "name": "Expense - Entertainment - MOSI",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "\\bFLORIDA\\s+STATE\\s+FAI\\b"
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Expense",
+		     "setSub1": "Entertainment",
+		  "setSub2" : "Outing",
+		  "setSub3" : "Florida State Fair"
+		   }
+		 },
+		 {
+		   "ruleNo": 11257,
+		   "name": "Expense - Entertainment - Vasanth Utsav",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "\\bVASANT\\s+UTSAV\\b"
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Expense",
+		     "setSub1": "Entertainment",
+		  "setSub2" : "Outing",
+		  "setSub3" : "Vasant Utsav"
+		   }
+		 },
+		 {
+		   "ruleNo": 11258,
+		   "name": "Florida Pre paid Anjali",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+			{
+			  "field": "merchant",
+			  "op": "EQ",
+			  "value": "Florida Prepaid"
+			},
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "\\bANJALI\\b"
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Investment",
+		     "setSub1": "College Savings plan",
+		  "setSub2" : "Florida Prepaid",
+		  "setSub3" : "Anjali"
+		   }
+		 },
+		 {
+		   "ruleNo": 11259,
+		   "name": "MEDICAL thats Foot and ankle",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		 {
+		   "field": "merchant",
+		   "op": "EQ",
+		   "value": "Medical"
+		 },
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "\\bNEW\\s+FOOT\\s+ANKLE\\b"
+		     }
+		   ],
+		   "then": {
+		  	"setSub3" : "New Tampa Foot and Ankle"
+		   }
+		 },
+		 {
+		   "ruleNo": 11260,
+		   "name": "DMV thats Ticket",
+		   "enabled": true,
+		   "priority": 18,
+		   "stopOnMatch": true,
+		   "when": [
+		 {
+		   "field": "merchant",
+		   "op": "EQ",
+		   "value": "DMV"
+		 },
+		     {
+		       "field": "description",
+		       "op": "REGEX",
+		       "value": "\\bDRIVING\\s+RECORD\\b"
+		     }
+		   ],
+		   "then": {
+		  	"setSub3" : "Ticket"
+		   }
 		 }
+		 
 		 
   ]
 }
