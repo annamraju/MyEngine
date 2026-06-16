@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.*;
 import org.kumar.excel.util.LedgerRecord;
 import org.apache.poi.ss.usermodel.Row;
@@ -36,6 +37,7 @@ public class ReadLedgerFile {
 
 	private static final Logger LOGGER = LogManager.getLogger(ReadLedgerFile.class);
 	private static final String myDelimiter = ":";
+	private static final Row.MissingCellPolicy CELL_POLICY = Row.MissingCellPolicy.RETURN_NULL_AND_BLANK;
 	
 	public static final Logger getLogger() {
 		return LOGGER;
@@ -126,6 +128,58 @@ public class ReadLedgerFile {
 		}
 		return result;
 	}	
+
+	private String getCellText(XSSFRow row, int cellIndex, DataFormatter formatter, FormulaEvaluator evaluator) {
+		if(row == null) return null;
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if(cell == null) return null;
+
+		String value = formatter.formatCellValue(cell, evaluator).trim();
+		return value.length() == 0 ? null : value;
+	}
+
+	private String getRequiredCellText(XSSFRow row, int cellIndex, String fieldName, int rowNum,
+			DataFormatter formatter, FormulaEvaluator evaluator) {
+		String value = getCellText(row, cellIndex, formatter, evaluator);
+		if(value == null) {
+			throw new IllegalArgumentException("Missing " + fieldName + " at spreadsheet row " + (rowNum + 1));
+		}
+		return value;
+	}
+
+	private Date getRequiredDate(XSSFRow row, int cellIndex, String fieldName, int rowNum) {
+		if(row == null) {
+			throw new IllegalArgumentException("Missing " + fieldName + " at spreadsheet row " + (rowNum + 1));
+		}
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if(cell == null) {
+			throw new IllegalArgumentException("Missing " + fieldName + " at spreadsheet row " + (rowNum + 1));
+		}
+		return cell.getDateCellValue();
+	}
+
+	private double getRequiredNumeric(XSSFRow row, int cellIndex, String fieldName, int rowNum) {
+		if(row == null) {
+			throw new IllegalArgumentException("Missing " + fieldName + " at spreadsheet row " + (rowNum + 1));
+		}
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if(cell == null) {
+			throw new IllegalArgumentException("Missing " + fieldName + " at spreadsheet row " + (rowNum + 1));
+		}
+		return cell.getNumericCellValue();
+	}
+
+	private boolean isBlankLedgerRow(XSSFRow row, DataFormatter formatter, FormulaEvaluator evaluator) {
+		if(row == null) return true;
+
+		for(int cellIndex = 0; cellIndex <= 12; cellIndex++) {
+			if(getCellText(row, cellIndex, formatter, evaluator) != null) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	/**
 	 * this one expects Month as a number
 	 * @param inFile
@@ -146,6 +200,7 @@ public class ReadLedgerFile {
 			XSSFSheet mainSheet = workbook.getSheet(sheetName);
 			FormulaEvaluator evaluator =
 				    workbook.getCreationHelper().createFormulaEvaluator();
+			DataFormatter dataFormatter = new DataFormatter();
 
 			System.out.println("lastrow num " + mainSheet.getLastRowNum());
 			for(int rowNum = mainSheet.getFirstRowNum()+1; rowNum <= mainSheet.getLastRowNum(); rowNum++) { 
@@ -153,18 +208,21 @@ public class ReadLedgerFile {
 					System.out.println("reading " + rowNum);
 				
 				XSSFRow row = mainSheet.getRow(rowNum);
+				if(isBlankLedgerRow(row, dataFormatter, evaluator)) {
+					continue;
+				}
 				// now read the columns
 				// columns in the order are
 				// account type, order, year(formula), month(formula), transDate, amount, balance,
 				// category, sub category 1, sub category 2, sub category 3, sub category 4
 				
-				String accountType =  (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getStringCellValue().trim();
+				String accountType = getRequiredCellText(row, 0, "account type", rowNum, dataFormatter, evaluator);
 				//System.out.println(" got " + accountType);
 				
-				XSSFCell cell2 =  row.getCell(1,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
+				XSSFCell cell2 =  row.getCell(1, CELL_POLICY);
 				int order = getFormulaResultNumeric(cell2, evaluator);
 				
-				XSSFCell cell3 =  row.getCell(2,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
+				XSSFCell cell3 =  row.getCell(2, CELL_POLICY);
 				int year = getFormulaResultNumeric(cell3, evaluator); 
 				
 				/*
@@ -175,48 +233,26 @@ public class ReadLedgerFile {
 				}
 				*/
 				
-				XSSFCell cell4 =  row.getCell(3,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				String monthStr =  getFormulaResultText(cell4, evaluator);
+				String monthStr = getRequiredCellText(row, 3, "month", rowNum, dataFormatter, evaluator);
 				//LOGGER.debug(" got monthstr as " + monthStr + " for row " + rowNum);
 				
-				XSSFCell cell5 =  row.getCell(4,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				Date transactionDate =  cell5.getDateCellValue();
+				Date transactionDate = getRequiredDate(row, 4, "transaction date", rowNum);
 
-				String description = (row.getCell(5, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getStringCellValue().trim();
+				String description = getRequiredCellText(row, 5, "description", rowNum, dataFormatter, evaluator);
 				
-				double amount =  (row.getCell(6, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getNumericCellValue();
-				XSSFCell cell6 = row.getCell(7, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				double amount = getRequiredNumeric(row, 6, "amount", rowNum);
+				XSSFCell cell6 = row.getCell(7, CELL_POLICY);
 				double balance = 0.0;
 				if(cell6 != null && cell6.getCellType() != CellType.FORMULA) {
 					balance = cell6.getNumericCellValue();
 				}
 				
-				String category = null;
-				XSSFCell cell7 = row.getCell(8, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if(cell7 != null) {
-					category =  cell7.getStringCellValue().trim();
-				}
+				String category = getCellText(row, 8, dataFormatter, evaluator);
 				
-				String subCategory1 = null;
-				XSSFCell cell8 = row.getCell(9, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if(cell8 != null) {
-					subCategory1 = cell8.getStringCellValue().trim();
-				}
-				String subCategory2 = null;
-				XSSFCell cell9 = row.getCell(10, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if(cell9 != null) {
-					subCategory2 = cell9.getStringCellValue().trim();
-				}
-				String subCategory3 = null;
-				XSSFCell cell10 = row.getCell(11, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if(cell10 != null) {
-					subCategory3 = cell10.getStringCellValue().trim();
-				}
-				String subCategory4 = null;
-				XSSFCell cell11 = row.getCell(12, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if(cell11 != null) {
-					subCategory4 = cell11.getStringCellValue().trim();
-				}
+				String subCategory1 = getCellText(row, 9, dataFormatter, evaluator);
+				String subCategory2 = getCellText(row, 10, dataFormatter, evaluator);
+				String subCategory3 = getCellText(row, 11, dataFormatter, evaluator);
+				String subCategory4 = getCellText(row, 12, dataFormatter, evaluator);
 
 				/*
 				LedgerRecord rec = new LedgerRecord(accountType, (short)order, (short)year, (short)month, transactionDate, 
