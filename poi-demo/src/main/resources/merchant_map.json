@@ -398,7 +398,7 @@
     },
     {
       "merchantId": "ALLEGANT",
-      "canonicalName": "Allegant",
+      "canonicalName": "Allegiant",
       "defaultCategory": "Expense",
       "defaultSub1": "Travel",
       "defaultSub2": "Air Tickets",
@@ -849,7 +849,8 @@
 	  "defaultCategory": "Expense",
 	  "defaultSub1": "Home Maintenance",
 	  "defaultSub2": "Insurance",
-	  "defaultSub3": "$MERCHANT",
+	  "defaultSub3": "LoggerHead",
+	  "defaultSub4": "10513 Mistflower Ln",
 	  "match": {
 	    "patterns": [
 	      "LOGGERHEAD\\s+INSURANCE"
@@ -858,11 +859,12 @@
 	},
 	{
 	  "merchantId": "NATIONAL_RISK_INSURANCE",
-	  "canonicalName": "National Risk Insurance",
+	  "canonicalName": "National Risk",
 	  "defaultCategory": "Expense",
 	  "defaultSub1": "Home Maintenance",
 	  "defaultSub2": "Insurance",
 	  "defaultSub3": "$MERCHANT",
+	  "defaultSub4" : "10513 Mistflower Ln",
 	  "match": {
 	    "patterns": [
 	      "\\bNATIONAL\\s+RISK\\s+SOL\\b"
@@ -1715,14 +1717,15 @@
 	        "category": "Expense",
 	        "sub1": "Home Maintenance",
 			"sub2" : "Insurance",
-			"sub3" : "$MERCHANT"
+			"sub3" : "Castle Key",
+			"sub4" : "10513 Mistflower Ln"
 	      },
 	      "positive": {
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
 			"sub2": "Home Maintenance",			
 			"sub3" : "Insurance",
-			"sub4" : "$MERCHANT"			
+			"sub4" : "Castle Key"			
 	      }
 	    }
 	  },	  
@@ -1958,6 +1961,7 @@
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Insurance",
       "defaultSub3": "$MERCHANT",
+	  "defaultSub4" : "10303 Meadow Crossing Dr",
       "match": {
         "patterns": [
           "^CITIZENS\\b.*\\bEPAYMENT\\b",
@@ -2272,7 +2276,8 @@
 	        "category": "Income",
 	        "sub1": "Refund/Reimbursement",
 			"sub2" : "Medical",
-			"sub3" : "$MERCHANT"
+			"sub3" : "Pharmacy",
+			"sub4" : "$MERCHANT"
 	      }
 	    }
 	  },	  
@@ -2302,7 +2307,7 @@
       "canonicalName": "Daylight Concepts",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
-      "defaultSub2": "In Daylight",
+      "defaultSub2": "Upgrades",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -2850,7 +2855,7 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Entertainment",
       "defaultSub2": "Outing",
-	  "defaultSub3": "$MERCHANT",
+	  "defaultSub3" : "Florida State Fair",
       "match": {
         "patterns": [
           "\\bFAIRGROUNDS\\b",
@@ -3858,7 +3863,6 @@
       "defaultSub1": "Recreation",
 	  "defaultSub2" : "Sports",
 	  "defaultSub3" : "Running",
-      "defaultSub4": "$MERCHANT",
       "match": {
         "patterns": [
           "\\bIMATHLETE\\s+COM\\s+CA\\b",
@@ -6339,6 +6343,7 @@
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Lawn Service",
       "defaultSub3": "$MERCHANT",
+	  "defaultSub4": "10303 Meadow Crossing Dr",
       "match": {
         "patterns": [
           "PESTBEAR\\s+BILL",
@@ -6662,6 +6667,7 @@
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Garage Repair",
       "defaultSub3": "$MERCHANT",
+	  "defaultSub4" : "10513 Mistflower Ln",
       "match": {
         "patterns": [
           "\\bPRECISION\\s+GARAGE\\s+DOOR\\b",
@@ -6832,7 +6838,12 @@
           "\\bRACE\\s*TRAC\\b",
 		  "\\bRACETRAC451\\b",
 		  "\\bRACETRAC126\\b",
-		  "\\bRACETRAC111\\b"		  		  
+		  "\\bRACETRAC111\\b",	
+		  "RACETRAC246\\s+00002469\\s+KISSIMMEE\\b",
+		  "RACETRAC2531\\s+00025312\\s+ATLANTA\\s+GA",
+		  "RACETRAC246\\s+00002469\\s+KISSIMMEE\\s+FL",
+		  "RACETRAC2531\\s+00025312\\s+ATLANTA\\s+GA",
+		  "RACETRAC\\s+644\\s+000064\\s+ROSWELL,\\s+GA"
         ]
       }
     },
@@ -7312,7 +7323,7 @@
       "canonicalName": "Small Jobs Electric",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
-      "defaultSub2": "SMALL JOBS ELECTRICITY",
+      "defaultSub2": "Repair",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -7762,6 +7773,7 @@
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Insurance",
       "defaultSub3": "$MERCHANT",
+	  "defaultSub4": "10303 Meadow Crossing Dr",
       "match": {
         "patterns": [
           "ST\\.?\\s+JOHNS\\s+INSURANCE",
@@ -7848,7 +7860,7 @@
       "canonicalName": "SuperHeat and Air",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
-      "defaultSub2": "SuperHeatand air",
+      "defaultSub2": "Repair",
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
@@ -8121,8 +8133,9 @@
       "canonicalName": "Taylor Gardner Gutter",
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
-      "defaultSub2": "Gutter Installation",
-      "defaultSub3": "$MERCHANT",
+      "defaultSub2": "Upgrades",
+	  "defaultSub3": "Gutter Installation",
+      "defaultSub4": "10513 Mistflower Ln",
       "match": {
         "patterns": [
           "\\bTAYLOR\\s+GARDNER\\s+GUTTER\\b"
@@ -9033,9 +9046,7 @@
 		  "match": {
 		    "patterns": [
 		      "76\\s+GAS\\s+EXPRESS\\s+126\\s+ATLANTA\\s+GA",
-		      "ADEL\\s+TRUCK\\s+PLAZA\\s+ADEL\\s+GA",
-		      "RACETRAC246\\s+00002469\\s+KISSIMMEE\\b",
-		      "RACETRAC2531\\s+00025312\\s+ATLANTA\\s+GA"
+		      "ADEL\\s+TRUCK\\s+PLAZA\\s+ADEL\\s+GA"
 		    ]
 		  }
 		},
@@ -9277,9 +9288,6 @@
           "\\bPZA\\s+CONC\\s+C\\s+CLT",
           "\\bPZA\\s+E\\s+CLT\\b",
           "QFC\\s+\\#5824\\s+ISSAQUAH\\s+WA",
-          "RACETRAC246\\s+00002469\\s+KISSIMMEE\\s+FL",
-          "RACETRAC2531\\s+00025312\\s+ATLANTA\\s+GA",
-          "RACETRAC\\s+644\\s+000064\\s+ROSWELL,\\s+GA",
           "RAJHANS\\s+NUTRIMENTS",
           "RECREATION\\.GOV\\s+ALBUQUERQUE\\s+NM",
           "REGAL\\s+MACARTHUR\\s+MARKET\\s+IRVING\\s+TX",
@@ -9450,13 +9458,13 @@
 	},
     {
       "merchantId": "TRAVEL_STAY",
-      "canonicalName": "Stay",
+      "canonicalName": "Lodging",
 	  "defaults": {
 	    "byAmountSign": {
 	      "negative": {
 	        "category": "Expense",
 	        "sub1": "Travel",
-			"sub2" : "Lodging"
+			"sub2" : "$MERCHANT"
 	      },
 	      "positive": {
 	        "category": "Income",
@@ -10223,6 +10231,8 @@
       "defaultCategory": "Expense",
       "defaultSub1": "Home Maintenance",
       "defaultSub2": "Repairs",
+	  "defaultSub3": "To Jamie Davis",
+	  "defaultSub4": "10303 Meadow Crossing Dr",
       "match": {
         "patterns": [
           "\\bZELLE\\s+PAYMENT\\s+TO\\s+JAMIE\\s+DAVIS\\b"
@@ -10541,7 +10551,6 @@
 	    "defaultSub1": "Recreation",
 		"defaultSub2": "Sports",
 		"defaultSub3": "Running",
-	    "defaultSub4": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
 	      "patterns": [
 	        "\\bRACERSIGNUP\\.?COM\\b",
@@ -10556,7 +10565,6 @@
 	    "defaultSub1": "Recreation",
 	  "defaultSub2": "Sports",
 	  "defaultSub3": "Running",
-	    "defaultSub4": "$MERCHANT",
 	    "match": {
 	      "patterns": [
 	        "\\bBT\\s+BLACKLIGHTRUBG547R\\b"			
@@ -10570,7 +10578,6 @@
 		"defaultSub1": "Recreation",
 		"defaultSub2": "Sports",
 		"defaultSub3": "Running",
-	    "defaultSub4": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
 	      "patterns": [
 	        "\\bACT\\*ACTIVE[-\\s]*NETWORK\\b",
@@ -10586,7 +10593,6 @@
 		"defaultSub1": "Recreation",
 		"defaultSub2": "Sports",
 		"defaultSub3": "Running",
-	    "defaultSub4": "$DESC_NORM_PREFIX(8,80)",
 	    "match": {
 	      "patterns": [
 	        "\\bSIGNUP\\b",
@@ -10783,7 +10789,8 @@
 		    "positive": {
 		      "category": "Income",
 		      "sub1": "Refund/Reimbursement",
-			  "sub2" : "$MERCHANT"
+			  "sub2" : "$MERCHANT",
+		  	  "sub3" : "Miscellaneous"
 		    }
 		  }
 		},		
@@ -11334,6 +11341,26 @@
 	    }
 	  },	  
 	  {
+	    "merchantId": "VOLLEYBALL",
+	    "canonicalName": "Volleyball",
+	    "defaultCategory": "Expense",
+	  	"defaultSub1": "Recreation",
+	  	"defaultSub2": "Sports",
+	    "defaultSub3": "$MERCHANT",
+		"defaultSub4": "Miscellaneous",
+	    "match": {
+	      "patterns": [
+	  			"\\bOT\\s+VOLLEYBALL\\b",
+	  			"\\bKIWI\\s+VOLLEYBALL\\b",
+	  		"\\bUSA\\s+VOLLEYBALL\\b",
+	  		"\\bREGION\\s+USAV\\b",
+	  		"\\bFLORIDA\\s+ELITE\\s+VLYBALL\\b",
+	  		"\\bAAU\\b",
+	  		"\\bCLUB\\s+STEEL\\s+VBALL"
+	      ]
+	    }
+	  },	  
+	  {
 	    "merchantId": "SPORTS_MISC",
 	    "canonicalName": "Sports Misc",
 	    "defaultCategory": "Expense",
@@ -11343,14 +11370,7 @@
 	    "match": {
 	      "patterns": [
 	  			"\\bATH\\s+RAP\\s+RIVER\\s+RUN\\b",
-	  			"\\bOT\\s+VOLLEYBALL\\b",
-	  			"\\bKIWI\\s+VOLLEYBALL\\b",
-				"\\b2025\\s+PGDC\\s+REGISTRATION\\s+BOSTON\\s+MA\\b",
-				"\\bUSA\\s+VOLLEYBALL\\b",
-				"\\bREGION\\s+USAV\\b",
-				"\\bFLORIDA\\s+ELITE\\s+VLYBALL\\b",
-				"\\bAAU\\b",
-				"\\bCLUB\\s+STEEL\\s+VBALL"
+				"\\b2025\\s+PGDC\\s+REGISTRATION\\s+BOSTON\\s+MA\\b"
 	      ]
 	    }
 	  },	  

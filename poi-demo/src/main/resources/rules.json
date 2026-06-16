@@ -4625,8 +4625,8 @@
         "setCategory": "Expense",
         "setSub1": "Recreation",
         "setSub2": "Sports",
-        "setSub3": "FEVA",
-        "setSub4": ""
+        "setSub3": "Volleyball",
+        "setSub4": "FEVA"
       }
     },
     {
@@ -4646,8 +4646,8 @@
         "setCategory": "Expense",
         "setSub1": "Recreation",
         "setSub2": "Sports",
-        "setSub3": "FEVA",
-        "setSub4": ""
+        "setSub3": "Volleyball",
+        "setSub4": "FEVA"
       }
     },
     {
@@ -6734,7 +6734,8 @@
 	   "then": {
 	     "setCategory": "Expense",
 	     "setSub1": "Big Purchase",
-		 "setSub2" : "New Car"
+		 "setSub2" : "New Car",
+		 "setSub3" : "BMW of Tampa"
 	   }
 	 },
 	 {
@@ -7150,7 +7151,8 @@
 	   "then": {
 	     "setCategory": "Expense",
 	     "setSub1": "Car Maintenance",
-	  	 "setSub2": "Insurance"
+	  	 "setSub2": "Insurance",
+		 "setSub3" : "Liberty Mutual"
 	   }
 	 },
 	   {
@@ -8976,7 +8978,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Food",
-	     "setSub2" : "Brandon Honda"
+	     "setSub2" : "Brandon Honda",
+		 "setSub3" : "$BLANK"
 	     }
 	   },
 	   {
@@ -9209,7 +9212,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Food"
+	     "setSub2" : "Food",
+		 "setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -9588,7 +9592,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Food"
+	     "setSub2" : "Food",
+		 "setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -9838,7 +9843,7 @@
 	   {	
 	     "field": "description",
 	     "op": "REGEX",
-	     "value": "ROSWELL"
+	     "value": "ROSWELL|ATLANTA|KISSIMMEE"
 	   },
 	   {	
 	     "field": "amount",
@@ -9849,7 +9854,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	      "setSub1": "Travel",
-	     "setSub2" : "Gas"
+	     "setSub2" : "Gas",
+		 "setSub3" : "$MERCHANT"
 	     }
 	   },
 	   {
@@ -10171,7 +10177,8 @@
 	     "then": {
 	       "setCategory": "Expense",
 	       "setSub1": "Travel",
-	       "setSub2": "Phantom of Broadway"
+	       "setSub2": "Phantom of Broadway",
+		   "setSub3" : "$BLANK"
 	     }
 	   },
 	   {
@@ -11767,7 +11774,7 @@
 	       { "field": "description", "op": "REGEX", "value": "RIVER\\s+RUN" },
 	       { "field": "amount", "op": "LT", "value": 0.0 }
 	     ],
-	     "then": { "setSub3": "Running" }
+	     "then": { "setSub3": "Running", "setSub4" : "ATH-RAP-RIVER-RUN" }
 	   },
 	   {
 	     "ruleNo": 11205,
@@ -12629,6 +12636,145 @@
 		   ],
 		   "then": {
 		  	"setSub3" : "Ticket"
+		   }
+		 },
+		 {
+		   "ruleNo":11261,
+		   "name": "interest thats actually refund",
+		   "enabled": true,
+		   "priority": 20,
+		   "stopOnMatch": true,
+		   "when": [
+		 	{	
+		 	  "field": "merchant",
+		 	  "op": "EQ",
+		 	  "value": "Fees"
+		 	},
+		 {	
+		   "field": "description",
+		   "op": "REGEX",
+		   "value": "\\bPURCHASE\\s+INTEREST\\s+CHARGE\\b"
+		 },
+		 {	
+		   "field": "amount",
+		   "op": "GT",
+		   "value": 0.0
+		 }
+		   ],
+		   "then": {
+		     "setCategory": "Income",
+		    "setSub1": "Refund/Reimbursement",
+		   "setSub2" : "Fees",
+		  "setSub3" : "Interest Charged"
+		   }
+		 },
+		 {
+		   "ruleNo":11262,
+		   "name": "RENTAL_CAR with company Alamo",
+		   "enabled": true,
+		   "priority": 20,
+		   "stopOnMatch": true,
+		   "when": [
+		 	{	
+		 	  "field": "merchant",
+		 	  "op": "EQ",
+		 	  "value": "Car Rental"
+		 	},
+		 {	
+		   "field": "description",
+		   "op": "REGEX",
+		   "value": "ALAMO"
+		 },
+		 {	
+		   "field": "amount",
+		   "op": "LT",
+		   "value": 0.0
+		 }
+		   ],
+		   "then": {
+		  "setSub3" : "Alamo"
+		   }
+		 },
+		 {
+		   "ruleNo":11263,
+		   "name": "Volleyball thats FEVA",
+		   "enabled": true,
+		   "priority": 20,
+		   "stopOnMatch": true,
+		   "when": [
+		 	{	
+		 	  "field": "merchant",
+		 	  "op": "EQ",
+		 	  "value": "Volleyball"
+		 	},
+		 {	
+		   "field": "description",
+		   "op": "REGEX",
+		   "value": "ELITE"
+		 },
+		 {	
+		   "field": "amount",
+		   "op": "LT",
+		   "value": 0.0
+		 }
+		   ],
+		   "then": {
+		  "setSub3" : "Volleyball",
+		  "setSub4" : "FEVA"
+		   }
+		 },
+		 {
+		   "ruleNo":11264,
+		   "name": "Education misc thats FBLA",
+		   "enabled": true,
+		   "priority": 20,
+		   "stopOnMatch": true,
+		   "when": [
+		 	{	
+		 	  "field": "merchant",
+		 	  "op": "EQ",
+		 	  "value": "Misc"
+		 	},
+		 {	
+		   "field": "description",
+		   "op": "REGEX",
+		   "value": "FUTUREBUSIN"
+		 },
+		 {	
+		   "field": "amount",
+		   "op": "LT",
+		   "value": 0.0
+		 }
+		   ],
+		   "then": {
+		  "setSub3" : "FBLA"
+		   }
+		 },
+		 {
+		   "ruleNo":11265,
+		   "name": "Volleyball thats STEEL",
+		   "enabled": true,
+		   "priority": 20,
+		   "stopOnMatch": true,
+		   "when": [
+		 	{	
+		 	  "field": "merchant",
+		 	  "op": "EQ",
+		 	  "value": "Volleyball"
+		 	},
+		 {	
+		   "field": "description",
+		   "op": "REGEX",
+		   "value": "CLUB\\s+STEEL\\b"
+		 },
+		 {	
+		   "field": "amount",
+		   "op": "LT",
+		   "value": 0.0
+		 }
+		   ],
+		   "then": {
+		  "setSub4" : "Steel"
 		   }
 		 }
 		 
