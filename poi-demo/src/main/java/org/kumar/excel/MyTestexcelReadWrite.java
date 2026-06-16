@@ -18,6 +18,7 @@ import java.text.ParseException;
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.net.URL;
 
 public class MyTestexcelReadWrite {
 
@@ -45,10 +46,16 @@ public class MyTestexcelReadWrite {
 	}
 
 	public void loadAllAccounts() {
-		String acctPath =  "c:\\users\\annam\\eclipse-workspace\\myexcelproject\\resources\\";
 		String acctFileName =  "Account.metadata";
 		try{
-			_allAccounts =  Account.loadAccountsFromFile(acctPath, acctFileName);
+			URL accountResource = MyTestexcelReadWrite.class.getClassLoader().getResource(acctFileName);
+			if(accountResource != null) {
+				File accountFile = new File(accountResource.toURI());
+				_allAccounts =  Account.loadAccountsFromFile(accountFile.getParent(), accountFile.getName());
+			}else {
+				String acctPath =  "c:\\users\\annam\\eclipse-workspace\\myexcelproject\\resources\\";
+				_allAccounts =  Account.loadAccountsFromFile(acctPath, acctFileName);
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -436,6 +443,8 @@ public class MyTestexcelReadWrite {
 	}
 
 	public boolean isThisAccountAStandardOne(Account acct) {
+		if(acct == null || _allAccounts == null) return false;
+
 		boolean result = false;
 		Iterator<Account> iter =  _allAccounts.iterator();
 		while(iter.hasNext()) {
