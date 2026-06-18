@@ -4107,7 +4107,13 @@
 		  "\\bCLOSE\\s+CD\\b",
 		  "\\bE\\s+TRADE\\s+BANK\\s+TRANSFER\\b",
 		  "\\bMSPBNA\\s+BANK\\s+TRANSFER\\b",
-		  "BKOFAM\\s+CK\\s+WEBXFRETRANSFER"
+		  "BKOFAM\\s+CK\\s+WEBXFRETRANSFER",
+		  "\\bDEPOSIT\\s+(?:FROM\\s+)?KUMAR\\s+ANNAMRAJU",
+		  "\\bDEPOSIT\\s+(?:FROM\\s+)?G\\s+T\\s+E\\s+FEDERAL\\s+CREDIT\\s+UNION\\s+5076",
+		  "\\bWITHDRAWAL\\s+(?:TO\\s+)?BANK\\s+(?:OF\\s+)?AMERICA\\s+N\\s+A\\s+5186",
+		  "\\bWITHDRAWAL\\s+(?:TO\\s+)?KUMAR\\s+ANNAMRAJU",
+		  "\\bGOLDMAN\\s+SACHS\\s+BA\\s+(?:DES\\s+)?TRANSFER",
+		  "\\bWITHDRAWAL\\s+(?:TO\\s+)?MORGAN\\s+STANLEY\\s+PRIVATE\\s+BANK\\s+NA\\s+7162"
         ]
       }
     },
@@ -4813,7 +4819,8 @@
       "match": {
         "patterns": [
           "\\bLIANG\\s+S\\s+BISTRO\\b",
-		  "\\bLIANG\\s+BISTRO\\b"
+		  "\\bLIANG\\s+BISTRO\\b",
+		  "\\bLIANGS\\s+BISTO\\b"
         ]
       }
     },
@@ -5331,7 +5338,9 @@
 		  "\\bNUMERADE\\b",
 		  "^PADMAJA\\s+DONTARAJU\\s+IDES$",
 		  "\\bAWL\\s+PEARSON\\s+EDUCATION\\b",
-		  "\\bWL\\s+VUE\\s+AAMC\\s+EXAM\\b"
+		  "\\bWL\\s+VUE\\s+AAMC\\s+EXAM\\b",
+		  "\\bINFINITE\\s+EDGE\\s+LEARNING\\b",
+		  "\\bQUIZLET\\s+COM\\b"
 	    ]
 	  }
 	},
@@ -10043,6 +10052,18 @@
         ]
       }
     },
+	{
+	  "merchantId": "TOTAL_WINE",
+	  "canonicalName": "Total Wine",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Food",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+	      "\\bTOTAL\\s+WINE\\s+(?:AND\\s+)?MORE"
+	    ]
+	  }
+	},
     {
       "merchantId": "WIX",
       "canonicalName": "Wix",
@@ -10745,7 +10766,10 @@
 				"\\bNIGHT\\s+OWL\\s+PEDIATRICS\\b",
 				"\\bPEDIATRIC\\s+HEALTH\\s*CARE\\s+ALLIANCE\\b",
 				"\\bPEDIATRIC\\s+HEALTHCARE\\b",
-				"\\bPHCA\\s+ADMINISTRATION\\s+LLC\\b"
+				"\\bPHCA\\s+ADMINISTRATION\\s+LLC\\b",
+				"\\bPEDIATRIC\\s+HEALTH\\s+CARE",
+				"\\bPEDIATRIC\\s+HEALTH\\s+C"
+				
 			]
     	}
   	},
@@ -10831,7 +10855,8 @@
 			"\\bBEHAVIOR\\s+ANALYST\\b",
 			"\\bNEW\\s+ORAL\\s+FACIAL\\b",
 			"\\bGOODRXGOLD\\b",
-			"\\b360\\s+DERMATOLOGY\\b"
+			"\\b360\\s+DERMATOLOGY\\b",
+			"\\bMYSAGEDENTAL\\b"
 			]
 		}
 	},
@@ -11464,6 +11489,56 @@
 	    "match": {
 	      "patterns": [
 	        "\\bGTE\\s+FINANCIAL\\s+(?:DES\\s+)?A2A\\s+TRANFR\\b"
+	      ]
+	    }
+	  },
+	  {
+	    "merchantId": "SRI_SHIVA_HANDLOOM",
+	    "canonicalName": "Sri Shiva Handloom",
+	    "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	        "sub1": "Shopping",
+	  	    "sub2": "Clothing",
+		    "sub3": "$MERCHANT"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	    "sub2": "Shopping",
+	  	    "sub3": "Clothing",
+			"sub4": "$MERCHANT"
+	      }
+	    }
+	  },		
+	    "match": {
+	      "patterns": [
+	        "\\bSRI\\s+SHIVA\\s+HANDLOOM\\b"
+	      ]
+	    }
+	  },
+	  {
+	    "merchantId": "ZELLE_CATCHALL",
+	    "canonicalName": "Zelle Catch All",
+		"defaults": {
+		  "byAmountSign": {
+		    "negative": {
+		      "category": "Expense",
+		      "sub1": "Zelle",
+			  "sub2": "Miscellaneous"
+		    },
+		    "positive": {
+		      "category": "Income",
+		      "sub1": "Refund/Reimbursement",
+			  "sub2": "Zelle",
+			  "sub3":"Miscellaneous"			  
+		    }
+		  }
+		},		
+	    "match": {
+	      "patterns": [
+	        "\\bZELLE\\s+(?:TRANSFER|PAYMENT)\\b"
 	      ]
 	    }
 	  },

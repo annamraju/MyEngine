@@ -1267,8 +1267,8 @@ public class LedgerRecordCategorizer {
 "NEW TAMPA ORAL &amp; FACIAL",
 "DICK'S CLOTHING&amp;SPORTING WESLEY CHAPELFL",
 "PAYMENT TO ICICI BANKLIMI-EDI PAYMTSPAYMENT TO ICICI BANKLIMI-EDI PAYMTS",
-"New Tampa Foot &amp; Ankle"    			 
-
+"New Tampa Foot &amp; Ankle"    			 ,
+"253-SALE (DEBIT)-MYSAGEDENTAL.COM-TAMPA-FL-Oct 15 202"
 
     	};
         MerchantMap merchantMap;

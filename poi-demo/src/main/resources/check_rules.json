@@ -3507,6 +3507,17 @@
         "setSub4": "10513 Mistflower Ln"
       }
     },
+	{
+	  "enabled": true,
+	  "account": "BOA Checking",
+	  "checkNo": 640,
+	  "then": {
+	    "setCategory": "Expense",
+	    "setSub1": "Education",
+	    "setSub2": "Miscellaneous",
+	    "setSub3": "Infinite Edge"
+	  }
+	},
     {
       "enabled": true,
       "account": "BOA Checking",

@@ -2038,7 +2038,7 @@
         "setSub1": "Recreation",
         "setSub2": "Dance",
         "setSub3": "Padma",
-        "setSub4": ""
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 11
@@ -2063,8 +2063,8 @@
         "setCategory": "Expense",
         "setSub1": "Shopping",
         "setSub2": "Jewellery",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 11
@@ -2089,8 +2089,8 @@
         "setCategory": "Expense",
         "setSub1": "Miscellaneous",
         "setSub2": "To Ramesh Joshi",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 11
@@ -2114,9 +2114,9 @@
       "then": {
         "setCategory": "Lending",
         "setSub1": "To Venky",
-        "setSub2": "",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub2": "$BLANK",
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 11
@@ -2140,9 +2140,9 @@
       "then": {
         "setCategory": "Expense",
         "setSub1": "Miscellaneous",
-        "setSub2": "",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub2": "$BLANK",
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 11
@@ -2166,9 +2166,9 @@
       "then": {
         "setCategory": "Internal",
         "setSub1": "Miscellaneous",
-        "setSub2": "",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub2": "$BLANK",
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 9
@@ -2192,9 +2192,9 @@
       "then": {
         "setCategory": "Internal",
         "setSub1": "Miscellaneous",
-        "setSub2": "",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub2": "$BLANK",
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 9
@@ -2218,9 +2218,9 @@
       "then": {
         "setCategory": "Internal",
         "setSub1": "Miscellaneous",
-        "setSub2": "",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub2": "$BLANK",
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 9
@@ -2245,8 +2245,8 @@
         "setCategory": "Expense",
         "setSub1": "Travel",
         "setSub2": "Entertainment",
-        "setSub3": "",
-        "setSub4": ""
+        "setSub3": "$BLANK",
+        "setSub4": "$BLANK"
       },
       "stopOnMatch": true,
       "priority": 9
@@ -5247,6 +5247,32 @@
         "setSub4": ""
       }
     },
+	{
+	  "ruleNo": 9568,
+	  "name": "EDUCATION_MISC thats Infinite Edge -> Expense/Education/Tuition/Infinite Edge",
+	  "enabled": true,
+	  "priority": 9,
+	  "stopOnMatch": true,
+	  "when": [
+		{
+		  "field": "merchant",
+		  "op": "EQ",
+		  "value": "Misc"
+		},
+	    {
+	      "field": "description",
+	      "op": "REGEX",
+	      "value": "\\bINFINITE\\s+EDGE\\b"
+	    }
+	  ],
+	  "then": {
+	    "setCategory": "Expense",
+	    "setSub1": "Education",
+	    "setSub2": "Tuition",
+	    "setSub3": "Infinite Edge",
+	    "setSub4": ""
+	  }
+	},
     {
       "ruleNo": 9569,
       "name": "Zelle: padmaja josyula for vyo and movie conf -> Expense/Misc",
@@ -10190,8 +10216,8 @@
 	     "when": [
 	   	{
 	     	"field": "account",
-	     	"op": "EQ",
-	     	"value": "HSA"
+	     	"op": "REEX",
+	     	"value": "HSA|CHASE\\s+CC"
 	   	},
 	   	{
 	     	"field": "merchant",
