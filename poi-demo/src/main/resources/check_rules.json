@@ -3518,6 +3518,17 @@
 	    "setSub3": "Infinite Edge"
 	  }
 	},
+	{
+	  "enabled": true,
+	  "account": "BOA Checking",
+	  "checkNo": 641,
+	  "then": {
+	    "setCategory": "Expense",
+	    "setSub1": "Home Maintenance",
+	    "setSub2": "Repair",
+	    "setSub3": "Lanai"
+	  }
+	},
     {
       "enabled": true,
       "account": "BOA Checking",

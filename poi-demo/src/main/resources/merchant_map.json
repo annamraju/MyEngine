@@ -339,7 +339,7 @@
 	  "match": {
 	    "patterns": [
 			"QATAR\\s+AIRWAYS",
-			"QATAR\\s+AIR\\s+1577201032472"
+			"QATAR\\s+AIR\\s+(?:1577201032472|1577386709275)"
 	    ]
 	  }
 	},
@@ -881,7 +881,20 @@
 	    "patterns": [
 			"\\bSAMUEL\\s+J\\s+TESKE\\b",
 			"\\bTESKE,\\s*O\\.?D\\.?\\b",
-			"\\bEYE\\s+DOCTORS\\b"
+			"\\bEYE\\s+DOCTORS\\b",
+			"TRUEEYEEXPERTSNTAMPA"
+	    ]
+	  }
+	},
+	{
+	  "merchantId": "GYNECOLOGIST",
+	  "canonicalName": "Gynecologist",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Medical",
+	  "defaultSub2": "$MERCHANT",
+	  "match": {
+	    "patterns": [
+			"(?:THE\\s+)?WOMANS\\s+GROUP"
 	    ]
 	  }
 	},
@@ -1950,7 +1963,8 @@
       "defaultSub3": "$MERCHANT",
       "match": {
         "patterns": [
-          "CIRCLE\\s+K"
+          "CIRCLE\\s+K",
+		  "\\bCIRCLEK\\b"
         ]
       }
     },
@@ -2055,7 +2069,7 @@
       "match": {
         "patterns": [
           "^(?!.*\\bDICK\\b).*\\bCLOTHING\\b",
-          "\\bZELLE\\s+PAYMENT\\s+TO\\s+SUDHA\\b"
+          "\\bZELLE\\s+PAYMENT\\s+(?:TO\\s+)?SUDHA\\b"
         ]
       }
     },
@@ -2388,6 +2402,18 @@
 	    ]
 	  }
 	},
+	{
+	  "merchantId": "NOVA_PAYCHECK",
+	  "canonicalName": "Nova Paycheck",
+	  "defaultCategory": "Income",
+	  "defaultSub1": "Paycheck",
+	  "defaultSub2": "Ananya",
+	  "match": {
+	    "patterns": [
+	      "NOVA\\s+SOUTHEASTER\\s+DES\\s+(?:INVOICE|PAYROLL)\\s+ID\\s+N02114659\\s+INDN\\s+ANANYA"
+	    ]
+	  }
+	},
     {
       "merchantId": "DESI_BY_NATURE",
       "canonicalName": "Desi By Nature",
@@ -2488,7 +2514,9 @@
 		  "\\bFLORIDA\\s+DRIVING\\s+RECORD\\b",
 		  "\\bTAG\\s+LICENSE\\s+ASMT\\b",
 		  "\\bPMT\\s+VEHICLETAGREN\\s+HILL\\b",
-	  	  "\\bPMT\\s+VEHICLETAGREN\\s+HILLSBO\\b"
+	  	  "\\bPMT\\s+VEHICLETAGREN\\s+HILLSBO\\b",
+		  "\\bNIC\\s+DOS\\s+DIVISION\\s+CORP",
+		  "\\bHSMV\\s+MYDMVPORTAL\\b"
         ]
       }
     },
@@ -3154,7 +3182,8 @@
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "FRESH\\s+KITCHEN"
+          "FRESH\\s+KITCHEN",
+		  "FK\\s+NEW\\s+(?:TAMPA\\s+)?EMV"
         ]
       }
     },
@@ -4350,7 +4379,7 @@
       "match": {
         "patterns": [
           "\\bJEWELLERY\\b",
-          "\\bZELLE\\s+PAYMENT\\s+TO\\s+ANUSHA\\b"
+          "\\bZELLE\\s+PAYMENT\\s+(?:TO\\s+)?ANUSHA\\s+VAKA\\b"
         ]
       }
     },
@@ -4572,7 +4601,8 @@
       "match": {
         "patterns": [
           "KIRAN\\s+INDIAN",
-		  "\\bNNT\\s+KIRAN\\s+INDI\\b"
+		  "\\bNNT\\s+KIRAN\\s+INDI\\b",
+		  "\\bKIREN\\s+INDIAN\\s+GROCERY\\b"
         ]
       }
     },
@@ -4820,7 +4850,7 @@
         "patterns": [
           "\\bLIANG\\s+S\\s+BISTRO\\b",
 		  "\\bLIANG\\s+BISTRO\\b",
-		  "\\bLIANGS\\s+BISTO\\b"
+		  "\\bLIANGS\\s+BISTRO\\b"
         ]
       }
     },
@@ -5340,7 +5370,8 @@
 		  "\\bAWL\\s+PEARSON\\s+EDUCATION\\b",
 		  "\\bWL\\s+VUE\\s+AAMC\\s+EXAM\\b",
 		  "\\bINFINITE\\s+EDGE\\s+LEARNING\\b",
-		  "\\bQUIZLET\\s+COM\\b"
+		  "\\bQUIZLET\\s+COM\\b",
+		  "\\bJACKWESTIN\\s+COM\\s+MCAT\\b"
 	    ]
 	  }
 	},
@@ -6223,7 +6254,10 @@
 		  "POE\\s+GARAGE\\b",
 		  "HILLSBOROUGH\\s+RVR",
 		  "\\bPARKMOBILE\\b",
-		  "\\bGARAGE\\s+434\\b"
+		  "\\bGARAGE\\s+434\\b",
+		  "E\\s+Z\\s+PARK\\s+INC",
+		  "PAM\\s+IORIO\\s+GARAGE",
+		  "\\bJOE\\s+S\\s+AUTO\\s+PARKS\\s+PLAZA"
         ]
       }
     },
@@ -6356,7 +6390,8 @@
       "match": {
         "patterns": [
           "PESTBEAR\\s+BILL",
-		  "\\bPESTBEAR\\b"
+		  "\\bPESTBEAR\\b",
+		  "\\bONLINE\\s+PAYMENT\\s+(?:26373755815|27061996832)\\s+(?:TO\\s+)?PEST\\s+BEAR"
         ]
       }
     },
@@ -6905,7 +6940,8 @@
         "patterns": [
           "ENTERPRISE\\s+RENT\\s+A\\s+CAR",
           "HERTZ\\s+RENT\\s+A\\s+CAR",
-          "ALAMO\\s+RENT\\s+A\\s+CAR"
+          "ALAMO\\s+RENT\\s+A\\s+CAR",
+		  "\\bBUDGET\\s+CAR\\s+RENTAL\\b"
         ]
       }
     },
@@ -7667,7 +7703,8 @@
       "match": {
         "patterns": [
           "SRI\\s+SIDDHESWARI\\s+SEVA",
-          "SQ\\s+\\*SRI\\s+SIDDHESWARI"
+          "SQ\\s+\\*SRI\\s+SIDDHESWARI",
+		  "SP\\s+GIRI\\s+USA"
         ]
       }
     },
@@ -8617,7 +8654,8 @@
       "defaultSub2": "$MERCHANT",
       "match": {
         "patterns": [
-          "TPA\\s+BAY\\s+COFFEE"
+          "TPA\\s+BAY\\s+COFFEE",
+		  "TPA\\s+6121\\s+BAYCOFFEE\\s+TEA"
         ]
       }
     },
@@ -8650,9 +8688,21 @@
     {
       "merchantId": "TRAVEL_MISC",
       "canonicalName": "Misc",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Travel",
-      "defaultSub2": "Miscellaneous",
+	  "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	        "sub1": "Travel",
+	  	  "sub2" : "Miscellaneous"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	  "sub2": "Travel",
+	  	  "sub3" : "Miscellaneous"			  
+	      }
+	    }
+	  },			  
       "match": {
         "patterns": [
           "TPA\\s+CART\\s+RENTAL",
@@ -8669,7 +8719,22 @@
 		  "\\bMETROCARD\\b",
 		  "\\bFRANKFURT\\s+AM\\s+DEU",
 		  "\\bSMITH\\s+STORE\\s+NASM\\b",
-		  "\\bBURLINGTON\\s+NC$"
+		  "\\bBURLINGTON\\s+NC$",
+		  "\\bAA\\s+KIOSK0010273966307\\b",
+		  "\\bYELL\\s+ACTIVITIES\\s+DEP\\b",
+		  "\\bVIATORTRIPADVISOR\\s+US\\b",
+		  "\\bYELLOWSTONE\\s+NATIONAL\\s+PA\\b",
+		  "\\bSECAUCUS\\s+JCT\\b",
+		  "\\bHOBOKEN\\b",
+		  "\\bSWA\\s+EXCS\\s+BAG",
+		  "\\bDMART\\s+AVENUE\\s+SUPERMART",
+		  "\\bDUBAI\\s+DUTY\\s+FREE\\b",
+		  "\\bNYX\\s+SMARTECARTE",
+		  "\\bCANYON\\s+GENERAL\\b",
+		  "\\bYELLOW\\s+TRUCK\\s+CANYO",
+		  "OLD\\s+FAITHFUL\\s+INN\\s+GIFTS",
+		  "DENVER\\s+AIRPORT",
+		  "TRAVELERS\\s+CENTER"
         ]
       }
     },
@@ -9031,7 +9096,8 @@
 		      "\\bLYFT\\s+1\\s+RIDE\\b",
 		      "SQUARE\\s+SQ\\s+UBER\\s+JERSEY\\s+CITY\\s+NJ",
 		      "TAXI\\s+PASS\\s+COM\\s+NEW\\s+YORK\\s+NY",
-		      "THRIFTY\\s+0078213\\s+ATLANTA\\s+GA"
+		      "THRIFTY\\s+0078213\\s+ATLANTA\\s+GA",
+			  "NJT\\s+MOBILE"
 		    ]
 		  }
 		},
@@ -9461,7 +9527,17 @@
 	      "\\bSITAR\\s+INDIAN\\s+RESTAURAN\\s+CHATTANOOGA\\s+TN\\b",
 	      "\\bWASHINGTON\\s+DC\\b",
 	      "\\bDUBAI\\s+AE\\b",
-	      "\\bMERRY\\s+ANNS\\s+DINER\\b(?:\\s+\\d{2}/\\d{2})?(?:\\s+PURCHASE)?(?:\\s+CHAMPAIGN\\s+IL)?\\b"
+	      "\\bMERRY\\s+ANNS\\s+DINER\\b(?:\\s+\\d{2}/\\d{2})?(?:\\s+PURCHASE)?(?:\\s+CHAMPAIGN\\s+IL)?\\b",
+		  "\\bHEIDI\\s+S\\s+BROOKLYN\\s+DELI\\b",
+		  "\\bLA\\s+JUNGLA\\s+LLC\\b",
+		  "\\bMAMMOTH\\s+DINING(?:\\s+BAR)?\\b",
+		  "\\bTIMBERLINE\\s+CAFE\\b",
+		  "\\bCANYON\\s+DINING\\s+BAR\\b",
+		  "\\bWILD\\s+WEST\\s+MADISON\\b",
+		  "\\bCANTINA\\s+GRILL\\b",
+		  "\\bCANYON\\s+DINING\\s+BAR\\b",
+		  "\\bSQ\\s+SERENITY\\s+BISTRO"
+
 	    ]
 	  }
 	},
@@ -9735,7 +9811,8 @@
           "VENDING",
 		  "365\\s+ADM\\s+GMA\\s+OTI\\s+TROY",
 		  "365\\sMARKET",
-		  "AVE\\s+C\\s+MKT\\b"
+		  "AVE\\s+C\\s+MKT\\b",
+		  "CTLP\\s+VEND\\s+FORCE"
         ]
       }
     },
@@ -10230,22 +10307,28 @@
 		  "HOFS\\s+HOUSE\\s+SWE\\b",
 		  "LADERACH\\s+USA\\s+INC\\b",
 		  "SP\\s+JAPANESETASTE\\b",
-		  "^YO\\s+KAI\\s+EXPRESS\\b"
+		  "^YO\\s+KAI\\s+EXPRESS\\b",
+		  "\\bFLORIDA\\s+AVENUE\\s+BREWI\\b",
+		  "GREEN\\s+EXPRESS\\s+TC",
+		  "\\bTAKO\\s+CHEENA",
+		  "\\bLITTLE\\s+INDIA\\b",
+		  "INCHINS\\s+BAMBOO\\s+GARD",
+		  "GOLDEN\\s+JUICE(?:\\s+ORLANDO)?"
 	    ]
 	  }
 	},
-    {
-      "merchantId": "ZELLE_EMANUEL",
-      "canonicalName": "Emanuel (Zelle)",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Home Maintenance",
-      "defaultSub2": "Roof Repair",
-      "match": {
-        "patterns": [
-          "\\bZELLE\\s+PAYMENT\\s+TO\\s+EMANUEL\\b"
-        ]
-      }
-    },
+	{
+	  "merchantId": "ZELLE_EMANUEL",
+	  "canonicalName": "Emanuel (Zelle)",
+	  "defaultCategory": "Expense",
+	  "defaultSub1": "Home Maintenance",
+	  "defaultSub2": "Roof Repair",
+	  "match": {
+	    "patterns": [
+	      "\\bZELLE\\s+PAYMENT\\s+(?:TO\\s+)?EMANUEL\\b"
+	    ]
+	  }
+	},	
     {
       "merchantId": "ZELLE_JAMIE_DAVIS",
       "canonicalName": "Jamie Davis (Zelle)",
@@ -10256,22 +10339,7 @@
 	  "defaultSub4": "10303 Meadow Crossing Dr",
       "match": {
         "patterns": [
-          "\\bZELLE\\s+PAYMENT\\s+TO\\s+JAMIE\\s+DAVIS\\b"
-        ]
-      }
-    },
-    {
-      "merchantId": "ZELLE_SONYA_IVANOVA_PIANO",
-      "canonicalName": "SONYA IVANOVA",
-      "defaultCategory": "Expense",
-      "defaultSub1": "Recreation",
-      "defaultSub2": "Piano",
-      "defaultSub3": "Sonya",
-      "match": {
-        "type": "REGEX_ANY",
-        "patterns": [
-          "ZELLE\\s+TRANSFER\\s+CONF#\\s*[A-Z0-9]{5,20}\\s*;\\s*IVANOVA\\s*,\\s*SONYA",
-          "ZELLE\\s+PAYMENT\\s+TO\\s+SONYA\\s+IVANOVA\\s+CONF#\\s*[A-Z0-9]{5,20}"
+          "\\bZELLE\\s+PAYMENT\\s+(?:TO\\s+)?JAMIE\\s+DAVIS\\b"
         ]
       }
     },
@@ -10660,6 +10728,32 @@
 	    }
 	  },
 	  {
+	    "merchantId": "CLOTHING_MISC",
+	    "canonicalName": "Clothing Catch All",
+		"defaults": {
+		  "byAmountSign": {
+		    "negative": {
+		      "category": "Expense",
+		      "sub1": "Shopping",
+			  "sub2": "Clothing",
+			  "sub3": "Miscellaneous"
+		    },
+		    "positive": {
+		      "category": "Income",
+		      "sub1": "Refund/Reimbursement",
+			  "sub2": "Shopping",
+			  "sub3":"Clothing",			  
+			  "sub4":"Miscellaneous"			  
+		    }
+		  }
+		},		
+	    "match": {
+	      "patterns": [
+			"\\bSP\\s+WHITE\\s+FOX\\s+BOUT"
+	      ]
+	    }
+	  },
+	  {
 	    "merchantId": "EXPENSE_MISC",
 	    "canonicalName": "Misc",
 	    "defaultCategory": "Expense",
@@ -10739,7 +10833,24 @@
 			      "\\bUWORLD\\b",
 				  "^MTC\\s+PET\\s+GROUP\\s+LLC\\s+POLK\\s+CITY",
 				  "^AIR\\s+VAC\\s+CONNECTION$",
-				  "^CROSS\\s+CREEK$"
+				  "^CROSS\\s+CREEK$",
+				  "\\bJACKSON\\s+TRADING\\s+CO\\b",
+				  "\\bANGELA\\s+HESTER\\s+BILL\\s+PAYMENT\\b",
+				  "\\bPHL\\s+TRIBUNE\\s+ST2863\\b",
+				  "\\bNAYAX\\b",
+				  "\\bSILVER\\s+MOON\\s+CUSTOM\\s+ART\\b",
+				  "\\bFRANCESCAS\\s+OPERAT\\b",
+				  "\\bINDIA\\s+BAZAAR\\s+EL\\s+DORADO\\b",
+				  "MYUVENTEX",
+				  "\\bGUJARATI\\s+SAMAJ(?:\\s+OF)?(?:\\s+TAMPA)?",
+				  "\\bSUMUP\\s+VIP\\s+RESTOB",
+				  "\\bSP\\s+WINDSOR\\b",
+				  "\\bSP\\s+EDIKTED",
+				  "\\bSTLR\\s+BA\\s+RJ\\s+SURF\\s+ST2895",
+				  "SERVER\\s+CENTER",
+				  "SQ\\s+SUN\\s+N\\s+FUN\\s+EN",
+				  "SP\\s+EVRYJEWELS",
+				  "WINECNTRYGIFTBSKT"
 	      ]
 	    }
 	  },
@@ -10856,7 +10967,9 @@
 			"\\bNEW\\s+ORAL\\s+FACIAL\\b",
 			"\\bGOODRXGOLD\\b",
 			"\\b360\\s+DERMATOLOGY\\b",
-			"\\bMYSAGEDENTAL\\b"
+			"\\bENTANDALLERGYASSO\\b",
+			"\\bENT\\s+ALLERGY\\s+ASSOCIATES\\b",
+			"\\bOPENBIO\\s+LABORATORY\\b"
 			]
 		}
 	},
@@ -11264,7 +11377,8 @@
 	      "patterns": [
 	        "GOFUNDME",
 	        "WPY\\s*GOFUNDME",
-			"^GFM\\s+GOFNDME"
+			"^GFM\\s+GOFNDME",
+			"GOFNDME"
 	      ]
 	    }
 	  },
@@ -11381,7 +11495,9 @@
 	  		"\\bREGION\\s+USAV\\b",
 	  		"\\bFLORIDA\\s+ELITE\\s+VLYBALL\\b",
 	  		"\\bAAU\\b",
-	  		"\\bCLUB\\s+STEEL\\s+VBALL"
+	  		"\\bCLUB\\s+STEEL\\s+VBALL",
+			"GAMEPOINTVOLLEYBALL",
+			"GOFANTIX"
 	      ]
 	    }
 	  },	  
@@ -11493,6 +11609,54 @@
 	    }
 	  },
 	  {
+	    "merchantId": "PASSPORT_SERVICES",
+	    "canonicalName": "Gov Assist",
+		"defaults": {
+		  "byAmountSign": {
+		    "negative": {
+		      "category": "Expense",
+			  "sub1": "Miscellaneous",
+		  	  "sub2": "Passport Services"
+		    },
+		    "positive": {
+		      "category": "Income",
+		      "sub1": "Refund/Reimbursement",
+			  "sub2": "Miscellaneous",
+			  "sub3":"Passport Services"			  
+		    }
+		  }
+		},		
+	    "match": {
+	      "patterns": [
+	        "\\bGOV\\s+ASSIST\\b"
+	      ]
+	    }
+	  },
+	  {
+	    "merchantId": "CHATGPT",
+	    "canonicalName": "ChatGPT",
+	  "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	  	  "sub1": "Subscription",
+	    	  "sub2": "$MERCHANT"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	  "sub2": "Subscription",
+	  	  "sub3":"$MERCHANT"			  
+	      }
+	    }
+	  },		
+	    "match": {
+	      "patterns": [
+	        "\\bCHATGPT\\b"
+	      ]
+	    }
+	  },
+	  {
 	    "merchantId": "SRI_SHIVA_HANDLOOM",
 	    "canonicalName": "Sri Shiva Handloom",
 	    "defaults": {
@@ -11519,29 +11683,79 @@
 	    }
 	  },
 	  {
+	    "merchantId": "SOUTH_INDIA-SHOPPING_MALL",
+	    "canonicalName": "South India Shopping Mall",
+	    "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	        "sub1": "Travel",
+	  	    "sub2": "Shopping",
+	      "sub3": "$MERCHANT"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	    "sub2": "Travel",
+	  	    "sub3": "Shopping",
+	  	"sub4": "$MERCHANT"
+	      }
+	    }
+	  },		
+	    "match": {
+	      "patterns": [
+	        "\\bSOUTH\\s+INDIA\\s+SHOPPING\\b"
+	      ]
+	    }
+	  },
+	  {
+	    "merchantId": "LEGAL_EXPENSES",
+	    "canonicalName": "Legal Expenses",
+	    "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	        "sub1": "Legal",
+	  	    "sub2": "FL Patel Law"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	    "sub2": "Legal",
+	  	    "sub3": "FL Patel Law"
+	      }
+	    }
+	  },		
+	    "match": {
+	      "patterns": [
+	        "\\b(?:FL\\s+)?PATEL\\s+LAW\\s+PLLC\\b"
+	      ]
+	    }
+	  },
+	  {
 	    "merchantId": "ZELLE_CATCHALL",
 	    "canonicalName": "Zelle Catch All",
-		"defaults": {
-		  "byAmountSign": {
-		    "negative": {
-		      "category": "Expense",
-		      "sub1": "Zelle",
-			  "sub2": "Miscellaneous"
-		    },
-		    "positive": {
-		      "category": "Income",
-		      "sub1": "Refund/Reimbursement",
-			  "sub2": "Zelle",
-			  "sub3":"Miscellaneous"			  
-		    }
-		  }
-		},		
+	  "defaults": {
+	    "byAmountSign": {
+	      "negative": {
+	        "category": "Expense",
+	        "sub1": "Zelle",
+	  	  "sub2": "Miscellaneous"
+	      },
+	      "positive": {
+	        "category": "Income",
+	        "sub1": "Refund/Reimbursement",
+	  	  "sub2": "Zelle",
+	  	  "sub3":"Miscellaneous"			  
+	      }
+	    }
+	  },		
 	    "match": {
 	      "patterns": [
 	        "\\bZELLE\\s+(?:TRANSFER|PAYMENT)\\b"
 	      ]
 	    }
-	  },
+	  },	  
 	  {
 	    "merchantId": "STORE",
 	    "canonicalName": "Store",
@@ -11553,8 +11767,67 @@
 	        "\\bSTORE\\b"
 	      ]
 	    }
-	  }
-	  	  
+	  },	  	  
+	  {
+	    "merchantId": "CATCHALL_EXPENSE_FOOD",
+	    "canonicalName": "Catch All Food Expense",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Food",
+		"defaultSub2": "Miscellaneous",
+	    "match": {
+	      "patterns": [
+	        "\\bBUTCHER\\s+(?:AND\\s+)?BBQ\\b",
+			"\\bTPA\\s+6121\\s+BAYCOFFEE\\s+TEA",
+			"\\bCHEF\\s+TAN\\b",
+			"\\bUBER\\s+EATS\\b",
+			"\\bNYX\\s+CANTEEN\\b",
+			"\\bPERSIS\\s+INDIAN\\s+GRILL\\b",
+			"\\bPARIS\\s+BAGUET(?:TE)?\\b",
+			"\\bNNT\\s+HELLO\\s+SWEE\\b",
+			"\\bFALABELLA\\s+FAMILY\\s+BIS",
+			"\\bMT\\s+COMFORT\\s+COFFEE\\b",
+			"\\bCOLUMBIA\\s+YBOR\\b"
+	      ]
+	    }
+	  },	  	  
+	  {
+	    "merchantId": "REPAIR_MISC",
+	    "canonicalName": "Catch All Repair Misc",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Home Maintenance",
+	  "defaultSub2": "Repair",
+	  "defaultSub3": "Miscellaneous",
+	    "match": {
+	      "patterns": [
+	  		"\\bSUNRISE\\sIRRIGATION\\s+LLC\\b"
+	      ]
+	    }
+	  },	  	  
+	  {
+	    "merchantId": "ENTERTAINMENT_MISC",
+	    "canonicalName": "Catch All Entertainment Misc",
+	    "defaultCategory": "Expense",
+	    "defaultSub1": "Entertainment",
+		"defaultSub2": "Movies",
+		"defaultSub3": "Miscellaneous",
+	    "match": {
+	      "patterns": [
+	  		"\\bORLANDO\\s+PREMIERE\\s+CINEM\\b"
+	      ]
+	    }
+	  },	  	  
+	  {
+	    "merchantId": "CATCHALL_DONATION_MISC",
+	    "canonicalName": "Catch All Donation Misc",
+	    "defaultCategory": "Donation",
+	    "defaultSub1": "Miscellaneous",
+	    "match": {
+	      "patterns": [
+	  		"\\bBLOOD\\s+CANCER\\s+UNITED\\b"
+	      ]
+	    }
+	  }	  	  
+	    	  
   ],
   "ordering": {
     "type": "specificity_then_alpha",
