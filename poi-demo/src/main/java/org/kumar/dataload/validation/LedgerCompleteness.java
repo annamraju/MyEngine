@@ -1,7 +1,16 @@
 package org.kumar.dataload.validation;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -21,9 +30,14 @@ import org.kumar.dataload.util.MarcusSavingsRecord;
 import org.kumar.excel.util.DateInterval;
 import org.kumar.excel.util.LedgerRecord;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class LedgerCompleteness {
 	private static final Logger LOGGER = LogManager.getLogger("LedgerCompleteness");
     public static final String DATALOADJSON = "dataload.json";
+    public static final String ACCOUNT_STATUS_CONFIG_JSON = "ledger-completeness-accounts.json";
+    public static final String ACCOUNT_STATUS_CONFIG_PROPERTY = "ledger.completeness.accounts";
 
 	public static final class AccountSpec<T> {
 		public final String account;
@@ -50,6 +64,66 @@ public class LedgerCompleteness {
 			this.reader = reader;
 			this.dateGetter = dateGetter;
 			this.toLedger = toLedger;
+		}
+	}
+
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	public static final class AccountStatusConfig {
+		public List<AccountStatus> accounts = new ArrayList<>();
+
+		public static AccountStatusConfig load(String configLocation) throws IOException {
+			ObjectMapper mapper = new ObjectMapper();
+
+			try (InputStream is = openConfig(configLocation)) {
+				return mapper.readValue(is, AccountStatusConfig.class);
+			}
+		}
+
+		private static InputStream openConfig(String configLocation) throws IOException {
+			Path configPath = Path.of(configLocation);
+			if (Files.exists(configPath)) {
+				return Files.newInputStream(configPath);
+			}
+
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream resourceStream = classLoader.getResourceAsStream(configLocation);
+			if (resourceStream != null) {
+				return resourceStream;
+			}
+
+			throw new IOException("Account status config not found: " + configLocation);
+		}
+	}
+
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	public static final class AccountStatus {
+		public String account;
+		public String status;
+		public Boolean enabled;
+
+		public boolean isEnabled() {
+			if (enabled != null) {
+				return enabled.booleanValue();
+			}
+
+			if (status == null || status.isBlank()) {
+				return true;
+			}
+
+			switch (status.trim().toUpperCase(Locale.ROOT)) {
+				case "ACTIVE":
+				case "ENABLED":
+				case "INCLUDE":
+				case "INCLUDED":
+					return true;
+				case "INACTIVE":
+				case "DISABLED":
+				case "EXCLUDE":
+				case "EXCLUDED":
+					return false;
+				default:
+					throw new IllegalArgumentException("Unsupported account status '" + status + "' for account " + account);
+			}
 		}
 	}
 
@@ -98,6 +172,52 @@ public class LedgerCompleteness {
 		if(missing == null) LOGGER.info("None");
 		else LOGGER.info(missing);
   }
+
+	private List<AccountSpec<?>> selectConfiguredSpecs(
+			List<AccountSpec<?>> availableSpecs,
+			String configLocation) throws IOException {
+		AccountStatusConfig config = AccountStatusConfig.load(configLocation);
+		if (config.accounts == null || config.accounts.isEmpty()) {
+			throw new IllegalArgumentException("No accounts configured in " + configLocation);
+		}
+
+		Map<String, AccountSpec<?>> availableByAccount = new LinkedHashMap<>();
+		for (AccountSpec<?> spec : availableSpecs) {
+			availableByAccount.put(spec.account, spec);
+		}
+
+		Set<String> configuredAccounts = new HashSet<>();
+		List<AccountSpec<?>> selectedSpecs = new ArrayList<>();
+		for (AccountStatus accountStatus : config.accounts) {
+			if (accountStatus.account == null || accountStatus.account.isBlank()) {
+				throw new IllegalArgumentException("Account status config contains a blank account name");
+			}
+
+			String account = accountStatus.account.trim();
+			if (!configuredAccounts.add(account)) {
+				LOGGER.warn("Ignoring duplicate account status config for " + account);
+				continue;
+			}
+
+			AccountSpec<?> spec = availableByAccount.get(account);
+			if (spec == null) {
+				LOGGER.warn("Ignoring account status config for unsupported account: " + account);
+				continue;
+			}
+
+			if (accountStatus.isEnabled()) {
+				selectedSpecs.add(spec);
+			} else {
+				LOGGER.info("Skipping disabled account: " + account);
+			}
+		}
+
+		if (selectedSpecs.isEmpty()) {
+			throw new IllegalArgumentException("No enabled accounts found in " + configLocation);
+		}
+
+		return selectedSpecs;
+	}
 
 	/**
 	 * 
@@ -272,7 +392,12 @@ public class LedgerCompleteness {
     	      )  
     );
 
-    for (AccountSpec<?> s : specs) {
+    String accountStatusConfig =
+    		System.getProperty(ACCOUNT_STATUS_CONFIG_PROPERTY, ACCOUNT_STATUS_CONFIG_JSON);
+    LOGGER.info("Loading account status config from " + accountStatusConfig);
+    List<AccountSpec<?>> configuredSpecs = lc.selectConfiguredSpecs(specs, accountStatusConfig);
+
+    for (AccountSpec<?> s : configuredSpecs) {
       lc.checkCompleteness(ledgerFile, sheetName, (AccountSpec<Object>) s, ctx);
       Thread.sleep(1000);
     }

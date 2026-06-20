@@ -1,0 +1,72 @@
+{
+  "accounts": [
+    {
+      "account": "Marcus Savings",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "HSA",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "GTEFCU CC",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "GTEFCU CD",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "GTEFCU Savings",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "GTEFCU Checking",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "etrade Bank",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Citi Savings",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Chase Checking (Anantha LLC)",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Chase Checking",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "BOA Savings",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "BOA Checking(Anjali)",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "BOA Checking(Ananya)",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "BOA Checking",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "BOA CC",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Chase CC (Anantha)",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Chase CC",
+      "status": "ACTIVE"
+    }
+  ]
+}
