@@ -91,8 +91,10 @@ public class MarcusSavingsRecord implements LedgerInterface {
      * Main entry point for MonthlyLoad: parse the PDF and return activity rows as records.
      */
     public static List<MarcusSavingsRecord> readTransactionsFromPdf(Path pdfPath) throws IOException {
-        String text = extractText(pdfPath);
+        return parseTransactionsFromText(extractText(pdfPath));
+    }
 
+    static List<MarcusSavingsRecord> parseTransactionsFromText(String text) throws IOException {
         // Normalize line endings and split.
         String[] rawLines = text.replace("\r\n", "\n").replace('\r', '\n').split("\n");
         List<String> lines = new ArrayList<>();
@@ -104,7 +106,7 @@ public class MarcusSavingsRecord implements LedgerInterface {
         // Find ACCOUNT ACTIVITY section and then the header line.
         int start = indexOfContains(lines, "ACCOUNT ACTIVITY");
         if (start < 0) {
-            throw new IOException("Could not find 'ACCOUNT ACTIVITY' section in PDF: " + pdfPath);
+            throw new IOException("Could not find 'ACCOUNT ACTIVITY' section in PDF text");
         }
 
         // header usually: "Date Description Credits Debits Balance"
@@ -119,7 +121,7 @@ public class MarcusSavingsRecord implements LedgerInterface {
             }
         }
         if (header < 0) {
-            throw new IOException("Could not find activity table header after ACCOUNT ACTIVITY in PDF: " + pdfPath);
+            throw new IOException("Could not find activity table header after ACCOUNT ACTIVITY in PDF text");
         }
 
         // Parse rows until we hit "ACCOUNT ACTIVITY (continued)" end-of-table markers,
@@ -170,6 +172,14 @@ public class MarcusSavingsRecord implements LedgerInterface {
                 curDate = LocalDate.parse(dm.group(1), dtf);
                 curDesc.setLength(0);
                 curDesc.append(dm.group(2).trim());
+
+                // Transactions that fit on one physical line must be completed
+                // before page footer or marketing text can be appended to them.
+                added = flushIfComplete(out, curDate, curDesc.toString(), money);
+                if (added) {
+                    curDate = null;
+                    curDesc.setLength(0);
+                }
                 continue;
             }
 
