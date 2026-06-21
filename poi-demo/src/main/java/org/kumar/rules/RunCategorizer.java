@@ -1,18 +1,22 @@
 package org.kumar.rules;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.kumar.excel.ReadLedgerFile;
 import org.kumar.excel.util.LedgerRecord;
 import org.kumar.rules.LedgerRecordCategorizer.CategorizationResult;
 import org.kumar.rules.LedgerRecordCategorizer.CategoryResult;
 import org.kumar.rules.LedgerRecordCategorizer.Engine;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -21,9 +25,16 @@ import java.util.stream.Collectors;
 
 public class RunCategorizer {
 
-    // ---- OPTION FLAGS ----
-    private static final boolean SAVE_OUTPUT = true;  // <-- set false if you don't want a file
-    private static final Path OUTPUT_DIR = Path.of("D:\\fin_docs\\output");
+    private static final int COL_CAT = 8;
+    private static final int COL_SUB1 = 9;
+    private static final int COL_SUB2 = 10;
+    private static final int COL_SUB3 = 11;
+    private static final int COL_SUB4 = 12;
+
+    private static final String HEADER_MERCHANT_ID = "MERCHANT_ID";
+    private static final String HEADER_MERCHANT = "merchant";
+    private static final String HEADER_RULE_MATCHES = "rule matches";
+    private static final String HEADER_RULE_NO = "rule no";
 
     public static void main(String[] args) throws Exception {
 
@@ -51,13 +62,10 @@ public class RunCategorizer {
         }
         // show some stats as to how many were uncategorized
         System.out.println(count + " were STILL uncategorized out of " + ledger.size());
-        
-        // ---- Save categorization audit output (CSV) ----
-        if (SAVE_OUTPUT) {
-            Path outFile = buildOutputFile("categorization_output", "csv");
-            saveCategorizationCsv(results, outFile);
-            System.out.println("Saved categorization output to: " + outFile.toAbsolutePath());
-        }
+
+        int updatedRows = updateLedgerFile(ledgerFile, sheetName, results);
+        System.out.println("Updated categorization output in ledger file: " + Path.of(ledgerFile).toAbsolutePath()
+                + " (" + updatedRows + " rows)");
 
   	  	printStats(results);
   	  	/*
@@ -110,150 +118,197 @@ public class RunCategorizer {
     		System.out.println(sorted);    	
     }
 
-    /*
-    public static void printStats(List<LedgerRecord> records) {
-    	if(records == null || records.size() ==0) return;
-    	Map<String, Integer> stats = new HashMap<String, Integer>();
-    	for(LedgerRecord rec : records) {
-    		StringBuffer buf =  new StringBuffer();
-    		buf.append(isBlank(rec.getCategory()) ? "" : rec.getCategory());
-    		buf.append("|");    		
-    		buf.append(isBlank(rec.getSub1()) ? "" : rec.getSub1());
-    		//buf.append("|");
-    		//buf.append(isBlank(rec.getSub2()) ? "" : rec.getSub2());
-    		if(stats.containsKey(buf.toString())) {
-    			Integer value = stats.get(buf.toString());
-    			value =  value + 1;
-    			stats.put(buf.toString(), value);
-    		}else {
-    			stats.put(buf.toString(), 1);
-    		}    				
-    	}
-    	
-    	// now print
-    	Map<String, Integer> sorted =
-    		    stats.entrySet()
-    		       .stream()
-    		       .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
-    		       .collect(Collectors.toMap(
-    		           Map.Entry::getKey,
-    		           Map.Entry::getValue,
-    		           (e1, e2) -> e1,
-    		           LinkedHashMap::new
-    		       ));
-
-    		System.out.println(sorted);    	
-    }
-    */
-    
-    private static Path buildOutputFile(String baseName, String ext) throws IOException {
-        if (!Files.exists(OUTPUT_DIR)) {
-            Files.createDirectories(OUTPUT_DIR);
+    static int updateLedgerFile(String ledgerFile, String sheetName, List<CategorizationResult> results) throws IOException {
+        if (isBlank(ledgerFile)) {
+            throw new IllegalArgumentException("ledgerFile cannot be blank");
         }
-        String ts = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        return OUTPUT_DIR.resolve(baseName + "_" + ts + "." + ext);
-    }
+        if (isBlank(sheetName)) {
+            throw new IllegalArgumentException("sheetName cannot be blank");
+        }
+        if (results == null) {
+            throw new IllegalArgumentException("results cannot be null");
+        }
 
-    private static void saveCategorizationCsv(List<CategorizationResult> results, Path outFile) throws IOException {
-        try (BufferedWriter w = Files.newBufferedWriter(outFile, StandardCharsets.UTF_8)) {
+        Path ledgerPath = Path.of(ledgerFile);
+        XSSFWorkbook workbook;
+        try (java.io.InputStream inputStream = Files.newInputStream(ledgerPath)) {
+            workbook = new XSSFWorkbook(inputStream);
+        }
 
-            // Header
-            w.write(String.join(",",
-                    "Account",
-                    "TransDate",
-                    "Description",
-                    "Amount",
-                    "MerchantID",
-                    "Merchant",
-                    "RuleMatched",
-                    "RuleNoMatched",
-                    "Original Category",
-                    "Original Sub1",
-                    "Original Sub2",
-                    "Original Sub3",
-                    "Original Sub4",
-                    "Category",
-                    "Sub1",
-                    "Sub2",
-                    "Sub3",
-                    "Sub4",
-                    "dif cate",
-                    "diff sub1",
-                    "diff sub2",
-                    "diff sub3",
-                    "diff sub4"
-            ));
-            w.newLine();
+        int rowsUpdated;
+        try (XSSFWorkbook closeableWorkbook = workbook) {
+            Sheet sheet = closeableWorkbook.getSheet(sheetName);
+            if (sheet == null) {
+                throw new IllegalArgumentException("Sheet not found: " + sheetName);
+            }
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Row headerRow = sheet.getRow(sheet.getFirstRowNum());
+            if (headerRow == null) {
+                headerRow = sheet.createRow(sheet.getFirstRowNum());
+            }
 
-            for (CategorizationResult r : results) {
-                LedgerRecord lr = r.record;
+            Map<String, Integer> headerColumns = getHeaderColumns(headerRow);
+            int merchantIdCol = getOrCreateHeaderColumn(headerRow, headerColumns, HEADER_MERCHANT_ID);
+            int merchantCol = getOrCreateHeaderColumn(headerRow, headerColumns, HEADER_MERCHANT);
+            int ruleMatchesCol = getOrCreateHeaderColumn(headerRow, headerColumns, HEADER_RULE_MATCHES);
+            int ruleNoCol = getOrCreateHeaderColumn(headerRow, headerColumns, HEADER_RULE_NO);
 
-                String account = csv(lr.getAccount());
-                String transDate = csv(lr.getTransDate() == null ? "" : sdf.format(lr.getTransDate()));
-                String desc = csv(lr.getDescription());
-                String amount = String.valueOf(lr.getAmount());
-                String merchantID = csv(r.merchantID);
-                String merchant = csv(r.merchant);
-                String ruleMatched = String.valueOf(r.ruleMatched);
-                String ruleNo = (r.ruleNoMatched == null) ? "" : String.valueOf(r.ruleNoMatched);
+            FormulaEvaluator evaluator = closeableWorkbook.getCreationHelper().createFormulaEvaluator();
+            DataFormatter formatter = new DataFormatter();
+            int resultIndex = 0;
 
-                String o_cat = csv(lr.getCategory());
-                String o_sub1 = csv(lr.getSub1());
-                String o_sub2 = csv(lr.getSub2());
-                String o_sub3 = csv(lr.getSub3());
-                String o_sub4 = csv(lr.getSub4());
+            for (int rowNum = sheet.getFirstRowNum() + 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+                Row row = sheet.getRow(rowNum);
+                if (isBlankLedgerRow(row, formatter, evaluator)) {
+                    continue;
+                }
+                if (resultIndex >= results.size()) {
+                    throw new IllegalStateException("More ledger rows than categorization results. First extra spreadsheet row: "
+                            + (rowNum + 1));
+                }
 
-                CategoryResult res =  r.categoryResult;
-                String cat = csv( res != null ? res.r_category : "");
-                String sub1 = csv(res != null ? res.r_sub1 : "");
-                String sub2 = csv(res != null ? res.r_sub2 : "");
-                String sub3 = csv(res != null ? res.r_sub3 : "");
-                String sub4 = csv(res != null ? res.r_sub4 : "");
+                CategorizationResult result = results.get(resultIndex);
+                writeCategoryResult(row, result.categoryResult);
+                setString(row, merchantIdCol, result.merchantID);
+                setString(row, merchantCol, result.merchant);
+                setBoolean(row, ruleMatchesCol, result.ruleMatched);
+                setInteger(row, ruleNoCol, result.ruleNoMatched);
+                resultIndex++;
+            }
 
-                w.write(String.join(",",
-                        account,
-                        transDate,
-                        desc,
-                        amount,
-                        merchantID,
-                        merchant,
-                        ruleMatched,
-                        ruleNo,
-                        o_cat,
-                        o_sub1,
-                        o_sub2,
-                        o_sub3,
-                        o_sub4,
-                        cat,
-                        sub1,
-                        sub2,
-                        sub3,
-                        sub4,
-                        (o_cat.equalsIgnoreCase(cat)) ? "TRUE" : "FALSE"  ,
-                        (o_sub1.equalsIgnoreCase(sub1)) ? "TRUE" : "FALSE",
-                        (o_sub2.equalsIgnoreCase(sub2)) ? "TRUE" : "FALSE",
-                        (o_sub3.equalsIgnoreCase(sub3)) ? "TRUE" : "FALSE",
-                        (o_sub4.equalsIgnoreCase(sub4)) ? "TRUE" : "FALSE"
-                        		
-                ));
-                w.newLine();
+            if (resultIndex != results.size()) {
+                throw new IllegalStateException("Categorization produced " + results.size()
+                        + " results but only " + resultIndex + " ledger rows were updated");
+            }
+
+            rowsUpdated = resultIndex;
+            try (java.io.OutputStream outputStream = Files.newOutputStream(ledgerPath)) {
+                closeableWorkbook.write(outputStream);
             }
         }
+
+        return rowsUpdated;
     }
 
-    /**
-     * CSV escape:
-     * - wrap in quotes if contains comma/quote/newline
-     * - escape quotes by doubling
-     */
-    private static String csv(String s) {
-        if (s == null) return "";
-        String v = s;
-        boolean needsQuotes = v.contains(",") || v.contains("\"") || v.contains("\n") || v.contains("\r");
-        if (v.contains("\"")) v = v.replace("\"", "\"\"");
-        return needsQuotes ? "\"" + v + "\"" : v;
+    private static Map<String, Integer> getHeaderColumns(Row headerRow) {
+        Map<String, Integer> columns = new HashMap<String, Integer>();
+        short lastCellNum = headerRow.getLastCellNum();
+        if (lastCellNum < 0) {
+            return columns;
+        }
+
+        for (int cellNum = 0; cellNum < lastCellNum; cellNum++) {
+            Cell cell = headerRow.getCell(cellNum, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+            if (cell == null) {
+                continue;
+            }
+            String header = cell.getStringCellValue();
+            if (!isBlank(header)) {
+                columns.put(normalizeHeader(header), cellNum);
+            }
+        }
+        return columns;
+    }
+
+    private static int getOrCreateHeaderColumn(Row headerRow, Map<String, Integer> headerColumns, String headerName) {
+        String normalizedHeader = normalizeHeader(headerName);
+        Integer existingColumn = headerColumns.get(normalizedHeader);
+        if (existingColumn != null) {
+            return existingColumn;
+        }
+
+        int newColumn = Math.max(headerRow.getLastCellNum(), COL_SUB4 + 1);
+        Cell cell = headerRow.createCell(newColumn, CellType.STRING);
+        cell.setCellValue(headerName);
+
+        CellStyle headerStyle = findHeaderStyle(headerRow, newColumn);
+        if (headerStyle != null) {
+            cell.setCellStyle(headerStyle);
+        }
+
+        headerColumns.put(normalizedHeader, newColumn);
+        return newColumn;
+    }
+
+    private static CellStyle findHeaderStyle(Row headerRow, int beforeColumn) {
+        for (int cellNum = beforeColumn - 1; cellNum >= 0; cellNum--) {
+            Cell cell = headerRow.getCell(cellNum, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+            if (cell != null && cell.getCellStyle() != null) {
+                return cell.getCellStyle();
+            }
+        }
+        return null;
+    }
+
+    private static String normalizeHeader(String header) {
+        return header == null ? "" : header.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+    }
+
+    private static void writeCategoryResult(Row row, CategoryResult result) {
+        if (result == null) {
+            return;
+        }
+        if (!isBlank(result.r_category)) setString(row, COL_CAT, result.r_category);
+        if (!isBlank(result.r_sub1)) setString(row, COL_SUB1, result.r_sub1);
+        if (!isBlank(result.r_sub2)) setString(row, COL_SUB2, result.r_sub2);
+        if (!isBlank(result.r_sub3)) setString(row, COL_SUB3, result.r_sub3);
+        if (!isBlank(result.r_sub4)) setString(row, COL_SUB4, result.r_sub4);
+    }
+
+    private static boolean isBlankLedgerRow(Row row, DataFormatter formatter, FormulaEvaluator evaluator) {
+        if (row == null) {
+            return true;
+        }
+        for (int cellIndex = 0; cellIndex <= COL_SUB4; cellIndex++) {
+            Cell cell = row.getCell(cellIndex, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+            if (cell != null && !isBlank(formatter.formatCellValue(cell, evaluator))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static void setString(Row row, int col, String value) {
+        Cell cell = getOrCreateCell(row, col, CellType.STRING);
+        cell.setCellValue(value == null ? "" : value);
+    }
+
+    private static void setBoolean(Row row, int col, boolean value) {
+        Cell cell = getOrCreateCell(row, col, CellType.BOOLEAN);
+        cell.setCellValue(value);
+    }
+
+    private static void setInteger(Row row, int col, Integer value) {
+        Cell cell = getOrCreateCell(row, col, value == null ? CellType.BLANK : CellType.NUMERIC);
+        if (value == null) {
+            cell.setBlank();
+        } else {
+            cell.setCellValue(value);
+        }
+    }
+
+    private static Cell getOrCreateCell(Row row, int col, CellType cellType) {
+        Cell cell = row.getCell(col, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+        if (cell == null) {
+            cell = row.createCell(col, cellType);
+            CellStyle style = findRowStyle(row, col);
+            if (style != null) {
+                cell.setCellStyle(style);
+            }
+        } else if (cellType != CellType.BLANK) {
+            cell.setCellType(cellType);
+        }
+        return cell;
+    }
+
+    private static CellStyle findRowStyle(Row row, int beforeColumn) {
+        for (int cellNum = beforeColumn - 1; cellNum >= 0; cellNum--) {
+            Cell cell = row.getCell(cellNum, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+            if (cell != null && cell.getCellStyle() != null) {
+                return cell.getCellStyle();
+            }
+        }
+        return null;
     }
 
     private static boolean isBlank(String s) {
