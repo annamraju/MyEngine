@@ -54,8 +54,6 @@ public class EtradeBrokerageRecord implements LedgerInterface {
             "^([A-Z*][A-Z0-9*.]{0,12})\\s+([\\d,]+\\.\\d{2})(?:\\s+([\\d,]+\\.\\d{2}))?$");
     private static final Pattern AMOUNT_ONLY = Pattern.compile("^([\\d,]+\\.\\d{2})$");
     private static final Pattern TRAILING_AMOUNT = Pattern.compile("\\s+([\\d,]+\\.\\d{2})\\s*$");
-    private static final Pattern OTHER_START = Pattern.compile(
-            "^(\\d{2}/\\d{2}/\\d{2})\\s+(.+)$");
 
     private LocalDate transactionDate;
     private String section;
@@ -326,34 +324,8 @@ public class EtradeBrokerageRecord implements LedgerInterface {
     }
 
     private static int parseOtherActivity(List<String> lines, int start, List<EtradeBrokerageRecord> out) {
-        for (int i = start; i < lines.size(); i++) {
-            String line = lines.get(i);
-            if (line.startsWith("-- ") || line.toUpperCase(Locale.ROOT).startsWith("PAGE ")) {
-                break;
-            }
-            if (isOtherNoise(line)) {
-                continue;
-            }
-
-            Matcher dateMatcher = OTHER_START.matcher(line);
-            if (!dateMatcher.find()) {
-                continue;
-            }
-
-            LocalDate date = parseDate(dateMatcher.group(1));
-            String rest = dateMatcher.group(2).trim();
-            if (rest.isEmpty()) {
-                continue;
-            }
-
-            EtradeBrokerageRecord rec = new EtradeBrokerageRecord();
-            rec.setTransactionDate(date);
-            rec.setSection("Other Activity");
-            rec.setTransactionType("Other");
-            rec.setDescription(rest);
-            rec.setAmount(0.0);
-            out.add(rec);
-        }
+        // Other Activity rows (e.g. option assignments) are non-cash and already
+        // appear in the securities section, so they are intentionally not loaded.
         return lines.size();
     }
 
@@ -489,6 +461,10 @@ public class EtradeBrokerageRecord implements LedgerInterface {
             cleanDesc = type;
         }
 
+        if (isInternalHousekeeping(type, cleanDesc)) {
+            return;
+        }
+
         double signed = depositColumn ? Math.abs(amount) : -Math.abs(amount);
 
         EtradeBrokerageRecord rec = new EtradeBrokerageRecord();
@@ -498,6 +474,27 @@ public class EtradeBrokerageRecord implements LedgerInterface {
         rec.setDescription(cleanDesc.trim());
         rec.setAmount(signed);
         out.add(rec);
+    }
+
+    /**
+     * Internal E*TRADE bookkeeping that shuffles cash between sub-accounts or
+     * records unrealized P&amp;L. These do not represent real cash entering or
+     * leaving the brokerage.
+     */
+    static boolean isInternalHousekeeping(String transactionType, String description) {
+        if (description == null || description.isBlank()) {
+            return false;
+        }
+
+        String upper = description.toUpperCase(Locale.ROOT);
+
+        if ("Mark to Mkt".equalsIgnoreCase(transactionType) || upper.contains("MARK TO MARKET")) {
+            return true;
+        }
+
+        return upper.contains("TRNSFR FROM CASH TO MARGIN")
+                || upper.contains("TRNSFR FROM MARGIN TO CASH")
+                || upper.contains("TFR MARGIN TO CASH");
     }
 
     private static void appendDesc(StringBuilder desc, String part) {

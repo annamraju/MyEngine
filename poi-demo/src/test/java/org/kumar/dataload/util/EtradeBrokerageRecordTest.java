@@ -53,6 +53,8 @@ class EtradeBrokerageRecordTest {
                 "NET DIVIDENDS & INTEREST ACTIVITY $281.15",
                 "WITHDRAWALS & DEPOSITS",
                 "06/03/19 Adjustment TRNSFR FROM CASH TO MARGIN 3.95",
+                "06/03/19 Mark to Mkt MARK TO MARKET 647.71",
+                "06/03/19 Mark to Mkt MARK TO MARKET SHORT POS 647.71",
                 "06/10/19 Transfer TRANSFER TO XXXXXX7162",
                 "REFID:24578471482;",
                 "221.00",
@@ -101,13 +103,9 @@ class EtradeBrokerageRecordTest {
         List<EtradeBrokerageRecord> cash = records.stream()
                 .filter(record -> "Withdrawals & Deposits".equals(record.getSection()))
                 .collect(Collectors.toList());
-        assertEquals(3, cash.size());
-
-        EtradeBrokerageRecord marginAdjustment = cash.stream()
-                .filter(record -> record.getDescription().contains("TRNSFR FROM CASH TO MARGIN"))
-                .findFirst()
-                .orElseThrow();
-        assertEquals(-3.95, marginAdjustment.getAmount(), 0.001);
+        assertEquals(2, cash.size());
+        assertTrue(cash.stream().noneMatch(record -> record.getDescription().contains("MARGIN")));
+        assertTrue(cash.stream().noneMatch(record -> record.getDescription().contains("MARK TO MARKET")));
 
         EtradeBrokerageRecord transfer = cash.stream()
                 .filter(record -> record.getDescription().contains("TRANSFER TO XXXXXX7162"))
@@ -121,10 +119,23 @@ class EtradeBrokerageRecordTest {
                 .orElseThrow();
         assertEquals(3.95, promotion.getAmount(), 0.001);
 
-        List<EtradeBrokerageRecord> other = records.stream()
-                .filter(record -> "Other Activity".equals(record.getSection()))
-                .collect(Collectors.toList());
-        assertEquals(1, other.size());
-        assertFalse(other.get(0).getDescription().isEmpty());
+        assertTrue(records.stream().noneMatch(record -> "Other Activity".equals(record.getSection())));
+    }
+
+    @Test
+    void isInternalHousekeepingIdentifiesNonCashRows() {
+        assertTrue(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Adjustment", "Adjustment - TRNSFR FROM CASH TO MARGIN"));
+        assertTrue(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Adjustment", "Adjustment - TRNSFR FROM MARGIN TO CASH"));
+        assertTrue(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Mark to Mkt", "Mark to Mkt - MARK TO MARKET"));
+        assertTrue(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Mark to Mkt", "Mark to Mkt - MARK TO MARKET SHORT POS"));
+
+        assertFalse(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Transfer", "Transfer - TRANSFER TO XXXXXX7162"));
+        assertFalse(EtradeBrokerageRecord.isInternalHousekeeping(
+                "Credit", "Credit - CUSTOMER PROMOTION REFID:P6-CSR-1559966879458;"));
     }
 }
