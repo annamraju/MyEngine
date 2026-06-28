@@ -572,21 +572,6 @@ public class EtradeBrokerageRecord implements LedgerInterface {
                 || upper.startsWith("NET WITHDRAWALS & DEPOSITS");
     }
 
-    private static boolean isOtherNoise(String line) {
-        String upper = line.toUpperCase(Locale.ROOT);
-        return upper.startsWith("OTHER ACTIVITY")
-                || upper.startsWith("DATE")
-                || upper.startsWith("DESCRIPTION")
-                || upper.startsWith("SYMBOL/")
-                || upper.startsWith("CUSIP")
-                || upper.startsWith("TRANSACTION")
-                || upper.startsWith("QUANTITY")
-                || upper.startsWith("PRICE")
-                || upper.startsWith("AMOUNT")
-                || upper.startsWith("DEBITED")
-                || upper.startsWith("CREDITED");
-    }
-
     private static String sectionName(String line) {
         return line.toUpperCase(Locale.ROOT).startsWith("UNSETTLED") ? "Unsettled Trades" : "Securities";
     }
