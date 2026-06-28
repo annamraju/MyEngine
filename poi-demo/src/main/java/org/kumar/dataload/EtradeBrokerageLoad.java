@@ -6,6 +6,10 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 import org.kumar.dataload.util.EtradeBrokerageRecord;
+import org.kumar.excel.util.LedgerRecord;
+import org.kumar.rules.LedgerRecordCategorizer;
+import org.kumar.rules.LedgerRecordCategorizer.CategorizationResult;
+import org.kumar.rules.LedgerRecordCategorizer.Engine;
 
 public class EtradeBrokerageLoad {
 
@@ -18,10 +22,16 @@ public class EtradeBrokerageLoad {
         String sheetName = "Runbook";
         String account = "etrade Brokerage";
 
+        Engine categorizer = LedgerRecordCategorizer.load(
+                "merchant_map.json",
+                "rules.json",
+                "check_rules.json"
+        );
+
         MonthlyLoad<EtradeBrokerageRecord> process = new MonthlyLoad<>(account, srcfolder, ext, processedFolder,
                 EtradeBrokerageRecord::readTransactionsFromPdf,
                 EtradeBrokerageRecord::getTransactionDate,
-                (rec, order) -> rec.convertToLedgerRecord(account, order)
+                (rec, order) -> categorizeRecord(categorizer, rec, account, order)
         );
 
         process.readLedgerFile(ledgerFile, sheetName);
@@ -41,5 +51,12 @@ public class EtradeBrokerageLoad {
         if (afterCount != beforeCount) {
             process.saveExcelAndJson(Path.of(newLedgerFile));
         }
+    }
+
+    static LedgerRecord categorizeRecord(Engine categorizer, EtradeBrokerageRecord rec, String account, short order) {
+        LedgerRecord ledgerRecord = rec.convertToLedgerRecord(account, order);
+        CategorizationResult result = LedgerRecordCategorizer.categorizeOne(categorizer, ledgerRecord);
+        LedgerRecordCategorizer.applyCategoryResult(ledgerRecord, result);
+        return ledgerRecord;
     }
 }

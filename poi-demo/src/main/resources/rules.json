@@ -12630,6 +12630,200 @@
 		   "then": {
 		  	"setSub3" : "Ticket"
 		   }
+		 },
+		 {
+		   "ruleNo": 11261,
+		   "name": "etrade Brokerage - External transfer out",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "description_raw",
+		       "op": "REGEX",
+		       "value": "(?i)Transfer\\s+-\\s+TRANSFER\\s+TO\\b"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "LT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Internal",
+		     "setSub1": "Transfer",
+		     "setSub2": "External",
+		     "setSub3": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11262,
+		   "name": "etrade Brokerage - Customer promotion",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "description_raw",
+		       "op": "REGEX",
+		       "value": "(?i)Credit\\s+-\\s+CUSTOMER\\s+PROMOTION\\b"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "GT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Income",
+		     "setSub1": "Other",
+		     "setSub2": "Promotional Credit",
+		     "setSub3": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11263,
+		   "name": "etrade Brokerage - Dividend agency fee",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "description_raw",
+		       "op": "REGEX",
+		       "value": "(?i)Dividend\\s+-.*\\bPROCESSING\\s+FEE\\b"
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Expense",
+		     "setSub1": "Fees",
+		     "setSub2": "Agency Fee",
+		     "setSub3": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11264,
+		   "name": "etrade Brokerage - Dividends",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "description_raw",
+		       "op": "REGEX",
+		       "value": "(?i)^Dividend\\s+-"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "GT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Income",
+		     "setSub1": "Investment Returns",
+		     "setSub2": "Securities",
+		     "setSub3": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11265,
+		   "name": "etrade Brokerage - Margin interest",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "description_raw",
+		       "op": "REGEX",
+		       "value": "(?i)^Interest\\s+-"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "LT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Expense",
+		     "setSub1": "Fees",
+		     "setSub2": "Interest Charged",
+		     "setSub3": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11266,
+		   "name": "etrade Brokerage - Securities purchase",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "LT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Investment",
+		     "setSub1": "Securities",
+		     "setSub2": "Etrade"
+		   }
+		 },
+		 {
+		   "ruleNo": 11267,
+		   "name": "etrade Brokerage - Securities sale",
+		   "enabled": true,
+		   "priority": 8,
+		   "stopOnMatch": true,
+		   "when": [
+		     {
+		       "field": "account",
+		       "op": "EQ",
+		       "value": "etrade Brokerage"
+		     },
+		     {
+		       "field": "amount",
+		       "op": "GT",
+		       "value": 0
+		     }
+		   ],
+		   "then": {
+		     "setCategory": "Income",
+		     "setSub1": "Investment Returns",
+		     "setSub2": "Securities",
+		     "setSub3": "Etrade"
+		   }
 		 }
 		 
 		 
