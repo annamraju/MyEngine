@@ -124,6 +124,44 @@ public class LedgerRecordCategorizer {
         return results;
     }
 
+    /**
+     * Writes categorization output (category, sub1..sub4, merchant metadata) onto the ledger record.
+     * Use after {@link #categorizeOne(Engine, LedgerRecord)} when building records during dataload.
+     */
+    public static void applyCategoryResult(LedgerRecord r, CategorizationResult result) {
+        if (r == null || result == null) {
+            return;
+        }
+        if (result.merchant != null) {
+            r.setMerchant(result.merchant);
+        }
+        if (result.merchantID != null) {
+            r.setMerchantId(result.merchantID);
+        }
+        if (result.ruleNoMatched != null) {
+            r.setRuleNo(result.ruleNoMatched);
+        }
+        if (result.categoryResult == null) {
+            return;
+        }
+        CategoryResult res = result.categoryResult;
+        if (!isBlank(res.r_category)) {
+            r.setCategory(res.r_category);
+        }
+        if (!isBlank(res.r_sub1)) {
+            r.setSubCategory1(res.r_sub1);
+        }
+        if (!isBlank(res.r_sub2)) {
+            r.setSubCategory2(res.r_sub2);
+        }
+        if (!isBlank(res.r_sub3)) {
+            r.setSubCategory3(res.r_sub3);
+        }
+        if (!isBlank(res.r_sub4)) {
+            r.setSubCategory4(res.r_sub4);
+        }
+    }
+
     public static class CategoryResult{
     	public String r_category;
     	public String r_sub1;
