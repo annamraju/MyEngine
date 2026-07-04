@@ -12644,7 +12644,6 @@
 		   }
 		 },
 		 {
-<<<<<<< HEAD
 		   "ruleNo":11261,
 		   "name": "interest thats actually refund",
 		   "enabled": true,
@@ -12832,8 +12831,10 @@
 		 "setSub1" : "Refund/Reimbursement",
 		 "setSub2" : "Education",
 		 "setSub3" : "Boarding"
-=======
-		   "ruleNo": 11261,
+		 }
+		 },
+		 {
+		   "ruleNo": 11268,
 		   "name": "etrade Brokerage - External transfer out",
 		   "enabled": true,
 		   "priority": 8,
@@ -12863,7 +12864,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11262,
+		   "ruleNo": 11269,
 		   "name": "etrade Brokerage - Customer promotion",
 		   "enabled": true,
 		   "priority": 8,
@@ -12893,7 +12894,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11263,
+		   "ruleNo": 11270,
 		   "name": "etrade Brokerage - Dividend agency fee",
 		   "enabled": true,
 		   "priority": 8,
@@ -12918,7 +12919,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11264,
+		   "ruleNo": 11271,
 		   "name": "etrade Brokerage - Dividends",
 		   "enabled": true,
 		   "priority": 8,
@@ -12948,7 +12949,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11265,
+		   "ruleNo": 11272,
 		   "name": "etrade Brokerage - Margin interest",
 		   "enabled": true,
 		   "priority": 8,
@@ -12978,7 +12979,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11266,
+		   "ruleNo": 11273,
 		   "name": "etrade Brokerage - Securities purchase",
 		   "enabled": true,
 		   "priority": 8,
@@ -13002,7 +13003,7 @@
 		   }
 		 },
 		 {
-		   "ruleNo": 11267,
+		   "ruleNo": 11274,
 		   "name": "etrade Brokerage - Securities sale",
 		   "enabled": true,
 		   "priority": 8,
@@ -13024,10 +13025,7 @@
 		     "setSub1": "Investment Returns",
 		     "setSub2": "Securities",
 		     "setSub3": "Etrade"
->>>>>>> branch 'master' of https://github.com/annamraju/MyEngine
 		   }
-		 }
-		 
-		 
+		 }		 		 
   ]
 }
