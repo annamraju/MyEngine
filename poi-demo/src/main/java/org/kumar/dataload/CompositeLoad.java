@@ -18,31 +18,27 @@ import org.kumar.excel.LedgerExcelWriter;
  *   <li>Run each account loader against the shared in-memory ledger</li>
  *   <li>Save the ledger and dataload.json once if any records were added</li>
  * </ol>
+ *
+ * <p>Paths and folders are read from {@code composite-load.json} on the classpath,
+ * or from a file path set via the {@code composite.load.config} system property.</p>
  */
 public class CompositeLoad {
     private static final Logger LOGGER = LogManager.getLogger("CompositeLoad");
 
     public static void main(String[] args) throws Exception {
-        String ledgerFile = "D:\\fin_docs\\updated_ledger_01192026_almost_final.xlsx";
-        String sheetName = "Runbook";
-        String outputFile = "D:\\fin_docs\\updated_ledger_01192026_composite.xlsx";
-
-        final String baselineInputDir = "D:\\fin_docs\\";
-        final String baselineProcessedDir = "\\Processed";
+        CompositeLoadConfig config = CompositeLoadConfig.loadDefault();
+        LOGGER.info("Loaded composite load config: ledgerFile={}, outputFile={}, baselineInputDir={}",
+                config.ledgerFile, config.outputFile, config.baselineInputDir);
 
         LedgerValidationContext ctx = LedgerValidationContext.loadOnce(
-                ledgerFile, sheetName, DataloadBaseClass.DATALOADJSON);
+                config.ledgerFile, config.sheetName, config.dataloadJson);
         int beforeCount = ctx.getLedger().size();
         LOGGER.info("Loaded ledger with {} records", beforeCount);
 
-        String accountStatusConfig = System.getProperty(
-                AccountLoadSpecs.ACCOUNT_STATUS_CONFIG_PROPERTY,
-                AccountLoadSpecs.ACCOUNT_STATUS_CONFIG_JSON);
-        LOGGER.info("Loading account status config from {}", accountStatusConfig);
-
+        LOGGER.info("Loading account status config from {}", config.accountStatusConfig);
         List<AccountSpec<?>> specs = AccountLoadSpecs.selectConfiguredSpecs(
-                AccountLoadSpecs.buildAll(baselineInputDir, baselineProcessedDir),
-                accountStatusConfig);
+                AccountLoadSpecs.buildAll(config.baselineInputDir, config.baselineProcessedDir),
+                config.accountStatusConfig);
 
         for (AccountSpec<?> spec : specs) {
             runAccountLoader(spec, ctx);
@@ -53,8 +49,8 @@ public class CompositeLoad {
 
         if (afterCount != beforeCount) {
             ctx.getStore().save();
-            LedgerExcelWriter.writeLedger(ctx.getLedger(), Path.of(outputFile));
-            LOGGER.info("Saved updated ledger to {}", outputFile);
+            LedgerExcelWriter.writeLedger(ctx.getLedger(), Path.of(config.outputFile));
+            LOGGER.info("Saved updated ledger to {}", config.outputFile);
         } else {
             LOGGER.info("No new records added; ledger file not written");
         }
