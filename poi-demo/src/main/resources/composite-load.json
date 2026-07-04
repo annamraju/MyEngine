@@ -1,0 +1,9 @@
+{
+  "ledgerFile": "D:\\fin_docs\\updated_ledger_01192026_almost_final.xlsx",
+  "sheetName": "Runbook",
+  "outputFile": "D:\\fin_docs\\updated_ledger_01192026_composite.xlsx",
+  "baselineInputDir": "D:\\fin_docs\\",
+  "baselineProcessedDir": "\\Processed",
+  "accountStatusConfig": "ledger-completeness-accounts.json",
+  "dataloadJson": "dataload.json"
+}
