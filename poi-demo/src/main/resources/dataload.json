@@ -267,10 +267,40 @@
       "status" : "Loaded",
       "NumberOfRecords" : 1
     }, {
+      "startDate" : "2019-01-26",
+      "endDate" : "2019-02-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-02-26",
+      "endDate" : "2019-03-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-03-26",
+      "endDate" : "2019-04-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
       "startDate" : "2019-04-26",
       "endDate" : "2019-05-25",
       "status" : "Loaded",
       "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-05-26",
+      "endDate" : "2019-06-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-06-26",
+      "endDate" : "2019-07-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-07-26",
+      "endDate" : "2019-08-25",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
     }, {
       "startDate" : "2019-08-26",
       "endDate" : "2019-09-25",
@@ -651,6 +681,6564 @@
       "endDate" : "2025-12-25",
       "status" : "Loaded",
       "NumberOfRecords" : 10
+    } ]
+  }, {
+    "accountName" : "Chase CC (Anantha)",
+    "loadIntervals" : [ {
+      "startDate" : "2023-12-18",
+      "endDate" : "2024-01-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-01-18",
+      "endDate" : "2024-02-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-02-18",
+      "endDate" : "2024-03-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-03-18",
+      "endDate" : "2024-04-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2024-04-18",
+      "endDate" : "2024-05-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2024-05-18",
+      "endDate" : "2024-06-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2024-06-18",
+      "endDate" : "2024-07-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 41
+    }, {
+      "startDate" : "2024-07-18",
+      "endDate" : "2024-08-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 37
+    }, {
+      "startDate" : "2024-08-18",
+      "endDate" : "2024-09-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 44
+    }, {
+      "startDate" : "2024-09-18",
+      "endDate" : "2024-10-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 45
+    }, {
+      "startDate" : "2024-10-18",
+      "endDate" : "2024-11-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 47
+    }, {
+      "startDate" : "2024-11-18",
+      "endDate" : "2024-12-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 41
+    }, {
+      "startDate" : "2024-12-18",
+      "endDate" : "2025-01-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 45
+    }, {
+      "startDate" : "2025-01-18",
+      "endDate" : "2025-02-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 49
+    }, {
+      "startDate" : "2025-02-18",
+      "endDate" : "2025-03-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2025-03-18",
+      "endDate" : "2025-04-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2025-04-18",
+      "endDate" : "2025-05-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2025-05-18",
+      "endDate" : "2025-06-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 49
+    }, {
+      "startDate" : "2025-06-18",
+      "endDate" : "2025-07-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 37
+    }, {
+      "startDate" : "2025-07-18",
+      "endDate" : "2025-08-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 67
+    }, {
+      "startDate" : "2025-08-18",
+      "endDate" : "2025-09-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 64
+    }, {
+      "startDate" : "2025-09-18",
+      "endDate" : "2025-10-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 51
+    }, {
+      "startDate" : "2025-10-18",
+      "endDate" : "2025-11-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 57
+    }, {
+      "startDate" : "2025-11-18",
+      "endDate" : "2025-12-17",
+      "status" : "Loaded",
+      "NumberOfRecords" : 65
+    } ]
+  }, {
+    "accountName" : "Chase CC",
+    "loadIntervals" : [ {
+      "startDate" : "2013-11-15",
+      "endDate" : "2013-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2013-12-15",
+      "endDate" : "2014-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2014-01-15",
+      "endDate" : "2014-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2014-02-15",
+      "endDate" : "2014-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2014-03-15",
+      "endDate" : "2014-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2014-04-15",
+      "endDate" : "2014-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2014-05-15",
+      "endDate" : "2014-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2014-06-15",
+      "endDate" : "2014-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2014-07-15",
+      "endDate" : "2014-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2014-09-15",
+      "endDate" : "2014-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2014-10-15",
+      "endDate" : "2014-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2014-11-15",
+      "endDate" : "2014-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2014-12-15",
+      "endDate" : "2015-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2015-01-15",
+      "endDate" : "2015-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2015-02-15",
+      "endDate" : "2015-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2015-03-15",
+      "endDate" : "2015-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2015-04-15",
+      "endDate" : "2015-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2015-05-15",
+      "endDate" : "2015-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2015-06-15",
+      "endDate" : "2015-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2015-07-15",
+      "endDate" : "2015-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 34
+    }, {
+      "startDate" : "2015-08-15",
+      "endDate" : "2015-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2015-09-15",
+      "endDate" : "2015-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2015-10-15",
+      "endDate" : "2015-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2015-11-15",
+      "endDate" : "2015-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 54
+    }, {
+      "startDate" : "2015-12-15",
+      "endDate" : "2016-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2016-01-15",
+      "endDate" : "2016-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2016-02-15",
+      "endDate" : "2016-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2016-03-15",
+      "endDate" : "2016-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2016-04-15",
+      "endDate" : "2016-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2016-05-15",
+      "endDate" : "2016-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2016-06-15",
+      "endDate" : "2016-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2016-07-15",
+      "endDate" : "2016-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 43
+    }, {
+      "startDate" : "2016-08-15",
+      "endDate" : "2016-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2016-09-15",
+      "endDate" : "2016-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2016-10-15",
+      "endDate" : "2016-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2016-11-15",
+      "endDate" : "2016-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2016-12-15",
+      "endDate" : "2017-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2017-01-15",
+      "endDate" : "2017-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2017-02-15",
+      "endDate" : "2017-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2017-03-15",
+      "endDate" : "2017-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2017-04-15",
+      "endDate" : "2017-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2017-05-15",
+      "endDate" : "2017-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2017-06-15",
+      "endDate" : "2017-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2017-07-15",
+      "endDate" : "2017-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2017-08-15",
+      "endDate" : "2017-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2017-09-15",
+      "endDate" : "2017-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2017-10-15",
+      "endDate" : "2017-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 35
+    }, {
+      "startDate" : "2017-11-15",
+      "endDate" : "2017-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2017-12-15",
+      "endDate" : "2018-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2018-01-15",
+      "endDate" : "2018-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2018-02-15",
+      "endDate" : "2018-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2018-03-15",
+      "endDate" : "2018-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2018-04-15",
+      "endDate" : "2018-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2018-05-15",
+      "endDate" : "2018-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 35
+    }, {
+      "startDate" : "2018-06-15",
+      "endDate" : "2018-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2018-07-15",
+      "endDate" : "2018-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 45
+    }, {
+      "startDate" : "2018-08-15",
+      "endDate" : "2018-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2018-09-15",
+      "endDate" : "2018-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2018-10-15",
+      "endDate" : "2018-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2018-11-15",
+      "endDate" : "2018-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 41
+    }, {
+      "startDate" : "2018-12-15",
+      "endDate" : "2019-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2019-01-15",
+      "endDate" : "2019-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2019-02-15",
+      "endDate" : "2019-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2019-03-15",
+      "endDate" : "2019-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2019-04-15",
+      "endDate" : "2019-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2019-05-15",
+      "endDate" : "2019-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2019-06-15",
+      "endDate" : "2019-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 47
+    }, {
+      "startDate" : "2019-07-15",
+      "endDate" : "2019-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2019-08-15",
+      "endDate" : "2019-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2019-09-15",
+      "endDate" : "2019-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2019-10-15",
+      "endDate" : "2019-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2019-11-15",
+      "endDate" : "2019-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2019-12-15",
+      "endDate" : "2020-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2020-01-15",
+      "endDate" : "2020-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2020-02-15",
+      "endDate" : "2020-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2020-03-15",
+      "endDate" : "2020-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2020-04-15",
+      "endDate" : "2020-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2020-05-15",
+      "endDate" : "2020-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2020-06-15",
+      "endDate" : "2020-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2020-07-15",
+      "endDate" : "2020-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2020-08-15",
+      "endDate" : "2020-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2020-09-15",
+      "endDate" : "2020-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2020-10-15",
+      "endDate" : "2020-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2020-11-15",
+      "endDate" : "2020-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2020-12-15",
+      "endDate" : "2021-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2021-01-15",
+      "endDate" : "2021-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2021-02-15",
+      "endDate" : "2021-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2021-03-15",
+      "endDate" : "2021-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2021-04-15",
+      "endDate" : "2021-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2021-05-15",
+      "endDate" : "2021-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2021-06-15",
+      "endDate" : "2021-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2021-07-15",
+      "endDate" : "2021-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2021-08-15",
+      "endDate" : "2021-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2021-09-15",
+      "endDate" : "2021-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2021-10-15",
+      "endDate" : "2021-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2021-11-15",
+      "endDate" : "2021-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2021-12-15",
+      "endDate" : "2022-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2022-01-15",
+      "endDate" : "2022-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2022-02-15",
+      "endDate" : "2022-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2022-03-15",
+      "endDate" : "2022-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2022-04-15",
+      "endDate" : "2022-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2022-05-15",
+      "endDate" : "2022-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2022-06-15",
+      "endDate" : "2022-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2022-07-15",
+      "endDate" : "2022-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2022-08-15",
+      "endDate" : "2022-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2022-09-15",
+      "endDate" : "2022-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2022-10-15",
+      "endDate" : "2022-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2022-11-15",
+      "endDate" : "2022-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2022-12-15",
+      "endDate" : "2023-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2023-01-15",
+      "endDate" : "2023-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2023-02-15",
+      "endDate" : "2023-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2023-03-15",
+      "endDate" : "2023-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2023-04-15",
+      "endDate" : "2023-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2023-05-15",
+      "endDate" : "2023-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 34
+    }, {
+      "startDate" : "2023-06-15",
+      "endDate" : "2023-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2023-07-15",
+      "endDate" : "2023-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2023-08-15",
+      "endDate" : "2023-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2023-09-15",
+      "endDate" : "2023-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2023-10-15",
+      "endDate" : "2023-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2023-11-15",
+      "endDate" : "2023-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2023-12-15",
+      "endDate" : "2024-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-01-15",
+      "endDate" : "2024-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2024-02-15",
+      "endDate" : "2024-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2024-03-15",
+      "endDate" : "2024-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2024-04-15",
+      "endDate" : "2024-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2024-05-15",
+      "endDate" : "2024-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2024-06-15",
+      "endDate" : "2024-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2024-07-15",
+      "endDate" : "2024-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2024-08-15",
+      "endDate" : "2024-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2024-09-15",
+      "endDate" : "2024-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2024-10-15",
+      "endDate" : "2024-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2024-11-15",
+      "endDate" : "2024-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2024-12-15",
+      "endDate" : "2025-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2025-01-15",
+      "endDate" : "2025-02-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2025-02-15",
+      "endDate" : "2025-03-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2025-03-15",
+      "endDate" : "2025-04-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2025-04-15",
+      "endDate" : "2025-05-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-05-15",
+      "endDate" : "2025-06-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2025-06-15",
+      "endDate" : "2025-07-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2025-07-15",
+      "endDate" : "2025-08-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2025-08-15",
+      "endDate" : "2025-09-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2025-09-15",
+      "endDate" : "2025-10-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2025-10-15",
+      "endDate" : "2025-11-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2025-11-15",
+      "endDate" : "2025-12-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2025-12-15",
+      "endDate" : "2026-01-14",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    } ]
+  }, {
+    "accountName" : "BOA Checking",
+    "loadIntervals" : [ {
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2014-12-01",
+      "endDate" : "2014-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2015-02-01",
+      "endDate" : "2015-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2015-05-01",
+      "endDate" : "2015-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2016-04-01",
+      "endDate" : "2016-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2016-08-01",
+      "endDate" : "2016-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2016-09-01",
+      "endDate" : "2016-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2016-10-01",
+      "endDate" : "2016-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2016-11-01",
+      "endDate" : "2016-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2016-12-01",
+      "endDate" : "2016-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2017-01-01",
+      "endDate" : "2017-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2017-02-01",
+      "endDate" : "2017-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2017-03-01",
+      "endDate" : "2017-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 35
+    }, {
+      "startDate" : "2017-04-01",
+      "endDate" : "2017-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2017-05-01",
+      "endDate" : "2017-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2017-06-01",
+      "endDate" : "2017-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 42
+    }, {
+      "startDate" : "2017-07-01",
+      "endDate" : "2017-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2017-08-01",
+      "endDate" : "2017-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2017-09-01",
+      "endDate" : "2017-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2017-10-01",
+      "endDate" : "2017-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2018-03-01",
+      "endDate" : "2018-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2020-01-01",
+      "endDate" : "2020-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 38
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 30
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 35
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 38
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 26
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    } ]
+  }, {
+    "accountName" : "BOA Checking(Ananya)",
+    "loadIntervals" : [ {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 40
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 46
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 40
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 37
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 46
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 35
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 68
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 76
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 58
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 51
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 56
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 37
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 36
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 32
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 31
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 37
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 34
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 43
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 40
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 47
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 42
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 27
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    } ]
+  }, {
+    "accountName" : "BOA Checking(Anjali)",
+    "loadIntervals" : [ {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 19
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    } ]
+  }, {
+    "accountName" : "BOA Savings",
+    "loadIntervals" : [ {
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-12-01",
+      "endDate" : "2014-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-02-01",
+      "endDate" : "2015-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-05-01",
+      "endDate" : "2015-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-04-01",
+      "endDate" : "2016-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-08-01",
+      "endDate" : "2016-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-09-01",
+      "endDate" : "2016-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2016-10-01",
+      "endDate" : "2016-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-11-01",
+      "endDate" : "2016-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-12-01",
+      "endDate" : "2016-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-01-01",
+      "endDate" : "2017-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-02-01",
+      "endDate" : "2017-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-03-01",
+      "endDate" : "2017-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-04-01",
+      "endDate" : "2017-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-05-01",
+      "endDate" : "2017-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-06-01",
+      "endDate" : "2017-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2017-07-01",
+      "endDate" : "2017-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-08-01",
+      "endDate" : "2017-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-09-01",
+      "endDate" : "2017-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-10-01",
+      "endDate" : "2017-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-03-01",
+      "endDate" : "2018-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-01-01",
+      "endDate" : "2020-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    } ]
+  }, {
+    "accountName" : "Chase Checking",
+    "loadIntervals" : [ {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    } ]
+  }, {
+    "accountName" : "Chase Checking (Anantha LLC)",
+    "loadIntervals" : [ {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 0
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    } ]
+  }, {
+    "accountName" : "Citi Savings",
+    "loadIntervals" : [ {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    } ]
+  }, {
+    "accountName" : "etrade Bank",
+    "loadIntervals" : [ {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-01-01",
+      "endDate" : "2020-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    } ]
+  }, {
+    "accountName" : "GTEFCU Checking",
+    "loadIntervals" : [ {
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2014-12-01",
+      "endDate" : "2014-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2015-02-01",
+      "endDate" : "2015-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2015-05-01",
+      "endDate" : "2015-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2016-04-01",
+      "endDate" : "2016-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2016-08-01",
+      "endDate" : "2016-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2016-09-01",
+      "endDate" : "2016-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2016-10-01",
+      "endDate" : "2016-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2016-11-01",
+      "endDate" : "2016-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2016-12-01",
+      "endDate" : "2016-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2017-01-01",
+      "endDate" : "2017-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2017-02-01",
+      "endDate" : "2017-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2017-03-01",
+      "endDate" : "2017-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2017-04-01",
+      "endDate" : "2017-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2017-05-01",
+      "endDate" : "2017-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2017-06-01",
+      "endDate" : "2017-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2017-07-01",
+      "endDate" : "2017-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2017-08-01",
+      "endDate" : "2017-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2017-09-01",
+      "endDate" : "2017-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2017-10-01",
+      "endDate" : "2017-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2018-03-01",
+      "endDate" : "2018-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2020-01-01",
+      "endDate" : "2020-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 18
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 13
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    } ]
+  }, {
+    "accountName" : "GTEFCU Savings",
+    "loadIntervals" : [ {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-02-01",
+      "endDate" : "2015-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-05-01",
+      "endDate" : "2015-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-04-01",
+      "endDate" : "2016-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-08-01",
+      "endDate" : "2016-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-09-01",
+      "endDate" : "2016-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-10-01",
+      "endDate" : "2016-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-11-01",
+      "endDate" : "2016-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-12-01",
+      "endDate" : "2016-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-01-01",
+      "endDate" : "2017-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-02-01",
+      "endDate" : "2017-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-03-01",
+      "endDate" : "2017-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-04-01",
+      "endDate" : "2017-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2017-05-01",
+      "endDate" : "2017-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-06-01",
+      "endDate" : "2017-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-07-01",
+      "endDate" : "2017-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-08-01",
+      "endDate" : "2017-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-09-01",
+      "endDate" : "2017-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-10-01",
+      "endDate" : "2017-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-03-01",
+      "endDate" : "2018-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-01-01",
+      "endDate" : "2020-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    } ]
+  }, {
+    "accountName" : "GTEFCU CD",
+    "loadIntervals" : [ {
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2014-12-01",
+      "endDate" : "2014-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-02-01",
+      "endDate" : "2015-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-05-01",
+      "endDate" : "2015-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-04-01",
+      "endDate" : "2016-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-08-01",
+      "endDate" : "2016-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-09-01",
+      "endDate" : "2016-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-10-01",
+      "endDate" : "2016-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-11-01",
+      "endDate" : "2016-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-12-01",
+      "endDate" : "2016-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-01-01",
+      "endDate" : "2017-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-02-01",
+      "endDate" : "2017-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-03-01",
+      "endDate" : "2017-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2017-04-01",
+      "endDate" : "2017-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-05-01",
+      "endDate" : "2017-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-06-01",
+      "endDate" : "2017-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-07-01",
+      "endDate" : "2017-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-08-01",
+      "endDate" : "2017-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-09-01",
+      "endDate" : "2017-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-10-01",
+      "endDate" : "2017-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    } ]
+  }, {
+    "accountName" : "GTEFCU CC",
+    "loadIntervals" : [ {
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 15
+    }, {
+      "startDate" : "2014-02-01",
+      "endDate" : "2014-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 33
+    }, {
+      "startDate" : "2014-03-01",
+      "endDate" : "2014-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 54
+    }, {
+      "startDate" : "2014-04-01",
+      "endDate" : "2014-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 53
+    }, {
+      "startDate" : "2014-05-01",
+      "endDate" : "2014-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 55
+    }, {
+      "startDate" : "2014-06-01",
+      "endDate" : "2014-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 46
+    }, {
+      "startDate" : "2014-07-01",
+      "endDate" : "2014-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 54
+    }, {
+      "startDate" : "2014-08-01",
+      "endDate" : "2014-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2014-09-01",
+      "endDate" : "2014-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2014-10-01",
+      "endDate" : "2014-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2014-11-01",
+      "endDate" : "2014-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2015-01-01",
+      "endDate" : "2015-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 29
+    }, {
+      "startDate" : "2015-03-01",
+      "endDate" : "2015-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2015-04-01",
+      "endDate" : "2015-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-06-01",
+      "endDate" : "2015-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2015-07-01",
+      "endDate" : "2015-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2015-08-01",
+      "endDate" : "2015-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-09-01",
+      "endDate" : "2015-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2015-10-01",
+      "endDate" : "2015-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2015-11-01",
+      "endDate" : "2015-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2015-12-01",
+      "endDate" : "2015-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 49
+    }, {
+      "startDate" : "2016-01-01",
+      "endDate" : "2016-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-02-01",
+      "endDate" : "2016-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2016-03-01",
+      "endDate" : "2016-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2016-05-01",
+      "endDate" : "2016-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2016-06-01",
+      "endDate" : "2016-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2016-07-01",
+      "endDate" : "2016-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2017-11-01",
+      "endDate" : "2017-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2017-12-01",
+      "endDate" : "2017-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2018-01-01",
+      "endDate" : "2018-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2018-02-01",
+      "endDate" : "2018-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 20
+    }, {
+      "startDate" : "2018-03-01",
+      "endDate" : "2018-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 39
+    }, {
+      "startDate" : "2018-04-01",
+      "endDate" : "2018-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2018-05-01",
+      "endDate" : "2018-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2018-06-01",
+      "endDate" : "2018-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2018-07-01",
+      "endDate" : "2018-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2018-08-01",
+      "endDate" : "2018-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2018-09-01",
+      "endDate" : "2018-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2018-10-01",
+      "endDate" : "2018-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2018-11-01",
+      "endDate" : "2018-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 22
+    }, {
+      "startDate" : "2018-12-01",
+      "endDate" : "2018-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 23
+    }, {
+      "startDate" : "2019-01-01",
+      "endDate" : "2019-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 28
+    }, {
+      "startDate" : "2019-02-01",
+      "endDate" : "2019-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 44
+    }, {
+      "startDate" : "2019-03-01",
+      "endDate" : "2019-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 56
+    }, {
+      "startDate" : "2019-04-01",
+      "endDate" : "2019-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 52
+    }, {
+      "startDate" : "2019-05-01",
+      "endDate" : "2019-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 34
+    }, {
+      "startDate" : "2019-06-01",
+      "endDate" : "2019-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 21
+    }, {
+      "startDate" : "2019-07-01",
+      "endDate" : "2019-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 42
+    }, {
+      "startDate" : "2019-08-01",
+      "endDate" : "2019-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 25
+    }, {
+      "startDate" : "2019-09-01",
+      "endDate" : "2019-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 40
+    }, {
+      "startDate" : "2019-10-01",
+      "endDate" : "2019-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 24
+    }, {
+      "startDate" : "2019-11-01",
+      "endDate" : "2019-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2019-12-01",
+      "endDate" : "2019-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-02-01",
+      "endDate" : "2020-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2020-03-01",
+      "endDate" : "2020-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2020-04-01",
+      "endDate" : "2020-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2020-05-01",
+      "endDate" : "2020-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    } ]
+  }, {
+    "accountName" : "HSA",
+    "loadIntervals" : [ {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 6
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    } ]
+  }, {
+    "accountName" : "Marcus Savings",
+    "loadIntervals" : [ {
+      "startDate" : "2020-06-01",
+      "endDate" : "2020-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2020-07-01",
+      "endDate" : "2020-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-08-01",
+      "endDate" : "2020-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-09-01",
+      "endDate" : "2020-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-10-01",
+      "endDate" : "2020-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-11-01",
+      "endDate" : "2020-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2020-12-01",
+      "endDate" : "2020-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-01-01",
+      "endDate" : "2021-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-02-01",
+      "endDate" : "2021-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-03-01",
+      "endDate" : "2021-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-04-01",
+      "endDate" : "2021-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2021-05-01",
+      "endDate" : "2021-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-06-01",
+      "endDate" : "2021-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2021-07-01",
+      "endDate" : "2021-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-08-01",
+      "endDate" : "2021-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-09-01",
+      "endDate" : "2021-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-10-01",
+      "endDate" : "2021-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-11-01",
+      "endDate" : "2021-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2021-12-01",
+      "endDate" : "2021-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-01-01",
+      "endDate" : "2022-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2022-02-01",
+      "endDate" : "2022-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-03-01",
+      "endDate" : "2022-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-04-01",
+      "endDate" : "2022-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-05-01",
+      "endDate" : "2022-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-06-01",
+      "endDate" : "2022-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-07-01",
+      "endDate" : "2022-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-08-01",
+      "endDate" : "2022-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-09-01",
+      "endDate" : "2022-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-10-01",
+      "endDate" : "2022-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-11-01",
+      "endDate" : "2022-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2022-12-01",
+      "endDate" : "2022-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-01-01",
+      "endDate" : "2023-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-02-01",
+      "endDate" : "2023-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-03-01",
+      "endDate" : "2023-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-04-01",
+      "endDate" : "2023-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-05-01",
+      "endDate" : "2023-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-06-01",
+      "endDate" : "2023-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-07-01",
+      "endDate" : "2023-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-08-01",
+      "endDate" : "2023-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-09-01",
+      "endDate" : "2023-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 1
+    }, {
+      "startDate" : "2023-10-01",
+      "endDate" : "2023-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2023-11-01",
+      "endDate" : "2023-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 2
+    }, {
+      "startDate" : "2023-12-01",
+      "endDate" : "2023-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-01-01",
+      "endDate" : "2024-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-02-01",
+      "endDate" : "2024-02-29",
+      "status" : "Loaded",
+      "NumberOfRecords" : 3
+    }, {
+      "startDate" : "2024-03-01",
+      "endDate" : "2024-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-04-01",
+      "endDate" : "2024-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 5
+    }, {
+      "startDate" : "2024-05-01",
+      "endDate" : "2024-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2024-06-01",
+      "endDate" : "2024-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 4
+    }, {
+      "startDate" : "2024-07-01",
+      "endDate" : "2024-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2024-08-01",
+      "endDate" : "2024-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 9
+    }, {
+      "startDate" : "2024-09-01",
+      "endDate" : "2024-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-10-01",
+      "endDate" : "2024-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-11-01",
+      "endDate" : "2024-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2024-12-01",
+      "endDate" : "2024-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2025-01-01",
+      "endDate" : "2025-01-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2025-02-01",
+      "endDate" : "2025-02-28",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-03-01",
+      "endDate" : "2025-03-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 7
+    }, {
+      "startDate" : "2025-04-01",
+      "endDate" : "2025-04-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 11
+    }, {
+      "startDate" : "2025-05-01",
+      "endDate" : "2025-05-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-06-01",
+      "endDate" : "2025-06-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 10
+    }, {
+      "startDate" : "2025-07-01",
+      "endDate" : "2025-07-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 8
+    }, {
+      "startDate" : "2025-08-01",
+      "endDate" : "2025-08-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 17
+    }, {
+      "startDate" : "2025-09-01",
+      "endDate" : "2025-09-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 16
+    }, {
+      "startDate" : "2025-10-01",
+      "endDate" : "2025-10-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
+    }, {
+      "startDate" : "2025-11-01",
+      "endDate" : "2025-11-30",
+      "status" : "Loaded",
+      "NumberOfRecords" : 14
+    }, {
+      "startDate" : "2025-12-01",
+      "endDate" : "2025-12-31",
+      "status" : "Loaded",
+      "NumberOfRecords" : 12
     } ]
   } ]
 }
