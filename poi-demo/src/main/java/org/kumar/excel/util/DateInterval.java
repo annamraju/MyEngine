@@ -235,6 +235,10 @@ public class DateInterval {
 	 */
 	public static List<DateInterval> findMissingCycles(Set<DateInterval> cycles, short _cycleStart, short _cycleEnd){
 		List<DateInterval> missingCycles =  null;
+
+		if (cycles == null || cycles.isEmpty()) {
+			return null;
+		}
 		
 		// Convert to list
 		List<DateInterval> sorted = new ArrayList<>(cycles);
@@ -297,6 +301,10 @@ public class DateInterval {
 	 */
 	public static List<DateInterval> findMonthlyMissingCycles(Set<DateInterval> cycles){
 		List<DateInterval> missingCycles =  null;
+
+		if (cycles == null || cycles.isEmpty()) {
+			return null;
+		}
 		
 		// Convert to list
 		List<DateInterval> sorted = new ArrayList<>(cycles);
