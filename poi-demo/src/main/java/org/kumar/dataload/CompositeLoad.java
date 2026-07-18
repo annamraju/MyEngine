@@ -68,7 +68,7 @@ public class CompositeLoad {
 
         LOGGER.info("Step 5: saving dataload.json and writing ledger to {}", config.outputFile);
         ctx.getStore().save();
-        LedgerExcelWriter.writeLedger(ctx.getLedger(), Path.of(config.outputFile));
+        LedgerExcelWriter.writeLedgerWithCategorization(ctx.getLedger(), Path.of(config.outputFile));
         LOGGER.info("Saved updated ledger with {} records", ctx.getLedger().size());
     }
 
