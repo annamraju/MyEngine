@@ -20,12 +20,9 @@ public final class LedgerValidationContext {
   public DataLoadJsonStore getStore() { return store; }
 
   public static LedgerValidationContext loadOnce(String ledgerFile, String sheetName, String dataloadJson) throws IOException {
-    // Use your existing excel reader that MonthlyLoad uses internally
-    // e.g. ReadLedgerFile.readFile(...)
-
-	  ReadLedgerFile fileReader =  new ReadLedgerFile();
-	  List<LedgerRecord> ledger = fileReader.readFile(ledgerFile, sheetName); // adjust to your API
-	  DataLoadJsonStore store = DataLoadJsonStore.loadFromResourceToDefaultConfig(dataloadJson);        // adjust to your API
+	  ReadLedgerFile fileReader = new ReadLedgerFile();
+	  List<LedgerRecord> ledger = fileReader.readFile3(ledgerFile, sheetName);
+	  DataLoadJsonStore store = DataLoadJsonStore.loadFromResourceToDefaultConfig(dataloadJson);
     return new LedgerValidationContext(ledger, store);
   }
 }
