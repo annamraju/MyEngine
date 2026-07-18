@@ -27,6 +27,7 @@ public class LedgerRecord {
     // =========================
     private String _merchantId;   // NEW
     private String _merchant; //canonical name
+    private Boolean _ruleMatched;
     private Integer _ruleNo;      // NEW
 
     public LedgerRecord() {
@@ -80,6 +81,10 @@ public class LedgerRecord {
 		_sub2 =  rec._sub2;
 		_sub3 =  rec._sub3;
 		_sub4 =  rec._sub4;
+		_merchantId = rec._merchantId;
+		_merchant = rec._merchant;
+		_ruleMatched = rec._ruleMatched;
+		_ruleNo = rec._ruleNo;
     	
     }
     // -------------------------
@@ -213,6 +218,14 @@ public class LedgerRecord {
         this._ruleNo = ruleNo;
     }
 
+    public Boolean getRuleMatched() {
+        return _ruleMatched;
+    }
+
+    public void setRuleMatched(Boolean ruleMatched) {
+        this._ruleMatched = ruleMatched;
+    }
+
     @Override
     public String toString() {
         return "LedgerRecord{" +
@@ -221,6 +234,8 @@ public class LedgerRecord {
                 ", description='" + _description + '\'' +
                 ", amount=" + _amount +
                 ", merchantId='" + _merchantId + '\'' +   // NEW
+                ", merchant='" + _merchant + '\'' +
+                ", ruleMatched=" + _ruleMatched +
                 ", ruleNo=" + _ruleNo +                   // NEW
                 ", category='" + _category + '\'' +
                 ", sub1='" + _sub1 + '\'' +

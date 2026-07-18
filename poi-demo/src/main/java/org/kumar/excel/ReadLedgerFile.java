@@ -38,6 +38,10 @@ public class ReadLedgerFile {
 	private static final Logger LOGGER = LogManager.getLogger(ReadLedgerFile.class);
 	private static final String myDelimiter = ":";
 	private static final Row.MissingCellPolicy CELL_POLICY = Row.MissingCellPolicy.RETURN_NULL_AND_BLANK;
+	private static final int COL_MERCHANT_ID = 13;
+	private static final int COL_MERCHANT = 14;
+	private static final int COL_RULE_MATCHES = 15;
+	private static final int COL_RULE_NO = 16;
 	
 	public static final Logger getLogger() {
 		return LOGGER;
@@ -178,6 +182,75 @@ public class ReadLedgerFile {
 			}
 		}
 		return true;
+	}
+
+	private String getOptionalStringCell(XSSFRow row, int cellIndex) {
+		if (row == null) {
+			return null;
+		}
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if (cell == null) {
+			return null;
+		}
+		if (cell.getCellType() == CellType.STRING) {
+			String value = cell.getStringCellValue().trim();
+			return value.isEmpty() ? null : value;
+		}
+		if (cell.getCellType() == CellType.NUMERIC) {
+			return String.valueOf(cell.getNumericCellValue());
+		}
+		if (cell.getCellType() == CellType.BOOLEAN) {
+			return String.valueOf(cell.getBooleanCellValue());
+		}
+		return null;
+	}
+
+	private Boolean getOptionalBooleanCell(XSSFRow row, int cellIndex) {
+		if (row == null) {
+			return null;
+		}
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if (cell == null || cell.getCellType() == CellType.BLANK) {
+			return null;
+		}
+		if (cell.getCellType() == CellType.BOOLEAN) {
+			return cell.getBooleanCellValue();
+		}
+		if (cell.getCellType() == CellType.STRING) {
+			String value = cell.getStringCellValue().trim();
+			if (value.isEmpty()) {
+				return null;
+			}
+			return Boolean.parseBoolean(value);
+		}
+		if (cell.getCellType() == CellType.NUMERIC) {
+			return cell.getNumericCellValue() != 0.0d;
+		}
+		return null;
+	}
+
+	private Integer getOptionalIntegerCell(XSSFRow row, int cellIndex) {
+		if (row == null) {
+			return null;
+		}
+		XSSFCell cell = row.getCell(cellIndex, CELL_POLICY);
+		if (cell == null || cell.getCellType() == CellType.BLANK) {
+			return null;
+		}
+		if (cell.getCellType() == CellType.NUMERIC) {
+			return (int) cell.getNumericCellValue();
+		}
+		if (cell.getCellType() == CellType.FORMULA) {
+			return getFormulaResultNumeric(cell);
+		}
+		if (cell.getCellType() == CellType.STRING) {
+			String value = cell.getStringCellValue().trim();
+			if (value.isEmpty()) {
+				return null;
+			}
+			return Integer.parseInt(value);
+		}
+		return null;
 	}
 
 	/**
@@ -383,6 +456,93 @@ public class ReadLedgerFile {
 			}
 		}
 		
+		return records;
+	}
+
+	/**
+	 * Like {@link #readFile2(String, String)} but also reads categorization metadata columns:
+	 * MERCHANT_ID, merchant, rule matches, and rule no.
+	 */
+	public List<LedgerRecord> readFile3(String inFile, String sheetName) throws FileNotFoundException {
+		List<LedgerRecord> records = new ArrayList<LedgerRecord>();
+
+		File fileHandle = null;
+		FileInputStream reader = null;
+		XSSFWorkbook workbook = null;
+
+		try {
+			fileHandle = new File(inFile);
+			reader = new FileInputStream(fileHandle);
+			workbook = new XSSFWorkbook(reader);
+			XSSFSheet mainSheet = workbook.getSheet(sheetName);
+
+			System.out.println("lastrow num " + mainSheet.getLastRowNum());
+			for (int rowNum = mainSheet.getFirstRowNum() + 1; rowNum < mainSheet.getLastRowNum(); rowNum++) {
+				XSSFRow row = mainSheet.getRow(rowNum);
+				String accountType = (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK))
+						.getStringCellValue().trim();
+
+				int order = 0;
+				XSSFCell cell2 = row.getCell(1, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				if (cell2 != null && cell2.getCellType() == CellType.FORMULA) {
+					try {
+						order = getFormulaResultNumeric(cell2);
+					} catch (IllegalStateException e3) {
+						order = 0;
+					}
+				}
+				int year = 0;
+				XSSFCell cell3 = row.getCell(2, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				if (cell3.getCellType() == CellType.FORMULA) {
+					year = getFormulaResultNumeric(cell3);
+				}
+				String month = "";
+				XSSFCell cell4 = row.getCell(3, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				if (cell4.getCellType() == CellType.FORMULA) {
+					month = getFormulaResultText(cell4);
+				} else if (cell4.getCellType() == CellType.STRING) {
+					month = cell4.getStringCellValue().trim();
+				}
+
+				XSSFCell cell5 = row.getCell(4, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				Date transactionDate = cell5.getDateCellValue();
+
+				String description = (row.getCell(5, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK))
+						.getStringCellValue().trim();
+
+				double amount = (row.getCell(6, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getNumericCellValue();
+				XSSFCell cell6 = row.getCell(7, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
+				double balance = 0.0;
+				if (cell6 != null && cell6.getCellType() != CellType.FORMULA) {
+					balance = cell6.getNumericCellValue();
+				}
+
+				String category = getOptionalStringCell(row, 8);
+				String subCategory1 = getOptionalStringCell(row, 9);
+				String subCategory2 = getOptionalStringCell(row, 10);
+				String subCategory3 = getOptionalStringCell(row, 11);
+				String subCategory4 = getOptionalStringCell(row, 12);
+
+				LedgerRecord rec = new LedgerRecord(accountType, (short) order, (short) year, month, transactionDate,
+						description, amount, balance, category,
+						subCategory1, subCategory2, subCategory3, subCategory4);
+				rec.setMerchantId(getOptionalStringCell(row, COL_MERCHANT_ID));
+				rec.setMerchant(getOptionalStringCell(row, COL_MERCHANT));
+				rec.setRuleMatched(getOptionalBooleanCell(row, COL_RULE_MATCHES));
+				rec.setRuleNo(getOptionalIntegerCell(row, COL_RULE_NO));
+				records.add(rec);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (reader != null) {
+					reader.close();
+				}
+			} catch (Exception e2) {
+			}
+		}
+
 		return records;
 	}
 
