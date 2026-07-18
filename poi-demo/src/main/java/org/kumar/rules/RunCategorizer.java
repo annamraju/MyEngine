@@ -37,30 +37,24 @@ public class RunCategorizer {
     private static final String HEADER_RULE_NO = "rule no";
 
     public static void main(String[] args) throws Exception {
-
         Engine engine = LedgerRecordCategorizer.load(
                 "merchant_map.json",
                 "rules.json",
                 "check_rules.json"
         );
 
-        // you already have this from ReadLedgerFile.readFile(...)
-//        String ledgerFile = "D:\\fin_docs\\updated_ledger_01192026_almost_final.xlsx";
-        //String ledgerFile = "D:\\fin_docs\\SampleDebug.xlsx";
         String ledgerFile = "D:\\fin_docs\\Ledger_pre_categorized.xlsx";
-        //String ledgerFile = "D:\\fin_docs\\test_trans.xlsx";
         String sheetName  = "Runbook";
   	  	ReadLedgerFile fileReader =  new ReadLedgerFile();
-  	  	List<LedgerRecord> ledger = fileReader.readFile(ledgerFile, sheetName);  
-  	  	
-        List<CategorizationResult> results = LedgerRecordCategorizer.categorizeAll(engine, ledger);
+  	  	List<LedgerRecord> ledger = fileReader.readFile(ledgerFile, sheetName);
+
+        List<CategorizationResult> results = categorizeInMemory(engine, ledger);
 
         int count = 0;
         for(int i = 0; i < results.size(); i++) {
         	CategoryResult x =  (results.get(i)).categoryResult;
         	if(x == null || isBlank(x.r_category)) count++;
         }
-        // show some stats as to how many were uncategorized
         System.out.println(count + " were STILL uncategorized out of " + ledger.size());
 
         int updatedRows = updateLedgerFile(ledgerFile, sheetName, results);
@@ -78,6 +72,23 @@ public class RunCategorizer {
             }
         }
         */
+    }
+
+    public static List<CategorizationResult> categorizeInMemory(Engine engine, List<LedgerRecord> ledger) {
+        List<CategorizationResult> results = LedgerRecordCategorizer.categorizeAll(engine, ledger);
+        for (int i = 0; i < ledger.size(); i++) {
+            LedgerRecordCategorizer.applyCategoryResult(ledger.get(i), results.get(i));
+        }
+        return results;
+    }
+
+    public static List<CategorizationResult> categorizeInMemory(
+            List<LedgerRecord> ledger,
+            String merchantMapResource,
+            String rulesResource,
+            String checkRulesResource) throws IOException {
+        Engine engine = LedgerRecordCategorizer.load(merchantMapResource, rulesResource, checkRulesResource);
+        return categorizeInMemory(engine, ledger);
     }
 
     public static void printStats(List<CategorizationResult> results) {

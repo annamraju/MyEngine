@@ -22,6 +22,9 @@ public final class CompositeLoadConfig {
     public String baselineProcessedDir;
     public String accountStatusConfig;
     public String dataloadJson;
+    public String merchantMapJson;
+    public String rulesJson;
+    public String checkRulesJson;
 
     public static CompositeLoadConfig load(String configLocation) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -66,6 +69,18 @@ public final class CompositeLoadConfig {
 
         if (dataloadJson == null || dataloadJson.isBlank()) {
             dataloadJson = DataloadBaseClass.DATALOADJSON;
+        }
+
+        if (merchantMapJson == null || merchantMapJson.isBlank()) {
+            merchantMapJson = "merchant_map.json";
+        }
+
+        if (rulesJson == null || rulesJson.isBlank()) {
+            rulesJson = "rules.json";
+        }
+
+        if (checkRulesJson == null || checkRulesJson.isBlank()) {
+            checkRulesJson = "check_rules.json";
         }
     }
 
