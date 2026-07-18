@@ -18,5 +18,8 @@ class CompositeLoadConfigTest {
         assertEquals("\\Processed", config.baselineProcessedDir);
         assertEquals("ledger-completeness-accounts.json", config.accountStatusConfig);
         assertEquals("dataload.json", config.dataloadJson);
+        assertEquals("merchant_map.json", config.merchantMapJson);
+        assertEquals("rules.json", config.rulesJson);
+        assertEquals("check_rules.json", config.checkRulesJson);
     }
 }

@@ -5,5 +5,8 @@
   "baselineInputDir": "D:\\fin_docs\\",
   "baselineProcessedDir": "\\Processed",
   "accountStatusConfig": "ledger-completeness-accounts.json",
-  "dataloadJson": "dataload.json"
+  "dataloadJson": "dataload.json",
+  "merchantMapJson": "merchant_map.json",
+  "rulesJson": "rules.json",
+  "checkRulesJson": "check_rules.json"
 }

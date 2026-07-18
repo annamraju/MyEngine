@@ -14,6 +14,13 @@ public class LedgerCompleteness {
 	private static final Logger LOGGER = LogManager.getLogger("LedgerCompleteness");
     public static final String DATALOADJSON = "dataload.json";
 
+	public void runAll(LedgerValidationContext ctx, List<AccountSpec<?>> specs) throws Exception {
+		for (AccountSpec<?> spec : specs) {
+			checkCompleteness(spec, ctx);
+		}
+	}
+
+	@SuppressWarnings("unchecked")
 	private <T> void checkCompleteness(
 			AccountSpec<T> spec,
 			LedgerValidationContext ctx) throws Exception {
@@ -23,6 +30,7 @@ public class LedgerCompleteness {
 		LOGGER.info("setting the context for " + spec.account);
 		process.setLedger(ctx.getLedger());
 		process.setStore(ctx.getStore());
+		process.setAutoSaveJson(false);
 
 		LOGGER.info("building the cycle data");
 		Map<DateInterval, Integer> loadedData = process.buildCycleData();
@@ -60,9 +68,6 @@ public class LedgerCompleteness {
     		AccountLoadSpecs.buildAll(baselineInputDir, baselineProcessedDir),
     		accountStatusConfig);
 
-    for (AccountSpec<?> s : configuredSpecs) {
-      lc.checkCompleteness((AccountSpec<Object>) s, ctx);
-      Thread.sleep(1000);
-    }
+    lc.runAll(ctx, configuredSpecs);
   }
 }
