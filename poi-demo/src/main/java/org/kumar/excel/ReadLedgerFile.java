@@ -87,7 +87,79 @@ public class ReadLedgerFile {
 	            break;
 			}
 		}
-		return result;
+		if (cell.getCellType() == CellType.NUMERIC) {
+			return (int) cell.getNumericCellValue();
+		}
+		if (cell.getCellType() == CellType.STRING) {
+			return parseIntegerText(cell.getStringCellValue());
+		}
+		return 0;
+	}
+
+	private static int parseIntegerText(String value) {
+		if (value == null || value.isBlank()) {
+			return 0;
+		}
+		try {
+			return (int) Double.parseDouble(value.trim());
+		} catch (NumberFormatException e) {
+			return 0;
+		}
+	}
+
+	/**
+	 * Reads the Order column the same way as {@link #readFile(String, String)}:
+	 * numeric cells, string cells ("17"), and formulas that evaluate to either.
+	 */
+	private int readOrderColumn(XSSFRow row, FormulaEvaluator evaluator) {
+		if (row == null) {
+			return 0;
+		}
+		return getFormulaResultNumeric(row.getCell(COL_ORDER, CELL_POLICY), evaluator);
+	}
+
+	/**
+	 * Reads the Year column from formula or numeric cells.
+	 */
+	private int readYearColumn(XSSFRow row, FormulaEvaluator evaluator) {
+		if (row == null) {
+			return 0;
+		}
+		return getFormulaResultNumeric(row.getCell(COL_YEAR, CELL_POLICY), evaluator);
+	}
+
+	/**
+	 * readFile2/readFile3 expect Year as a formula derived from the transaction date.
+	 */
+	private int readYearFormulaColumn(XSSFRow row, FormulaEvaluator evaluator) {
+		if (row == null) {
+			return 0;
+		}
+		XSSFCell yearCell = row.getCell(COL_YEAR, CELL_POLICY);
+		if (yearCell != null && yearCell.getCellType() == CellType.FORMULA) {
+			return getFormulaResultNumeric(yearCell, evaluator);
+		}
+		return 0;
+	}
+
+	/**
+	 * readFile3 also accepts a literal numeric Year when the formula was flattened.
+	 */
+	private int readYearFormulaOrNumericColumn(XSSFRow row, FormulaEvaluator evaluator) {
+		if (row == null) {
+			return 0;
+		}
+		XSSFCell yearCell = row.getCell(COL_YEAR, CELL_POLICY);
+		if (yearCell == null) {
+			return 0;
+		}
+		if (yearCell.getCellType() == CellType.FORMULA) {
+			return getFormulaResultNumeric(yearCell, evaluator);
+		}
+		if (yearCell.getCellType() == CellType.NUMERIC) {
+			return (int) yearCell.getNumericCellValue();
+		}
+		return 0;
 	}
 
 	/**
@@ -292,11 +364,8 @@ public class ReadLedgerFile {
 				String accountType = getRequiredCellText(row, 0, "account type", rowNum, dataFormatter, evaluator);
 				//System.out.println(" got " + accountType);
 				
-				XSSFCell cell2 =  row.getCell(1, CELL_POLICY);
-				int order = getFormulaResultNumeric(cell2, evaluator);
-				
-				XSSFCell cell3 =  row.getCell(2, CELL_POLICY);
-				int year = getFormulaResultNumeric(cell3, evaluator); 
+				int order = readOrderColumn(row, evaluator);
+				int year = readYearColumn(row, evaluator);
 				
 				/*
 				int month = 0;
@@ -374,33 +443,24 @@ public class ReadLedgerFile {
 			XSSFSheet mainSheet = workbook.getSheet(sheetName);
 
 			System.out.println("lastrow num " + mainSheet.getLastRowNum());
-			for(int rowNum = mainSheet.getFirstRowNum()+1; rowNum < mainSheet.getLastRowNum(); rowNum++) { 
+			for(int rowNum = mainSheet.getFirstRowNum()+1; rowNum <= mainSheet.getLastRowNum(); rowNum++) { 
 				//System.out.println("reading " + rowNum);
 				XSSFRow row = mainSheet.getRow(rowNum);
+				if (row == null) {
+					continue;
+				}
 				// now read the columns
 				// columns in the order are
 				// account type, order, year(formula), month(formula), transDate, amount, balance,
 				// category, sub category 1, sub category 2, sub category 3, sub category 4
 				String accountType =  (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getStringCellValue().trim();
 				//System.out.println(" got " + accountType);
-				int order = 0;
-				XSSFCell cell2 =  row.getCell(1,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				if(cell2 != null && cell2.getCellType()== CellType.FORMULA) {
-					try {
-						order = getFormulaResultNumeric(cell2);
-					}catch(IllegalStateException e3) {
-						order =  0;
-					}
-				}
-				int year = 0;
-				XSSFCell cell3 =  row.getCell(2,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				if(cell3.getCellType()== CellType.FORMULA) {
-					year = getFormulaResultNumeric(cell3);
-				}
+				int order = readOrderColumn(row, evaluator);
+				int year = readYearFormulaColumn(row, evaluator);
 				String month = "";
 				XSSFCell cell4 =  row.getCell(3,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				if(cell4.getCellType()== CellType.FORMULA) {
-					month = getFormulaResultText(cell4);
+				if(cell4 != null && cell4.getCellType()== CellType.FORMULA) {
+					month = getFormulaResultText(cell4, evaluator);
 				}
 				
 				XSSFCell cell5 =  row.getCell(4,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
@@ -482,27 +542,8 @@ public class ReadLedgerFile {
 				String accountType = (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK))
 						.getStringCellValue().trim();
 
-				int order = 0;
-				XSSFCell cell2 = row.getCell(1, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if (cell2 != null && cell2.getCellType() == CellType.FORMULA) {
-					try {
-						order = getFormulaResultNumeric(cell2);
-					} catch (IllegalStateException e3) {
-						order = 0;
-					}
-				}
-				int year = 0;
-				XSSFCell cell3 = row.getCell(2, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if (cell3.getCellType() == CellType.FORMULA) {
-					year = getFormulaResultNumeric(cell3);
-				}
-				String month = "";
-				XSSFCell cell4 = row.getCell(3, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				if (cell4.getCellType() == CellType.FORMULA) {
-					month = getFormulaResultText(cell4);
-				} else if (cell4.getCellType() == CellType.STRING) {
-					month = cell4.getStringCellValue().trim();
-				}
+					int order = readOrderColumn(row, evaluator);
+					int year = readYearFormulaOrNumericColumn(row, evaluator);
 
 				XSSFCell cell5 = row.getCell(4, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
 				Date transactionDate = cell5.getDateCellValue();
