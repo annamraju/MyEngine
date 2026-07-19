@@ -6,17 +6,29 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.TextStyle;
+import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.time.format.DateTimeFormatter;
 
 import org.kumar.excel.util.LedgerRecord;
 
 public class BOACheckingRecord implements LedgerInterface{
+
+	// Accepts both "01/02/2026" and "1/2/2026" (BOA exports vary)
+	private static final DateTimeFormatter DATE_FMT = new DateTimeFormatterBuilder()
+			.appendValue(ChronoField.MONTH_OF_YEAR)
+			.appendLiteral('/')
+			.appendValue(ChronoField.DAY_OF_MONTH)
+			.appendLiteral('/')
+			.appendValue(ChronoField.YEAR, 4)
+			.toFormatter(Locale.US);
+
 	private LocalDate transactionDate;
 	private String description;
 	private double amount;
@@ -85,8 +97,6 @@ public class BOACheckingRecord implements LedgerInterface{
 	 * @throws IOException
 	 */
 	public static List<BOACheckingRecord> readTransactionsFromCsv(Path csvPath) throws IOException {
-	    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-
 	    double beginningBalance = 0.0;
 
 	    // We'll first load all "transaction" rows (lines below the Date,Description,Amount... header)
@@ -145,7 +155,7 @@ public class BOACheckingRecord implements LedgerInterface{
 
 	            if(desc.startsWith("Beginning balance as of")) continue;
 	            
-	            LocalDate txDate = LocalDate.parse(dateStr, dtf);
+	            LocalDate txDate = LocalDate.parse(dateStr, DATE_FMT);
 	            double amt = parseMoney(amtStr); // empty amount => 0.0
 
 	            BOACheckingRecord r = new BOACheckingRecord();
