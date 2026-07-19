@@ -18,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -38,6 +40,19 @@ public class ReadLedgerFile {
 	private static final Logger LOGGER = LogManager.getLogger(ReadLedgerFile.class);
 	private static final String myDelimiter = ":";
 	private static final Row.MissingCellPolicy CELL_POLICY = Row.MissingCellPolicy.RETURN_NULL_AND_BLANK;
+	private static final int COL_ACCOUNT = 0;
+	private static final int COL_ORDER = 1;
+	private static final int COL_YEAR = 2;
+	private static final int COL_MONTH = 3;
+	private static final int COL_DATE = 4;
+	private static final int COL_DESC = 5;
+	private static final int COL_AMOUNT = 6;
+	private static final int COL_BALANCE = 7;
+	private static final int COL_CAT = 8;
+	private static final int COL_SUB1 = 9;
+	private static final int COL_SUB2 = 10;
+	private static final int COL_SUB3 = 11;
+	private static final int COL_SUB4 = 12;
 	private static final int COL_MERCHANT_ID = 13;
 	private static final int COL_MERCHANT = 14;
 	private static final int COL_RULE_MATCHES = 15;
@@ -58,13 +73,21 @@ public class ReadLedgerFile {
 
 	    if (cell.getCellType() == CellType.FORMULA) {
 	        CellValue cv = evaluator.evaluate(cell);
-	        return cv.getCellType() == CellType.NUMERIC
-	                ? (int)(cv.getNumberValue())
-	                : 0;
+	        if (cv.getCellType() == CellType.NUMERIC) {
+	            return (int) cv.getNumberValue();
+	        }
+	        if (cv.getCellType() == CellType.STRING) {
+	            return parseIntegerText(cv.getStringValue());
+	        }
+	        return 0;
 	    }
 
 	    if (cell.getCellType() == CellType.NUMERIC) {
 	        return (int)(cell.getNumericCellValue());
+	    }
+
+	    if (cell.getCellType() == CellType.STRING) {
+	        return parseIntegerText(cell.getStringCellValue());
 	    }
 
 	    return 0;
@@ -76,15 +99,17 @@ public class ReadLedgerFile {
 	 * @return
 	 */
 	public int getFormulaResultNumeric(XSSFCell cell) {
-		int result = 0;
-		if(cell.getCellType()== CellType.FORMULA) {
+		if (cell == null) {
+			return 0;
+		}
+		if (cell.getCellType() == CellType.FORMULA) {
 			switch (cell.getCachedFormulaResultType()) {
-	        case NUMERIC:
-	            result =  (int) (cell.getNumericCellValue());
-	            break;
-	        default:
-	            System.out.println(cell.getRichStringCellValue());
-	            break;
+			case NUMERIC:
+				return (int) cell.getNumericCellValue();
+			case STRING:
+				return parseIntegerText(cell.getStringCellValue());
+			default:
+				return 0;
 			}
 		}
 		if (cell.getCellType() == CellType.NUMERIC) {
@@ -441,6 +466,7 @@ public class ReadLedgerFile {
 			reader = new FileInputStream (fileHandle);
 			workbook = new XSSFWorkbook(reader);
 			XSSFSheet mainSheet = workbook.getSheet(sheetName);
+			FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
 
 			System.out.println("lastrow num " + mainSheet.getLastRowNum());
 			for(int rowNum = mainSheet.getFirstRowNum()+1; rowNum <= mainSheet.getLastRowNum(); rowNum++) { 
@@ -528,53 +554,60 @@ public class ReadLedgerFile {
 
 		File fileHandle = null;
 		FileInputStream reader = null;
-		XSSFWorkbook workbook = null;
 
 		try {
 			fileHandle = new File(inFile);
 			reader = new FileInputStream(fileHandle);
-			workbook = new XSSFWorkbook(reader);
+			XSSFWorkbook workbook = new XSSFWorkbook(reader);
 			XSSFSheet mainSheet = workbook.getSheet(sheetName);
+			FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+			DataFormatter dataFormatter = new DataFormatter();
 
 			System.out.println("lastrow num " + mainSheet.getLastRowNum());
-			for (int rowNum = mainSheet.getFirstRowNum() + 1; rowNum < mainSheet.getLastRowNum(); rowNum++) {
-				XSSFRow row = mainSheet.getRow(rowNum);
-				String accountType = (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK))
-						.getStringCellValue().trim();
+			for (int rowNum = mainSheet.getFirstRowNum() + 1; rowNum <= mainSheet.getLastRowNum(); rowNum++) {
+				try {
+					XSSFRow row = mainSheet.getRow(rowNum);
+					if (row == null || isBlankLedgerRow(row, dataFormatter, evaluator)) {
+						continue;
+					}
+
+					String accountType = getRequiredCellText(row, 0, "account type", rowNum, dataFormatter, evaluator);
 
 					int order = readOrderColumn(row, evaluator);
 					int year = readYearFormulaOrNumericColumn(row, evaluator);
 
-				XSSFCell cell5 = row.getCell(4, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				Date transactionDate = cell5.getDateCellValue();
+					Date transactionDate = getRequiredDate(row, 4, "transaction date", rowNum);
+					String month = readMonthValue(row, evaluator, dataFormatter, transactionDate);
 
-				String description = (row.getCell(5, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK))
-						.getStringCellValue().trim();
+					String description = getRequiredCellText(row, 5, "description", rowNum, dataFormatter, evaluator);
+					double amount = getRequiredNumeric(row, 6, "amount", rowNum);
 
-				double amount = (row.getCell(6, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getNumericCellValue();
-				XSSFCell cell6 = row.getCell(7, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK);
-				double balance = 0.0;
-				if (cell6 != null && cell6.getCellType() != CellType.FORMULA) {
-					balance = cell6.getNumericCellValue();
+					XSSFCell cell6 = row.getCell(7, CELL_POLICY);
+					double balance = 0.0;
+					if (cell6 != null && cell6.getCellType() != CellType.FORMULA) {
+						balance = cell6.getNumericCellValue();
+					}
+
+					String category = getCellText(row, 8, dataFormatter, evaluator);
+					String subCategory1 = getCellText(row, 9, dataFormatter, evaluator);
+					String subCategory2 = getCellText(row, 10, dataFormatter, evaluator);
+					String subCategory3 = getCellText(row, 11, dataFormatter, evaluator);
+					String subCategory4 = getCellText(row, 12, dataFormatter, evaluator);
+
+					LedgerRecord rec = new LedgerRecord(accountType, (short) order, (short) year, month, transactionDate,
+							description, amount, balance, category,
+							subCategory1, subCategory2, subCategory3, subCategory4);
+					rec.setMerchantId(getOptionalStringCell(row, COL_MERCHANT_ID));
+					rec.setMerchant(getOptionalStringCell(row, COL_MERCHANT));
+					rec.setRuleMatched(getOptionalBooleanCell(row, COL_RULE_MATCHES));
+					rec.setRuleNo(getOptionalIntegerCell(row, COL_RULE_NO));
+					records.add(rec);
+				} catch (Exception rowError) {
+					LOGGER.error("Failed reading ledger row {} in {}", rowNum + 1, inFile, rowError);
 				}
-
-				String category = getOptionalStringCell(row, 8);
-				String subCategory1 = getOptionalStringCell(row, 9);
-				String subCategory2 = getOptionalStringCell(row, 10);
-				String subCategory3 = getOptionalStringCell(row, 11);
-				String subCategory4 = getOptionalStringCell(row, 12);
-
-				LedgerRecord rec = new LedgerRecord(accountType, (short) order, (short) year, month, transactionDate,
-						description, amount, balance, category,
-						subCategory1, subCategory2, subCategory3, subCategory4);
-				rec.setMerchantId(getOptionalStringCell(row, COL_MERCHANT_ID));
-				rec.setMerchant(getOptionalStringCell(row, COL_MERCHANT));
-				rec.setRuleMatched(getOptionalBooleanCell(row, COL_RULE_MATCHES));
-				rec.setRuleNo(getOptionalIntegerCell(row, COL_RULE_NO));
-				records.add(rec);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error("Failed reading ledger file {}", inFile, e);
 		} finally {
 			try {
 				if (reader != null) {
@@ -585,6 +618,22 @@ public class ReadLedgerFile {
 		}
 
 		return records;
+	}
+
+	private String readMonthValue(XSSFRow row, FormulaEvaluator evaluator, DataFormatter dataFormatter, Date transactionDate) {
+		XSSFCell monthCell = row.getCell(3, CELL_POLICY);
+		if (monthCell == null) {
+			return LedgerRecord.parseMonth(null, transactionDate).getDisplayName(TextStyle.FULL, Locale.US);
+		}
+
+		String month = getFormulaResultText(monthCell, evaluator);
+		if (month == null || month.isBlank()) {
+			month = dataFormatter.formatCellValue(monthCell, evaluator).trim();
+		}
+		if (month == null || month.isBlank()) {
+			return LedgerRecord.parseMonth(null, transactionDate).getDisplayName(TextStyle.FULL, Locale.US);
+		}
+		return month;
 	}
 
 	//prepare 
