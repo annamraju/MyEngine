@@ -58,7 +58,7 @@ public abstract class DataloadBaseClass {
         _records = LEDGER_CACHE.computeIfAbsent(key, k -> {
             try {
                 ReadLedgerFile process = new ReadLedgerFile();
-                List<LedgerRecord> r = process.readFile(ledgerFileName, sheetName);
+                List<LedgerRecord> r = process.readFile3(ledgerFileName, sheetName);
                 LOGGER.info("done reading the ledger (cached) for key=" + k);
                 return r;
             } catch (FileNotFoundException e) {
@@ -96,7 +96,8 @@ public abstract class DataloadBaseClass {
 
     public void saveExcelAndJson(Path p) throws Exception {
         saveDataLoadJson();
-        LedgerExcelWriter.writeLedger(_records, p);
+        //LedgerExcelWriter.writeLedger(_records, p);
+        LedgerExcelWriter.writeLedgerWithCategorization(_records, p);
     }
 
     public int getLedgerRecordCount() {

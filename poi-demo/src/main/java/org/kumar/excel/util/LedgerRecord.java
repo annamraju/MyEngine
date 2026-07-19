@@ -1,7 +1,6 @@
 package org.kumar.excel.util;
 
 import java.time.Month;
-import java.time.ZoneId;
 import java.time.format.TextStyle;
 import java.util.Date;
 import java.util.Locale;
@@ -56,7 +55,7 @@ public class LedgerRecord {
     	_account = account;
     	_order = order;
     	_year =  year;
-    	_monEnum = parseMonth(mon, transDate);
+    	_monEnum = Month.valueOf(mon.trim().toUpperCase());
     	_transDate =  transDate;
     	_description = desc;
     	_amount = amount;
@@ -66,36 +65,6 @@ public class LedgerRecord {
     	_sub2 =  sub2;
     	_sub3 =  sub3;
     	_sub4 =  sub4;
-    }
-
-    public static Month parseMonth(String mon, Date transDate) {
-        if (mon != null && !mon.isBlank()) {
-            String normalized = mon.trim();
-            try {
-                return Month.valueOf(normalized.toUpperCase(Locale.ROOT));
-            } catch (IllegalArgumentException ex) {
-                for (Month month : Month.values()) {
-                    if (month.getDisplayName(TextStyle.FULL, Locale.US).equalsIgnoreCase(normalized)
-                            || month.getDisplayName(TextStyle.SHORT, Locale.US).equalsIgnoreCase(normalized)) {
-                        return month;
-                    }
-                }
-                try {
-                    int monthNum = Integer.parseInt(normalized);
-                    if (monthNum >= 1 && monthNum <= 12) {
-                        return Month.of(monthNum);
-                    }
-                } catch (NumberFormatException nfe) {
-                    // fall through to transaction date
-                }
-            }
-        }
-
-        if (transDate != null) {
-            return transDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().getMonth();
-        }
-
-        throw new IllegalArgumentException("Unable to parse month value: '" + mon + "'");
     }
     
     public LedgerRecord(LedgerRecord rec) {
