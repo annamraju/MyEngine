@@ -189,6 +189,37 @@ public class ReadLedgerFileTest {
 	}
 
 	@Test
+	void readFile3PreservesStringOrderColumn() throws Exception {
+		File ledgerFile = File.createTempFile("ledger-readfile3-order", ".xlsx");
+		ledgerFile.deleteOnExit();
+
+		try (XSSFWorkbook workbook = new XSSFWorkbook();
+				FileOutputStream outputStream = new FileOutputStream(ledgerFile)) {
+			XSSFSheet sheet = workbook.createSheet("Runbook");
+			sheet.createRow(0);
+
+			XSSFRow row = sheet.createRow(1);
+			row.createCell(0).setCellValue("Checking");
+			row.createCell(1).setCellValue("7");
+			row.createCell(2).setCellValue(2024);
+			row.createCell(3).setCellValue("January");
+			row.createCell(4).setCellValue(new Date(0));
+			row.createCell(5).setCellValue("Coffee");
+			row.createCell(6).setCellValue(-4.50);
+			row.createCell(7).setCellValue(100.00);
+
+			sheet.createRow(2);
+			workbook.write(outputStream);
+		}
+
+		List<LedgerRecord> records = new ReadLedgerFile().readFile3(ledgerFile.getAbsolutePath(), "Runbook");
+
+		assertEquals(1, records.size());
+		assertEquals(7, records.get(0).getOrder());
+		assertEquals(2024, records.get(0).getYear());
+	}
+
+	@Test
 	void readFile3HandlesFormulaMonthColumn() throws Exception {
 		File ledgerFile = File.createTempFile("ledger-formula-month", ".xlsx");
 		ledgerFile.deleteOnExit();
