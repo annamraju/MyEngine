@@ -200,7 +200,7 @@ public class MonthlyLoad<T> extends DataloadBaseClass {
     }
     
     public List<DateInterval> findMissingCycles(Map<DateInterval, Integer> loadedData) {
-    	if(loadedData == null) return null;
+    	if(loadedData == null || loadedData.isEmpty()) return null;
         List<DateInterval> missingcycles = cycleStrategy.findMissing(loadedData.keySet());
         if(missingcycles == null) return null;
         List<DateInterval> finalMissing = new ArrayList<>();
