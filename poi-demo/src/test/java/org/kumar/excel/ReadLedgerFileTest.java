@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.time.Month;
 import java.util.Date;
 import java.util.List;
 
@@ -95,5 +96,35 @@ public class ReadLedgerFileTest {
 		assertEquals("Publix", record.getMerchant());
 		assertTrue(record.getRuleMatched());
 		assertEquals(42, record.getRuleNo());
+	}
+
+	@Test
+	void readFile3HandlesFormulaMonthColumn() throws Exception {
+		File ledgerFile = File.createTempFile("ledger-formula-month", ".xlsx");
+		ledgerFile.deleteOnExit();
+
+		try (XSSFWorkbook workbook = new XSSFWorkbook();
+				FileOutputStream outputStream = new FileOutputStream(ledgerFile)) {
+			XSSFSheet sheet = workbook.createSheet("Runbook");
+			sheet.createRow(0);
+
+			XSSFRow row = sheet.createRow(1);
+			row.createCell(0).setCellValue("etrade Brokerage");
+			row.createCell(1).setCellValue(1);
+			row.createCell(2).setCellFormula("YEAR(E2)");
+			row.createCell(3).setCellFormula("TEXT(E2,\"mmmm\")");
+			row.createCell(4).setCellValue(java.time.LocalDate.of(2026, 6, 15));
+			row.createCell(5).setCellValue("Dividend");
+			row.createCell(6).setCellValue(25.00);
+			row.createCell(7).setCellValue(1000.00);
+
+			sheet.createRow(2);
+			workbook.write(outputStream);
+		}
+
+		List<LedgerRecord> records = new ReadLedgerFile().readFile3(ledgerFile.getAbsolutePath(), "Runbook");
+
+		assertEquals(1, records.size());
+		assertEquals(Month.JUNE, records.get(0).getMonEnum());
 	}
 }
