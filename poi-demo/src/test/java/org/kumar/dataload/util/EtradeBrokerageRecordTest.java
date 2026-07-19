@@ -135,4 +135,66 @@ class EtradeBrokerageRecordTest {
         assertFalse(EtradeBrokerageRecord.isInternalHousekeeping(
                 "Credit", "Credit - CUSTOMER PROMOTION REFID:P6-CSR-1559966879458;"));
     }
+
+    @Test
+    void parseModernActivityFormatLoadsDividendsInterestTransfersAndTrades() throws Exception {
+        String statementText = String.join("\n",
+                "CLIENT STATEMENT     For the Period January 1-31, 2024",
+                "ACTIVITY",
+                "CASH FLOW ACTIVITY BY DATE",
+                "Activity",
+                "Date",
+                "Settlement",
+                "Date Activity Type Description Comments Quantity Price Credits/(Debits)",
+                "1/3 Qualified Dividend LAM RESEARCH CORPORATION $20.00",
+                "1/8 Qualified Dividend MC CORMICK AND CO NON VOTING 8.40",
+                "1/18 Online Transfer ACH DEPOSIT REFID:98139449906; 50,000.00",
+                "1/31 Interest Income MORGAN STANLEY BANK N.A. (Period 01/01-01/31) 0.89",
+                "1/31 2/1 Sold PUT  ANET   03/01/24   230.000 ACTED AS AGENT",
+                "UNSOLICITED TRADE; OPENING",
+                "3.000 3.8000 1,139.20",
+                "NET CREDITS/(DEBITS) $51,387.79",
+                "UNSETTLED PURCHASES/SALES ACTIVITY",
+                "1/31 2/1 Sold PUT  ANET   03/01/24   230.000 UNSETTLED SALE 3.000 $3.8000 $1,139.20",
+                "NET UNSETTLED PURCHASES/SALES $1,139.20",
+                "MONEY MARKET FUND (MMF) AND BANK DEPOSIT PROGRAM ACTIVITY",
+                "1/2 Automatic Investment BANK DEPOSIT PROGRAM $20.59",
+                "1/19 Automatic Investment BANK DEPOSIT PROGRAM 50,000.00",
+                "NET ACTIVITY FOR PERIOD $50,269.18");
+
+        List<EtradeBrokerageRecord> records = EtradeBrokerageRecord.parseTransactionsFromText(statementText);
+
+        List<EtradeBrokerageRecord> dividends = records.stream()
+                .filter(record -> "Dividends & Interest".equals(record.getSection()))
+                .collect(Collectors.toList());
+        assertEquals(3, dividends.size());
+        assertEquals(20.00, dividends.get(0).getAmount(), 0.001);
+        assertEquals("2024-01-03", dividends.get(0).getTransactionDate().toString());
+        assertEquals(8.40, dividends.get(1).getAmount(), 0.001);
+        assertEquals(0.89, dividends.get(2).getAmount(), 0.001);
+        assertEquals("Interest", dividends.get(2).getTransactionType());
+
+        List<EtradeBrokerageRecord> transfers = records.stream()
+                .filter(record -> "Withdrawals & Deposits".equals(record.getSection()))
+                .collect(Collectors.toList());
+        assertEquals(1, transfers.size());
+        assertEquals("Transfer", transfers.get(0).getTransactionType());
+        assertEquals(50000.00, transfers.get(0).getAmount(), 0.001);
+        assertTrue(transfers.get(0).getDescription().contains("ACH DEPOSIT"));
+
+        List<EtradeBrokerageRecord> trades = records.stream()
+                .filter(record -> "Securities".equals(record.getSection())
+                        || "Unsettled Trades".equals(record.getSection()))
+                .collect(Collectors.toList());
+        // Same ANET sale appears in cash flow and unsettled; load once.
+        assertEquals(1, trades.size());
+        assertEquals("Sold", trades.get(0).getTransactionType());
+        assertEquals(1139.20, trades.get(0).getAmount(), 0.001);
+        assertTrue(trades.get(0).getDescription().contains("PUT"));
+        assertTrue(trades.get(0).getDescription().contains("ANET"));
+
+        assertTrue(records.stream().noneMatch(record ->
+                record.getDescription() != null
+                        && record.getDescription().toUpperCase().contains("BANK DEPOSIT PROGRAM")));
+    }
 }

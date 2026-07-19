@@ -23,12 +23,18 @@ import org.kumar.excel.util.LedgerRecord;
 /**
  * Reader for E*TRADE brokerage PDF statements.
  *
- * Parses the TRANSACTION HISTORY section, including:
+ * Supports two statement layouts:
+ * <ul>
+ *   <li>Legacy: TRANSACTION HISTORY with Securities / Dividends / Withdrawals subsections</li>
+ *   <li>Newer Morgan Stanley style: ACTIVITY / CASH FLOW ACTIVITY BY DATE</li>
+ * </ul>
+ *
+ * Loaded activity:
  * - Securities purchased or sold
  * - Unsettled trades
  * - Dividends and interest activity
- * - Withdrawals and deposits (Transfer rows only; Adjustment/Credit/Mark to Mkt skipped)
- * - Other activity (skipped; already reflected in securities)
+ * - Withdrawals and deposits (Transfer / Online Transfer only)
+ * - Other activity and MMF/BDP automatic investments are skipped
  */
 public class EtradeBrokerageRecord implements LedgerInterface {
 
@@ -53,8 +59,20 @@ public class EtradeBrokerageRecord implements LedgerInterface {
             Pattern.CASE_INSENSITIVE);
     private static final Pattern SYMBOL_AMOUNT = Pattern.compile(
             "^([A-Z*][A-Z0-9*.]{0,12})\\s+([\\d,]+\\.\\d{2})(?:\\s+([\\d,]+\\.\\d{2}))?$");
-    private static final Pattern AMOUNT_ONLY = Pattern.compile("^([\\d,]+\\.\\d{2})$");
-    private static final Pattern TRAILING_AMOUNT = Pattern.compile("\\s+([\\d,]+\\.\\d{2})\\s*$");
+    private static final Pattern AMOUNT_ONLY = Pattern.compile("^\\$?([\\d,]+\\.\\d{2})$");
+    private static final Pattern TRAILING_AMOUNT = Pattern.compile("\\s+\\$?([\\d,]+\\.\\d{2})\\s*$");
+
+    /** Newer statements use M/D (no year) plus optional settlement date. */
+    private static final Pattern ACTIVITY_DATE_PREFIX = Pattern.compile(
+            "^(\\d{1,2})/(\\d{1,2})(?:\\s+(\\d{1,2})/(\\d{1,2}))?\\s+(.+)$");
+    private static final Pattern ACTIVITY_TYPE_PREFIX = Pattern.compile(
+            "^(Qualified Dividend|Dividend|Interest Income|Interest|Online Transfer|Transfer|Bought|Sold)\\b\\s*(.*)$",
+            Pattern.CASE_INSENSITIVE);
+    private static final Pattern ACTIVITY_QTY_PRICE_AMT = Pattern.compile(
+            "^\\$?([\\d,]+\\.\\d+)\\s+\\$?([\\d,]+\\.\\d+)\\s+\\$?([\\d,]+\\.\\d{2})$");
+    private static final Pattern STATEMENT_PERIOD_YEAR = Pattern.compile(
+            "For the Period\\s+.+?(\\d{4})\\s*$",
+            Pattern.CASE_INSENSITIVE);
 
     private LocalDate transactionDate;
     private String section;
@@ -121,19 +139,36 @@ public class EtradeBrokerageRecord implements LedgerInterface {
     static List<EtradeBrokerageRecord> parseTransactionsFromText(String text) throws IOException {
         List<String> lines = normalizeLines(text);
 
-        int start = indexOfContains(lines, "TRANSACTION HISTORY");
-        if (start < 0) {
-            throw new IOException("Could not find 'TRANSACTION HISTORY' section in PDF text");
+        int legacyStart = indexOfContains(lines, "TRANSACTION HISTORY");
+        int activityStart = indexOfExactIgnoreCase(lines, "ACTIVITY");
+
+        List<EtradeBrokerageRecord> out;
+        if (legacyStart >= 0) {
+            out = parseLegacyTransactionHistory(lines, legacyStart + 1);
+        } else if (activityStart >= 0) {
+            out = parseModernActivity(lines, activityStart + 1);
+        } else {
+            throw new IOException(
+                    "Could not find 'TRANSACTION HISTORY' or 'ACTIVITY' section in PDF text");
         }
 
+        out.sort(Comparator
+                .comparing(EtradeBrokerageRecord::getTransactionDate)
+                .thenComparing(EtradeBrokerageRecord::getSection, Comparator.nullsLast(String::compareTo))
+                .thenComparing(EtradeBrokerageRecord::getDescription, Comparator.nullsLast(String::compareTo)));
+
+        return out;
+    }
+
+    private static List<EtradeBrokerageRecord> parseLegacyTransactionHistory(List<String> lines, int start) {
         List<EtradeBrokerageRecord> out = new ArrayList<>();
-        int i = start + 1;
+        int i = start;
         while (i < lines.size()) {
             String line = lines.get(i);
             String upper = line.toUpperCase(Locale.ROOT);
 
             if (upper.startsWith("OTHER ACTIVITY")) {
-                i = parseOtherActivity(lines, i + 1, out);
+                parseOtherActivity(lines, i + 1, out);
                 break;
             }
             if (upper.startsWith("SECURITIES PURCHASED OR SOLD")
@@ -151,13 +186,299 @@ public class EtradeBrokerageRecord implements LedgerInterface {
             }
             i++;
         }
-
-        out.sort(Comparator
-                .comparing(EtradeBrokerageRecord::getTransactionDate)
-                .thenComparing(EtradeBrokerageRecord::getSection, Comparator.nullsLast(String::compareTo))
-                .thenComparing(EtradeBrokerageRecord::getDescription, Comparator.nullsLast(String::compareTo)));
-
         return out;
+    }
+
+    /**
+     * Newer E*TRADE / Morgan Stanley statements use an ACTIVITY section with
+     * CASH FLOW ACTIVITY BY DATE and UNSETTLED PURCHASES/SALES ACTIVITY.
+     */
+    private static List<EtradeBrokerageRecord> parseModernActivity(List<String> lines, int start) {
+        int year = extractStatementYear(lines);
+        List<EtradeBrokerageRecord> out = new ArrayList<>();
+        java.util.Set<String> seenKeys = new java.util.HashSet<>();
+
+        int i = start;
+        while (i < lines.size()) {
+            String upper = lines.get(i).toUpperCase(Locale.ROOT);
+            if (upper.startsWith("CASH FLOW ACTIVITY BY DATE")) {
+                i = parseModernCashFlowSection(lines, i + 1, out, seenKeys, year, "Securities");
+                continue;
+            }
+            if (upper.startsWith("UNSETTLED PURCHASES/SALES ACTIVITY")) {
+                i = parseModernCashFlowSection(lines, i + 1, out, seenKeys, year, "Unsettled Trades");
+                continue;
+            }
+            if (upper.startsWith("MONEY MARKET FUND")
+                    || upper.startsWith("NET ACTIVITY FOR PERIOD")
+                    || upper.startsWith("MESSAGES")) {
+                break;
+            }
+            i++;
+        }
+        return out;
+    }
+
+    private static int parseModernCashFlowSection(List<String> lines, int start, List<EtradeBrokerageRecord> out,
+            java.util.Set<String> seenKeys, int year, String tradeSection) {
+        LocalDate pendingDate = null;
+        String pendingType = null;
+        StringBuilder pendingDesc = new StringBuilder();
+
+        for (int i = start; i < lines.size(); i++) {
+            String line = lines.get(i);
+            String upper = line.toUpperCase(Locale.ROOT);
+
+            if (isModernActivityBoundary(upper)) {
+                flushModernPendingTrade(out, seenKeys, pendingDate, pendingType, pendingDesc, tradeSection);
+                return i;
+            }
+            if (isModernActivityNoise(upper)) {
+                continue;
+            }
+
+            Matcher dateMatcher = ACTIVITY_DATE_PREFIX.matcher(line);
+            if (dateMatcher.matches()) {
+                flushModernPendingTrade(out, seenKeys, pendingDate, pendingType, pendingDesc, tradeSection);
+                pendingDate = null;
+                pendingType = null;
+                pendingDesc.setLength(0);
+
+                LocalDate activityDate = LocalDate.of(
+                        year,
+                        Integer.parseInt(dateMatcher.group(1)),
+                        Integer.parseInt(dateMatcher.group(2)));
+                String rest = dateMatcher.group(5).trim();
+
+                Matcher typeMatcher = ACTIVITY_TYPE_PREFIX.matcher(rest);
+                if (!typeMatcher.matches()) {
+                    continue;
+                }
+
+                String rawType = typeMatcher.group(1);
+                String remainder = typeMatcher.group(2) == null ? "" : typeMatcher.group(2).trim();
+                String normalizedType = normalizeModernActivityType(rawType);
+
+                if (isSkippedModernActivityType(normalizedType, rawType)) {
+                    continue;
+                }
+
+                if ("Bought".equalsIgnoreCase(normalizedType) || "Sold".equalsIgnoreCase(normalizedType)) {
+                    Matcher inlineQty = findTrailingQtyPriceAmount(remainder);
+                    if (inlineQty != null) {
+                        String desc = remainder.substring(0, inlineQty.start()).trim();
+                        double amount = parseMoney(inlineQty.group(3));
+                        addModernTradeRecord(out, seenKeys, activityDate, normalizedType, desc, amount, tradeSection);
+                    } else {
+                        pendingDate = activityDate;
+                        pendingType = normalizedType;
+                        pendingDesc.setLength(0);
+                        if (!remainder.isEmpty()) {
+                            pendingDesc.append(remainder);
+                        }
+                    }
+                    continue;
+                }
+
+                Matcher trailing = TRAILING_AMOUNT.matcher(remainder);
+                if (!trailing.find()) {
+                    continue;
+                }
+                String desc = remainder.substring(0, trailing.start()).trim();
+                double amount = parseMoney(trailing.group(1));
+
+                if ("Dividend".equalsIgnoreCase(normalizedType) || "Interest".equalsIgnoreCase(normalizedType)) {
+                    // Interest Income is a credit; legacy margin Interest remains a debit via old parser.
+                    double signed = amount;
+                    if ("Interest".equalsIgnoreCase(normalizedType)
+                            && !rawType.toUpperCase(Locale.ROOT).contains("INCOME")) {
+                        signed = -Math.abs(amount);
+                    } else {
+                        signed = Math.abs(amount);
+                    }
+                    addDividendRecord(out, activityDate, normalizedType, desc, null, signed);
+                    seenKeys.add(dedupeKey(activityDate, normalizedType, desc, signed));
+                    continue;
+                }
+
+                if ("Transfer".equalsIgnoreCase(normalizedType)) {
+                    boolean deposit = isModernTransferDeposit(desc);
+                    addCashRecord(out, activityDate, "Transfer", desc, deposit, amount);
+                    continue;
+                }
+
+                continue;
+            }
+
+            if (pendingDate != null) {
+                Matcher qtyPriceAmt = ACTIVITY_QTY_PRICE_AMT.matcher(line);
+                if (qtyPriceAmt.matches()) {
+                    double amount = parseMoney(qtyPriceAmt.group(3));
+                    addModernTradeRecord(out, seenKeys, pendingDate, pendingType, pendingDesc.toString(),
+                            amount, tradeSection);
+                    pendingDate = null;
+                    pendingType = null;
+                    pendingDesc.setLength(0);
+                    continue;
+                }
+                appendDesc(pendingDesc, line.trim());
+            }
+        }
+
+        flushModernPendingTrade(out, seenKeys, pendingDate, pendingType, pendingDesc, tradeSection);
+        return lines.size();
+    }
+
+    private static void flushModernPendingTrade(List<EtradeBrokerageRecord> out, java.util.Set<String> seenKeys,
+            LocalDate date, String type, StringBuilder desc, String tradeSection) {
+        if (date == null || type == null || desc == null) {
+            return;
+        }
+        String clean = desc.toString().trim();
+        Matcher trailing = findTrailingQtyPriceAmount(clean);
+        if (trailing == null) {
+            return;
+        }
+        String descPart = clean.substring(0, trailing.start()).trim();
+        double amount = parseMoney(trailing.group(3));
+        addModernTradeRecord(out, seenKeys, date, type, descPart, amount, tradeSection);
+    }
+
+    private static void addModernTradeRecord(List<EtradeBrokerageRecord> out, java.util.Set<String> seenKeys,
+            LocalDate date, String type, String desc, double amount, String section) {
+        boolean bought = "Bought".equalsIgnoreCase(type);
+        double signed = bought ? -Math.abs(amount) : Math.abs(amount);
+        String cleanDesc = desc.replaceAll("\\s{2,}", " ").trim();
+        if (cleanDesc.isEmpty()) {
+            cleanDesc = type;
+        }
+
+        String key = dedupeKey(date, type, cleanDesc, signed);
+        if (!seenKeys.add(key)) {
+            return;
+        }
+
+        EtradeBrokerageRecord rec = new EtradeBrokerageRecord();
+        rec.setTransactionDate(date);
+        rec.setSection(section);
+        rec.setTransactionType(type);
+        rec.setDescription(cleanDesc);
+        rec.setAmount(signed);
+        out.add(rec);
+    }
+
+    private static Matcher findTrailingQtyPriceAmount(String text) {
+        if (text == null || text.isBlank()) {
+            return null;
+        }
+        Matcher m = Pattern.compile(
+                "(?i)(?:UNSETTLED\\s+(?:SALE|PURCHASE)\\s+)?\\$?([\\d,]+\\.\\d+)\\s+\\$?([\\d,]+\\.\\d+)\\s+\\$?([\\d,]+\\.\\d{2})\\s*$")
+                .matcher(text.trim());
+        return m.find() ? m : null;
+    }
+
+    private static String normalizeModernActivityType(String rawType) {
+        String upper = rawType.toUpperCase(Locale.ROOT);
+        if (upper.contains("DIVIDEND")) {
+            return "Dividend";
+        }
+        if (upper.contains("INTEREST")) {
+            return "Interest";
+        }
+        if (upper.contains("TRANSFER")) {
+            return "Transfer";
+        }
+        if (upper.equals("BOUGHT")) {
+            return "Bought";
+        }
+        if (upper.equals("SOLD")) {
+            return "Sold";
+        }
+        return rawType;
+    }
+
+    private static boolean isSkippedModernActivityType(String normalizedType, String rawType) {
+        String upper = rawType.toUpperCase(Locale.ROOT);
+        return upper.contains("AUTOMATIC INVESTMENT")
+                || upper.startsWith("AUTOMATIC");
+    }
+
+    private static boolean isModernTransferDeposit(String description) {
+        if (description == null) {
+            return false;
+        }
+        String upper = description.toUpperCase(Locale.ROOT);
+        if (upper.contains("WITHDRAW") || upper.contains("TRANSFER TO") || upper.contains("ACH WITHDRAWAL")) {
+            return false;
+        }
+        return upper.contains("DEPOSIT") || upper.contains("TRANSFER FROM") || upper.contains("ACH DEPOSIT");
+    }
+
+    private static boolean isModernActivityBoundary(String upper) {
+        return upper.startsWith("UNSETTLED PURCHASES/SALES ACTIVITY")
+                || upper.startsWith("MONEY MARKET FUND")
+                || upper.startsWith("NET CREDITS/(DEBITS)")
+                || upper.startsWith("NET UNSETTLED PURCHASES/SALES")
+                || upper.startsWith("NET ACTIVITY FOR PERIOD")
+                || upper.startsWith("MESSAGES");
+    }
+
+    private static boolean isModernActivityNoise(String upper) {
+        return upper.equals("ACTIVITY")
+                || upper.equals("DATE")
+                || upper.startsWith("SETTLEMENT")
+                || upper.startsWith("ACTIVITY TYPE")
+                || upper.startsWith("DESCRIPTION")
+                || upper.startsWith("COMMENTS")
+                || upper.startsWith("QUANTITY")
+                || upper.equals("PRICE")
+                || upper.startsWith("CREDITS/(DEBITS)")
+                || upper.startsWith("PENDING")
+                || upper.startsWith("PAGE ")
+                || upper.startsWith("ACCOUNT DETAIL")
+                || upper.startsWith("CLIENT STATEMENT")
+                || upper.startsWith("SELF-DIRECTED")
+                || upper.startsWith("SUBJECT TO STA")
+                || upper.startsWith("PURCHASE AND SALE TRANSACTIONS")
+                || upper.startsWith("THIS SECTION DISPLAYS")
+                || upper.startsWith("THE HOLDINGS SECTION")
+                || upper.startsWith("PRICE FOR UNSETTLED")
+                || Pattern.compile("^\\d{3}-\\d{6}-\\d{3}$").matcher(upper).matches()
+                || upper.matches("[A-Z ]+ TOD");
+    }
+
+    private static int extractStatementYear(List<String> lines) {
+        for (String line : lines) {
+            Matcher m = STATEMENT_PERIOD_YEAR.matcher(line.trim());
+            if (m.find()) {
+                return Integer.parseInt(m.group(1));
+            }
+        }
+        // Fallback: current year is better than failing hard on missing header text.
+        return LocalDate.now().getYear();
+    }
+
+    private static String dedupeKey(LocalDate date, String type, String desc, double amount) {
+        String normalizedDesc = desc == null ? "" : desc.toUpperCase(Locale.ROOT)
+                .replaceAll("\\bUNSETTLED\\s+(?:SALE|PURCHASE)\\b", " ")
+                .replaceAll("\\bACTED AS AGENT\\b", " ")
+                .replaceAll("\\bUNSOLICITED TRADE;?\\b", " ")
+                .replaceAll("\\bOPENING\\b", " ")
+                .replaceAll("\\bCLOSING\\b", " ")
+                .replaceAll("[^A-Z0-9./]+", " ")
+                .replaceAll("\\s{2,}", " ")
+                .trim();
+        return date + "|" + String.valueOf(type).toUpperCase(Locale.ROOT) + "|"
+                + normalizedDesc + "|" + String.format(Locale.ROOT, "%.2f", amount);
+    }
+
+    private static int indexOfExactIgnoreCase(List<String> lines, String needle) {
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).equalsIgnoreCase(needle)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private static int parseSecuritiesSection(List<String> lines, int start, List<EtradeBrokerageRecord> out,
@@ -612,7 +933,7 @@ public class EtradeBrokerageRecord implements LedgerInterface {
         if (s == null) {
             return 0.0;
         }
-        String t = s.trim().replace(",", "");
+        String t = s.trim().replace(",", "").replace("$", "");
         if (t.isEmpty()) {
             return 0.0;
         }
