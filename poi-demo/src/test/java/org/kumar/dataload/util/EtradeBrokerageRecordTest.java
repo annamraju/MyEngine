@@ -103,21 +103,18 @@ class EtradeBrokerageRecordTest {
         List<EtradeBrokerageRecord> cash = records.stream()
                 .filter(record -> "Withdrawals & Deposits".equals(record.getSection()))
                 .collect(Collectors.toList());
-        assertEquals(2, cash.size());
+        // Only Transfer rows are loaded from Withdrawals & Deposits.
+        assertEquals(1, cash.size());
+        assertEquals("Transfer", cash.get(0).getTransactionType());
+        assertTrue(cash.get(0).getDescription().contains("TRANSFER TO XXXXXX7162"));
+        assertEquals(-221.00, cash.get(0).getAmount(), 0.001);
+
         assertTrue(cash.stream().noneMatch(record -> record.getDescription().contains("MARGIN")));
         assertTrue(cash.stream().noneMatch(record -> record.getDescription().contains("MARK TO MARKET")));
-
-        EtradeBrokerageRecord transfer = cash.stream()
-                .filter(record -> record.getDescription().contains("TRANSFER TO XXXXXX7162"))
-                .findFirst()
-                .orElseThrow();
-        assertEquals(-221.00, transfer.getAmount(), 0.001);
-
-        EtradeBrokerageRecord promotion = cash.stream()
-                .filter(record -> record.getDescription().contains("CUSTOMER PROMOTION"))
-                .findFirst()
-                .orElseThrow();
-        assertEquals(3.95, promotion.getAmount(), 0.001);
+        assertTrue(cash.stream().noneMatch(record -> record.getDescription().contains("CUSTOMER PROMOTION")));
+        assertTrue(records.stream().noneMatch(record -> "Credit".equalsIgnoreCase(record.getTransactionType())));
+        assertTrue(records.stream().noneMatch(record -> "Adjustment".equalsIgnoreCase(record.getTransactionType())));
+        assertTrue(records.stream().noneMatch(record -> "Mark to Mkt".equalsIgnoreCase(record.getTransactionType())));
 
         assertTrue(records.stream().noneMatch(record -> "Other Activity".equals(record.getSection())));
     }

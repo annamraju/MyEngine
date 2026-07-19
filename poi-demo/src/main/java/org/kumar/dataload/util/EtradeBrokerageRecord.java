@@ -24,10 +24,11 @@ import org.kumar.excel.util.LedgerRecord;
  * Reader for E*TRADE brokerage PDF statements.
  *
  * Parses the TRANSACTION HISTORY section, including:
- * - Securities purchased or sold (and unsettled trades)
+ * - Securities purchased or sold
+ * - Unsettled trades
  * - Dividends and interest activity
- * - Withdrawals and deposits
- * - Other activity
+ * - Withdrawals and deposits (Transfer rows only; Adjustment/Credit/Mark to Mkt skipped)
+ * - Other activity (skipped; already reflected in securities)
  */
 public class EtradeBrokerageRecord implements LedgerInterface {
 
@@ -454,6 +455,12 @@ public class EtradeBrokerageRecord implements LedgerInterface {
 
     private static void addCashRecord(List<EtradeBrokerageRecord> out, LocalDate date, String type, String desc,
             boolean depositColumn, double amount) {
+        // Only external transfers belong in the ledger from this section.
+        // Adjustment / Credit / Mark to Mkt rows are skipped.
+        if (type == null || !"Transfer".equalsIgnoreCase(type)) {
+            return;
+        }
+
         String cleanDesc = desc.replaceAll("\\s{2,}", " ").trim();
         if (!cleanDesc.isEmpty()) {
             cleanDesc = type + " - " + cleanDesc;
