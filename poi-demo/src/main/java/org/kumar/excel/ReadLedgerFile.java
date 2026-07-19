@@ -40,6 +40,19 @@ public class ReadLedgerFile {
 	private static final Logger LOGGER = LogManager.getLogger(ReadLedgerFile.class);
 	private static final String myDelimiter = ":";
 	private static final Row.MissingCellPolicy CELL_POLICY = Row.MissingCellPolicy.RETURN_NULL_AND_BLANK;
+	private static final int COL_ACCOUNT = 0;
+	private static final int COL_ORDER = 1;
+	private static final int COL_YEAR = 2;
+	private static final int COL_MONTH = 3;
+	private static final int COL_DATE = 4;
+	private static final int COL_DESC = 5;
+	private static final int COL_AMOUNT = 6;
+	private static final int COL_BALANCE = 7;
+	private static final int COL_CAT = 8;
+	private static final int COL_SUB1 = 9;
+	private static final int COL_SUB2 = 10;
+	private static final int COL_SUB3 = 11;
+	private static final int COL_SUB4 = 12;
 	private static final int COL_MERCHANT_ID = 13;
 	private static final int COL_MERCHANT = 14;
 	private static final int COL_RULE_MATCHES = 15;
@@ -60,13 +73,21 @@ public class ReadLedgerFile {
 
 	    if (cell.getCellType() == CellType.FORMULA) {
 	        CellValue cv = evaluator.evaluate(cell);
-	        return cv.getCellType() == CellType.NUMERIC
-	                ? (int)(cv.getNumberValue())
-	                : 0;
+	        if (cv.getCellType() == CellType.NUMERIC) {
+	            return (int) cv.getNumberValue();
+	        }
+	        if (cv.getCellType() == CellType.STRING) {
+	            return parseIntegerText(cv.getStringValue());
+	        }
+	        return 0;
 	    }
 
 	    if (cell.getCellType() == CellType.NUMERIC) {
 	        return (int)(cell.getNumericCellValue());
+	    }
+
+	    if (cell.getCellType() == CellType.STRING) {
+	        return parseIntegerText(cell.getStringCellValue());
 	    }
 
 	    return 0;
@@ -78,18 +99,48 @@ public class ReadLedgerFile {
 	 * @return
 	 */
 	public int getFormulaResultNumeric(XSSFCell cell) {
-		int result = 0;
-		if(cell.getCellType()== CellType.FORMULA) {
+		if (cell == null) {
+			return 0;
+		}
+		if (cell.getCellType() == CellType.FORMULA) {
 			switch (cell.getCachedFormulaResultType()) {
-	        case NUMERIC:
-	            result =  (int) (cell.getNumericCellValue());
-	            break;
-	        default:
-	            System.out.println(cell.getRichStringCellValue());
-	            break;
+			case NUMERIC:
+				return (int) cell.getNumericCellValue();
+			case STRING:
+				return parseIntegerText(cell.getStringCellValue());
+			default:
+				return 0;
 			}
 		}
-		return result;
+		if (cell.getCellType() == CellType.NUMERIC) {
+			return (int) cell.getNumericCellValue();
+		}
+		if (cell.getCellType() == CellType.STRING) {
+			return parseIntegerText(cell.getStringCellValue());
+		}
+		return 0;
+	}
+
+	private static int parseIntegerText(String value) {
+		if (value == null || value.isBlank()) {
+			return 0;
+		}
+		try {
+			return (int) Double.parseDouble(value.trim());
+		} catch (NumberFormatException e) {
+			return 0;
+		}
+	}
+
+	/**
+	 * Reads integer-like ledger columns such as Order and Year from numeric cells,
+	 * string cells ("17"), and formulas that evaluate to either.
+	 */
+	private int readIntCellValue(XSSFRow row, int colIndex, FormulaEvaluator evaluator) {
+		if (row == null) {
+			return 0;
+		}
+		return getFormulaResultNumeric(row.getCell(colIndex, CELL_POLICY), evaluator);
 	}
 
 	/**
@@ -294,11 +345,8 @@ public class ReadLedgerFile {
 				String accountType = getRequiredCellText(row, 0, "account type", rowNum, dataFormatter, evaluator);
 				//System.out.println(" got " + accountType);
 				
-				XSSFCell cell2 =  row.getCell(1, CELL_POLICY);
-				int order = getFormulaResultNumeric(cell2, evaluator);
-				
-				XSSFCell cell3 =  row.getCell(2, CELL_POLICY);
-				int year = getFormulaResultNumeric(cell3, evaluator); 
+				int order = readIntCellValue(row, COL_ORDER, evaluator);
+				int year = readIntCellValue(row, COL_YEAR, evaluator);
 				
 				/*
 				int month = 0;
@@ -374,6 +422,7 @@ public class ReadLedgerFile {
 			reader = new FileInputStream (fileHandle);
 			workbook = new XSSFWorkbook(reader);
 			XSSFSheet mainSheet = workbook.getSheet(sheetName);
+			FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
 
 			System.out.println("lastrow num " + mainSheet.getLastRowNum());
 			for(int rowNum = mainSheet.getFirstRowNum()+1; rowNum < mainSheet.getLastRowNum(); rowNum++) { 
@@ -385,20 +434,8 @@ public class ReadLedgerFile {
 				// category, sub category 1, sub category 2, sub category 3, sub category 4
 				String accountType =  (row.getCell(0, Row.MissingCellPolicy.RETURN_NULL_AND_BLANK)).getStringCellValue().trim();
 				//System.out.println(" got " + accountType);
-				int order = 0;
-				XSSFCell cell2 =  row.getCell(1,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				if(cell2 != null && cell2.getCellType()== CellType.FORMULA) {
-					try {
-						order = getFormulaResultNumeric(cell2);
-					}catch(IllegalStateException e3) {
-						order =  0;
-					}
-				}
-				int year = 0;
-				XSSFCell cell3 =  row.getCell(2,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
-				if(cell3.getCellType()== CellType.FORMULA) {
-					year = getFormulaResultNumeric(cell3);
-				}
+				int order = readIntCellValue(row, COL_ORDER, evaluator);
+				int year = readIntCellValue(row, COL_YEAR, evaluator);
 				String month = "";
 				XSSFCell cell4 =  row.getCell(3,Row.MissingCellPolicy.RETURN_NULL_AND_BLANK );
 				if(cell4.getCellType()== CellType.FORMULA) {
@@ -489,27 +526,8 @@ public class ReadLedgerFile {
 
 					String accountType = getRequiredCellText(row, 0, "account type", rowNum, dataFormatter, evaluator);
 
-					int order = 0;
-					XSSFCell cell2 = row.getCell(1, CELL_POLICY);
-					if (cell2 != null && cell2.getCellType() == CellType.FORMULA) {
-						try {
-							order = getFormulaResultNumeric(cell2, evaluator);
-						} catch (IllegalStateException e3) {
-							order = 0;
-						}
-					} else if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
-						order = (int) cell2.getNumericCellValue();
-					}
-
-					int year = 0;
-					XSSFCell cell3 = row.getCell(2, CELL_POLICY);
-					if (cell3 != null) {
-						if (cell3.getCellType() == CellType.FORMULA) {
-							year = getFormulaResultNumeric(cell3, evaluator);
-						} else if (cell3.getCellType() == CellType.NUMERIC) {
-							year = (int) cell3.getNumericCellValue();
-						}
-					}
+					int order = readIntCellValue(row, COL_ORDER, evaluator);
+					int year = readIntCellValue(row, COL_YEAR, evaluator);
 
 					Date transactionDate = getRequiredDate(row, 4, "transaction date", rowNum);
 					String month = readMonthValue(row, evaluator, dataFormatter, transactionDate);
