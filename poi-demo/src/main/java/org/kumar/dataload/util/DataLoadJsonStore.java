@@ -36,7 +36,8 @@ public class DataLoadJsonStore {
     // ---------- Configuration defaults ----------
     private static final int DEFAULT_BACKUP_KEEP_COUNT = 20;
     private static final DateTimeFormatter BACKUP_TS =
-            DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+            DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss_SSS");
+    private static final int MAX_BACKUP_NAME_ATTEMPTS = 1000;
 
     private final ObjectMapper mapper;
     private final String resourceName;
@@ -363,13 +364,12 @@ public class DataLoadJsonStore {
         Path backupDir = backupDir();
         Files.createDirectories(backupDir);
 
-        String ts = LocalDateTime.now().format(BACKUP_TS);
-        String baseName = configFile.getFileName().toString();
-        Path backupFile = backupDir.resolve(baseName + "." + ts + ".bak");
-
-        if (Files.exists(configFile) && Files.size(configFile) > 0) {
-            Files.copy(configFile, backupFile, StandardCopyOption.COPY_ATTRIBUTES);
+        if (!Files.exists(configFile) || Files.size(configFile) <= 0) {
+            return;
         }
+
+        String baseName = configFile.getFileName().toString();
+        copyToUniqueBackup(configFile, backupDir, baseName);
     }
 
     /*
@@ -381,19 +381,17 @@ public class DataLoadJsonStore {
         Path backupDir = backupDir();
         Files.createDirectories(backupDir);
 
-        String ts = LocalDateTime.now().format(BACKUP_TS);
-        String baseName = configFile.getFileName().toString();
-        Path backupFile = backupDir.resolve(baseName + "." + ts + ".bak");
-
         // If file is empty, nothing to backup
         long size = sourceChannel.size();
         if (size <= 0) return;
 
-        // Copy bytes from the already-open channel to backup file
-        long originalPos = sourceChannel.position();
-        try (FileChannel out = FileChannel.open(backupFile,
-                StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE)) {
+        String baseName = configFile.getFileName().toString();
 
+        // Copy bytes from the already-open channel to a unique backup file.
+        // MonthlyLoad can save multiple times within the same second; CREATE_NEW
+        // must not fail on timestamp collisions.
+        long originalPos = sourceChannel.position();
+        try (FileChannel out = openUniqueBackupChannel(backupDir, baseName)) {
             sourceChannel.position(0);
             long transferred = 0;
             while (transferred < size) {
@@ -404,6 +402,40 @@ public class DataLoadJsonStore {
             // restore original position
             sourceChannel.position(originalPos);
         }
+    }
+
+    /**
+     * Copy to a unique backup path, retrying with a numeric suffix when two saves
+     * land on the same timestamp.
+     */
+    private void copyToUniqueBackup(Path source, Path backupDir, String baseName) throws IOException {
+        String ts = LocalDateTime.now().format(BACKUP_TS);
+        for (int n = 0; n < MAX_BACKUP_NAME_ATTEMPTS; n++) {
+            String suffix = (n == 0) ? ts : (ts + "-" + n);
+            Path backupFile = backupDir.resolve(baseName + "." + suffix + ".bak");
+            try {
+                Files.copy(source, backupFile, StandardCopyOption.COPY_ATTRIBUTES);
+                return;
+            } catch (FileAlreadyExistsException ignored) {
+                // another save already claimed this name; try next suffix
+            }
+        }
+        throw new IOException("Unable to create unique backup for " + baseName + " under " + backupDir);
+    }
+
+    private FileChannel openUniqueBackupChannel(Path backupDir, String baseName) throws IOException {
+        String ts = LocalDateTime.now().format(BACKUP_TS);
+        for (int n = 0; n < MAX_BACKUP_NAME_ATTEMPTS; n++) {
+            String suffix = (n == 0) ? ts : (ts + "-" + n);
+            Path backupFile = backupDir.resolve(baseName + "." + suffix + ".bak");
+            try {
+                return FileChannel.open(backupFile,
+                        StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
+            } catch (FileAlreadyExistsException ignored) {
+                // another save already claimed this name; try next suffix
+            }
+        }
+        throw new IOException("Unable to create unique backup for " + baseName + " under " + backupDir);
     }
         
     private void cleanupBackupsLocked() throws IOException {
