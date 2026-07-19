@@ -29,8 +29,14 @@ public class ChaseCCLoad extends DataloadBaseClass {
 	public final static String transactionExt = ".csv" ;
 	
 	public final static String PROCESSED_FOLDER =  "D:\\fin_docs\\ChaseCC\\Processed";
+	/** Overridable for tests; defaults to {@link #PROCESSED_FOLDER}. */
+	private String processedFolder = PROCESSED_FOLDER;
 	public static short _cycleStart = 15;
 	public static short _cycleEnd = 14;
+
+	public void setProcessedFolder(String processedFolder) {
+		this.processedFolder = processedFolder;
+	}
 		
 	/**
 	 * @override
@@ -147,10 +153,20 @@ public class ChaseCCLoad extends DataloadBaseClass {
 		}
 		return cycles;
 	}
+
+	/** Group transactions by billing cycle (one Chase export can span multiple cycles). */
+	private Map<DateInterval, List<ChaseCCCsvRecord>> groupTransactionsByInterval(List<ChaseCCCsvRecord> txns) {
+		Map<DateInterval, List<ChaseCCCsvRecord>> byInterval = new HashMap<>();
+		for (ChaseCCCsvRecord txn : txns) {
+			DateInterval cycle = DateInterval.getDateInterval(txn.getTransactionDate(), _cycleStart, _cycleEnd);
+			byInterval.computeIfAbsent(cycle, k -> new ArrayList<>()).add(txn);
+		}
+		return byInterval;
+	}
 	
 	/**
 	 * @override
-	 * This is to read a transaction file for Chase CC (Anantha) given the file name if not loaded as per dataload json file 
+	 * This is to read a transaction file for Chase CC given the file name if not loaded as per dataload json file 
 	 * and then update the data load status in the json
 	 * @param csvPath
 	 */
@@ -158,39 +174,42 @@ public class ChaseCCLoad extends DataloadBaseClass {
 		LOGGER.info(" reading " + csvPath);
 		try {
 			List<ChaseCCCsvRecord> txns = ChaseCCCsvReader.read(csvPath);
-			// identify the billing cycle these trans belong to
-			Map<DateInterval, Integer> cycles = extractCycleIntervals(txns);
-			
-			//if these cycles are already loaded, then dont load any of these
-			//check if these cycles are already loaded in dataload.json
-			for (Map.Entry<DateInterval, Integer> entry : cycles.entrySet()) {
+			// One file may contain multiple cycles -> group, then load each unloaded cycle once
+			Map<DateInterval, List<ChaseCCCsvRecord>> txnsByInterval = groupTransactionsByInterval(txns);
+
+			boolean loadedAny = false;
+			for (Map.Entry<DateInterval, List<ChaseCCCsvRecord>> entry : txnsByInterval.entrySet()) {
 			    DateInterval interval = entry.getKey();
+			    List<ChaseCCCsvRecord> intervalTxns = entry.getValue();
 			    try {
 			    	_store.findIntervalOrThrow( accountName, interval.getStartDate(), interval.getEndDate());
 					// that means this is already loaded
 					// nothing to do
 			    }catch(java.lang.IllegalStateException e1) {
-					// now convert these transactions to LedgerRecord
-					for(int i = 0; i < txns.size(); i++) {
-						ChaseCCCsvRecord chaseRec =  txns.get(i);
+					for(int i = 0; i < intervalTxns.size(); i++) {
+						ChaseCCCsvRecord chaseRec =  intervalTxns.get(i);
 						_records.add(chaseRec.convertToLedgerRecord(accountName, (short)(i+1)));
 					}
 					
-					// update the json for the internal
-					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate() + "  and " + interval.getEndDate() );
+					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate()
+							+ "  and " + interval.getEndDate()
+							+ " (" + intervalTxns.size() + " of " + txns.size() + " transactions)");
 					_store.upsertInterval(accountName,
 							interval.getStartDate(),
 							interval.getEndDate(),
                             "Loaded",
-                            txns.size());
-										
-					// move the file to a processed folder
-					Path targetDir =  Path.of(PROCESSED_FOLDER);
-					Files.createDirectories(targetDir); // make sure it exists
-					Path target = targetDir.resolve(csvPath.getFileName());
-					LOGGER.info("moving " + csvPath + " to " + target);
-					Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
+                            intervalTxns.size());
+					loadedAny = true;
 			    }
+			}
+
+			// Move once after all cycles are handled (never per-cycle)
+			if (loadedAny) {
+				Path targetDir =  Path.of(processedFolder);
+				Files.createDirectories(targetDir); // make sure it exists
+				Path target = targetDir.resolve(csvPath.getFileName());
+				LOGGER.info("moving " + csvPath + " to " + target);
+				Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

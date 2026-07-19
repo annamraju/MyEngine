@@ -151,6 +151,17 @@ public class ChaseCCAnantha extends DataloadBaseClass {
 		}
 		return cycles;
 	}
+
+	/** Group transactions by billing cycle (one Chase export can span multiple cycles). */
+	private Map<DateInterval, List<ChaseCCananthaCsvRecord>> groupTransactionsByInterval(
+			List<ChaseCCananthaCsvRecord> txns) {
+		Map<DateInterval, List<ChaseCCananthaCsvRecord>> byInterval = new HashMap<>();
+		for (ChaseCCananthaCsvRecord txn : txns) {
+			DateInterval cycle = DateInterval.getDateInterval(txn.getTransactionDate(), _cycleStart, _cycleEnd);
+			byInterval.computeIfAbsent(cycle, k -> new ArrayList<>()).add(txn);
+		}
+		return byInterval;
+	}
 	
 	/**
 	 * @override
@@ -162,39 +173,42 @@ public class ChaseCCAnantha extends DataloadBaseClass {
 		LOGGER.info(" reading " + csvPath);
 		try {
 			List<ChaseCCananthaCsvRecord> txns = ChaseCCAnanthaCsvReader.read(csvPath);
-			// identify the billing cycle these trans belong to
-			Map<DateInterval, Integer> cycles = extractCycleIntervals(txns);
-			
-			//if these cycles are already loaded, then dont load any of these
-			//check if these cycles are already loaded in dataload.json
-			for (Map.Entry<DateInterval, Integer> entry : cycles.entrySet()) {
+			// One file may contain multiple cycles -> group, then load each unloaded cycle once
+			Map<DateInterval, List<ChaseCCananthaCsvRecord>> txnsByInterval = groupTransactionsByInterval(txns);
+
+			boolean loadedAny = false;
+			for (Map.Entry<DateInterval, List<ChaseCCananthaCsvRecord>> entry : txnsByInterval.entrySet()) {
 			    DateInterval interval = entry.getKey();
+			    List<ChaseCCananthaCsvRecord> intervalTxns = entry.getValue();
 			    try {
 			    	_store.findIntervalOrThrow( accountName, interval.getStartDate(), interval.getEndDate());
 					// that means this is already loaded
 					// nothing to do
 			    }catch(java.lang.IllegalStateException e1) {
-					// now convert these transactions to LedgerRecord
-					for(int i = 0; i < txns.size(); i++) {
-						ChaseCCananthaCsvRecord chaseRec =  txns.get(i);
+					for(int i = 0; i < intervalTxns.size(); i++) {
+						ChaseCCananthaCsvRecord chaseRec =  intervalTxns.get(i);
 						_records.add(chaseRec.convertToLedgerRecord(accountName, (short)(i+1)));
 					}
 					
-					// update the json for the internal
-					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate() + "  and " + interval.getEndDate() );
+					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate()
+							+ "  and " + interval.getEndDate()
+							+ " (" + intervalTxns.size() + " of " + txns.size() + " transactions)");
 					_store.upsertInterval(accountName,
 							interval.getStartDate(),
 							interval.getEndDate(),
                             "Loaded",
-                            txns.size());
-										
-					// move the file to a processed folder
-					Path targetDir =  Path.of(PROCESSED_FOLDER);
-					Files.createDirectories(targetDir); // make sure it exists
-					Path target = targetDir.resolve(csvPath.getFileName());
-					LOGGER.info("moving " + csvPath + " to " + target);
-					Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
+                            intervalTxns.size());
+					loadedAny = true;
 			    }
+			}
+
+			// Move once after all cycles are handled (never per-cycle)
+			if (loadedAny) {
+				Path targetDir =  Path.of(PROCESSED_FOLDER);
+				Files.createDirectories(targetDir); // make sure it exists
+				Path target = targetDir.resolve(csvPath.getFileName());
+				LOGGER.info("moving " + csvPath + " to " + target);
+				Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

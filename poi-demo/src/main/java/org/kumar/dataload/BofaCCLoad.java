@@ -162,6 +162,16 @@ public class BofaCCLoad extends DataloadBaseClass{
 		}
 		return cycles;
 	}
+
+	/** Group transactions by billing cycle (one statement export can span multiple cycles). */
+	private Map<DateInterval, List<Txn>> groupTransactionsByInterval(Txn[] txns) {
+		Map<DateInterval, List<Txn>> byInterval = new HashMap<>();
+		for (Txn txn : txns) {
+			DateInterval cycle = DateInterval.getDateInterval(txn.getPostedDate(), _cycleStart, _cycleEnd);
+			byInterval.computeIfAbsent(cycle, k -> new ArrayList<>()).add(txn);
+		}
+		return byInterval;
+	}
 	
 	/**
 	 * This is to read a transaction file for Bofa given the file name if not loaded as per dataload json file 
@@ -172,38 +182,40 @@ public class BofaCCLoad extends DataloadBaseClass{
 		LOGGER.info(" reading " + csvPath);
 		try {
 			Txn[] txns = BofaCsvToObjects.readTxns(csvPath);
-			// identify the billing cycle these trans belong to
-			Map<DateInterval, Integer> cycles = extractCycleIntervals(txns);
-						
-			//if these cycles are already loaded, then dont load any of these
-			//check if these cycles are already loaded in dataload.json
-			for (Map.Entry<DateInterval, Integer> entry : cycles.entrySet()) {
+			// One file may contain multiple cycles -> group, then load each unloaded cycle once
+			Map<DateInterval, List<Txn>> txnsByInterval = groupTransactionsByInterval(txns);
+
+			boolean loadedAny = false;
+			for (Map.Entry<DateInterval, List<Txn>> entry : txnsByInterval.entrySet()) {
 			    DateInterval interval = entry.getKey();
+			    List<Txn> intervalTxns = entry.getValue();
 			    try {
 					 _store.findIntervalOrThrow(accountName,interval.getStartDate(), interval.getEndDate()	);
 					// that means this is already loaded
 			    }catch(java.lang.IllegalStateException e1) {
-			    	//its ok - load it
-					// now convert these transactions to LedgerRecord
-					for(int i = 0; i < txns.length; i++) {
-						addToLedger(txns[i], (short)(i+1));  //lets start the seq number in ledger with 1
+					for(int i = 0; i < intervalTxns.size(); i++) {
+						addToLedger(intervalTxns.get(i), (short)(i+1));  //lets start the seq number in ledger with 1
 					}
 					
-					// update the json for the internal
-					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate() + "  and " + interval.getEndDate() );
+					LOGGER.info("updating dataload.json with a new interva " + interval.getStartDate()
+							+ "  and " + interval.getEndDate()
+							+ " (" + intervalTxns.size() + " of " + txns.length + " transactions)");
 					_store.upsertInterval(accountName,
 							interval.getStartDate(),
 							interval.getEndDate(),
                             "Loaded",
-                            txns.length);
-										
-					// move the file to a processed folder
-					Path targetDir =  Path.of(PROCESSED_FOLDER);					
-					Files.createDirectories(targetDir); // make sure it exists
-					Path target = targetDir.resolve(csvPath.getFileName());
-					LOGGER.info("moving " + csvPath + " to " + target);
-					Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
+                            intervalTxns.size());
+					loadedAny = true;
 			    }
+			}
+
+			// Move once after all cycles are handled (never per-cycle)
+			if (loadedAny) {
+				Path targetDir =  Path.of(PROCESSED_FOLDER);					
+				Files.createDirectories(targetDir); // make sure it exists
+				Path target = targetDir.resolve(csvPath.getFileName());
+				LOGGER.info("moving " + csvPath + " to " + target);
+				Files.move(csvPath, target, StandardCopyOption.REPLACE_EXISTING);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
