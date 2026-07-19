@@ -282,14 +282,17 @@ public class MonthlyLoad<T> extends DataloadBaseClass {
                     }
 
                     LOGGER.info("updating dataload.json with interval "
-                            + interval.getStartDate() + " to " + interval.getEndDate());
+                            + interval.getStartDate() + " to " + interval.getEndDate()
+                            + " (" + intervalTxns.size() + " of " + txns.size() + " transactions)");
 
+                    // Count only this cycle's transactions. One statement file can span
+                    // multiple months (e.g. late May + June), so never use txns.size().
                     _store.upsertInterval(
                             accountName,
                             interval.getStartDate(),
                             interval.getEndDate(),
                             "Loaded",
-                            txns.size()
+                            intervalTxns.size()
                     );
 
                     if (autoSaveJson) saveDataLoadJson();
